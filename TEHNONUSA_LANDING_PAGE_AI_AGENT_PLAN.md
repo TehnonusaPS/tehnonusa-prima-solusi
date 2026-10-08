@@ -1212,7 +1212,7 @@ What needs to be fixed:
 
 ---
 
-## TASK 06 — Process / Workflow (Alur Kerja) [NEXT UP 🚀]
+## TASK 06 — Process / Workflow (Alur Kerja) [COMPLETED ✅]
 
 **Fokus:** Menunjukkan transparansi metodologi rekayasa software.
 - Tahapan jelas: *Discovery & Consultation → Solution Architecture → UI/UX Prototyping → Agile Development → Rigorous QA & Testing → Deployment & SLA Support*.
@@ -1221,7 +1221,7 @@ What needs to be fixed:
 
 ---
 
-## TASK 07 — Portfolio / Case Studies (Studi Kasus)
+## TASK 07 — Portfolio / Case Studies (Studi Kasus) [NEXT UP 🚀]
 
 **Fokus:** Membuktikan kemampuan tim melalui showcase proyek representatif.
 - Menggunakan `TextParallaxContent` untuk storytelling studi kasus utama (gambar sticky scaling + floating typography).
