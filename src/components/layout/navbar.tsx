@@ -75,22 +75,10 @@ export function Navbar({ className }: NavbarProps) {
             />
           </nav>
 
-          {/* Desktop Actions: Language, Spring Theme Slider, CTA */}
-          <div className="hidden lg:flex items-center gap-2">
+          {/* Desktop Actions: Language & Spring Theme Slider */}
+          <div className="hidden lg:flex items-center gap-2.5">
             <LanguageSwitcher />
             <SliderToggle useNextThemes />
-            <Button
-              size="sm"
-              variant="default"
-              className="ml-2 shadow-sm font-semibold"
-              rightIcon={<Sparkles className="w-3.5 h-3.5" />}
-              onClick={() => {
-                const el = document.querySelector("#contact");
-                el?.scrollIntoView({ behavior: "smooth" });
-              }}
-            >
-              {tHero("cta_primary")}
-            </Button>
           </div>
 
           {/* Mobile Right Controls: Language, Theme, Morphing Hamburger */}
