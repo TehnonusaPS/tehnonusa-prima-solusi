@@ -418,31 +418,24 @@ Namun jangan membuat abstraction yang terlalu rumit.
 
 ---
 
-# 9. Dummy Assets
+# 9. Visual Assets & AI Generated Images
 
-Pada tahap awal:
-
-- Logo boleh menggunakan dummy
-- Foto team boleh dummy
-- Portfolio image boleh dummy
-- Illustration boleh dummy
-- Client logo boleh dummy
-
-Tetapi struktur asset harus siap diganti.
-
-Gunakan:
+Pada tahap awal, aset visual telah disiapkan secara mandiri menggunakan AI Image Generation (gaya modern high-tech enterprise, abstrak tanpa manusia) dan tersimpan di direktori lokal project:
 
 ```text
 public/
-├── images/
-├── icons/
-├── logos/
-└── ...
+└── images/
+    ├── hero-tech.jpg       # Futuristic holographic computing core (Hero Section)
+    ├── systems-mesh.jpg     # Abstract enterprise systems architecture (Trust / Why Us)
+    ├── data-core.jpg        # High-tech glowing server infrastructure (Process / Architecture)
+    └── tech-grid.jpg        # Cyber matrix landscape (Portfolio / Case Studies)
 ```
 
-Jangan menggunakan URL random dari internet sebagai dependency utama website.
-
-Untuk sementara boleh gunakan placeholder yang stabil.
+Aturan penggunaan aset:
+- Jangan menggunakan URL random internet yang tidak stabil.
+- Prioritaskan aset lokal yang sudah di-generate di `public/images/`.
+- Gambar bersifat non-intrusif, elegan, berestetika teknologi modern (deep blue, cyan glow, dark sleek atmosphere).
+- Komponen visual siap menerima penggantian aset resmi saat brand guideline final tersedia.
 
 ---
 
@@ -1037,116 +1030,142 @@ What needs to be fixed:
 
 ---
 
-# 17. NEXT TASK PREVIEW
+# 17. COMPONENT HARMONY MAP & TASK ROADMAP
 
-## TASK 02 — Design System & UI Foundation
-
-Baru setelah Task 01 disetujui, lanjut:
-
-- typography
-- spacing system
-- container
-- button variants
-- card
-- section heading
-- badge
-- theme toggle
-- language switcher
-- navbar foundation
-- responsive utilities
-- reusable animation primitives
-
-Belum membuat semua section landing page.
+> **Prinsip Harmonisasi UI/UX:**
+> Gunakan komponen visual secara proporsional. Jangan menumpuk semua efek di satu tempat. Setiap section memiliki fokus peran psikologisnya masing-masing agar website terasa premium, kredibel, dan modern tanpa terasa norak atau berat. Komponen yang tidak relevan di suatu section **tidak perlu dipaksakan**.
 
 ---
 
-## TASK 03 — Navbar + Hero
+### Peta Penempatan Komponen (UI/UX Harmony Matrix)
 
-Fokus:
-
-- Navbar
-- Language switcher
-- Theme toggle
-- CTA
-- Hero
-- visual dummy
-- responsive
-- animation
-
----
-
-## TASK 04 — Services
-
-Fokus:
-
-- service cards
-- solution categories
-- interaction
-- animation
+| Section / Bagian | Komponen Utama | Komponen Pendukung / Interaksi | Aset Visual AI Lokal |
+| :--- | :--- | :--- | :--- |
+| **0. Global Shell & Nav** | `Navbar`, `ShiftingDropDown` | `SlideTabs`, `SliderToggle`, `LanguageSwitcher`, `AnimatedHamburgerButton` | — |
+| **1. Hero Section** | `CircleHighlight`, `SpotlightButton` / `EncryptButton` | `AuroraHero` (ambient glow) / `FuzzyOverlay` (lo-fi depth) | `public/images/hero-tech.jpg` |
+| **2. Services (Layanan)** | `SectionHeading`, `Card` (interactive) | `AIGradientBorder` (highlight card), `StaggerContainer` | — |
+| **3. Trust & Tech Stack** | `DivOrigami` (`LogoRolodex`) | `ParticleRing` (3D interactive mesh drag & zoom) | `public/images/systems-mesh.jpg` |
+| **4. Process & Workflow** | `SlideTabs` (step tabs) | `FadeIn`, `SlideUp` motion primitives | `public/images/data-core.jpg` |
+| **5. Portfolio / Projects** | `TextParallaxContent` | `MouseImageTrail` (interactive cursor showcase) | `public/images/tech-grid.jpg` |
+| **6. FAQ & Support** | `BlockInTextCard` (`Typewrite`) | Accordion / FAQ clean list | — |
+| **7. Conversion CTA** | `AIGradientAnimationCard` | `SpringModal` (inquiry popup), `EncryptButton` | — |
+| **8. Footer** | `RevealLinks` (`FlipLink`) | Legal copyright, brand identity, clean links | — |
 
 ---
 
-## TASK 05 — Trust + Why Us
+## TASK 02 — Design System & UI Foundation [COMPLETED ✅]
 
-Fokus:
-
-- metrics
-- technology
-- credibility
-- differentiators
-
----
-
-## TASK 06 — Process
-
-Fokus:
-
-```text
-Discovery
-→ Planning
-→ Design
-→ Development
-→ Testing
-→ Launch
-→ Support
-```
+- [x] Design token foundation (`globals.css` semantic variables)
+- [x] `Container` polymorphic responsive gutters
+- [x] `Button` variants (`cva` based)
+- [x] `Badge` variants & status indicators
+- [x] `Card` family (`CardHeader`, `CardTitle`, `CardDescription`, `CardContent`, `CardFooter`)
+- [x] `SectionHeading` standardizer
+- [x] `ThemeToggle` & `SliderToggle` (NextThemes integration & layout spring pill)
+- [x] `LanguageSwitcher` (`next-intl` reactive switcher)
+- [x] `MotionPrimitives` (`FadeIn`, `SlideUp`, `ScaleIn`, `StaggerContainer`)
+- [x] `SmoothScrollProvider` & `lenis` configuration
+- [x] Creative Micro-interaction library (`EncryptButton`, `SpotlightButton`, `DrawOutlineButton`, `DottedButton`, `NeumorphismButton`, `NeuButton`)
+- [x] Navigation components (`AnimatedHamburgerButton`, `SlideTabs`, `ShiftingDropDown`)
+- [x] Advanced Visuals (`AuroraHero`, `ParticleRing`, `TextParallaxContent`, `FuzzyOverlay`, `CircleHighlight`, `DivOrigami`, `BlockInTextCard`, `SpringModal`, `MouseImageTrail`, `CutoutTextLoader`)
+- [x] AI Generated local high-tech imagery di `public/images/`
 
 ---
 
-## TASK 07 — Portfolio / Case Studies
+## TASK 03 — Navbar + Hero Section [NEXT UP 🚀]
 
-Gunakan dummy project terlebih dahulu.
+**Tujuan:** Membangun *first impression* yang memukau (*WOW effect*) namun tetap profesional, berwibawa, dan bernilai bisnis tinggi.
+
+**Fokus Implementasi:**
+1. **Header / Navbar Modern:**
+   - Sticky navbar dengan latar glassmorphism saat di-scroll (`backdrop-blur-md`).
+   - Desktop Menu: Integrasi `ShiftingDropDown` untuk dropdown informatif (*Layanan*, *Solusi*, *Tentang Kami*) atau `SlideTabs` untuk navigasi cepat.
+   - Quick Controls: `SliderToggle` (Light/Dark mode) dan `LanguageSwitcher` (ID/EN).
+   - Mobile: `AnimatedHamburgerButton` morphing ke drawer menu yang rapi.
+   - Tombol CTA utama: "Diskusi Proyek".
+
+2. **Hero Section:**
+   - Headline persuasif dengan `CircleHighlight` untuk melingkari kata kunci:  
+     `"Membangun Solusi Digital Andal untuk Skalabilitas Bisnis"`.
+   - Subtitle deskriptif yang menjawab kebutuhan klien enterprise & startup.
+   - Call-to-action ganda: Tombol primer beranimasi micro-interaction (`EncryptButton` / `SpotlightButton`) dan tombol sekunder outline.
+   - Elemen visual: Perpaduan ambient glow `AuroraHero` / 3D Stars halus di background, diperkaya tekstur `FuzzyOverlay`, dan thumbnail visual showcase `public/images/hero-tech.jpg`.
 
 ---
 
-## TASK 08 — Testimonials + FAQ
+## TASK 04 — Services Section (Layanan Digital)
+
+**Fokus:** Menjelaskan kapabilitas teknologi tanpa bahasa yang membingungkan.
+- `SectionHeading` dengan eyebrow badge.
+- Kategori layanan utama:
+  1. **Enterprise Web Systems** (Portal internal, ERP, arsitektur modular).
+  2. **High-Performance Mobile Apps** (Aplikasi bisnis native/cross-platform).
+  3. **Custom Software & Cloud Architecture** (Sistem kustom spesifik industri).
+  4. **Digital Transformation & API Integration** (Payment gateway, third-party connectors, otomatisasi).
+- Komponen: `Card` interaktif dengan aksen `AIGradientBorder` pada layanan unggulan.
 
 ---
 
-## TASK 09 — CTA + Footer
+## TASK 05 — Trust & Technology Expertise (Kredibilitas & Tech Stack)
+
+**Fokus:** Memberikan keyakinan bahwa PT Tehnonusa Prima Solusi adalah mitra teknologi yang kompeten.
+- Metrik bisnis realistis (SLA 99.9%, clean code architecture, keamanan data enterprise).
+- Komponen 3D / Interaktif:
+  - `DivOrigami` (`LogoRolodex`) untuk menampilkan pilar teknologi (Next.js, TypeScript, Cloud Infrastructure, Scalable DB, Security, Microservices).
+  - Integrasi modular `ParticleRing` (3D mesh teknologi yang dapat di-drag & zoom oleh visitor) atau visual `public/images/systems-mesh.jpg`.
+
+---
+
+## TASK 06 — Process / Workflow (Alur Kerja)
+
+**Fokus:** Menunjukkan transparansi metodologi rekayasa software.
+- Tahapan jelas: *Discovery & Consultation → Solution Architecture → UI/UX Prototyping → Agile Development → Rigorous QA & Testing → Deployment & SLA Support*.
+- Integrasi `SlideTabs` untuk berpindah antar fase alur kerja secara interaktif.
+- Visual backdrop: `public/images/data-core.jpg`.
+
+---
+
+## TASK 07 — Portfolio / Case Studies (Studi Kasus)
+
+**Fokus:** Membuktikan kemampuan tim melalui showcase proyek representatif.
+- Menggunakan `TextParallaxContent` untuk storytelling studi kasus utama (gambar sticky scaling + floating typography).
+- Atau `MouseImageTrail` untuk interaksi visual showcase yang dinamis dan berkelas.
+- Visual asset: `public/images/tech-grid.jpg` dan mockups sistem.
+
+---
+
+## TASK 08 — Testimonials & FAQ Consultation
+
+**Fokus:** Menghapus keraguan calon klien dan menjawab pertanyaan umum.
+- Kartu testimoni kredibel klien bisnis.
+- Interactive Consultation Support: Menggunakan `BlockInTextCard` dengan `Typewrite` animasi mengetik contoh pertanyaan nyata seputar estimasi proyek, integrasi, dan SLA.
+
+---
+
+## TASK 09 — Conversion CTA & Footer
+
+**Fokus:** Menutup landing page dengan konversi tinggi dan branding yang membekas.
+- **Conversion CTA:** Banner penutup dengan `AIGradientAnimationCard`, tombol aksi pemicu `SpringModal` (pop-up konsultasi cepat).
+- **Footer:** Kinetic typography `RevealLinks` (`FlipLink`) untuk tautan navigasi dan media sosial perusahaan, informasi PT resmi, hak cipta, dan kepatuhan privasi.
 
 ---
 
 ## TASK 10 — SEO + Performance + Accessibility
 
+**Fokus:** Mengoptimalkan Core Web Vitals dan keterbacaan mesin pencari.
+- Metadata lengkap, Open Graph, twitter cards, canonical URL.
+- Semantics HTML (`<header>`, `<nav>`, `<main>`, `<section>`, `<footer>`).
+- Audit keyboard navigation, visible focus state, dan `prefers-reduced-motion`.
+
 ---
 
-## TASK 11 — Final QA
+## TASK 11 — Final QA & Polishing
 
-Check:
-
-- responsive
-- dark mode
-- light mode
-- Indonesian
-- English
-- animation
-- accessibility
-- SEO
-- performance
-- build
-- lint
-- type safety
+**Fokus:** Pengujian menyeluruh sebelum rilis.
+- Cross-device QA (Mobile, Tablet, Desktop, Large Screens).
+- Dark Mode & Light Mode consistency check.
+- Indonesian & English routing check (`/` dan `/en`).
+- Production build validation (`pnpm build` & `pnpm lint`).
 
 ---
 
