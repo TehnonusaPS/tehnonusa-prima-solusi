@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { motion, type Variants } from "motion/react";
 import {
   Activity,
   CheckCircle2,
@@ -28,6 +29,28 @@ import { cn } from "@/lib/utils";
 interface TechSectionProps {
   className?: string;
 }
+
+const techGridVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const techCardVariants: Variants = {
+  hidden: { opacity: 0, y: 25 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
 
 export function TechSection({ className }: TechSectionProps) {
   const t = useTranslations("trust_tech");
@@ -146,8 +169,14 @@ export function TechSection({ className }: TechSectionProps) {
       </div>
 
       <Container size="lg">
-        {/* 1. Header: Eyebrow + Title with Hand-drawn Loop Highlight */}
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16 sm:mb-20">
+        {/* 1. Header: Eyebrow + Title with Hand-drawn Loop Highlight (Motion Reveal) */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16 sm:mb-20"
+        >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border/80 bg-surface/80 backdrop-blur-md shadow-2xs mb-5">
             <Terminal className="w-3.5 h-3.5 text-primary" />
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground">
@@ -169,16 +198,24 @@ export function TechSection({ className }: TechSectionProps) {
           <p className="font-sans text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed max-w-3xl">
             {t("description")}
           </p>
-        </div>
+        </motion.div>
 
-        {/* 2. Key Trust & Credibility Metrics Grid (Equal Heights) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 items-stretch mb-16 sm:mb-24">
+        {/* 2. Key Trust & Credibility Metrics Grid (Staggered Entrance & Hover Lift) */}
+        <motion.div
+          variants={techGridVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 items-stretch mb-16 sm:mb-24"
+        >
           {metrics.map((metric, idx) => {
             const Icon = metric.icon;
             return (
-              <div
+              <motion.div
                 key={idx}
-                className="group relative flex flex-col justify-between p-6 sm:p-7 rounded-(--radius-xl) border border-border/70 bg-surface/90 hover:border-primary/40 hover:bg-surface-elevated transition-all duration-300 shadow-xs hover:shadow-md"
+                variants={techCardVariants}
+                whileHover={{ y: -5, transition: { duration: 0.2, ease: "easeOut" } }}
+                className="group relative flex flex-col justify-between p-6 sm:p-7 rounded-(--radius-xl) border border-border/70 bg-surface/90 hover:border-primary/40 hover:bg-surface-elevated transition-colors duration-300 shadow-xs hover:shadow-md cursor-default"
               >
                 <div>
                   <div className="flex items-center justify-between mb-5">
@@ -202,13 +239,19 @@ export function TechSection({ className }: TechSectionProps) {
                 <p className="font-sans text-xs sm:text-sm text-muted-foreground leading-relaxed mt-2 pt-3 border-t border-border/40">
                   {metric.desc}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
-        {/* 3. Hover.dev DivOrigami Interactive 3D Showcase */}
-        <div className="relative rounded-(--radius-2xl) border border-border/80 bg-gradient-to-br from-surface to-surface/60 p-6 sm:p-12 lg:p-16 mb-16 sm:mb-24 shadow-sm overflow-hidden">
+        {/* 3. Hover.dev DivOrigami Interactive 3D Showcase with Scale Entrance */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.97 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+          className="relative rounded-(--radius-2xl) border border-border/80 bg-gradient-to-br from-surface to-surface/60 p-6 sm:p-12 lg:p-16 mb-16 sm:mb-24 shadow-sm overflow-hidden"
+        >
           {/* Subtle Accent Glow */}
           <div className="pointer-events-none absolute -right-24 -top-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
           <div className="pointer-events-none absolute -left-24 -bottom-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
@@ -251,11 +294,17 @@ export function TechSection({ className }: TechSectionProps) {
               <LogoRolodex items={origamiTechItems} delay={2800} />
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* 4. Categorized Tech Stack Ecosystem Grid */}
+        {/* 4. Categorized Tech Stack Ecosystem Grid with Staggered Motion */}
         <div className="mt-8">
-          <div className="text-center max-w-2xl mx-auto mb-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5 }}
+            className="text-center max-w-2xl mx-auto mb-12"
+          >
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-primary mb-2 block">
               {t("ecosystem.kicker")}
             </span>
@@ -265,15 +314,23 @@ export function TechSection({ className }: TechSectionProps) {
             <p className="font-sans text-sm sm:text-base text-muted-foreground leading-relaxed">
               {t("ecosystem.desc")}
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+          <motion.div
+            variants={techGridVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-40px" }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch"
+          >
             {techEcosystem.map((cat, idx) => {
               const Icon = cat.icon;
               return (
-                <div
+                <motion.div
                   key={idx}
-                  className="flex flex-col justify-between p-6 rounded-(--radius-xl) border border-border/60 bg-surface/70 backdrop-blur-xs hover:border-border transition-all duration-300"
+                  variants={techCardVariants}
+                  whileHover={{ y: -4, transition: { duration: 0.2, ease: "easeOut" } }}
+                  className="flex flex-col justify-between p-6 rounded-(--radius-xl) border border-border/60 bg-surface/70 backdrop-blur-xs hover:border-border transition-colors duration-300"
                 >
                   <div>
                     <div className="flex items-center gap-3 mb-3">
@@ -300,10 +357,10 @@ export function TechSection({ className }: TechSectionProps) {
                       </span>
                     ))}
                   </div>
-                </div>
+                </motion.div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </Container>
     </section>

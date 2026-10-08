@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { useTranslations } from "next-intl";
+import { motion, type Variants } from "motion/react";
 import {
   Globe,
   Smartphone,
@@ -23,6 +24,28 @@ import { cn } from "@/lib/utils";
 export interface ServicesSectionProps {
   className?: string;
 }
+
+const servicesGridVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const serviceCardVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.55,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
 
 interface ServiceData {
   id: string;
@@ -97,8 +120,14 @@ export function ServicesSection({ className }: ServicesSectionProps) {
       </div>
 
       <Container size="lg">
-        {/* Section Header */}
-        <div className="flex flex-col items-center text-center mb-16 sm:mb-20">
+        {/* Section Header with Motion Reveal */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col items-center text-center mb-16 sm:mb-20"
+        >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border/80 bg-surface/80 backdrop-blur-md shadow-2xs mb-4">
             <Terminal className="w-3.5 h-3.5 text-primary" />
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground">
@@ -120,10 +149,16 @@ export function ServicesSection({ className }: ServicesSectionProps) {
           <p className="font-sans text-base sm:text-lg text-muted-foreground max-w-2xl leading-relaxed">
             {tServices("description")}
           </p>
-        </div>
+        </motion.div>
 
-        {/* Services Grid (2x2 on desktop with strictly uniform cards) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-16 items-stretch">
+        {/* Services Grid (2x2 on desktop with staggered entrance) */}
+        <motion.div
+          variants={servicesGridVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-60px" }}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-16 items-stretch"
+        >
           {serviceItems.map((service) => {
             const IconComponent = service.icon;
             const features = [0, 1, 2, 3].map((idx) =>
@@ -131,11 +166,16 @@ export function ServicesSection({ className }: ServicesSectionProps) {
             );
 
             return (
-              <AIGradientBorder
+              <motion.div
                 key={service.id}
-                duration={service.isFeatured ? 4 : 5.5}
-                className="h-full rounded-2xl"
+                variants={serviceCardVariants}
+                whileHover={{ y: -6, transition: { duration: 0.25, ease: "easeOut" } }}
+                className="h-full"
               >
+                <AIGradientBorder
+                  duration={service.isFeatured ? 4 : 5.5}
+                  className="h-full rounded-2xl"
+                >
                 <div className="relative flex flex-col h-full p-6 sm:p-8 rounded-[calc(1rem-1px)] bg-surface/90 hover:bg-surface/95 transition-all duration-300 shadow-sm group backdrop-blur-sm">
                   {/* Top Row: Icon + Eyebrow Badge */}
                   <div className="flex items-center justify-between gap-4 mb-6">
@@ -216,41 +256,48 @@ export function ServicesSection({ className }: ServicesSectionProps) {
                   </div>
                 </div>
               </AIGradientBorder>
-            );
-          })}
-        </div>
+            </motion.div>
+          );
+        })}
+      </motion.div>
 
-        {/* Bottom Banner: Custom Consultation Inquiry */}
-        <div className="relative rounded-2xl sm:rounded-3xl border border-border/80 bg-surface/90 p-6 sm:p-10 shadow-lg overflow-hidden backdrop-blur-xl">
-          {/* Subtle gradient aura */}
-          <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+      {/* Bottom Banner: Custom Consultation Inquiry with Motion Entrance */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        className="relative rounded-2xl sm:rounded-3xl border border-border/80 bg-surface/90 p-6 sm:p-10 shadow-lg overflow-hidden backdrop-blur-xl"
+      >
+        {/* Subtle gradient aura */}
+        <div className="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
-            <div className="max-w-2xl">
-              <div className="inline-flex items-center gap-2 text-primary font-mono text-xs font-semibold uppercase tracking-wider mb-2">
-                <Sparkles className="w-3.5 h-3.5" />
-                <span>Tailored Engineering</span>
-              </div>
-              <h3 className="font-heading text-xl sm:text-2xl font-bold text-foreground mb-2">
-                {tServices("cta_banner_title")}
-              </h3>
-              <p className="font-sans text-sm sm:text-base text-muted-foreground leading-relaxed">
-                {tServices("cta_banner_desc")}
-              </p>
+        <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 text-primary font-mono text-xs font-semibold uppercase tracking-wider mb-2">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Tailored Engineering</span>
             </div>
-
-            <Button
-              size="lg"
-              variant="default"
-              onClick={scrollToContact}
-              className="w-full sm:w-auto shrink-0 font-sans font-semibold shadow-md shadow-primary/20"
-              leftIcon={<MessageSquare className="w-4 h-4" />}
-              rightIcon={<ArrowUpRight className="w-4 h-4" />}
-            >
-              {tServices("cta_banner_button")}
-            </Button>
+            <h3 className="font-heading text-xl sm:text-2xl font-bold text-foreground mb-2">
+              {tServices("cta_banner_title")}
+            </h3>
+            <p className="font-sans text-sm sm:text-base text-muted-foreground leading-relaxed">
+              {tServices("cta_banner_desc")}
+            </p>
           </div>
+
+          <Button
+            size="lg"
+            variant="default"
+            onClick={scrollToContact}
+            className="w-full sm:w-auto shrink-0 font-sans font-semibold shadow-md shadow-primary/20"
+            leftIcon={<MessageSquare className="w-4 h-4" />}
+            rightIcon={<ArrowUpRight className="w-4 h-4" />}
+          >
+            {tServices("cta_banner_button")}
+          </Button>
         </div>
+      </motion.div>
       </Container>
     </section>
   );

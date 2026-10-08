@@ -4,6 +4,7 @@ import * as React from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
+import { motion, type Variants } from "motion/react";
 import {
   ShieldCheck,
   Cpu,
@@ -41,6 +42,29 @@ export interface HeroSectionProps {
   className?: string;
 }
 
+const heroContainerVariants: Variants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.08,
+    },
+  },
+};
+
+const heroItemVariants: Variants = {
+  hidden: { opacity: 0, y: 22 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
 export function HeroSection({ className }: HeroSectionProps) {
   const tHero = useTranslations("hero");
   const mounted = React.useSyncExternalStore(
@@ -77,9 +101,17 @@ export function HeroSection({ className }: HeroSectionProps) {
       </div>
 
       <Container size="lg">
-        <div className="flex flex-col items-center text-center">
+        <motion.div
+          variants={heroContainerVariants}
+          initial="hidden"
+          animate="visible"
+          className="flex flex-col items-center text-center"
+        >
           {/* 2. Engineering Eyebrow Tag / Kicker */}
-          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-border/80 bg-surface/80 backdrop-blur-md shadow-2xs mb-5 sm:mb-6 max-w-[94vw] sm:max-w-none">
+          <motion.div
+            variants={heroItemVariants}
+            className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-border/80 bg-surface/80 backdrop-blur-md shadow-2xs mb-5 sm:mb-6 max-w-[94vw] sm:max-w-none"
+          >
             <span className="flex h-2 w-2 shrink-0 relative">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
@@ -88,10 +120,13 @@ export function HeroSection({ className }: HeroSectionProps) {
             <span className="font-mono text-[10px] sm:text-xs font-semibold uppercase tracking-tight sm:tracking-wider text-muted-foreground text-center">
               {tHero("kicker")}
             </span>
-          </div>
+          </motion.div>
 
           {/* 3. Main Persuasive Headline with Hand-drawn Loop Highlight (Exact 3 lines on mobile & desktop) */}
-          <h1 className="font-heading font-bold text-[clamp(1.65rem,7.2vw,2.4rem)] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-foreground leading-[1.12] sm:leading-[1.08] max-w-6xl mb-5 sm:mb-6">
+          <motion.h1
+            variants={heroItemVariants}
+            className="font-heading font-bold text-[clamp(1.65rem,7.2vw,2.4rem)] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-foreground leading-[1.12] sm:leading-[1.08] max-w-6xl mb-5 sm:mb-6"
+          >
             <span className="block">{tHero("headline_prefix")}</span>
             <span className="block my-1.5 sm:my-2 whitespace-nowrap">
               <CircleHighlight
@@ -106,15 +141,21 @@ export function HeroSection({ className }: HeroSectionProps) {
               )}
             </span>
             <span className="block whitespace-nowrap">{tHero("headline_suffix")}</span>
-          </h1>
+          </motion.h1>
 
           {/* 4. Subtitle / Product Philosophy Copy */}
-          <p className="font-sans text-sm sm:text-lg lg:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-8 sm:mb-10 px-1 sm:px-0">
+          <motion.p
+            variants={heroItemVariants}
+            className="font-sans text-sm sm:text-lg lg:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-8 sm:mb-10 px-1 sm:px-0"
+          >
             {tHero("description")}
-          </p>
+          </motion.p>
 
           {/* 5. Dual Action Buttons (Diskusi Proyek hidden on mobile) */}
-          <div className="flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto mb-12 sm:mb-16">
+          <motion.div
+            variants={heroItemVariants}
+            className="flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto mb-12 sm:mb-16"
+          >
             {/* Primary Action Button with Cyber Scramble Effect - Hidden on mobile */}
             <EncryptButton
               text={tHero("cta_primary")}
@@ -133,15 +174,29 @@ export function HeroSection({ className }: HeroSectionProps) {
             >
               {tHero("cta_secondary")}
             </Button>
-          </div>
+          </motion.div>
 
-          {/* 6. High-Tech Visual Showcase Card with Authentic Enterprise Badges */}
-          <div className="relative w-full max-w-5xl group">
+          {/* 6. High-Tech Visual Showcase Card with Authentic Enterprise Badges & Smooth Float */}
+          <motion.div
+            variants={heroItemVariants}
+            className="relative w-full max-w-5xl group"
+          >
             {/* Ambient Backlight Glow for Visual Card */}
             <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-primary/30 via-accent/20 to-primary/30 blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-700 pointer-events-none" />
 
-            {/* Main Showcase Container */}
-            <div className="relative rounded-2xl sm:rounded-3xl border border-border/80 bg-surface/90 shadow-2xl overflow-hidden backdrop-blur-xl">
+            {/* Main Showcase Container with Levitation Float */}
+            <motion.div
+              animate={{
+                y: [0, -6, 0],
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                repeatType: "mirror",
+                ease: "easeInOut",
+              }}
+              className="relative rounded-2xl sm:rounded-3xl border border-border/80 bg-surface/90 shadow-2xl overflow-hidden backdrop-blur-xl"
+            >
               {/* Window Frame Bar */}
               <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-border/70 bg-muted/40">
                 <div className="flex items-center gap-2">
@@ -195,9 +250,9 @@ export function HeroSection({ className }: HeroSectionProps) {
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </Container>
     </section>
   );
