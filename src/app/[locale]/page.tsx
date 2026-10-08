@@ -3,6 +3,7 @@ import { routing } from "@/i18n/routing";
 import { HeroSection } from "@/components/sections/hero/hero-section";
 import { ServicesSection } from "@/components/sections/services/services-section";
 import { TechSection } from "@/components/sections/tech/tech-section";
+import { ProcessSection } from "@/components/sections/process/process-section";
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -28,6 +29,9 @@ export default async function HomePage({ params }: Props) {
 
       {/* Production Trust & Technology Expertise Section (Task 05) */}
       <TechSection />
+
+      {/* Production Process / Workflow Section (Task 06) */}
+      <ProcessSection />
     </main>
   );
 }

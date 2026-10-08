@@ -131,6 +131,105 @@
       "cat_data_desc": "Consistent ACID-compliant storage and ultra-low latency distributed caching."
     }
   },
+  "process": {
+    "kicker": "METHODOLOGY & WORKFLOW",
+    "title_prefix": "Structured Engineering from",
+    "title_highlight": "Concept to Production",
+    "description": "We follow a transparent, measurable, and highly disciplined software engineering lifecycle to ensure every deliverable arrives on schedule and meets enterprise standards.",
+    "cta_button": "Consult With Our Team",
+    "phases": {
+      "discovery": {
+        "step": "PHASE 01",
+        "tab_label": "01. Discovery",
+        "title": "Discovery & Business Needs Analysis",
+        "tagline": "Understanding Business Logic & Defining Precise Scope",
+        "description": "We collaborate closely with your stakeholders to dissect operational hurdles, map out system requirements, and craft comprehensive technical blueprints.",
+        "deliverables": [
+          "Business Requirements Document (BRD)",
+          "User Journey & Scope Mapping",
+          "Project Timeline & Milestone Release Plan",
+          "Technical Feasibility & ROI Assessment"
+        ],
+        "tooling": ["Figma Jam", "Miro", "Notion Specs", "Jira Architecture"],
+        "cadence": "Weeks 1 – 2"
+      },
+      "architecture": {
+        "step": "PHASE 02",
+        "tab_label": "02. Architecture",
+        "title": "System Architecture Design & Technical Specs",
+        "tagline": "Scalable, Secure, & Future-Proof System Blueprint",
+        "description": "Before writing code, our software architects design normalized database schemas, modular service boundaries, security data protocols, and API contracts.",
+        "deliverables": [
+          "System Architecture & Cloud Topology Blueprint",
+          "Entity Relationship Diagram (ERD) Schema",
+          "Standardized API Contracts (OpenAPI / Swagger)",
+          "Data Security & RBAC Governance Model"
+        ],
+        "tooling": ["PlantUML", "Draw.io", "PostgreSQL ERD", "OpenAPI"],
+        "cadence": "Weeks 2 – 3"
+      },
+      "prototyping": {
+        "step": "PHASE 03",
+        "tab_label": "03. Prototyping",
+        "title": "UI/UX Prototyping & Flow Mapping",
+        "tagline": "Intuitive User Journeys Engineered for Conversion",
+        "description": "Our product designers craft modern, accessible, and high-fidelity interfaces. Stakeholders can interactively click through real system flows before development begins.",
+        "deliverables": [
+          "High-Fidelity Interface Wireframes",
+          "Modular Design System & Component Library",
+          "Interactive Prototypes for User Testing",
+          "Responsive Mobile & Desktop Viewport Specs"
+        ],
+        "tooling": ["Figma", "Design Tokens", "Tailwind Theme", "User Testing"],
+        "cadence": "Weeks 3 – 4"
+      },
+      "development": {
+        "step": "PHASE 04",
+        "tab_label": "04. Development",
+        "title": "Agile & Modular Engineering Sprints",
+        "tagline": "Clean Code, Strict Type Safety, & Predictable Cadence",
+        "description": "Development proceeds in transparent 2-week agile sprints. You receive live working demos, visible Git commit progress, and automated CI/CD pipeline verification.",
+        "deliverables": [
+          "Bi-Weekly Agile Sprint Deliverables",
+          "Clean Codebase with Strict TypeScript Type Safety",
+          "Live Staging Environments for Review",
+          "Automated CI/CD Integration Pipeline"
+        ],
+        "tooling": ["Next.js", "TypeScript", "Node.js / Go", "Docker", "GitLab / GitHub"],
+        "cadence": "Bi-Weekly Sprints"
+      },
+      "qa_testing": {
+        "step": "PHASE 05",
+        "tab_label": "05. QA & Audit",
+        "title": "Rigorous QA, Security Audits, & Load Testing",
+        "tagline": "Ensuring Zero Flaws, Resilient Uptime, & Peak Performance",
+        "description": "Prior to launch, systems undergo end-to-end testing: automated unit test suites, security penetration checks, peak concurrency load testing, and cross-device validation.",
+        "deliverables": [
+          "End-to-End & Automated Unit Testing Suites",
+          "High-Concurrency Peak Load & Stress Testing",
+          "Vulnerability & Security Penetration Check",
+          "Accessibility & Viewport Responsiveness Audit"
+        ],
+        "tooling": ["Jest", "Playwright", "K6 Load Test", "SonarQube", "OWASP ZAP"],
+        "cadence": "Pre-Release Stage"
+      },
+      "deployment": {
+        "step": "PHASE 06",
+        "tab_label": "06. Launch & SLA",
+        "title": "Production Deployment & 99.9% SLA Warranty",
+        "tagline": "Zero-Downtime Rollout & Continuous Enterprise Support",
+        "description": "We roll out to production cloud infrastructure with zero-downtime blue/green deployment, 24/7 real-time telemetry monitoring, automated backups, and SLA guarantees.",
+        "deliverables": [
+          "Zero-Downtime Production Deployment",
+          "Real-Time Telemetry & APM Observability",
+          "Comprehensive Technical Documentation & Training",
+          "SLA-Backed Maintenance & Engineering Support"
+        ],
+        "tooling": ["Kubernetes", "AWS / GCP", "Prometheus", "Grafana", "Uptime Kuma"],
+        "cadence": "Continuous Support"
+      }
+    }
+  },
   "theme": {
     "label": "Toggle Theme",
     "light": "Light",

@@ -131,6 +131,105 @@
       "cat_data_desc": "Penyimpanan data konsisten ACID-compliant dan caching latensi ultra-rendah."
     }
   },
+  "process": {
+    "kicker": "METODOLOGI & ALUR KERJA",
+    "title_prefix": "Alur Rekayasa Terstruktur dari",
+    "title_highlight": "Ide ke Produksi",
+    "description": "Kami menerapkan siklus hidup rekayasa perangkat lunak yang transparan, terukur, dan berdisiplin tinggi untuk memastikan setiap deliverables selesai tepat waktu dan berstandar enterprise.",
+    "cta_button": "Konsultasikan Proyek Anda",
+    "phases": {
+      "discovery": {
+        "step": "FASE 01",
+        "tab_label": "01. Discovery",
+        "title": "Discovery & Analisis Kebutuhan Bisnis",
+        "tagline": "Memahami Logika Bisnis & Mendefinisikan Ruang Lingkup",
+        "description": "Kami berkolaborasi erat dengan tim Anda untuk membedah tantangan operasional, memetakan kebutuhan sistem, dan menyusun spesifikasi kebutuhan teknis secara komprehensif.",
+        "deliverables": [
+          "Business Requirements Document (BRD)",
+          "Pemetaan User Journey & Ruang Lingkup",
+          "Estimasi Timeline & Rencana Rilis",
+          "Kalkulasi Kelayakan Teknis (Feasibility)"
+        ],
+        "tooling": ["Figma Jam", "Miro", "Notion Specs", "Jira Architecture"],
+        "cadence": "Minggu 1 – 2"
+      },
+      "architecture": {
+        "step": "FASE 02",
+        "tab_label": "02. Arsitektur",
+        "title": "Desain Arsitektur Sistem & Spesifikasi",
+        "tagline": "Fondasi Scalable, Aman, & Siap Skalabilitas",
+        "description": "Sebelum menulis kode, software architect kami merancang skema database, pemisahan layer microservices/modular, protokol keamanan data, dan kontrak API.",
+        "deliverables": [
+          "Diagram Arsitektur Sistem & Topologi Cloud",
+          "Entity Relationship Diagram (ERD) Database",
+          "Kontrak API Terstandar (OpenAPI / Swagger)",
+          "Strategi Keamanan & RBAC Governance"
+        ],
+        "tooling": ["PlantUML", "Draw.io", "PostgreSQL ERD", "OpenAPI"],
+        "cadence": "Minggu 2 – 3"
+      },
+      "prototyping": {
+        "step": "FASE 03",
+        "tab_label": "03. Prototyping",
+        "title": "Desain Antarmuka & Prototipe Interaktif",
+        "tagline": "Pengalaman Pengguna Intuitif Berorientasi Konversi",
+        "description": "Tim UI/UX merancang antarmuka yang modern, responsif, dan mudah digunakan. Klien dapat menguji klik alur sistem secara langsung sebelum tahap koding dimulai.",
+        "deliverables": [
+          "Wireframe Antarmuka Resolusi Tinggi",
+          "Design System & Komponen Terstandar",
+          "Prototipe Interaktif Siap Uji Pengguna",
+          "Panduan Responsif Mobile & Desktop"
+        ],
+        "tooling": ["Figma", "Design Tokens", "Tailwind Theme", "User Testing"],
+        "cadence": "Minggu 3 – 4"
+      },
+      "development": {
+        "step": "FASE 04",
+        "tab_label": "04. Development",
+        "title": "Pengembangan Sistem Agile & Modular",
+        "tagline": "Clean Code, Type-Safe, & Sprint Terjadwal",
+        "description": "Pengembangan dilakukan dalam siklus sprint 2 mingguan. Anda mendapatkan demo berkala, progress transparan di Git, dan integrasi berkelanjutan (CI/CD pipeline).",
+        "deliverables": [
+          "Siklus Sprint Agile 2 Mingguan",
+          "Repositori Kode Bersih & Type-Safe",
+          "Staging Environment untuk Demo Rutin",
+          "Pipeline CI/CD Otomatis Terintegrasi"
+        ],
+        "tooling": ["Next.js", "TypeScript", "Node.js / Go", "Docker", "GitLab / GitHub"],
+        "cadence": "Sprint 2 Mingguan"
+      },
+      "qa_testing": {
+        "step": "FASE 05",
+        "tab_label": "05. QA & Audit",
+        "title": "Pengujian Ketat, Keamanan, & Audit Performa",
+        "tagline": "Menjamin Bebas Bug, Cepat, & Terlindungi",
+        "description": "Sebelum peluncuran, sistem diuji secara menyeluruh: unit testing, pengujian penetrasi keamanan data, audit beban puncak (stress/load test), dan uji lintas perangkat.",
+        "deliverables": [
+          "End-to-End & Automated Unit Testing",
+          "Simulasi Uji Beban Puncak (Load & Stress Test)",
+          "Vulnerability & Security Penetration Check",
+          "Audit Aksesibilitas & Responsivitas Antarmuka"
+        ],
+        "tooling": ["Jest", "Playwright", "K6 Load Test", "SonarQube", "OWASP ZAP"],
+        "cadence": "Menjelang Release"
+      },
+      "deployment": {
+        "step": "FASE 06",
+        "tab_label": "06. Launch & SLA",
+        "title": "Peluncuran Produksi & Garansi SLA 99.9%",
+        "tagline": "Deployment Zero-Downtime & Dukungan Penuh",
+        "description": "Sistem diluncurkan ke production cloud dengan arsitektur zero-downtime, dilengkapi pemantauan telemetri real-time, backup otomatis, dan jaminan support SLA.",
+        "deliverables": [
+          "Zero-Downtime Production Deployment",
+          "Pemantauan Telemetri & APM Real-Time",
+          "Dokumentasi Teknis & Pelatihan Admin",
+          "Dukungan Pemeliharaan & Perjanjian SLA"
+        ],
+        "tooling": ["Kubernetes", "AWS / GCP", "Prometheus", "Grafana", "Uptime Kuma"],
+        "cadence": "Continuous Support"
+      }
+    }
+  },
   "theme": {
     "label": "Ganti Tema",
     "light": "Terang",
