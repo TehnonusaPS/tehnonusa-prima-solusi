@@ -1,8 +1,17 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 
+export type ContainerElement =
+  | "div"
+  | "section"
+  | "main"
+  | "article"
+  | "header"
+  | "footer"
+  | "aside";
+
 export interface ContainerProps extends React.HTMLAttributes<HTMLDivElement> {
-  as?: React.ElementType;
+  as?: ContainerElement;
   size?: "sm" | "md" | "lg" | "xl" | "full";
 }
 
@@ -15,9 +24,9 @@ const sizeClasses = {
 };
 
 export const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
-  ({ as: Component = "div", size = "lg", className, children, ...props }, ref) => {
+  ({ as: Tag = "div", size = "lg", className, children, ...props }, ref) => {
     return (
-      <Component
+      <Tag
         ref={ref}
         className={cn(
           "w-full mx-auto px-4 sm:px-6 lg:px-8",
@@ -27,7 +36,7 @@ export const Container = React.forwardRef<HTMLDivElement, ContainerProps>(
         {...props}
       >
         {children}
-      </Component>
+      </Tag>
     );
   }
 );
