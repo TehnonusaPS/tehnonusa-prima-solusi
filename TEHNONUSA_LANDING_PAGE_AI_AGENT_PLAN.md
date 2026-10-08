@@ -434,24 +434,27 @@ Namun jangan membuat abstraction yang terlalu rumit.
 
 # 9. Visual Assets & AI Generated Images Strategy
 
-### 9.1 Kebijakan Aset Visual: Dummy / Placeholder vs AI Generation
+### 9.1 Kebijakan Aset Visual: Dummy / Placeholder vs Dynamic AI Generation
 
 Dalam pengembangan landing page ini, visual memegang peranan krusial untuk menciptakan impresi *high-tech enterprise*. Kebijakan penggunaan gambar:
 
-1. **Placeholder / Dummy Frame Terlebih Dahulu:**
-   - Jika suatu section memerlukan ilustrasi/mockup yang belum final, gunakan **placeholder dummy yang rapi atau wireframe kosongan** terlebih dahulu (misal: subtle tinted glass container dengan icon representatif).
-   - Hindari memasang sembarang gambar dari internet yang tidak berizin atau broken link.
+1. **Fleksibilitas Penuh Men-generate Gambar Baru (Tidak Terbatas pada Gambar yang Ada):**
+   - **PENTING:** Agent **TIDAK HANYA** terbatas pada 4 gambar yang sudah ada di `public/images/`.
+   - Kapan pun ada kebutuhan visual pada section mana pun (misalnya untuk kartu layanan, studi kasus portfolio, showcase arsitektur, visual pendukung testimonial, dll.), Agent **DIPERBOLEHKAN & DIANJURKAN** untuk membuat atau men-generate gambar baru secara dinamis menggunakan AI Image Generation.
+   - Pilihan gambar boleh acak/random, asalkan estetik, berkelas, dan selaras dengan tema sistem teknologi modern.
 
-2. **AI-Generated Imagery Sesuai Kriteria Khusus:**
-   Jika memerlukan gambar visual, generate menggunakan tool AI dengan panduan ketat:
+2. **Placeholder / Dummy Frame Terlebih Dahulu (Jika Diperlukan):**
+   - Jika suatu section sedang dibangun dan belum memerlukan visual final, boleh menggunakan **placeholder dummy / frame kosongan yang rapi** (misal: subtle tinted glass container atau wireframe box ber-icon).
+
+3. **Kriteria Mutlak untuk Gambar AI (Baru maupun Eksisting):**
    - **Gaya Visual:** Modern, berkelas, ultra-sleek, clean, atmosfer teknologi enterprise (nuansa dark sapphire, electric cyan, deep navy, prisma cahaya halus).
    - **Relevansi Industri:** Merepresentasikan rekayasa perangkat lunak, sistem komputasi terdistribusi, data core, arsitektur cloud, dan transformasi digital.
    - **MUTLAK TANPA MANUSIA:** Tidak boleh menampilkan figur, wajah, atau siluet manusia. Fokus 100% pada elemen teknologi abstrak, node interkoneksi, sirkuit isometrik, fiber optik, dan kubus data 3D.
    - **Random & Bebas Asal Harmonis:** Tema spesifik visual boleh acak/random selama tetap menyatu (*cohesive*) dengan identitas visual PT Tehnonusa Prima Solusi dan enak dipandang (*aesthetically pleasing*).
 
-### 9.2 Inventori Aset AI yang Tersedia
+### 9.2 Inventori Aset Awal yang Sudah Tersedia
 
-Saat ini telah disiapkan aset lokal beresolusi tinggi di direktori `public/images/`:
+Sebagai permulaan (*starter pack*), 4 aset awal telah di-generate di `public/images/`:
 
 ```text
 public/
@@ -461,6 +464,8 @@ public/
     ├── data-core.jpg        # High-tech glowing server infrastructure & laser data paths (Process / Workflow)
     └── tech-grid.jpg        # Cyber matrix landscape & abstract isometric grid (Portfolio / Case Studies)
 ```
+
+> **Catatan Operasional:** Gambar di atas adalah aset awal. Saat mengerjakan Task berikutnya (Task 04, 05, 07, dsb.), Agent bebas men-generate gambar tambahan baru (misal: `case-erp.jpg`, `mobile-mesh.jpg`, `cloud-node.jpg`, dll.) sesuai kebutuhan tampilan tanpa ragu.
 
 Aturan teknis implementasi gambar di komponen:
 - Gunakan Next.js `<Image />` dengan properti `priority` untuk LCP (seperti hero image) dan `loading="lazy"` untuk section berikutnya.
@@ -1358,11 +1363,12 @@ Library komponen di `src/components/ui/` adalah penyedia opsi interaksi:
 
 ### Rule 12 — Kebijakan Aset Visual & AI Image Generation
 
-- Sisipkan gambar **dummy atau kosongan terlebih dahulu** saat layouting jika gambar final belum tersedia.
-- Jika memerlukan gambar visual, generate menggunakan **AI Image Generation**:
-  - Konsep gambar boleh bebas/acak asalkan **modern, keren, dan sesuai dengan identitas project software & teknologi enterprise**.
-  - **MUTLAK TANPA FIGUR MANUSIA** (fokus pada arsitektur sistem abstrak, sirkuit isometrik, laser data core, dan cyber mesh).
-  - Gambar harus berestetika tinggi dan enak dilihat.
+- **Tidak Terbatas Hanya pada Gambar yang Ada:** Agent **TIDAK HANYA** terpaku pada 4 gambar yang sudah ada. Kapan pun ada kebutuhan gambar visual tambahan pada section mana pun (misal: Services, Portfolio/Case Studies, Testimonials, dll.), Agent **BEBAS & DIANJURKAN** untuk membuat/men-generate foto AI baru secara on-demand.
+- **Dummy / Kosongan Dulu:** Boleh menyisipkan frame dummy atau container placeholder terlebih dahulu saat menyusun layout awal sebelum aset visual final dipasang.
+- **Karakteristik Gambar AI (Acak/Bebas tapi Selaras):**
+  - Konsep gambar boleh acak/random asalkan **modern, keren, dan sesuai dengan identitas project software & teknologi enterprise**.
+  - **MUTLAK TANPA FIGUR MANUSIA** (fokus pada visual 3D abstrak, arsitektur data, sirkuit isometrik, laser core, cyber grid).
+  - Tampilan visual harus berestetika tinggi dan enak dilihat.
 
 ---
 
