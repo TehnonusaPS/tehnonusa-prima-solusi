@@ -170,7 +170,7 @@ export function HeroSection({ className }: HeroSectionProps) {
             {/* Primary Action Button with Hover.dev Spotlight Effect - Hidden on mobile */}
             <SpotlightButton
               onClick={() => scrollToSection("#contact")}
-              className="hidden sm:inline-flex items-center justify-center w-full sm:w-auto px-7 py-3.5 rounded-(--radius-md) font-sans font-semibold text-sm shadow-md"
+              className="hidden sm:inline-flex items-center justify-center w-full sm:w-auto"
             >
               <span>{tHero("cta_primary")}</span>
             </SpotlightButton>
@@ -178,10 +178,10 @@ export function HeroSection({ className }: HeroSectionProps) {
             {/* Secondary Action Button with Hover.dev Rounded Draw Outline Effect */}
             <DrawOutlineButton
               onClick={() => scrollToSection("#services")}
-              className="w-full sm:w-auto px-7 py-3.5 rounded-(--radius-md) font-sans font-semibold text-sm shadow-2xs"
+              className="w-full sm:w-auto"
             >
               <span>{tHero("cta_secondary")}</span>
-              <ArrowUpRight className="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+              <ArrowUpRight className="w-4 h-4 text-slate-500 dark:text-slate-400 group-hover:text-primary transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
             </DrawOutlineButton>
           </motion.div>
 

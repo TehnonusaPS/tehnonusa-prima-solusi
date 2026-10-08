@@ -168,10 +168,10 @@ export const SpotlightButton: React.FC<SpotlightButtonProps> = ({
       whileTap={{ scale: 0.985 }}
       ref={btnRef}
       className={cn(
-        // Light mode: Vibrant brand primary CTA with soft shadow
-        "group relative overflow-hidden rounded-(--radius-md) bg-primary px-7 py-3.5 font-sans text-sm font-semibold text-white shadow-md shadow-primary/25 border border-primary/40 hover:bg-primary-dark transition-all duration-300 cursor-pointer select-none",
+        // Light mode: Inverted from dark mode (clean white background, bold slate-950 text, soft elevation)
+        "group relative overflow-hidden rounded-(--radius-md) bg-white px-7 py-3.5 font-sans text-sm font-semibold text-slate-950 shadow-sm shadow-slate-200/80 border border-slate-300/80 hover:border-primary/50 hover:shadow-md transition-all duration-300 cursor-pointer select-none",
         // Dark mode: Sleek dark CTA with dark border and primary glow
-        "dark:bg-slate-950 dark:border-slate-800 dark:shadow-none dark:hover:bg-slate-900",
+        "dark:bg-slate-950 dark:border-slate-800 dark:text-white dark:shadow-none dark:hover:bg-slate-900",
         className
       )}
       {...props}
@@ -179,10 +179,10 @@ export const SpotlightButton: React.FC<SpotlightButtonProps> = ({
       <span className="pointer-events-none relative z-10 inline-flex items-center justify-center gap-2">
         {children}
       </span>
-      {/* Light mode: luminous white/sky crystal highlight; Dark mode: primary blue spotlight */}
+      {/* Light mode: primary blue spotlight; Dark mode: primary blue spotlight (calibrated size) */}
       <span
         ref={spanRef}
-        className="pointer-events-none absolute left-1/2 top-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/30 dark:bg-primary blur-xs opacity-0"
+        className="pointer-events-none absolute left-1/2 top-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/25 dark:bg-primary/80 blur-xs opacity-0"
       />
     </motion.button>
   );
@@ -239,10 +239,10 @@ export const DrawOutlineButton: React.FC<DrawOutlineButtonProps> = ({
         onBlur?.(e);
       }}
       className={cn(
-        // Light mode: Crisp white background, dark slate-800 text, subtle light border
-        "group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-(--radius-md) border border-slate-200/90 bg-white px-7 py-3.5 font-sans text-sm font-semibold text-slate-800 backdrop-blur-xs transition-colors duration-300 hover:text-primary hover:bg-slate-50 active:scale-[0.985] shadow-2xs cursor-pointer select-none",
+        // Light mode: Inverted from dark mode, muted slate-100 background to avoid 50:50 visual weight clash with primary button
+        "group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-(--radius-md) border border-slate-200/90 bg-slate-100/70 px-7 py-3.5 font-sans text-sm font-semibold text-slate-700 backdrop-blur-xs transition-colors duration-300 hover:text-slate-950 hover:bg-slate-100 active:scale-[0.985] shadow-2xs cursor-pointer select-none",
         // Dark mode: Dark slate background, light text, dark border
-        "dark:border-slate-800 dark:bg-slate-900/80 dark:text-slate-100 dark:hover:bg-slate-800/80 dark:hover:text-primary",
+        "dark:border-slate-800 dark:bg-slate-900/80 dark:text-slate-200 dark:hover:bg-slate-800/80 dark:hover:text-white",
         className
       )}
       {...props}
