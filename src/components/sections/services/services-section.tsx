@@ -19,6 +19,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CircleHighlight } from "@/components/ui/draw-circle-text";
 import { AIGradientBorder } from "@/components/ui/ai-gradient-card";
+import { TechBackground } from "@/components/ui/tech-background";
 import { cn } from "@/lib/utils";
 
 export interface ServicesSectionProps {
@@ -30,19 +31,20 @@ const servicesGridVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.12,
+      staggerChildren: 0.16,
     },
   },
 };
 
 const serviceCardVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 40, scale: 0.96 },
   visible: {
     opacity: 1,
     y: 0,
+    scale: 1,
     transition: {
-      duration: 0.55,
-      ease: [0.22, 1, 0.36, 1],
+      duration: 0.65,
+      ease: [0.16, 1, 0.3, 1],
     },
   },
 };
@@ -110,22 +112,16 @@ export function ServicesSection({ className }: ServicesSectionProps) {
         className
       )}
     >
-      {/* Ambient background glow accents */}
-      <div
-        className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
-        aria-hidden="true"
-      >
-        <div className="absolute top-1/4 -right-40 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-10 -left-40 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      </div>
+      {/* Ambient background glow accents & Light-Mode Architectural Grid */}
+      <TechBackground variant="section" pattern="grid" />
 
       <Container size="lg">
-        {/* Section Header with Motion Reveal */}
+        {/* Section Header with Motion Reveal & Blur Glider */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 35, filter: "blur(6px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col items-center text-center mb-16 sm:mb-20"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border/80 bg-surface/80 backdrop-blur-md shadow-2xs mb-4">
@@ -169,7 +165,7 @@ export function ServicesSection({ className }: ServicesSectionProps) {
               <motion.div
                 key={service.id}
                 variants={serviceCardVariants}
-                whileHover={{ y: -6, transition: { duration: 0.25, ease: "easeOut" } }}
+                whileHover={{ y: -8, scale: 1.015, transition: { type: "spring", stiffness: 350, damping: 25 } }}
                 className="h-full"
               >
                 <AIGradientBorder
@@ -181,7 +177,7 @@ export function ServicesSection({ className }: ServicesSectionProps) {
                   <div className="flex items-center justify-between gap-4 mb-6">
                     <div
                       className={cn(
-                        "w-12 h-12 rounded-xl flex items-center justify-center border transition-transform duration-300 group-hover:scale-105",
+                        "w-12 h-12 rounded-xl flex items-center justify-center border transition-all duration-300 group-hover:scale-110 group-hover:-rotate-3 shadow-2xs group-hover:shadow-md",
                         service.iconBg
                       )}
                     >
@@ -263,10 +259,11 @@ export function ServicesSection({ className }: ServicesSectionProps) {
 
       {/* Bottom Banner: Custom Consultation Inquiry with Motion Entrance */}
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 40, scale: 0.98, filter: "blur(4px)" }}
+        whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
         viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+        whileHover={{ y: -3, transition: { duration: 0.25 } }}
         className="relative rounded-2xl sm:rounded-3xl border border-border/80 bg-surface/90 p-6 sm:p-10 shadow-lg overflow-hidden backdrop-blur-xl"
       >
         {/* Subtle gradient aura */}

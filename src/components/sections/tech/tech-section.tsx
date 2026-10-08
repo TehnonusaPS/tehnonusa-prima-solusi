@@ -24,6 +24,7 @@ import { Container } from "@/components/ui/container";
 import { CircleHighlight } from "@/components/ui/draw-circle-text";
 import { LogoItem, LogoRolodex } from "@/components/ui/div-origami";
 import { DrawOutlineButton } from "@/components/ui/creative-buttons";
+import { TechBackground } from "@/components/ui/tech-background";
 import { cn } from "@/lib/utils";
 
 interface TechSectionProps {
@@ -35,19 +36,20 @@ const techGridVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.12,
     },
   },
 };
 
 const techCardVariants: Variants = {
-  hidden: { opacity: 0, y: 25 },
+  hidden: { opacity: 0, y: 36, scale: 0.95 },
   visible: {
     opacity: 1,
     y: 0,
+    scale: 1,
     transition: {
-      duration: 0.5,
-      ease: [0.22, 1, 0.36, 1],
+      duration: 0.6,
+      ease: [0.16, 1, 0.3, 1],
     },
   },
 };
@@ -156,25 +158,16 @@ export function TechSection({ className }: TechSectionProps) {
         className
       )}
     >
-      {/* Background Architectural Mesh Texture */}
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden opacity-[0.04] dark:opacity-[0.08]" aria-hidden="true">
-        <Image
-          src="/images/systems-mesh.jpg"
-          alt="Architectural mesh background"
-          fill
-          className="object-cover object-center"
-          priority={false}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
-      </div>
+      {/* Background Architectural Mesh & Light-Mode Ambient Aura */}
+      <TechBackground variant="section" pattern="mesh" />
 
       <Container size="lg">
         {/* 1. Header: Eyebrow + Title with Hand-drawn Loop Highlight (Motion Reveal) */}
         <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 35, filter: "blur(6px)" }}
+          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16 sm:mb-20"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border/80 bg-surface/80 backdrop-blur-md shadow-2xs mb-5">
@@ -214,7 +207,7 @@ export function TechSection({ className }: TechSectionProps) {
               <motion.div
                 key={idx}
                 variants={techCardVariants}
-                whileHover={{ y: -5, transition: { duration: 0.2, ease: "easeOut" } }}
+                whileHover={{ y: -8, scale: 1.025, transition: { type: "spring", stiffness: 350, damping: 25 } }}
                 className="group relative flex flex-col justify-between p-6 sm:p-7 rounded-(--radius-xl) border border-border/70 bg-surface/90 hover:border-primary/40 hover:bg-surface-elevated transition-colors duration-300 shadow-xs hover:shadow-md cursor-default"
               >
                 <div>
@@ -246,10 +239,10 @@ export function TechSection({ className }: TechSectionProps) {
 
         {/* 3. Hover.dev DivOrigami Interactive 3D Showcase with Scale Entrance */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.97 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 0.96, y: 35, filter: "blur(4px)" }}
+          whileInView={{ opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }}
           viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
           className="relative rounded-(--radius-2xl) border border-border/80 bg-gradient-to-br from-surface to-surface/60 p-6 sm:p-12 lg:p-16 mb-16 sm:mb-24 shadow-sm overflow-hidden"
         >
           {/* Subtle Accent Glow */}
@@ -299,10 +292,10 @@ export function TechSection({ className }: TechSectionProps) {
         {/* 4. Categorized Tech Stack Ecosystem Grid with Staggered Motion */}
         <div className="mt-8">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 30, filter: "blur(4px)" }}
+            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
             viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-2xl mx-auto mb-12"
           >
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-primary mb-2 block">
@@ -329,12 +322,12 @@ export function TechSection({ className }: TechSectionProps) {
                 <motion.div
                   key={idx}
                   variants={techCardVariants}
-                  whileHover={{ y: -4, transition: { duration: 0.2, ease: "easeOut" } }}
-                  className="flex flex-col justify-between p-6 rounded-(--radius-xl) border border-border/60 bg-surface/70 backdrop-blur-xs hover:border-border transition-colors duration-300"
+                  whileHover={{ y: -6, scale: 1.015, transition: { duration: 0.25, ease: "easeOut" } }}
+                  className="flex flex-col justify-between p-6 rounded-(--radius-xl) border border-border/60 bg-surface/70 backdrop-blur-xs hover:border-primary/40 hover:bg-surface-elevated transition-colors duration-300 shadow-2xs hover:shadow-md"
                 >
                   <div>
                     <div className="flex items-center gap-3 mb-3">
-                      <div className={cn("p-2 rounded-lg bg-surface border", cat.color)}>
+                      <div className={cn("p-2 rounded-lg bg-surface border transition-transform duration-300 group-hover:scale-110", cat.color)}>
                         <Icon className="w-4 h-4" />
                       </div>
                       <h4 className="font-heading font-semibold text-base text-foreground">
@@ -349,12 +342,14 @@ export function TechSection({ className }: TechSectionProps) {
 
                   <div className="flex flex-wrap gap-1.5 pt-4 border-t border-border/40 mt-auto">
                     {cat.items.map((tech, techIdx) => (
-                      <span
+                      <motion.span
                         key={techIdx}
+                        whileHover={{ scale: 1.08, y: -2 }}
+                        transition={{ duration: 0.15 }}
                         className="inline-flex items-center px-2.5 py-1 rounded-md text-xs font-mono font-medium bg-muted/60 text-foreground/90 border border-border/40 hover:border-primary/40 hover:text-primary transition-colors cursor-default"
                       >
                         {tech}
-                      </span>
+                      </motion.span>
                     ))}
                   </div>
                 </motion.div>

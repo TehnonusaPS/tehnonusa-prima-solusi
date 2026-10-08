@@ -16,6 +16,7 @@ import { Container } from "@/components/ui/container";
 import { CircleHighlight } from "@/components/ui/draw-circle-text";
 import { SpotlightButton, DrawOutlineButton } from "@/components/ui/creative-buttons";
 import { FuzzyOverlay } from "@/components/ui/fuzzy-overlay";
+import { TechBackground } from "@/components/ui/tech-background";
 import { cn } from "@/lib/utils";
 
 // Dynamically load client-side Three.js organic twinkling stars shader (SSR safe)
@@ -45,20 +46,21 @@ const heroContainerVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.12,
+      staggerChildren: 0.14,
       delayChildren: 0.08,
     },
   },
 };
 
 const heroItemVariants: Variants = {
-  hidden: { opacity: 0, y: 22 },
+  hidden: { opacity: 0, y: 32, filter: "blur(6px)" },
   visible: {
     opacity: 1,
     y: 0,
+    filter: "blur(0px)",
     transition: {
-      duration: 0.6,
-      ease: [0.22, 1, 0.36, 1],
+      duration: 0.75,
+      ease: [0.16, 1, 0.3, 1],
     },
   },
 };
@@ -83,20 +85,14 @@ export function HeroSection({ className }: HeroSectionProps) {
         className
       )}
     >
-      {/* 1. Subtle Ambient Background Glow */}
-      <div
-        className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
-        aria-hidden="true"
-      >
-        {/* Soft Radial Ambient Aura */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[550px] bg-gradient-to-b from-primary/20 via-primary/5 to-transparent blur-3xl opacity-75 dark:opacity-40" />
+      {/* 1. Architectural Tech Background with Organic Breathing Aura */}
+      <TechBackground variant="hero" pattern="dots" />
 
-        {/* Ambient Dark-Mode 3D Stars Canvas */}
-        {mounted && <AmbientStars />}
+      {/* Ambient Dark-Mode 3D Stars Canvas */}
+      {mounted && <AmbientStars />}
 
-        {/* Subtle Film Grain Noise Texture (low opacity, non-intrusive) */}
-        <FuzzyOverlay opacity={0.03} />
-      </div>
+      {/* Subtle Film Grain Noise Texture */}
+      <FuzzyOverlay opacity={0.03} />
 
       <Container size="lg">
         <motion.div
@@ -177,19 +173,34 @@ export function HeroSection({ className }: HeroSectionProps) {
             variants={heroItemVariants}
             className="relative w-full max-w-5xl group"
           >
-            {/* Ambient Backlight Glow for Visual Card */}
-            <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-primary/30 via-accent/20 to-primary/30 blur-2xl opacity-50 group-hover:opacity-75 transition-opacity duration-700 pointer-events-none" />
+            {/* Ambient Backlight Glow with Breathing Pulse */}
+            <motion.div
+              animate={{
+                opacity: [0.45, 0.75, 0.45],
+                scale: [0.99, 1.015, 0.99],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="absolute -inset-1.5 rounded-3xl bg-gradient-to-r from-primary/30 via-accent/25 to-primary/30 blur-2xl pointer-events-none"
+            />
 
             {/* Main Showcase Container with Levitation Float */}
             <motion.div
               animate={{
-                y: [0, -6, 0],
+                y: [0, -8, 0],
               }}
               transition={{
                 duration: 6,
                 repeat: Infinity,
                 repeatType: "mirror",
                 ease: "easeInOut",
+              }}
+              whileHover={{
+                scale: 1.01,
+                transition: { duration: 0.3, ease: "easeOut" },
               }}
               className="relative rounded-2xl sm:rounded-3xl border border-border/80 bg-surface/90 shadow-2xl overflow-hidden backdrop-blur-xl"
             >
@@ -218,32 +229,44 @@ export function HeroSection({ className }: HeroSectionProps) {
                   alt="PT Tehnonusa Prima Solusi Systems Core"
                   fill
                   priority
-                  className="object-cover object-center transform group-hover:scale-[1.02] transition-transform duration-700 ease-out"
+                  className="object-cover object-center transform group-hover:scale-[1.025] transition-transform duration-700 ease-out"
                   sizes="(max-width: 1280px) 100vw, 1200px"
                 />
 
                 {/* Subtle Image Gradient Overlay for Depth */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent pointer-events-none" />
 
-                {/* Overlaid Real-Time Metric Pills */}
-                <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 flex flex-wrap gap-2 sm:gap-3 pointer-events-none">
+                {/* Overlaid Real-Time Metric Pills with Micro-Hover Motion */}
+                <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 flex flex-wrap gap-2 sm:gap-3 pointer-events-auto">
                   {/* Metric Pill 1 */}
-                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/80 backdrop-blur-md border border-white/10 text-white text-xs font-semibold shadow-lg">
+                  <motion.div
+                    whileHover={{ scale: 1.06, y: -2 }}
+                    transition={{ duration: 0.2 }}
+                    className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/85 backdrop-blur-md border border-white/15 text-white text-xs font-semibold shadow-lg cursor-default"
+                  >
                     <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
                     <span>{tHero("badge_uptime")}</span>
-                  </div>
+                  </motion.div>
 
                   {/* Metric Pill 2 */}
-                  <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/80 backdrop-blur-md border border-white/10 text-white text-xs font-semibold shadow-lg">
+                  <motion.div
+                    whileHover={{ scale: 1.06, y: -2 }}
+                    transition={{ duration: 0.2 }}
+                    className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/85 backdrop-blur-md border border-white/15 text-white text-xs font-semibold shadow-lg cursor-default"
+                  >
                     <Zap className="w-3.5 h-3.5 text-amber-400" />
                     <span>{tHero("badge_security")}</span>
-                  </div>
+                  </motion.div>
 
                   {/* Metric Pill 3 */}
-                  <div className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/80 backdrop-blur-md border border-white/10 text-white text-xs font-semibold shadow-lg">
+                  <motion.div
+                    whileHover={{ scale: 1.06, y: -2 }}
+                    transition={{ duration: 0.2 }}
+                    className="hidden md:flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/85 backdrop-blur-md border border-white/15 text-white text-xs font-semibold shadow-lg cursor-default"
+                  >
                     <Cpu className="w-3.5 h-3.5 text-cyan-400" />
                     <span>{tHero("badge_architecture")}</span>
-                  </div>
+                  </motion.div>
                 </div>
               </div>
             </motion.div>
