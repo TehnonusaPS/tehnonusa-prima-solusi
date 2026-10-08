@@ -27,7 +27,7 @@ export const SliderToggle: React.FC<SliderToggleProps> = ({
   const { setTheme, resolvedTheme } = useTheme();
   const mounted = useSyncExternalStore(emptySubscribe, () => true, () => false);
 
-  const [internalSelected, setInternalSelected] = React.useState<"light" | "dark">("light");
+  const [internalSelected, setInternalSelected] = React.useState<"light" | "dark">("dark");
 
   const isControlled = controlledSelected !== undefined;
   const currentMode: "light" | "dark" = useNextThemes && mounted

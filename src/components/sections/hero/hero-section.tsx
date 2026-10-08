@@ -32,10 +32,10 @@ const Stars = dynamic(
 
 const AmbientStars = React.memo(function AmbientStars() {
   return (
-    <div className="hidden dark:block absolute inset-0 opacity-40 pointer-events-none">
+    <div className="hidden dark:block absolute inset-0 opacity-70 pointer-events-none">
       <React.Suspense fallback={null}>
         <Canvas camera={{ position: [0, 0, 1] }}>
-          <Stars radius={50} count={1200} factor={3} fade speed={1} />
+          <Stars radius={60} depth={50} count={2400} factor={3.5} fade speed={1.2} />
         </Canvas>
       </React.Suspense>
     </div>

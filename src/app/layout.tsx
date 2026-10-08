@@ -49,8 +49,8 @@ export default function RootLayout({
       <body className="min-h-dvh flex flex-col antialiased bg-background text-foreground selection:bg-primary/20 selection:text-primary">
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="dark"
+          enableSystem={false}
           disableTransitionOnChange
         >
           {children}
