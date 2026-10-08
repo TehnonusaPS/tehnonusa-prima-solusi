@@ -86,6 +86,51 @@
       ]
     }
   },
+  "trust_tech": {
+    "kicker": "RELIABILITY & ENGINEERING EXPERTISE",
+    "title_prefix": "Standar Arsitektur Modern &",
+    "title_highlight": "Kualitas Industri",
+    "description": "Kami membangun solusi teknologi dengan disiplin rekayasa software tingkat tinggi: ketersediaan sistem maksimal, performa responsif, keamanan data berstandar enterprise, dan kemudahan skalabilitas.",
+    "metrics": {
+      "sla_val": "99.9%",
+      "sla_title": "Production SLA Uptime",
+      "sla_desc": "Infrastruktur high-availability dengan failover otomatis dan disaster recovery.",
+      "latency_val": "<100ms",
+      "latency_title": "P95 Response Latency",
+      "latency_desc": "Optimalisasi query database, distributed caching, dan runtime yang efisien.",
+      "quality_val": "100%",
+      "quality_title": "Clean Code & Type Safety",
+      "quality_desc": "Basis kode modular dengan TypeScript ketat dan pengujian otomatis.",
+      "security_val": "Enterprise",
+      "security_title": "Security & Data Governance",
+      "security_desc": "Role-based access control (RBAC), enkripsi data, dan audit trail terpusat."
+    },
+    "origami": {
+      "kicker": "CORE ARCHITECTURE PILLARS",
+      "headline": "Fondasi Teknologi Andal untuk Skalabilitas Bisnis",
+      "subtitle": "Pilihan stack teknologi kami dirancang untuk performa jangka panjang, keamanan data korporat, dan kemudahan pengembangan tanpa risiko vendor lock-in.",
+      "tag_1": "Next.js App Core",
+      "tag_2": "TypeScript Engine",
+      "tag_3": "Cloud & Microservices",
+      "tag_4": "Scalable Database",
+      "tag_5": "Enterprise Security",
+      "tag_6": "API Integration Mesh",
+      "cta": "Diskusikan Arsitektur"
+    },
+    "ecosystem": {
+      "kicker": "TECH STACK ECOSYSTEM",
+      "title": "Teknologi Teruji di Level Produksi",
+      "desc": "Kami memilih teknologi modern yang terbukti tangguh menangani lalu lintas transaksi tinggi dan didukung ekosistem global.",
+      "cat_frontend": "Frontend & Mobile",
+      "cat_frontend_desc": "Antarmuka responsif dan performa rendering kilat di web maupun aplikasi mobile.",
+      "cat_backend": "Backend & Microservices",
+      "cat_backend_desc": "Logika bisnis tangguh, throughput tinggi, dan arsitektur modular yang adaptif.",
+      "cat_cloud": "Cloud & DevOps",
+      "cat_cloud_desc": "Otomasi deployment kontainer, pipeline CI/CD, dan observabilitas telemetri penuh.",
+      "cat_data": "Database & Distributed Cache",
+      "cat_data_desc": "Penyimpanan data konsisten ACID-compliant dan caching latensi ultra-rendah."
+    }
+  },
   "theme": {
     "label": "Ganti Tema",
     "light": "Terang",

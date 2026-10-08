@@ -1200,17 +1200,19 @@ What needs to be fixed:
 
 ---
 
-## TASK 05 — Trust & Technology Expertise (Kredibilitas & Tech Stack) [NEXT UP 🚀]
+## TASK 05 — Trust & Technology Expertise (Kredibilitas & Tech Stack) [COMPLETED ✅]
 
 **Fokus:** Memberikan keyakinan bahwa PT Tehnonusa Prima Solusi adalah mitra teknologi yang kompeten.
 - Metrik bisnis realistis (SLA 99.9%, clean code architecture, keamanan data enterprise).
 - Komponen Interaktif:
   - `DivOrigami` (`LogoRolodex`) untuk menampilkan pilar teknologi (Next.js, TypeScript, Cloud Infrastructure, Scalable DB, Security, Microservices).
-  - Integrasi modular `ParticleRing` (3D mesh teknologi yang dapat di-drag & zoom oleh visitor) atau visual `public/images/systems-mesh.jpg`. Gunakan yang paling harmonis; jangan membebani performa browser jika aset gambar lebih efisien.
+  - Visual tech mesh background terintegrasi (`public/images/systems-mesh.jpg`) dengan gradient overlay berkelas.
+  - Hover.dev `DrawOutlineButton` untuk aksi konsultasi arsitektur.
+  - Ekosistem tech stack interaktif (Frontend, Backend, Cloud & DevOps, Database & Cache).
 
 ---
 
-## TASK 06 — Process / Workflow (Alur Kerja)
+## TASK 06 — Process / Workflow (Alur Kerja) [NEXT UP 🚀]
 
 **Fokus:** Menunjukkan transparansi metodologi rekayasa software.
 - Tahapan jelas: *Discovery & Consultation → Solution Architecture → UI/UX Prototyping → Agile Development → Rigorous QA & Testing → Deployment & SLA Support*.

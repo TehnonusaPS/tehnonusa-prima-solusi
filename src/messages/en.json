@@ -86,6 +86,51 @@
       ]
     }
   },
+  "trust_tech": {
+    "kicker": "RELIABILITY & ENGINEERING EXPERTISE",
+    "title_prefix": "Modern Architecture &",
+    "title_highlight": "Enterprise Standards",
+    "description": "We engineer technology solutions with high-caliber software engineering disciplines: maximum system availability, ultra-responsive performance, enterprise-grade data security, and effortless scalability.",
+    "metrics": {
+      "sla_val": "99.9%",
+      "sla_title": "Production SLA Uptime",
+      "sla_desc": "High-availability infrastructure with automated failover and zero-downtime releases.",
+      "latency_val": "<100ms",
+      "latency_title": "P95 Response Latency",
+      "latency_desc": "Optimized database queries, edge caching, and lightweight runtimes.",
+      "quality_val": "100%",
+      "quality_title": "Clean Code & Type Safety",
+      "quality_desc": "Modular architecture enforced by strict TypeScript and comprehensive testing.",
+      "security_val": "Enterprise",
+      "security_title": "Security & Data Governance",
+      "security_desc": "Role-based access control (RBAC), data encryption, and centralized audit logs."
+    },
+    "origami": {
+      "kicker": "CORE ARCHITECTURE PILLARS",
+      "headline": "Battle-Tested Tech Foundation for Modern Business",
+      "subtitle": "Our architectural stack is engineered for long-term scalability, corporate data protection, and rapid delivery cycles without vendor lock-in.",
+      "tag_1": "Next.js App Core",
+      "tag_2": "TypeScript Engine",
+      "tag_3": "Cloud & Microservices",
+      "tag_4": "Scalable Database",
+      "tag_5": "Enterprise Security",
+      "tag_6": "API Integration Mesh",
+      "cta": "Discuss Architecture"
+    },
+    "ecosystem": {
+      "kicker": "TECH STACK ECOSYSTEM",
+      "title": "Proven Production Tech Ecosystem",
+      "desc": "We select modern industry standards backed by active global developer communities and proven under heavy transaction traffic.",
+      "cat_frontend": "Frontend & Mobile",
+      "cat_frontend_desc": "Responsive interfaces and sub-second rendering performance on web and mobile apps.",
+      "cat_backend": "Backend & Microservices",
+      "cat_backend_desc": "Resilient business logic, high throughput, and adaptive modular architectures.",
+      "cat_cloud": "Cloud & DevOps",
+      "cat_cloud_desc": "Automated containerized deployment, CI/CD pipelines, and full telemetry observability.",
+      "cat_data": "Database & Distributed Cache",
+      "cat_data_desc": "Consistent ACID-compliant storage and ultra-low latency distributed caching."
+    }
+  },
   "theme": {
     "label": "Toggle Theme",
     "light": "Light",
