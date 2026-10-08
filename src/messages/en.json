@@ -1,0 +1,32 @@
+{
+  "common": {
+    "company": "PT Tehnonusa Prima Solusi",
+    "tagline": "Digital Solutions for Your Business"
+  },
+  "meta": {
+    "title": "PT Tehnonusa Prima Solusi — Digital Solutions for Your Business",
+    "description": "PT Tehnonusa Prima Solusi provides web system development, application building, custom software, and digital transformation services for your business."
+  },
+  "nav": {
+    "services": "Services",
+    "solutions": "Solutions",
+    "process": "Process",
+    "portfolio": "Portfolio",
+    "contact": "Contact Us"
+  },
+  "hero": {
+    "title": "Digital Solutions for Your Business",
+    "description": "We help your business grow with reliable, efficient, and scalable digital systems — from web applications to enterprise system integration.",
+    "cta_primary": "Discuss Your Project",
+    "cta_secondary": "View Services"
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "language": {
+    "id": "Indonesia",
+    "en": "English"
+  }
+}

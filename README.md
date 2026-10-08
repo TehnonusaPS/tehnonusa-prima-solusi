@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PT Tehnonusa Prima Solusi
 
-## Getting Started
+Landing page perusahaan teknologi PT. Tehnonusa Prima Solusi.
 
-First, run the development server:
+## Tech Stack
+
+- **Next.js 16** — App Router, Server Components
+- **React 19** — UI library
+- **TypeScript 5** — Type safety
+- **Tailwind CSS 4** — Utility-first styling
+- **next-intl 4** — Internationalization (id / en)
+- **next-themes** — Dark / light / system mode
+- **Motion** — Animations
+- **lucide-react** — Icons
+- **clsx + tailwind-merge** — Class merging utility
+
+## Development
+
+Install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run development server:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Build production:
 
-## Learn More
+```bash
+pnpm build
+```
 
-To learn more about Next.js, take a look at the following resources:
+Lint:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm lint
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Type check:
 
-## Deploy on Vercel
+```bash
+pnpm tsc --noEmit
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/
+│   ├── [locale]/       # Locale-aware routes
+│   │   ├── layout.tsx  # Locale layout (theme + i18n providers)
+│   │   └── page.tsx    # Home page
+│   └── globals.css     # Design tokens + base styles
+│
+├── components/
+│   ├── layout/         # Navbar, Footer
+│   ├── sections/       # Landing page sections
+│   ├── ui/             # Reusable UI primitives
+│   └── providers/      # React context providers
+│
+├── config/
+│   └── site.ts         # Site-wide configuration
+│
+├── i18n/
+│   ├── routing.ts      # Locale routing config
+│   └── request.ts      # next-intl server config
+│
+├── lib/
+│   └── utils.ts        # Utility functions (cn)
+│
+├── messages/
+│   ├── id.json         # Indonesian translations
+│   └── en.json         # English translations
+│
+└── types/              # Shared TypeScript types
+```
+
+## Localization
+
+Default language: **Indonesian (id)**
+
+Supported: `id`, `en`
+
+English URL example: `/en`
+
+## Theme
+
+Supports: **Light**, **Dark**, **System**
+
+All colors use CSS custom properties — defined in `globals.css`.

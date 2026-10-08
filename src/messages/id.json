@@ -1,0 +1,32 @@
+{
+  "common": {
+    "company": "PT Tehnonusa Prima Solusi",
+    "tagline": "Solusi Digital untuk Bisnis Anda"
+  },
+  "meta": {
+    "title": "PT Tehnonusa Prima Solusi — Solusi Digital untuk Bisnis Anda",
+    "description": "PT Tehnonusa Prima Solusi menyediakan layanan pembuatan sistem web, aplikasi, custom software, dan transformasi digital untuk bisnis Anda."
+  },
+  "nav": {
+    "services": "Layanan",
+    "solutions": "Solusi",
+    "process": "Proses",
+    "portfolio": "Portfolio",
+    "contact": "Hubungi Kami"
+  },
+  "hero": {
+    "title": "Solusi Digital untuk Bisnis Anda",
+    "description": "Kami membantu bisnis Anda berkembang dengan sistem digital yang handal, efisien, dan skalabel — dari web app hingga integrasi sistem enterprise.",
+    "cta_primary": "Diskusi Proyek",
+    "cta_secondary": "Lihat Layanan"
+  },
+  "theme": {
+    "light": "Terang",
+    "dark": "Gelap",
+    "system": "Sistem"
+  },
+  "language": {
+    "id": "Indonesia",
+    "en": "English"
+  }
+}
