@@ -38,12 +38,17 @@ export const AIGradientBorder: React.FC<AIGradientBorderProps> = ({
   const gradient = useMotionTemplate`conic-gradient(from ${turn}turn, transparent 0%, #f472b600 5%, #f472b6 10%, #c084fc 18%, #818cf8 26%, #38bdf8 34%, #2dd4bf 42%, #fbbf24 46%, #fbbf2400 52%, transparent 56%)`;
 
   return (
-    <div className={cn("relative p-px", className)}>
+    <div className={cn("relative p-px rounded-2xl shadow-sm dark:shadow-none", className)}>
+      {/* 1. Underlying Base Border Track (Guarantees crisp, defined edge in light mode while preserving dark mode) */}
+      <div className="absolute inset-0 rounded-[inherit] bg-slate-200/90 dark:bg-slate-800/80" />
+
+      {/* 2. Active Conic AI Gradient Traveling Beam */}
       <motion.div
         style={{ backgroundImage: gradient }}
         className="absolute inset-0 rounded-[inherit]"
       />
 
+      {/* 3. Inner Content Container with Glow Spill Mask */}
       <div className="relative rounded-[inherit] overflow-hidden h-full flex flex-col">
         <div className="relative h-full flex flex-col">{children}</div>
 
