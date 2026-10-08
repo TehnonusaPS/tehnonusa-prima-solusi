@@ -171,7 +171,7 @@ export function ServicesSection({ className }: ServicesSectionProps) {
                   duration={service.isFeatured ? 4 : 5.5}
                   className="h-full rounded-2xl"
                 >
-                <div className="relative flex flex-col h-full p-6 sm:p-8 rounded-[calc(1rem-1px)] bg-surface/90 hover:bg-surface/95 transition-all duration-300 shadow-sm group backdrop-blur-sm">
+                <div className="relative flex flex-col h-full p-6 sm:p-8 rounded-[inherit] bg-surface/95 dark:bg-neutral-900/95 hover:bg-surface transition-all duration-300 shadow-sm group">
                   {/* Top Row: Icon + Eyebrow Badge */}
                   <div className="flex items-center justify-between gap-4 mb-6">
                     <div
