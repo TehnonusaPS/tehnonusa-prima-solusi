@@ -2,12 +2,14 @@
 
 import * as React from "react";
 import { useTranslations } from "next-intl";
-import { Menu, X, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/ui/logo";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { SlideTabs } from "@/components/ui/slide-tabs";
+import { SliderToggle } from "@/components/ui/slider-toggle";
 import { LanguageSwitcher } from "@/components/ui/language-switcher";
+import { AnimatedHamburgerButton } from "@/components/ui/animated-hamburger";
 import { navItems } from "@/config/navigation";
 import { cn } from "@/lib/utils";
 
@@ -18,7 +20,6 @@ export interface NavbarProps {
 export function Navbar({ className }: NavbarProps) {
   const tNav = useTranslations("nav");
   const tHero = useTranslations("hero");
-  const tUi = useTranslations("ui");
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 
@@ -41,6 +42,16 @@ export function Navbar({ className }: NavbarProps) {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const desktopTabs = React.useMemo(
+    () =>
+      navItems.map((item) => ({
+        id: item.key,
+        label: tNav(item.key),
+        href: item.href,
+      })),
+    [tNav]
+  );
+
   return (
     <header
       className={cn(
@@ -56,30 +67,22 @@ export function Navbar({ className }: NavbarProps) {
           {/* Logo Brand */}
           <Logo />
 
-          {/* Desktop Navigation Links */}
-          <nav
-            className="hidden lg:flex items-center gap-1 xl:gap-2"
-            aria-label="Main Navigation"
-          >
-            {navItems.map((item) => (
-              <a
-                key={item.key}
-                href={item.href}
-                className="px-3 py-1.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors rounded-(--radius-md) hover:bg-muted/60"
-              >
-                {tNav(item.key)}
-              </a>
-            ))}
+          {/* Desktop Navigation Links with Spring Hover Cursor */}
+          <nav className="hidden lg:block" aria-label="Main Navigation">
+            <SlideTabs
+              tabs={desktopTabs}
+              className="py-1 px-1.5 border-border/60 bg-surface/80"
+            />
           </nav>
 
-          {/* Desktop Actions: Language, Theme, CTA */}
-          <div className="hidden lg:flex items-center gap-2.5">
+          {/* Desktop Actions: Language, Spring Theme Slider, CTA */}
+          <div className="hidden lg:flex items-center gap-2">
             <LanguageSwitcher />
-            <ThemeToggle />
+            <SliderToggle useNextThemes />
             <Button
               size="sm"
               variant="default"
-              className="ml-2"
+              className="ml-2 shadow-sm font-semibold"
               rightIcon={<Sparkles className="w-3.5 h-3.5" />}
               onClick={() => {
                 const el = document.querySelector("#contact");
@@ -90,25 +93,16 @@ export function Navbar({ className }: NavbarProps) {
             </Button>
           </div>
 
-          {/* Mobile Right Controls: Language, Theme, Hamburger */}
+          {/* Mobile Right Controls: Language, Theme, Morphing Hamburger */}
           <div className="flex lg:hidden items-center gap-1.5">
             <LanguageSwitcher />
-            <ThemeToggle />
-            <button
-              type="button"
-              onClick={() => setMobileMenuOpen((prev) => !prev)}
-              className="p-2 rounded-(--radius-md) text-foreground hover:bg-muted focus-visible:ring-2 focus-visible:ring-ring outline-none transition-colors"
-              aria-expanded={mobileMenuOpen}
-              aria-label={
-                mobileMenuOpen ? tUi("close_menu") : tUi("open_menu")
-              }
-            >
-              {mobileMenuOpen ? (
-                <X className="w-5 h-5 text-foreground" />
-              ) : (
-                <Menu className="w-5 h-5 text-foreground" />
-              )}
-            </button>
+            <SliderToggle useNextThemes className="p-0.5 scale-90" />
+            <AnimatedHamburgerButton
+              active={mobileMenuOpen}
+              onToggle={setMobileMenuOpen}
+              size="sm"
+              ariaLabel="Toggle mobile menu"
+            />
           </div>
         </div>
       </Container>

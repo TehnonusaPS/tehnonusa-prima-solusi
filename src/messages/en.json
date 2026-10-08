@@ -15,10 +15,17 @@
     "contact": "Contact Us"
   },
   "hero": {
-    "title": "Digital Solutions for Your Business",
-    "description": "We help your business grow with reliable, efficient, and scalable digital systems — from web applications to enterprise system integration.",
-    "cta_primary": "Discuss Your Project",
-    "cta_secondary": "View Services"
+    "kicker": "SOFTWARE ENGINEERING & DIGITAL TRANSFORMATION",
+    "headline_prefix": "Engineering",
+    "headline_highlight": "Digital Solutions",
+    "headline_suffix": "Built for Scalable Business",
+    "description": "We architect and engineer enterprise web systems, high-performance mobile apps, and custom cloud architectures that power modern business growth.",
+    "cta_primary": "Discuss Project",
+    "cta_secondary": "Explore Services",
+    "badge_uptime": "99.9% Uptime SLA",
+    "badge_security": "Enterprise Grade Security",
+    "badge_architecture": "Scalable Microservices",
+    "client_trust": "Trusted for delivering mission-critical digital infrastructure and enterprise software"
   },
   "theme": {
     "label": "Toggle Theme",

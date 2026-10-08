@@ -15,10 +15,17 @@
     "contact": "Hubungi Kami"
   },
   "hero": {
-    "title": "Solusi Digital untuk Bisnis Anda",
-    "description": "Kami membantu bisnis Anda berkembang dengan sistem digital yang handal, efisien, dan skalabel — dari web app hingga integrasi sistem enterprise.",
+    "kicker": "SOFTWARE ENGINEERING & DIGITAL TRANSFORMATION",
+    "headline_prefix": "Membangun",
+    "headline_highlight": "Solusi Digital",
+    "headline_suffix": "Andal untuk Skalabilitas Bisnis",
+    "description": "Kami merancang dan mengembangkan sistem web enterprise, aplikasi mobile performa tinggi, serta arsitektur cloud kustom yang menggerakkan pertumbuhan bisnis modern.",
     "cta_primary": "Diskusi Proyek",
-    "cta_secondary": "Lihat Layanan"
+    "cta_secondary": "Lihat Layanan",
+    "badge_uptime": "99.9% Uptime SLA",
+    "badge_security": "Enterprise Grade Security",
+    "badge_architecture": "Scalable Microservices",
+    "client_trust": "Dipercaya untuk membangun infrastruktur dan sistem digital berkinerja tinggi"
   },
   "theme": {
     "label": "Ganti Tema",
