@@ -50,7 +50,7 @@ export function LanguageSwitcher({
   return (
     <div
       className={cn(
-        "h-9 inline-flex items-center p-0.5 rounded-full bg-surface/80 border border-border/80 text-xs font-medium select-none shadow-2xs",
+        "inline-flex items-center p-0.5 rounded-full bg-muted/70 border border-border text-xs font-semibold select-none",
         isPending && "opacity-60 pointer-events-none",
         className
       )}
@@ -61,9 +61,9 @@ export function LanguageSwitcher({
         type="button"
         onClick={() => handleLocaleChange("id")}
         className={cn(
-          "h-full px-2.5 rounded-full transition-all duration-200 text-xs font-semibold flex items-center justify-center cursor-pointer",
+          "px-2.5 py-1 rounded-full transition-all duration-200 text-xs font-medium",
           locale === "id"
-            ? "bg-primary text-primary-foreground shadow-2xs"
+            ? "bg-background text-primary font-semibold shadow-xs"
             : "text-muted-foreground hover:text-foreground"
         )}
         aria-pressed={locale === "id"}
@@ -74,9 +74,9 @@ export function LanguageSwitcher({
         type="button"
         onClick={() => handleLocaleChange("en")}
         className={cn(
-          "h-full px-2.5 rounded-full transition-all duration-200 text-xs font-semibold flex items-center justify-center cursor-pointer",
+          "px-2.5 py-1 rounded-full transition-all duration-200 text-xs font-medium",
           locale === "en"
-            ? "bg-primary text-primary-foreground shadow-2xs"
+            ? "bg-background text-primary font-semibold shadow-xs"
             : "text-muted-foreground hover:text-foreground"
         )}
         aria-pressed={locale === "en"}

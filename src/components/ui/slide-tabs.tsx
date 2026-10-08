@@ -55,7 +55,7 @@ export const SlideTabs: React.FC<SlideTabsProps> = ({
         }));
       }}
       className={cn(
-        "relative mx-auto flex w-fit items-center gap-0.5 select-none",
+        "relative mx-auto flex w-fit items-center rounded-full border border-border bg-surface/90 backdrop-blur-md p-1.5 shadow-xs select-none",
         className
       )}
     >
@@ -129,10 +129,10 @@ const SlideTabItem: React.FC<SlideTabItemProps> = ({
       ref={ref}
       onMouseEnter={handleMouseEnter}
       className={cn(
-        "relative z-10 block px-3.5 py-1.5 text-xs sm:text-sm font-medium transition-colors duration-150 cursor-pointer rounded-full",
+        "relative z-10 block px-3 py-1.5 text-xs sm:text-sm font-medium tracking-wide uppercase transition-colors duration-150 cursor-pointer",
         isActive
-          ? "text-primary font-semibold"
-          : "text-muted-foreground hover:text-foreground"
+          ? "text-primary-foreground font-semibold"
+          : "text-foreground/80 hover:text-foreground"
       )}
     >
       {ContentWrapper}
@@ -153,11 +153,11 @@ const Cursor: React.FC<CursorProps> = ({ position, className }) => {
       }}
       transition={{
         type: "spring",
-        stiffness: 400,
-        damping: 32,
+        stiffness: 380,
+        damping: 30,
       }}
       className={cn(
-        "absolute z-0 h-8 sm:h-8.5 rounded-full bg-muted/80 dark:bg-muted/70 pointer-events-none",
+        "absolute z-0 h-7 sm:h-9 rounded-full bg-primary/90 shadow-sm pointer-events-none",
         className
       )}
     />
