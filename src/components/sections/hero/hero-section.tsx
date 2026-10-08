@@ -97,12 +97,12 @@ export function HeroSection({ className }: HeroSectionProps) {
               <CircleHighlight
                 strokeColor="#0085EB"
                 strokeWidth={3.5}
-                className="text-primary font-black inline-block"
+                className="text-primary font-black inline-block mr-3.5 sm:mr-5"
               >
                 {tHero("headline_highlight")}
-              </CircleHighlight>
+              </CircleHighlight>{" "}
               {Boolean(tHero("headline_mid")) && (
-                <span className="inline-block ml-3 sm:ml-4">{tHero("headline_mid")}</span>
+                <span className="inline-block">{tHero("headline_mid")}</span>
               )}
             </span>
             <span className="block lg:whitespace-nowrap">{tHero("headline_suffix")}</span>
