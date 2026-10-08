@@ -113,13 +113,13 @@ export function HeroSection({ className }: HeroSectionProps) {
             {tHero("description")}
           </p>
 
-          {/* 5. Dual Action Buttons */}
+          {/* 5. Dual Action Buttons (Diskusi Proyek hidden on mobile) */}
           <div className="flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto mb-12 sm:mb-16">
-            {/* Primary Action Button with Cyber Scramble Effect */}
+            {/* Primary Action Button with Cyber Scramble Effect - Hidden on mobile */}
             <EncryptButton
               text={tHero("cta_primary")}
               icon={<Sparkles className="w-4 h-4 text-primary" />}
-              className="w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary-dark border-transparent shadow-lg shadow-primary/25 font-sans font-semibold normal-case px-7 py-3.5 rounded-(--radius-md)"
+              className="hidden sm:inline-flex w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary-dark border-transparent shadow-lg shadow-primary/25 font-sans font-semibold normal-case px-7 py-3.5 rounded-(--radius-md)"
               onClick={() => scrollToSection("#contact")}
             />
 
