@@ -16,7 +16,7 @@ export interface SliderToggleProps {
 }
 
 const TOGGLE_CLASSES =
-  "text-xs sm:text-sm font-semibold flex items-center justify-center h-full gap-1.5 px-3 transition-colors relative z-10 cursor-pointer select-none outline-none";
+  "text-xs sm:text-sm font-semibold flex items-center justify-center h-full gap-1.5 px-3.5 transition-colors relative z-10 cursor-pointer select-none outline-none";
 
 export const SliderToggle: React.FC<SliderToggleProps> = ({
   selected: controlledSelected,
@@ -48,7 +48,7 @@ export const SliderToggle: React.FC<SliderToggleProps> = ({
   return (
     <div
       className={cn(
-        "relative flex h-10 w-fit items-center rounded-full p-1 bg-muted/80 border border-border/80 shadow-2xs select-none",
+        "relative flex h-11 w-fit items-center rounded-full p-1 bg-muted/80 border border-border/80 shadow-2xs select-none",
         className
       )}
       role="group"

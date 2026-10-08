@@ -55,7 +55,7 @@ export const SlideTabs: React.FC<SlideTabsProps> = ({
         }));
       }}
       className={cn(
-        "relative mx-auto flex h-10 w-fit items-center rounded-full border border-border bg-surface/90 backdrop-blur-md p-1 shadow-xs select-none",
+        "relative mx-auto flex h-11 w-fit items-center rounded-full border border-border bg-surface/90 backdrop-blur-md p-1 shadow-xs select-none",
         className
       )}
     >
