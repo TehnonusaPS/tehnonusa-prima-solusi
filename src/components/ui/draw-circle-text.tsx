@@ -32,7 +32,7 @@ export const CircleHighlight: React.FC<CircleHighlightProps> = ({
         fill="none"
         preserveAspectRatio="none"
         className={cn(
-          "pointer-events-none absolute -left-3 -right-3 -top-2.5 -bottom-2.5 h-[calc(100%+18px)] w-[calc(100%+24px)] z-0",
+          "pointer-events-none absolute -left-2 sm:-left-3 -right-2 sm:-right-3 -top-1 sm:-top-2.5 -bottom-1 sm:-bottom-2.5 h-[calc(100%+8px)] sm:h-[calc(100%+18px)] w-[calc(100%+16px)] sm:w-[calc(100%+24px)] z-0",
           svgClassName
         )}
       >

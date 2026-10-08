@@ -155,24 +155,24 @@ export function TechSection({ className }: TechSectionProps) {
             </span>
           </div>
 
-          <h2 className="font-heading font-bold text-3xl sm:text-5xl lg:text-6xl tracking-tight text-foreground leading-[1.12] mb-5">
+          <h2 className="font-heading font-bold text-2xl sm:text-4xl lg:text-5xl tracking-tight text-foreground leading-[1.18] sm:leading-[1.12] mb-5">
             <span>{t("title_prefix")} </span>
             <CircleHighlight
               strokeColor="#0085EB"
-              strokeWidth={3.5}
+              strokeWidth={3}
               className="text-primary font-black"
             >
               {t("title_highlight")}
             </CircleHighlight>
           </h2>
 
-          <p className="font-sans text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl">
+          <p className="font-sans text-sm sm:text-base lg:text-lg text-muted-foreground leading-relaxed max-w-3xl">
             {t("description")}
           </p>
         </div>
 
         {/* 2. Key Trust & Credibility Metrics Grid (Equal Heights) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 items-stretch mb-20 sm:mb-24">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 items-stretch mb-16 sm:mb-24">
           {metrics.map((metric, idx) => {
             const Icon = metric.icon;
             return (
@@ -208,7 +208,7 @@ export function TechSection({ className }: TechSectionProps) {
         </div>
 
         {/* 3. Hover.dev DivOrigami Interactive 3D Showcase */}
-        <div className="relative rounded-(--radius-2xl) border border-border/80 bg-gradient-to-br from-surface to-surface/60 p-8 sm:p-12 lg:p-16 mb-20 sm:mb-24 shadow-sm overflow-hidden">
+        <div className="relative rounded-(--radius-2xl) border border-border/80 bg-gradient-to-br from-surface to-surface/60 p-6 sm:p-12 lg:p-16 mb-16 sm:mb-24 shadow-sm overflow-hidden">
           {/* Subtle Accent Glow */}
           <div className="pointer-events-none absolute -right-24 -top-24 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
           <div className="pointer-events-none absolute -left-24 -bottom-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />

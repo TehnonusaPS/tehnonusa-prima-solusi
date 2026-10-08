@@ -79,25 +79,25 @@ export function HeroSection({ className }: HeroSectionProps) {
       <Container size="lg">
         <div className="flex flex-col items-center text-center">
           {/* 2. Engineering Eyebrow Tag / Kicker */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border/80 bg-surface/80 backdrop-blur-md shadow-2xs mb-5 sm:mb-6">
-            <span className="flex h-2 w-2 relative">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-border/80 bg-surface/80 backdrop-blur-md shadow-2xs mb-5 sm:mb-6 max-w-[94vw] sm:max-w-none">
+            <span className="flex h-2 w-2 shrink-0 relative">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
             </span>
-            <Terminal className="w-3.5 h-3.5 text-primary" />
-            <span className="font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+            <Terminal className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary shrink-0" />
+            <span className="font-mono text-[10px] sm:text-xs font-semibold uppercase tracking-tight sm:tracking-wider text-muted-foreground text-center">
               {tHero("kicker")}
             </span>
           </div>
 
-          {/* 3. Main Persuasive Headline with Hand-drawn Loop Highlight */}
-          <h1 className="font-heading font-bold text-4xl sm:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-foreground leading-[1.08] max-w-6xl mb-6">
+          {/* 3. Main Persuasive Headline with Hand-drawn Loop Highlight (Exact 3 lines on mobile & desktop) */}
+          <h1 className="font-heading font-bold text-[clamp(1.65rem,7.2vw,2.4rem)] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-foreground leading-[1.12] sm:leading-[1.08] max-w-6xl mb-5 sm:mb-6">
             <span className="block">{tHero("headline_prefix")}</span>
-            <span className="block my-1">
+            <span className="block my-1.5 sm:my-2 whitespace-nowrap">
               <CircleHighlight
                 strokeColor="#0085EB"
-                strokeWidth={3.5}
-                className="text-primary font-black inline-block mr-3.5 sm:mr-5"
+                strokeWidth={3}
+                className="text-primary font-black inline-block mr-2 sm:mr-4"
               >
                 {tHero("headline_highlight")}
               </CircleHighlight>{" "}
@@ -105,11 +105,11 @@ export function HeroSection({ className }: HeroSectionProps) {
                 <span className="inline-block">{tHero("headline_mid")}</span>
               )}
             </span>
-            <span className="block lg:whitespace-nowrap">{tHero("headline_suffix")}</span>
+            <span className="block whitespace-nowrap">{tHero("headline_suffix")}</span>
           </h1>
 
           {/* 4. Subtitle / Product Philosophy Copy */}
-          <p className="font-sans text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-8 sm:mb-10">
+          <p className="font-sans text-sm sm:text-lg lg:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-8 sm:mb-10 px-1 sm:px-0">
             {tHero("description")}
           </p>
 

@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/ui/logo";
 import { SlideTabs } from "@/components/ui/slide-tabs";
 import { SliderToggle } from "@/components/ui/slider-toggle";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { LanguageSwitcher } from "@/components/ui/language-switcher";
 import { AnimatedHamburgerButton } from "@/components/ui/animated-hamburger";
 import { navItems } from "@/config/navigation";
@@ -88,9 +89,9 @@ export function Navbar({ className }: NavbarProps) {
             <LanguageSwitcher />
           </div>
 
-          {/* Mobile Right Controls: Theme, Language at the far right, Morphing Hamburger */}
-          <div className="flex lg:hidden items-center gap-1.5">
-            <SliderToggle useNextThemes className="p-0.5 scale-90" />
+          {/* Mobile Right Controls: Compact Theme Icon Button, Language Switcher, Morphing Hamburger */}
+          <div className="flex lg:hidden items-center gap-1.5 shrink-0">
+            <ThemeToggle className="w-8 h-8 rounded-full border border-border/60 bg-surface/80" />
             <LanguageSwitcher />
             <AnimatedHamburgerButton
               active={mobileMenuOpen}
