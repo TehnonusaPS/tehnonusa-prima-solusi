@@ -16,7 +16,7 @@ import {
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { CircleHighlight } from "@/components/ui/draw-circle-text";
-import { EncryptButton } from "@/components/ui/creative-buttons";
+import { SpotlightButton } from "@/components/ui/creative-buttons";
 import { FuzzyOverlay } from "@/components/ui/fuzzy-overlay";
 import { cn } from "@/lib/utils";
 
@@ -156,13 +156,14 @@ export function HeroSection({ className }: HeroSectionProps) {
             variants={heroItemVariants}
             className="flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto mb-12 sm:mb-16"
           >
-            {/* Primary Action Button with Cyber Scramble Effect - Hidden on mobile */}
-            <EncryptButton
-              text={tHero("cta_primary")}
-              icon={<Sparkles className="w-4 h-4 text-current shrink-0" />}
-              className="hidden sm:inline-flex items-center justify-center w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary-dark hover:text-primary-foreground border-transparent shadow-lg shadow-primary/25 font-sans font-semibold normal-case px-7 py-3.5 rounded-(--radius-md)"
+            {/* Primary Action Button with Hover.dev Spotlight Effect - Hidden on mobile */}
+            <SpotlightButton
               onClick={() => scrollToSection("#contact")}
-            />
+              className="hidden sm:inline-flex items-center justify-center w-full sm:w-auto px-7 py-3.5 rounded-(--radius-md) font-sans font-semibold text-sm shadow-md"
+            >
+              <Sparkles className="w-4 h-4 shrink-0" />
+              <span>{tHero("cta_primary")}</span>
+            </SpotlightButton>
 
             {/* Secondary Outline Action Button */}
             <Button

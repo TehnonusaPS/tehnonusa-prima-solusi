@@ -153,17 +153,17 @@ export const SpotlightButton: React.FC<SpotlightButtonProps> = ({
       whileTap={{ scale: 0.985 }}
       ref={btnRef}
       className={cn(
-        "relative w-full max-w-xs overflow-hidden rounded-(--radius-md) bg-slate-950 px-6 py-3 font-medium text-white shadow-sm border border-slate-800 transition-colors cursor-pointer select-none",
+        "relative overflow-hidden rounded-(--radius-md) bg-slate-950 px-6 py-3.5 font-sans font-semibold text-white shadow-md border border-slate-800 transition-colors cursor-pointer select-none",
         className
       )}
       {...props}
     >
-      <span className="pointer-events-none relative z-10 mix-blend-difference font-semibold">
+      <span className="pointer-events-none relative z-10 mix-blend-difference inline-flex items-center justify-center gap-2">
         {children}
       </span>
       <span
         ref={spanRef}
-        className="pointer-events-none absolute left-1/2 top-1/2 h-36 w-36 -translate-x-1/2 -translate-y-1/2 rounded-full bg-slate-100/90"
+        className="pointer-events-none absolute left-1/2 top-1/2 h-36 w-36 -translate-x-1/2 -translate-y-1/2 rounded-full bg-slate-100"
       />
     </motion.button>
   );
