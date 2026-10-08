@@ -50,6 +50,10 @@
     --radius-md: 0.75rem;
     --radius-lg: 1rem;
     --radius-xl: 1.5rem;
+
+    /* Glassmorphism */
+    --surface-glass: rgba(255, 255, 255, 0.75);
+    --border-glass: rgba(226, 232, 240, 0.8);
   }
 
   .dark {
@@ -83,6 +87,10 @@
     --border: #1e3a5f;
     --ring: #5a91e0;
 
+    /* Glassmorphism */
+    --surface-glass: rgba(17, 24, 39, 0.75);
+    --border-glass: rgba(30, 58, 95, 0.6);
+
     /* Semantic */
     --success: #22c55e;
     --success-foreground: #ffffff;
@@ -114,8 +122,10 @@
 
   --color-surface: var(--surface);
   --color-surface-elevated: var(--surface-elevated);
+  --color-surface-glass: var(--surface-glass);
 
   --color-border: var(--border);
+  --color-border-glass: var(--border-glass);
   --color-ring: var(--ring);
 
   --color-success: var(--success);

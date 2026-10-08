@@ -21,12 +21,18 @@
     "cta_secondary": "View Services"
   },
   "theme": {
+    "label": "Toggle Theme",
     "light": "Light",
     "dark": "Dark",
     "system": "System"
   },
   "language": {
+    "label": "Change Language",
     "id": "Indonesia",
     "en": "English"
+  },
+  "ui": {
+    "open_menu": "Open Menu",
+    "close_menu": "Close Menu"
   }
 }

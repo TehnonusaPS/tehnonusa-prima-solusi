@@ -4,6 +4,7 @@ import { Geist_Mono } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import { Navbar } from "@/components/layout/navbar";
 import "../globals.css";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
@@ -81,7 +82,8 @@ export default async function LocaleLayout({ children, params }: Props) {
           disableTransitionOnChange={false}
         >
           <NextIntlClientProvider messages={messages}>
-            {children}
+            <Navbar />
+            <div className="flex-1 flex flex-col">{children}</div>
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>

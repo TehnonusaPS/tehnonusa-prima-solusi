@@ -21,12 +21,18 @@
     "cta_secondary": "Lihat Layanan"
   },
   "theme": {
+    "label": "Ganti Tema",
     "light": "Terang",
     "dark": "Gelap",
     "system": "Sistem"
   },
   "language": {
+    "label": "Ganti Bahasa",
     "id": "Indonesia",
     "en": "English"
+  },
+  "ui": {
+    "open_menu": "Buka Menu",
+    "close_menu": "Tutup Menu"
   }
 }
