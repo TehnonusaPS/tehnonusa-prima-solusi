@@ -105,17 +105,44 @@ Konsep implementasi di `src/app/globals.css`:
 --danger: #DC2626;
 ```
 
-**Catatan:**
+## 2.2 Typography System & Font Pairing Strategy
 
-Jangan menganggap nilai di atas sebagai brand guideline final. Jadikan sebagai initial design system.
+Untuk menciptakan diferensiasi visual yang tegas antara **judul besar**, **deskripsi panjang**, dan **data teknis**, sistem tipografi tidak menggunakan satu font tunggal. Digunakan kombinasi 3 jenis font dengan peran spesifik:
 
-Tujuan utamanya:
+```text
+┌────────────────────────────────────────────────────────────────────────┐
+│  1. PLUS JAKARTA SANS (--font-heading)                                  │
+│     → Display, Judul H1, H2, H3, Hero Headline, Stat Numbers           │
+│     → Karakter: Geometris, modern, kokoh, berwibawa enterprise tech     │
+├────────────────────────────────────────────────────────────────────────┤
+│  2. INTER (--font-sans)                                                │
+│     → Deskripsi, Paragraf Body, Card Content, Form & Nav Controls      │
+│     → Karakter: Bersih, netral, legibilitas tinggi & nyaman di mata     │
+├────────────────────────────────────────────────────────────────────────┤
+│  3. GEIST MONO (--font-mono)                                           │
+│     → Eyebrow Badges, Kicker Tags, SLA, API specs, Terminal snippets   │
+│     → Karakter: Monospaced, tabular figures, engineering precision     │
+└────────────────────────────────────────────────────────────────────────┘
+```
 
-1. Semua warna terpusat.
-2. Dark/light mode mudah dibuat.
-3. Perubahan branding di masa depan mudah.
-4. Component tidak memiliki warna random.
-5. UI konsisten.
+### Tabel Matriks Hierarki Tipografi
+
+| Level / Elemen | Font Family | Bobot & Ukuran Standar | Peran & Penggunaan |
+| :--- | :--- | :--- | :--- |
+| **Hero Title (H1)** | `font-heading` (`Plus Jakarta Sans`) | `font-black text-4xl sm:text-6xl md:text-7xl leading-[1.08] tracking-tight` | Pernyataan nilai utama pada Hero; memberikan *punch* pertama visitor. |
+| **Section Title (H2)** | `font-heading` (`Plus Jakarta Sans`) | `font-extrabold text-2xl sm:text-4xl md:text-5xl leading-tight tracking-tight` | Judul setiap bagian (Layanan, Arsitektur, Kredibilitas, FAQ). |
+| **Card / Feature (H3)** | `font-heading` (`Plus Jakarta Sans`) | `font-bold text-lg sm:text-xl tracking-tight text-foreground` | Nama modul sistem, judul pilar layanan, nama paket solusi. |
+| **Stat / Metric Numbers** | `font-heading` (`Plus Jakarta Sans`) | `font-black text-3xl sm:text-5xl text-primary tracking-tight` | Angka metrik kredibilitas (misal: `99.9%`, `24/7`, `<100ms`). |
+| **Hero Subtitle** | `font-sans` (`Inter`) | `text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl` | Kalimat persuasif penjelas di bawah Hero Headline. |
+| **Body / Paragraf** | `font-sans` (`Inter`) | `text-sm sm:text-base text-muted-foreground leading-relaxed` | Penjelasan alur kerja, studi kasus, detail fitur, dan teks FAQ. |
+| **UI Buttons & Controls** | `font-sans` (`Inter`) | `text-sm sm:text-base font-semibold tracking-normal` | Label tombol aksi primer/sekunder dan navigasi navbar. |
+| **Eyebrow Badges / Tags** | `font-mono` (`Geist Mono`) | `text-xs uppercase tracking-wider font-semibold` | Label kategori di atas judul (misal: `// CLOUD ARCHITECTURE`). |
+| **SLA / Code / Terminal** | `font-mono` (`Geist Mono`) | `text-xs sm:text-sm text-foreground/90 font-medium` | Parameter teknis arsitektur, JSON schema, atau kutipan konfigurasi. |
+
+### Penerapan Teknis di Kode:
+1. **Next.js Font Optimization:** Dimuat via `next/font/google` di `src/app/[locale]/layout.tsx` dengan `display: "swap"` tanpa pergeseran tata letak (*zero CLS*).
+2. **Global CSS Mapping:** Di `src/app/globals.css`, semua tag heading `<h1>` sampai `<h6>` otomatis mengadopsi `var(--font-heading)`, sedangkan `<body>` mengadopsi `var(--font-sans)`.
+3. **Utility Classes:** Siap digunakan secara eksplisit dengan class `font-heading`, `font-sans`, dan `font-mono`.
 
 ---
 
