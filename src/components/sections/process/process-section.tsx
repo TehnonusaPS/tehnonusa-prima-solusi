@@ -124,7 +124,7 @@ export function ProcessSection({ className }: ProcessSectionProps) {
   const [isPaused, setIsPaused] = React.useState(false);
   const pauseTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
 
-  // Auto-advance every 3 seconds seamlessly as requested
+  // Auto-advance every 5 seconds seamlessly as requested
   React.useEffect(() => {
     if (isPaused) return;
 
@@ -134,19 +134,19 @@ export function ProcessSection({ className }: ProcessSectionProps) {
         const nextIndex = (currentIndex + 1) % PHASES_CONFIG.length;
         return PHASES_CONFIG[nextIndex].key;
       });
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [isPaused]);
 
-  // When user explicitly clicks or selects a phase, pause auto-advance briefly (6s) then resume
+  // When user explicitly clicks or selects a phase, pause auto-advance briefly (8s) then resume
   const handleSelectPhase = (key: PhaseKey) => {
     setActivePhaseKey(key);
     setIsPaused(true);
     if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
     pauseTimeoutRef.current = setTimeout(() => {
       setIsPaused(false);
-    }, 6000);
+    }, 8000);
   };
 
   const activePhase = React.useMemo(
