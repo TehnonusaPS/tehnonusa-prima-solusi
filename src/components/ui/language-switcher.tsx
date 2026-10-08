@@ -3,7 +3,7 @@
 import * as React from "react";
 import { motion } from "motion/react";
 import { useLocale } from "next-intl";
-import { usePathname, useRouter } from "@/i18n/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 export interface LanguageSwitcherProps {
@@ -11,37 +11,52 @@ export interface LanguageSwitcherProps {
 }
 
 const TOGGLE_CLASSES =
-  "text-[11px] sm:text-xs font-semibold flex items-center gap-1 px-2.5 py-1 transition-colors relative z-10 cursor-pointer select-none outline-none";
+  "text-[11px] sm:text-xs font-semibold flex items-center justify-center px-2.5 py-1 transition-colors relative z-10 cursor-pointer select-none outline-none";
 
 export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
-  const locale = useLocale();
+  const activeLocale = useLocale() === "en" ? "en" : "id";
   const router = useRouter();
-  const pathname = usePathname();
+  const rawPathname = usePathname();
   const [, startTransition] = React.useTransition();
-  const [selectedLocale, setSelectedLocale] = React.useState<"id" | "en" | null>(null);
 
-  if (selectedLocale !== null && selectedLocale === locale) {
-    setSelectedLocale(null);
-  }
-
-  const currentLocale = selectedLocale ?? (locale === "en" ? "en" : "id");
+  // React 19 official primitive for instant zero-latency UI updates during async transitions
+  const [currentLocale, setOptimisticLocale] = React.useOptimistic(
+    activeLocale,
+    (_current, next: "id" | "en") => next
+  );
 
   const handleSelect = (nextLocale: "id" | "en") => {
     if (nextLocale === currentLocale) return;
 
-    // 1. Instant spring slide
-    setSelectedLocale(nextLocale);
-
-    // 2. Sync cookie immediately on client so subsequent loads are consistent
+    // 1. Set next-intl cookie immediately on client
     try {
       document.cookie = `NEXT_LOCALE=${nextLocale}; path=/; max-age=31536000; SameSite=Lax`;
     } catch {
       // Ignore if SSR or restricted
     }
 
-    // 3. Smooth router transition with scroll: false to prevent jumping
+    // 2. Compute clean target path without redundant 307 redirect
+    let cleanPath = rawPathname || "/";
+    if (cleanPath.startsWith("/en")) {
+      cleanPath = cleanPath.slice(3) || "/";
+    } else if (cleanPath.startsWith("/id")) {
+      cleanPath = cleanPath.slice(3) || "/";
+    }
+
+    const targetPath =
+      nextLocale === "en"
+        ? cleanPath === "/"
+          ? "/en"
+          : `/en${cleanPath}`
+        : cleanPath;
+
+    const hash = typeof window !== "undefined" ? window.location.hash : "";
+    const fullTarget = `${targetPath}${hash}`;
+
+    // 3. React 19 transition: optimistic pill slide happens instantly, router navigates seamlessly
     startTransition(() => {
-      router.replace(pathname, { locale: nextLocale, scroll: false });
+      setOptimisticLocale(nextLocale);
+      router.replace(fullTarget, { scroll: false });
     });
   };
 
