@@ -63,12 +63,17 @@ export function Navbar({ className }: NavbarProps) {
       )}
     >
       <Container size="lg">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+        <div className="relative flex items-center justify-between h-16 sm:h-20">
           {/* Logo Brand */}
-          <Logo />
+          <div className="flex items-center shrink-0">
+            <Logo />
+          </div>
 
-          {/* Desktop Navigation Links with Spring Hover Cursor */}
-          <nav className="hidden lg:block" aria-label="Main Navigation">
+          {/* Desktop Navigation Links — Centered 100% with Hero & Sections */}
+          <nav
+            className="hidden lg:flex items-center absolute left-1/2 -translate-x-1/2 z-10"
+            aria-label="Main Navigation"
+          >
             <SlideTabs
               tabs={desktopTabs}
               className="py-1 px-1.5 border-border/60 bg-surface/80"
@@ -76,7 +81,7 @@ export function Navbar({ className }: NavbarProps) {
           </nav>
 
           {/* Desktop Actions: Theme Slider, and Language Switcher at the far right */}
-          <div className="hidden lg:flex items-center gap-2.5">
+          <div className="hidden lg:flex items-center gap-2.5 shrink-0">
             <SliderToggle useNextThemes />
             <LanguageSwitcher />
           </div>
