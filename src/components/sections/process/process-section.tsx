@@ -210,7 +210,7 @@ export function ProcessSection({ className }: ProcessSectionProps) {
         </div>
 
         {/* 3. Interactive SlideTabs Navigation */}
-        <div className="mb-10 sm:mb-14 overflow-x-auto pb-2 scrollbar-none flex justify-start sm:justify-center">
+        <div className="mb-4 sm:mb-6 overflow-x-auto pb-1 scrollbar-none flex justify-start sm:justify-center">
           <SlideTabs
             tabs={tabs}
             activeId={activePhaseKey}
