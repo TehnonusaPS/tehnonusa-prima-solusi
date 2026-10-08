@@ -14,9 +14,8 @@ import {
   Terminal,
 } from "lucide-react";
 import { Container } from "@/components/ui/container";
-import { Button } from "@/components/ui/button";
 import { CircleHighlight } from "@/components/ui/draw-circle-text";
-import { SpotlightButton } from "@/components/ui/creative-buttons";
+import { SpotlightButton, DrawOutlineButton } from "@/components/ui/creative-buttons";
 import { FuzzyOverlay } from "@/components/ui/fuzzy-overlay";
 import { cn } from "@/lib/utils";
 
@@ -165,16 +164,14 @@ export function HeroSection({ className }: HeroSectionProps) {
               <span>{tHero("cta_primary")}</span>
             </SpotlightButton>
 
-            {/* Secondary Outline Action Button */}
-            <Button
-              variant="outline"
-              size="lg"
-              className="w-full sm:w-auto border-border hover:bg-muted font-sans font-semibold px-6 py-3.5 rounded-(--radius-md)"
-              rightIcon={<ArrowUpRight className="w-4 h-4" />}
+            {/* Secondary Action Button with Hover.dev Rounded Draw Outline Effect */}
+            <DrawOutlineButton
               onClick={() => scrollToSection("#services")}
+              className="w-full sm:w-auto px-7 py-3.5 rounded-(--radius-md) font-sans font-semibold text-sm shadow-2xs"
             >
-              {tHero("cta_secondary")}
-            </Button>
+              <span>{tHero("cta_secondary")}</span>
+              <ArrowUpRight className="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+            </DrawOutlineButton>
           </motion.div>
 
           {/* 6. High-Tech Visual Showcase Card with Authentic Enterprise Badges & Smooth Float */}

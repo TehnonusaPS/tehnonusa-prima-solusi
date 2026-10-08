@@ -170,63 +170,94 @@ export const SpotlightButton: React.FC<SpotlightButtonProps> = ({
 };
 
 /* ============================================================
-   3. DRAW OUTLINE BUTTON — Multi-delay Animated Border Tracing
+   3. DRAW OUTLINE BUTTON — Rounded Animated Border Tracing
    ============================================================ */
 
 export interface DrawOutlineButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  extends Omit<HTMLMotionProps<"button">, "children"> {
   children?: React.ReactNode;
+  strokeColor?: string;
   lineColor?: string;
+  borderRadius?: number;
+  strokeWidth?: number;
 }
 
 export const DrawOutlineButton: React.FC<DrawOutlineButtonProps> = ({
   children = "Hover me",
   className,
-  lineColor = "bg-primary",
+  strokeColor = "var(--primary, #0085EB)",
+  lineColor,
+  borderRadius = 12,
+  strokeWidth = 2,
+  onMouseEnter,
+  onMouseLeave,
+  onFocus,
+  onBlur,
   ...props
 }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  // Fallback if legacy lineColor prop is passed
+  const activeStrokeColor = strokeColor || "var(--primary, #0085EB)";
+
   return (
-    <button
+    <motion.button
+      whileTap={{ scale: 0.985 }}
+      onMouseEnter={(e) => {
+        setIsHovered(true);
+        onMouseEnter?.(e);
+      }}
+      onMouseLeave={(e) => {
+        setIsHovered(false);
+        onMouseLeave?.(e);
+      }}
+      onFocus={(e) => {
+        setIsHovered(true);
+        onFocus?.(e);
+      }}
+      onBlur={(e) => {
+        setIsHovered(false);
+        onBlur?.(e);
+      }}
       className={cn(
-        "group relative px-5 py-2.5 font-medium text-foreground transition-colors duration-300 hover:text-primary cursor-pointer select-none",
+        "group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-(--radius-md) border border-border/80 bg-surface/80 px-6 py-3.5 font-sans text-sm font-semibold text-foreground backdrop-blur-xs transition-colors duration-300 hover:text-primary hover:bg-surface-elevated active:scale-[0.985] dark:border-slate-800 dark:bg-slate-900/60 dark:hover:bg-slate-800/80 cursor-pointer select-none",
         className
       )}
       {...props}
     >
-      <span>{children}</span>
+      <span className="relative z-10 inline-flex items-center justify-center gap-2">
+        {children}
+      </span>
 
-      {/* TOP */}
-      <span
-        className={cn(
-          "absolute left-0 top-0 h-[2px] w-0 transition-all duration-150 group-hover:w-full",
-          lineColor
-        )}
-      />
-
-      {/* RIGHT */}
-      <span
-        className={cn(
-          "absolute right-0 top-0 h-0 w-[2px] transition-all delay-100 duration-150 group-hover:h-full",
-          lineColor
-        )}
-      />
-
-      {/* BOTTOM */}
-      <span
-        className={cn(
-          "absolute bottom-0 right-0 h-[2px] w-0 transition-all delay-200 duration-150 group-hover:w-full",
-          lineColor
-        )}
-      />
-
-      {/* LEFT */}
-      <span
-        className={cn(
-          "absolute bottom-0 left-0 h-0 w-[2px] transition-all delay-300 duration-150 group-hover:h-full",
-          lineColor
-        )}
-      />
-    </button>
+      {/* SVG Rounded Animated Outline Trace (Universal Safari & Chromium support) */}
+      <div className="pointer-events-none absolute inset-[1px] rounded-[inherit] overflow-hidden">
+        <svg
+          className="h-full w-full"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            x="0"
+            y="0"
+            width="100%"
+            height="100%"
+            rx={borderRadius}
+            ry={borderRadius}
+            pathLength="100"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="transition-[stroke-dashoffset,opacity] duration-500 ease-in-out"
+            style={{
+              stroke: activeStrokeColor,
+              strokeWidth,
+              strokeDasharray: "100",
+              strokeDashoffset: isHovered ? "0" : "100",
+              opacity: isHovered ? 1 : 0,
+            }}
+          />
+        </svg>
+      </div>
+    </motion.button>
   );
 };
 
