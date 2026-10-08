@@ -121,6 +121,33 @@ const processCardVariants: Variants = {
 export function ProcessSection({ className }: ProcessSectionProps) {
   const t = useTranslations("process");
   const [activePhaseKey, setActivePhaseKey] = React.useState<PhaseKey>("discovery");
+  const [isPaused, setIsPaused] = React.useState(false);
+  const pauseTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
+
+  // Auto-advance every 3 seconds seamlessly as requested
+  React.useEffect(() => {
+    if (isPaused) return;
+
+    const interval = setInterval(() => {
+      setActivePhaseKey((prev) => {
+        const currentIndex = PHASES_CONFIG.findIndex((p) => p.key === prev);
+        const nextIndex = (currentIndex + 1) % PHASES_CONFIG.length;
+        return PHASES_CONFIG[nextIndex].key;
+      });
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [isPaused]);
+
+  // When user explicitly clicks or selects a phase, pause auto-advance briefly (6s) then resume
+  const handleSelectPhase = (key: PhaseKey) => {
+    setActivePhaseKey(key);
+    setIsPaused(true);
+    if (pauseTimeoutRef.current) clearTimeout(pauseTimeoutRef.current);
+    pauseTimeoutRef.current = setTimeout(() => {
+      setIsPaused(false);
+    }, 6000);
+  };
 
   const activePhase = React.useMemo(
     () => PHASES_CONFIG.find((p) => p.key === activePhaseKey) ?? PHASES_CONFIG[0],
@@ -187,7 +214,7 @@ export function ProcessSection({ className }: ProcessSectionProps) {
           <SlideTabs
             tabs={tabs}
             activeId={activePhaseKey}
-            onChange={(id) => setActivePhaseKey(id as PhaseKey)}
+            onChange={(id) => handleSelectPhase(id as PhaseKey)}
             className="bg-surface/90 border-border/80 shadow-sm"
           />
         </div>
@@ -365,7 +392,7 @@ export function ProcessSection({ className }: ProcessSectionProps) {
               <button
                 key={phase.key}
                 type="button"
-                onClick={() => setActivePhaseKey(phase.key)}
+                onClick={() => handleSelectPhase(phase.key)}
                 className={cn(
                   "p-4 rounded-2xl border text-left transition-all duration-300 cursor-pointer select-none flex flex-col justify-between group",
                   isSelected

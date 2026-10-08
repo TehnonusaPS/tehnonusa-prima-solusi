@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 
@@ -40,39 +40,70 @@ export const SlideTabs: React.FC<SlideTabsProps> = ({
   className,
   cursorClassName,
 }) => {
+  const containerRef = useRef<HTMLUListElement>(null);
+  const tabRefs = useRef<Map<string, HTMLLIElement>>(new Map());
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
+
   const [position, setPosition] = useState<Position>({
     left: 0,
     width: 0,
     opacity: 0,
   });
 
+  // Exactly one active pill target:
+  // If user is hovering an item, glide to that item.
+  // When unhovered, snap smoothly to the activeId item.
+  const currentTargetId = hoveredId ?? activeId;
+
+  useEffect(() => {
+    if (!currentTargetId) {
+      setPosition((prev) => ({ ...prev, opacity: 0 }));
+      return;
+    }
+
+    const targetEl = tabRefs.current.get(currentTargetId);
+    if (targetEl) {
+      setPosition({
+        left: targetEl.offsetLeft,
+        width: targetEl.offsetWidth,
+        opacity: 1,
+      });
+    }
+  }, [currentTargetId, tabs]);
+
   return (
     <ul
+      ref={containerRef}
       onMouseLeave={() => {
-        setPosition((pv) => ({
-          ...pv,
-          opacity: 0,
-        }));
+        setHoveredId(null);
       }}
       className={cn(
         "relative mx-auto flex h-11 w-fit items-center rounded-full border border-border bg-surface/90 backdrop-blur-md p-1 shadow-xs select-none",
         className
       )}
     >
-      {tabs.map((tab) => (
-        <SlideTabItem
-          key={tab.id}
-          tab={tab}
-          isActive={activeId === tab.id}
-          setPosition={setPosition}
-          onClick={() => {
-            tab.onClick?.();
-            onChange?.(tab.id);
-          }}
-        >
-          {tab.label}
-        </SlideTabItem>
-      ))}
+      {tabs.map((tab) => {
+        const isCurrentPill = currentTargetId === tab.id;
+
+        return (
+          <SlideTabItem
+            key={tab.id}
+            tab={tab}
+            isPillTarget={isCurrentPill}
+            setTabRef={(el) => {
+              if (el) tabRefs.current.set(tab.id, el);
+              else tabRefs.current.delete(tab.id);
+            }}
+            onHover={() => setHoveredId(tab.id)}
+            onClick={() => {
+              tab.onClick?.();
+              onChange?.(tab.id);
+            }}
+          >
+            {tab.label}
+          </SlideTabItem>
+        );
+      })}
 
       <Cursor position={position} className={cursorClassName} />
     </ul>
@@ -82,30 +113,20 @@ export const SlideTabs: React.FC<SlideTabsProps> = ({
 interface SlideTabItemProps {
   children: React.ReactNode;
   tab: TabItem;
-  isActive: boolean;
-  setPosition: React.Dispatch<React.SetStateAction<Position>>;
+  isPillTarget: boolean;
+  setTabRef: (el: HTMLLIElement | null) => void;
+  onHover: () => void;
   onClick?: () => void;
 }
 
 const SlideTabItem: React.FC<SlideTabItemProps> = ({
   children,
   tab,
-  isActive,
-  setPosition,
+  isPillTarget,
+  setTabRef,
+  onHover,
   onClick,
 }) => {
-  const ref = useRef<HTMLLIElement>(null);
-
-  const handleMouseEnter = () => {
-    if (!ref.current) return;
-    const { width } = ref.current.getBoundingClientRect();
-    setPosition({
-      left: ref.current.offsetLeft,
-      width,
-      opacity: 1,
-    });
-  };
-
   const ContentWrapper = tab.href ? (
     <a
       href={tab.href}
@@ -126,13 +147,13 @@ const SlideTabItem: React.FC<SlideTabItemProps> = ({
 
   return (
     <li
-      ref={ref}
-      onMouseEnter={handleMouseEnter}
+      ref={setTabRef}
+      onMouseEnter={onHover}
       className={cn(
-        "relative z-10 flex h-full items-center px-3.5 text-xs sm:text-sm font-medium tracking-wide uppercase transition-colors duration-150 cursor-pointer",
-        isActive
-          ? "text-primary-foreground font-semibold"
-          : "text-foreground/80 hover:text-foreground"
+        "relative z-10 flex h-full items-center px-3.5 text-xs sm:text-sm font-medium tracking-wide uppercase transition-colors duration-200 cursor-pointer",
+        isPillTarget
+          ? "text-white font-semibold"
+          : "text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white"
       )}
     >
       {ContentWrapper}
@@ -157,7 +178,7 @@ const Cursor: React.FC<CursorProps> = ({ position, className }) => {
         damping: 30,
       }}
       className={cn(
-        "absolute z-0 inset-y-1 rounded-full bg-primary/90 shadow-sm pointer-events-none",
+        "absolute z-0 inset-y-1 rounded-full bg-primary shadow-sm shadow-primary/25 pointer-events-none",
         className
       )}
     />

@@ -23,12 +23,26 @@ export function Navbar({ className }: NavbarProps) {
   const tHero = useTranslations("hero");
   const [isScrolled, setIsScrolled] = React.useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const [activeSection, setActiveSection] = React.useState<string>("services");
 
   React.useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 16);
+
+      const sectionKeys = ["services", "solutions", "process", "portfolio", "contact"];
+      const scrollPos = window.scrollY + 140;
+
+      for (let i = sectionKeys.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sectionKeys[i]);
+        if (el && el.offsetTop <= scrollPos) {
+          setActiveSection(sectionKeys[i]);
+          break;
+        }
+      }
     };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -49,6 +63,7 @@ export function Navbar({ className }: NavbarProps) {
         id: item.key,
         label: tNav(item.key),
         href: item.href,
+        onClick: () => setActiveSection(item.key),
       })),
     [tNav]
   );
@@ -79,6 +94,8 @@ export function Navbar({ className }: NavbarProps) {
           >
             <SlideTabs
               tabs={desktopTabs}
+              activeId={activeSection}
+              onChange={setActiveSection}
               className="border-border/60 bg-surface/80"
             />
           </nav>
