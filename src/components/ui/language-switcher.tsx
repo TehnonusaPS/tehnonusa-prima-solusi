@@ -12,7 +12,7 @@ export interface LanguageSwitcherProps {
 }
 
 const TOGGLE_CLASSES =
-  "text-xs sm:text-sm font-semibold flex items-center gap-1.5 px-3 py-1.5 transition-colors relative z-10 cursor-pointer select-none outline-none";
+  "text-[11px] sm:text-xs font-semibold flex items-center gap-1 px-2.5 py-1 transition-colors relative z-10 cursor-pointer select-none outline-none";
 
 export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
   const locale = useLocale();
@@ -49,7 +49,7 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
   return (
     <div
       className={cn(
-        "relative flex w-fit items-center rounded-full p-1 bg-muted/80 border border-border/80 shadow-2xs select-none",
+        "relative flex w-fit items-center rounded-full p-0.5 bg-muted/80 border border-border/80 shadow-2xs select-none",
         className
       )}
       role="group"
@@ -67,7 +67,7 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
         )}
         onClick={() => handleSelect("id")}
       >
-        <Globe className="h-4 w-4 relative z-10" />
+        <Globe className="h-3 w-3 sm:h-3.5 sm:w-3.5 relative z-10" />
         <span className="relative z-10">ID</span>
       </button>
 
@@ -86,10 +86,10 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
         <span className="relative z-10">EN</span>
       </button>
 
-      {/* Spring Animated Sliding Pill (Identical to SliderToggle) */}
+      {/* Spring Animated Sliding Pill */}
       <div
         className={cn(
-          "absolute inset-1 z-0 flex",
+          "absolute inset-0.5 z-0 flex",
           currentLocale === "en" ? "justify-end" : "justify-start"
         )}
       >
