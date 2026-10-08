@@ -27,6 +27,64 @@
     "badge_architecture": "Scalable Microservices",
     "client_trust": "Dipercaya untuk membangun infrastruktur dan sistem digital berkinerja tinggi"
   },
+  "services": {
+    "kicker": "LAYANAN & KAPABILITAS TEKNOLOGI",
+    "title_prefix": "Solusi Rekayasa Perangkat Lunak untuk",
+    "title_highlight": "Pertumbuhan Bisnis",
+    "description": "Kami merancang arsitektur sistem yang andal, scalable, dan aman guna mengakselerasi transformasi digital serta efisiensi operasional perusahaan Anda.",
+    "cta_card": "Konsultasikan Kebutuhan",
+    "cta_banner_title": "Memiliki Kebutuhan Sistem Digital Khusus?",
+    "cta_banner_desc": "Tim software engineer kami siap menganalisis kebutuhan spesifik bisnis Anda dan merancang solusi arsitektur yang paling tepat dan efisien.",
+    "cta_banner_button": "Diskusikan Kebutuhan Anda",
+    "web_systems": {
+      "badge": "ENTERPRISE ARCHITECTURE",
+      "title": "Enterprise Web Systems",
+      "tagline": "Sistem Web Korporat & Portal Terintegrasi",
+      "description": "Pengembangan aplikasi web skala korporat, dashboard manajemen operasional, ERP terintegrasi, dan portal internal dengan ketersediaan tinggi serta kontrol akses terpusat.",
+      "features": [
+        "Arsitektur modular & high-availability",
+        "Multi-role RBAC & data auditing terpusat",
+        "Visualisasi data & telemetri real-time",
+        "Integrasi seamless dengan database korporat"
+      ]
+    },
+    "mobile_apps": {
+      "badge": "MOBILE ENGINEERING",
+      "title": "High-Performance Mobile Apps",
+      "tagline": "Solusi Mobile Lintas Platform & Native",
+      "description": "Aplikasi mobile bisnis responsif untuk iOS & Android dengan performa native, sinkronisasi offline-first, enkripsi data, dan antarmuka pengguna yang intuitif.",
+      "features": [
+        "Lintas platform modern (Flutter / React Native)",
+        "Sinkronisasi offline-first otomatis",
+        "Keamanan biometrik & autentikasi enkripsi",
+        "Dukungan pipeline CI/CD rilis toko aplikasi"
+      ]
+    },
+    "custom_cloud": {
+      "badge": "CLOUD & BACKEND",
+      "title": "Custom Software & Cloud Systems",
+      "tagline": "Sistem Spesifik Industri & Cloud Terdistribusi",
+      "description": "Pengembangan sistem kustom yang dirancang presisi sesuai logika bisnis unik Anda, diperkuat infrastruktur cloud terdistribusi, microservices, dan skalabilitas elastis.",
+      "features": [
+        "Logika bisnis kustom domain-driven design",
+        "Microservices & caching terdistribusi",
+        "Orkestrasi kontainer & automasi CI/CD",
+        "Disaster recovery otomatis dengan 99.9% SLA"
+      ]
+    },
+    "digital_transformation": {
+      "badge": "INTEGRATION SUITE",
+      "title": "Digital Transformation & API",
+      "tagline": "Modernisasi Sistem & Otomasi Alur Kerja",
+      "description": "Modernisasi sistem legacy, integrasi payment gateway nasional/global, agregasi API pihak ketiga, dan otomatisasi alur kerja operasional antar departemen.",
+      "features": [
+        "Modernisasi arsitektur sistem legacy",
+        "Gerbang RESTful & GraphQL API terstandar",
+        "Konektor payment gateway & agregator fintech",
+        "Otomatisasi event-driven workflow tanpa jeda"
+      ]
+    }
+  },
   "theme": {
     "label": "Ganti Tema",
     "light": "Terang",

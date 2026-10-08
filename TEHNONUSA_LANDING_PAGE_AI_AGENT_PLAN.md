@@ -1166,20 +1166,25 @@ What needs to be fixed:
 
 ---
 
-## TASK 04 — Services Section (Layanan Digital) [NEXT UP 🚀]
+## TASK 04 — Services Section (Layanan Digital) [COMPLETED ✅]
 
 **Fokus:** Menjelaskan kapabilitas teknologi tanpa bahasa yang membingungkan.
-- `SectionHeading` dengan eyebrow badge.
-- Kategori layanan utama:
-  1. **Enterprise Web Systems** (Portal internal, ERP, arsitektur modular).
-  2. **High-Performance Mobile Apps** (Aplikasi bisnis native/cross-platform).
-  3. **Custom Software & Cloud Architecture** (Sistem kustom spesifik industri).
-  4. **Digital Transformation & API Integration** (Payment gateway, third-party connectors, otomatisasi).
-- Komponen: `Card` interaktif dengan aksen `AIGradientBorder` pada layanan unggulan (ubah styling border & glow agar selaras dengan palet tema).
+- [x] Header terpusat dengan eyebrow badge mono (`// LAYANAN & KAPABILITAS TEKNOLOGI`) dan headline H2 `Space Grotesk` dengan `CircleHighlight`
+- [x] 4 Pilar Layanan Utama dengan Pure SVG Icons dari `lucide-react` (bebas dari emotikon / kartun AI):
+  1. **Enterprise Web Systems** (`Globe` icon, modular architecture, RBAC, telemetry)
+  2. **High-Performance Mobile Apps** (`Smartphone` icon, cross-platform & native, offline sync)
+  3. **Custom Software & Cloud Systems** (`CloudCog` icon, domain-driven design, microservices, 99.9% SLA)
+  4. **Digital Transformation & API** (`Workflow` icon, legacy modernization, REST/GraphQL gateways, webhook engine)
+- [x] Integrasi Hover.dev `AIGradientBorder` halus pada kartu core capability dengan warna selaras brand
+- [x] Checklist Key Deliverables dengan `CheckCircle2` icon
+- [x] Tech Stack tags dengan tipografi `JetBrains Mono`
+- [x] Interactive action link dengan animated `ArrowUpRight` hover transition
+- [x] Bottom Consultation Banner dengan tombol CTA konsultasi cepat (`MessageSquare`)
+- [x] Bilingual Translations lengkap di `messages/id.json` & `messages/en.json`
 
 ---
 
-## TASK 05 — Trust & Technology Expertise (Kredibilitas & Tech Stack)
+## TASK 05 — Trust & Technology Expertise (Kredibilitas & Tech Stack) [NEXT UP 🚀]
 
 **Fokus:** Memberikan keyakinan bahwa PT Tehnonusa Prima Solusi adalah mitra teknologi yang kompeten.
 - Metrik bisnis realistis (SLA 99.9%, clean code architecture, keamanan data enterprise).

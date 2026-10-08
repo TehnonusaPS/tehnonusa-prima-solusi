@@ -27,6 +27,64 @@
     "badge_architecture": "Scalable Microservices",
     "client_trust": "Trusted for delivering mission-critical digital infrastructure and enterprise software"
   },
+  "services": {
+    "kicker": "SERVICES & TECHNICAL CAPABILITIES",
+    "title_prefix": "Software Engineering Solutions for",
+    "title_highlight": "Business Growth",
+    "description": "We engineer reliable, scalable, and secure system architectures that accelerate digital transformation and operational efficiency for your business.",
+    "cta_card": "Discuss Requirements",
+    "cta_banner_title": "Need a Tailored Digital System Solution?",
+    "cta_banner_desc": "Our software engineering team is ready to analyze your unique business challenges and architect the most effective, scalable digital solution.",
+    "cta_banner_button": "Consult With Our Engineers",
+    "web_systems": {
+      "badge": "ENTERPRISE ARCHITECTURE",
+      "title": "Enterprise Web Systems",
+      "tagline": "Corporate Web Systems & Unified Portals",
+      "description": "Corporate-scale web application development, operations management dashboards, integrated ERP, and internal portals with high availability and centralized access control.",
+      "features": [
+        "Modular architecture & high-availability",
+        "Multi-role RBAC & centralized data auditing",
+        "Real-time data visualization & telemetry",
+        "Seamless corporate database integration"
+      ]
+    },
+    "mobile_apps": {
+      "badge": "MOBILE ENGINEERING",
+      "title": "High-Performance Mobile Apps",
+      "tagline": "Cross-Platform & Native Mobile Solutions",
+      "description": "Responsive enterprise mobile applications for iOS & Android featuring native-grade performance, offline-first sync, robust data encryption, and intuitive UX.",
+      "features": [
+        "Modern cross-platform (Flutter / React Native)",
+        "Automated offline-first data sync engine",
+        "Biometric security & end-to-end encryption",
+        "Automated app store release CI/CD pipelines"
+      ]
+    },
+    "custom_cloud": {
+      "badge": "CLOUD & BACKEND",
+      "title": "Custom Software & Cloud Systems",
+      "tagline": "Industry-Specific Logic & Distributed Cloud",
+      "description": "Custom software precisely designed around your unique business logic, backed by distributed cloud infrastructure, microservices, and elastic scalability.",
+      "features": [
+        "Domain-driven custom business logic design",
+        "Microservices & distributed caching layers",
+        "Container orchestration & automated CI/CD",
+        "Automated disaster recovery with 99.9% SLA"
+      ]
+    },
+    "digital_transformation": {
+      "badge": "INTEGRATION SUITE",
+      "title": "Digital Transformation & API",
+      "tagline": "Legacy Modernization & Workflow Automation",
+      "description": "Legacy system modernization, national/global payment gateway integration, third-party API aggregations, and seamless cross-department workflow automation.",
+      "features": [
+        "Legacy architecture modernization & refactoring",
+        "Standardized RESTful & GraphQL API gateways",
+        "Payment gateways & fintech aggregator connectors",
+        "Seamless event-driven workflow automation"
+      ]
+    }
+  },
   "theme": {
     "label": "Toggle Theme",
     "light": "Light",
