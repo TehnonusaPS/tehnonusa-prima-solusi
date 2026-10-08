@@ -60,7 +60,7 @@ export function Navbar({ className }: NavbarProps) {
         "sticky top-0 z-50 w-full transition-all duration-300",
         hasBackdrop
           ? "bg-background/85 backdrop-blur-md border-b border-border shadow-xs"
-          : "bg-transparent border-b border-transparent shadow-none",
+          : "bg-transparent border-b-0 shadow-none",
         className
       )}
     >
@@ -78,12 +78,7 @@ export function Navbar({ className }: NavbarProps) {
           >
             <SlideTabs
               tabs={desktopTabs}
-              className={cn(
-                "py-1 px-1.5 transition-all duration-300",
-                isScrolled
-                  ? "border border-border/60 bg-surface/80 backdrop-blur-md shadow-2xs"
-                  : "border border-transparent bg-transparent shadow-none"
-              )}
+              className="py-1 px-1.5 border-border/60 bg-surface/80"
             />
           </nav>
 

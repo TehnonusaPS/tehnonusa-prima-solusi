@@ -55,8 +55,8 @@ export const SlideTabs: React.FC<SlideTabsProps> = ({
         }));
       }}
       className={cn(
-        "relative mx-auto flex w-fit items-center rounded-full select-none transition-all duration-300",
-        className || "border border-border bg-surface/90 backdrop-blur-md p-1.5 shadow-xs"
+        "relative mx-auto flex w-fit items-center rounded-full border border-border bg-surface/90 backdrop-blur-md p-1.5 shadow-xs select-none",
+        className
       )}
     >
       {tabs.map((tab) => (
