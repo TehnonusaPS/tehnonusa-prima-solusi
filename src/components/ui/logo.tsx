@@ -11,22 +11,31 @@ export interface LogoProps extends React.AnchorHTMLAttributes<HTMLAnchorElement>
 
 const sizeConfig = {
   sm: {
-    iconSize: 28,
-    iconWrapper: "w-7 h-7",
-    primaryText: "text-sm sm:text-base font-extrabold tracking-tight",
-    subText: "text-[8px] sm:text-[9px] font-semibold tracking-[0.18em]",
+    iconWidth: 30,
+    iconHeight: 27,
+    wrapper: "w-[30px] h-[27px]",
+    primaryText: "text-[15px] font-black tracking-tight",
+    subText: "text-[8.5px] font-bold tracking-[0.26em]",
+    gap: "gap-2.5",
+    spacing: "mt-0.5",
   },
   md: {
-    iconSize: 36,
-    iconWrapper: "w-9 h-9 sm:w-10 sm:h-10",
-    primaryText: "text-base sm:text-lg font-extrabold tracking-tight",
-    subText: "text-[9px] sm:text-[10px] font-semibold tracking-[0.2em]",
+    iconWidth: 36,
+    iconHeight: 33,
+    wrapper: "w-[34px] h-[31px] sm:w-[36px] sm:h-[33px]",
+    primaryText: "text-[16px] sm:text-[17px] font-black tracking-tight leading-none",
+    subText: "text-[9.5px] sm:text-[10px] font-bold tracking-[0.28em] leading-none",
+    gap: "gap-2.5 sm:gap-3",
+    spacing: "mt-1",
   },
   lg: {
-    iconSize: 48,
-    iconWrapper: "w-12 h-12 sm:w-14 sm:h-14",
-    primaryText: "text-xl sm:text-2xl font-extrabold tracking-tight",
-    subText: "text-[11px] sm:text-xs font-semibold tracking-[0.22em]",
+    iconWidth: 46,
+    iconHeight: 42,
+    wrapper: "w-[44px] h-[40px] sm:w-[48px] sm:h-[44px]",
+    primaryText: "text-[20px] sm:text-[22px] font-black tracking-tight leading-none",
+    subText: "text-[11px] sm:text-[12px] font-bold tracking-[0.28em] leading-none",
+    gap: "gap-3 sm:gap-3.5",
+    spacing: "mt-1.5",
   },
 };
 
@@ -44,38 +53,43 @@ export function Logo({
     <a
       href={href}
       className={cn(
-        "inline-flex transition-opacity hover:opacity-90 outline-none group select-none",
+        "inline-flex items-center transition-opacity hover:opacity-90 outline-none group select-none",
         layout === "horizontal"
-          ? "items-center gap-2.5 sm:gap-3"
-          : "flex-col items-center gap-2 text-center",
+          ? cn("items-center", config.gap)
+          : "flex-col items-center gap-2.5 text-center",
         className
       )}
       aria-label="PT Tehnonusa Prima Solusi Home"
       {...props}
     >
       {/* Official Transparent Emblem Icon */}
-      <div className={cn("relative shrink-0 flex items-center justify-center", config.iconWrapper)}>
+      <div
+        className={cn(
+          "relative shrink-0 flex items-center justify-center",
+          config.wrapper
+        )}
+      >
         <Image
           src="/images/logo/logo-icon.png"
           alt="Tehnonusa Emblem"
-          width={config.iconSize * 2}
-          height={config.iconSize * 2}
-          className="w-full h-full object-contain drop-shadow-xs"
+          width={config.iconWidth * 2}
+          height={config.iconHeight * 2}
+          className="w-full h-full object-contain"
           priority
         />
       </div>
 
-      {/* Adaptive HTML Typography (Light & Dark Mode Safe) */}
+      {/* Adaptive HTML Typography (Light & Dark Mode Safe with Perfect Alignment) */}
       {showText && (
         <span
           className={cn(
-            "flex flex-col",
-            layout === "vertical" ? "items-center" : "items-start text-left"
+            "flex flex-col justify-center",
+            layout === "vertical" ? "items-center" : "items-start"
           )}
         >
           <span
             className={cn(
-              "leading-none text-foreground uppercase tracking-tight",
+              "text-foreground uppercase text-nowrap font-black",
               config.primaryText
             )}
           >
@@ -83,8 +97,9 @@ export function Logo({
           </span>
           <span
             className={cn(
-              "leading-tight text-muted-foreground uppercase pt-0.5",
-              config.subText
+              "text-foreground/80 dark:text-foreground/80 uppercase text-nowrap",
+              config.subText,
+              config.spacing
             )}
           >
             Prima Solusi
