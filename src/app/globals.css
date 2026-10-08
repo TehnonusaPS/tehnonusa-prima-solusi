@@ -136,9 +136,9 @@
   --color-danger: var(--danger);
   --color-danger-foreground: var(--danger-foreground);
 
-  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
-  --font-heading: var(--font-heading), var(--font-inter), system-ui, sans-serif;
-  --font-mono: var(--font-geist-mono), monospace;
+  --font-sans: var(--font-sans), system-ui, -apple-system, sans-serif;
+  --font-heading: var(--font-heading), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-mono), monospace;
 
   --radius-sm: var(--radius);
   --radius-md: var(--radius-md);
