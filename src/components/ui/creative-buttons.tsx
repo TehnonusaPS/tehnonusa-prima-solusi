@@ -87,7 +87,9 @@ export const EncryptButton: React.FC<EncryptButtonProps> = ({
       {...props}
     >
       <div className="relative z-10 flex items-center justify-center gap-2">
-        {icon ?? <Lock className="h-4 w-4 text-primary" />}
+        {icon ? (
+          <span className="inline-flex shrink-0 items-center">{icon}</span>
+        ) : null}
         <span>{displayText}</span>
       </div>
       <motion.span

@@ -159,8 +159,8 @@ export function HeroSection({ className }: HeroSectionProps) {
             {/* Primary Action Button with Cyber Scramble Effect - Hidden on mobile */}
             <EncryptButton
               text={tHero("cta_primary")}
-              icon={<Sparkles className="w-4 h-4 text-primary" />}
-              className="hidden sm:inline-flex w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary-dark border-transparent shadow-lg shadow-primary/25 font-sans font-semibold normal-case px-7 py-3.5 rounded-(--radius-md)"
+              icon={<Sparkles className="w-4 h-4 text-current shrink-0" />}
+              className="hidden sm:inline-flex items-center justify-center w-full sm:w-auto bg-primary text-primary-foreground hover:bg-primary-dark hover:text-primary-foreground border-transparent shadow-lg shadow-primary/25 font-sans font-semibold normal-case px-7 py-3.5 rounded-(--radius-md)"
               onClick={() => scrollToSection("#contact")}
             />
 
