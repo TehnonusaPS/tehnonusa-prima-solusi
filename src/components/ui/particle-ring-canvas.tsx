@@ -4,7 +4,7 @@ import React, { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Sphere } from "@react-three/drei";
 import * as THREE from "three";
-import { pointsInner, pointsOuter, type ParticlePoint } from "./particle-ring";
+import { pointsInner, pointsOuter, type ParticlePoint } from "./particle-utils";
 
 export default function ParticleRingCanvas() {
   return (
