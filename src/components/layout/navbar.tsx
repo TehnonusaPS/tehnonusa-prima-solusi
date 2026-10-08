@@ -1,11 +1,11 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Menu, X, Sparkles } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/ui/logo";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { LanguageSwitcher } from "@/components/ui/language-switcher";
 import { navItems } from "@/config/navigation";
@@ -54,30 +54,7 @@ export function Navbar({ className }: NavbarProps) {
       <Container size="lg">
         <div className="flex items-center justify-between h-16 sm:h-20">
           {/* Logo Brand */}
-          <a
-            href="#"
-            className="flex items-center gap-2.5 transition-opacity hover:opacity-90 outline-none"
-            aria-label="PT Tehnonusa Prima Solusi Home"
-          >
-            {/* Light Mode Logo */}
-            <Image
-              src="/images/logo/logo-horizontal.png"
-              alt="PT Tehnonusa Prima Solusi"
-              width={200}
-              height={40}
-              className="h-8 sm:h-9 w-auto dark:hidden"
-              priority
-            />
-            {/* Dark Mode Logo */}
-            <Image
-              src="/images/logo/logo-horizontal-white.png"
-              alt="PT Tehnonusa Prima Solusi"
-              width={200}
-              height={40}
-              className="h-8 sm:h-9 w-auto hidden dark:block"
-              priority
-            />
-          </a>
+          <Logo />
 
           {/* Desktop Navigation Links */}
           <nav
