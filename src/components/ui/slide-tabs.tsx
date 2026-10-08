@@ -55,7 +55,7 @@ export const SlideTabs: React.FC<SlideTabsProps> = ({
         }));
       }}
       className={cn(
-        "relative mx-auto flex w-fit items-center rounded-full border border-border bg-surface/90 backdrop-blur-md p-1.5 shadow-xs select-none",
+        "relative mx-auto flex h-10 w-fit items-center rounded-full border border-border bg-surface/90 backdrop-blur-md p-1 shadow-xs select-none",
         className
       )}
     >
@@ -129,7 +129,7 @@ const SlideTabItem: React.FC<SlideTabItemProps> = ({
       ref={ref}
       onMouseEnter={handleMouseEnter}
       className={cn(
-        "relative z-10 block px-3 py-1.5 text-xs sm:text-sm font-medium tracking-wide uppercase transition-colors duration-150 cursor-pointer",
+        "relative z-10 flex h-full items-center px-3.5 text-xs sm:text-sm font-medium tracking-wide uppercase transition-colors duration-150 cursor-pointer",
         isActive
           ? "text-primary-foreground font-semibold"
           : "text-foreground/80 hover:text-foreground"
@@ -157,7 +157,7 @@ const Cursor: React.FC<CursorProps> = ({ position, className }) => {
         damping: 30,
       }}
       className={cn(
-        "absolute z-0 h-7 sm:h-9 rounded-full bg-primary/90 shadow-sm pointer-events-none",
+        "absolute z-0 inset-y-1 rounded-full bg-primary/90 shadow-sm pointer-events-none",
         className
       )}
     />

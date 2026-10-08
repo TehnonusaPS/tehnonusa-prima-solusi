@@ -78,7 +78,7 @@ export function Navbar({ className }: NavbarProps) {
           >
             <SlideTabs
               tabs={desktopTabs}
-              className="py-1 px-1.5 border-border/60 bg-surface/80"
+              className="border-border/60 bg-surface/80"
             />
           </nav>
 
