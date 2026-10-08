@@ -17,7 +17,6 @@ import { Container } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CircleHighlight } from "@/components/ui/draw-circle-text";
-import { AIGradientBorder } from "@/components/ui/ai-gradient-card";
 import { cn } from "@/lib/utils";
 
 export interface ServicesSectionProps {
@@ -122,16 +121,19 @@ export function ServicesSection({ className }: ServicesSectionProps) {
           </p>
         </div>
 
-        {/* Services Grid (2x2 on desktop) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-16">
+        {/* Services Grid (2x2 on desktop with strictly uniform cards) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-16 items-stretch">
           {serviceItems.map((service) => {
             const IconComponent = service.icon;
             const features = [0, 1, 2, 3].map((idx) =>
               tServices(`${service.key}.features.${idx}`)
             );
 
-            const cardContent = (
-              <div className="relative flex flex-col h-full p-6 sm:p-8 rounded-2xl bg-surface/95 border border-border/80 hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-xl group backdrop-blur-sm">
+            return (
+              <div
+                key={service.id}
+                className="relative flex flex-col h-full p-6 sm:p-8 rounded-2xl bg-surface/90 border border-border/80 hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-xl group backdrop-blur-sm"
+              >
                 {/* Top Row: Icon + Eyebrow Badge */}
                 <div className="flex items-center justify-between gap-4 mb-6">
                   <div
@@ -144,7 +146,7 @@ export function ServicesSection({ className }: ServicesSectionProps) {
                   </div>
 
                   <Badge
-                    variant="surface"
+                    variant={service.isFeatured ? "default" : "surface"}
                     size="sm"
                     className="font-mono text-[11px] font-semibold uppercase tracking-wider"
                   >
@@ -152,21 +154,23 @@ export function ServicesSection({ className }: ServicesSectionProps) {
                   </Badge>
                 </div>
 
-                {/* Service Title & Tagline */}
-                <h3 className="font-heading text-xl sm:text-2xl font-bold tracking-tight text-foreground mb-1 group-hover:text-primary transition-colors">
-                  {tServices(`${service.key}.title`)}
-                </h3>
-                <p className="font-sans text-xs sm:text-sm font-semibold text-primary/90 mb-3">
-                  {tServices(`${service.key}.tagline`)}
-                </p>
+                {/* Service Title & Tagline with aligned vertical height */}
+                <div className="min-h-[4.5rem] mb-3">
+                  <h3 className="font-heading text-xl sm:text-2xl font-bold tracking-tight text-foreground mb-1 group-hover:text-primary transition-colors">
+                    {tServices(`${service.key}.title`)}
+                  </h3>
+                  <p className="font-sans text-xs sm:text-sm font-semibold text-primary/90">
+                    {tServices(`${service.key}.tagline`)}
+                  </p>
+                </div>
 
-                {/* Service Detailed Description */}
-                <p className="font-sans text-sm text-muted-foreground leading-relaxed mb-6">
+                {/* Service Detailed Description with aligned height */}
+                <p className="font-sans text-sm text-muted-foreground leading-relaxed mb-6 min-h-[4rem]">
                   {tServices(`${service.key}.description`)}
                 </p>
 
-                {/* Key Capabilities Checklist */}
-                <div className="pt-5 border-t border-border/60 mb-6 flex-1">
+                {/* Key Capabilities Checklist with flex-1 to push footer down evenly */}
+                <div className="pt-5 border-t border-border/60 mb-6 flex-1 flex flex-col justify-between">
                   <span className="font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground/80 block mb-3">
                     Key Deliverables:
                   </span>
@@ -183,8 +187,8 @@ export function ServicesSection({ className }: ServicesSectionProps) {
                   </ul>
                 </div>
 
-                {/* Tech Stack Tags & Interactive Action */}
-                <div className="pt-4 border-t border-border/60 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                {/* Tech Stack Tags & Interactive Action pinned to bottom baseline */}
+                <div className="mt-auto pt-4 border-t border-border/60 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   {/* Technology Badges */}
                   <div className="flex flex-wrap gap-1.5 items-center">
                     {service.techStack.map((tech) => (
@@ -201,31 +205,12 @@ export function ServicesSection({ className }: ServicesSectionProps) {
                   <button
                     type="button"
                     onClick={scrollToContact}
-                    className="inline-flex items-center gap-1.5 font-sans text-xs sm:text-sm font-semibold text-primary hover:text-primary-dark transition-colors self-start sm:self-auto group/btn cursor-pointer"
+                    className="inline-flex items-center gap-1.5 font-sans text-xs sm:text-sm font-semibold text-primary hover:text-primary-dark transition-colors self-start sm:self-auto group/btn cursor-pointer shrink-0"
                   >
                     <span>{tServices("cta_card")}</span>
                     <ArrowUpRight className="w-4 h-4 transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                   </button>
                 </div>
-              </div>
-            );
-
-            // Featured services utilize Hover.dev subtle animated gradient border
-            if (service.isFeatured) {
-              return (
-                <AIGradientBorder
-                  key={service.id}
-                  duration={5}
-                  className="rounded-2xl p-px h-full"
-                >
-                  {cardContent}
-                </AIGradientBorder>
-              );
-            }
-
-            return (
-              <div key={service.id} className="h-full">
-                {cardContent}
               </div>
             );
           })}

@@ -196,6 +196,15 @@ Website dirancang dengan standar responsivitas tingkat tinggi (*viewport fluid a
    - **Optical Height Alignment (36px):** Seluruh elemen kontrol di kanan navbar (`LanguageSwitcher`, `ThemeToggle`, `CTA Button`) wajib memiliki tinggi vertikal seragam (`h-9` / 36px), radius selaras (`rounded-full`), dan padding proporsional.
    - **Mobile Viewport Protection:** Tombol di header mobile dilarang menggunakan widget lebar berteks (seperti slider switch teks panjang). Gunakan icon-only compact control yang elegan agar tidak mendesak logo perusahaan.
 
+4. **Card & Grid Uniformity Standard (Group Consistency Guarantee):**
+   - **Tinggi & Lebar Selaras (Equal Heights):** Semua kartu dalam satu baris grid atau kelompok yang sama (`grid-cols-1 md:grid-cols-2`, `grid-cols-3`, dsb.) **wajib menggunakan `items-stretch` dan `h-full`** agar tinggi dan lebarnya 100% konsisten dan simetris di grupnya.
+   - **Struktur Wrapper Seragam:** Dilarang menggunakan wrapper luar yang berbeda-beda dalam satu kelompok kartu (misal satu kartu memakai wrapper tebal dan lainnya tipis) yang merusak keselarasan visual garis batas.
+   - **Baseline Alignment Internal:** Setiap kartu dalam grup harus memiliki ritme vertikal yang sejajar:
+     - Header icon & category badge sejajar.
+     - Slot judul & tagline memiliki ruang vertikal yang seimbang (`min-h-[...]`).
+     - Slot deskripsi teks memiliki ketinggian terpadu.
+     - Footer (tech stack & tombol aksi/link) **wajib selalu terkunci di garis paling bawah kartu menggunakan `mt-auto`**, sehingga semua tombol aksi di baris yang sama berada tepat pada garis horizontal yang sama.
+
 ---
 
 ### 4.2 Dark / Light Mode
