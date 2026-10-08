@@ -68,14 +68,8 @@ function StarField() {
   );
 
   useFrame(({ clock }) => {
-    const elapsedTime = clock.getElapsedTime();
     if (materialRef.current) {
-      materialRef.current.uniforms.uTime.value = elapsedTime;
-    }
-    if (pointsRef.current) {
-      // Gentle, serene celestial drift
-      pointsRef.current.rotation.y = elapsedTime * 0.012;
-      pointsRef.current.rotation.x = Math.sin(elapsedTime * 0.008) * 0.04;
+      materialRef.current.uniforms.uTime.value = clock.getElapsedTime();
     }
   });
 
