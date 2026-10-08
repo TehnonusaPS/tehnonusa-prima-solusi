@@ -168,7 +168,10 @@ export const SpotlightButton: React.FC<SpotlightButtonProps> = ({
       whileTap={{ scale: 0.985 }}
       ref={btnRef}
       className={cn(
-        "group relative overflow-hidden rounded-(--radius-md) bg-slate-950 px-6 py-3.5 font-sans font-semibold text-white shadow-md border border-slate-800/90 transition-colors cursor-pointer select-none dark:bg-slate-900 dark:border-slate-800",
+        // Light mode: Vibrant brand primary CTA with soft shadow
+        "group relative overflow-hidden rounded-(--radius-md) bg-primary px-7 py-3.5 font-sans text-sm font-semibold text-white shadow-md shadow-primary/25 border border-primary/40 hover:bg-primary-dark transition-all duration-300 cursor-pointer select-none",
+        // Dark mode: Sleek dark CTA with dark border and primary glow
+        "dark:bg-slate-950 dark:border-slate-800 dark:shadow-none dark:hover:bg-slate-900",
         className
       )}
       {...props}
@@ -176,9 +179,10 @@ export const SpotlightButton: React.FC<SpotlightButtonProps> = ({
       <span className="pointer-events-none relative z-10 inline-flex items-center justify-center gap-2">
         {children}
       </span>
+      {/* Light mode: luminous white/sky crystal highlight; Dark mode: primary blue spotlight */}
       <span
         ref={spanRef}
-        className="pointer-events-none absolute left-1/2 top-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary blur-xs opacity-0"
+        className="pointer-events-none absolute left-1/2 top-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/30 dark:bg-primary blur-xs opacity-0"
       />
     </motion.button>
   );
@@ -235,7 +239,10 @@ export const DrawOutlineButton: React.FC<DrawOutlineButtonProps> = ({
         onBlur?.(e);
       }}
       className={cn(
-        "group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-(--radius-md) border border-border/80 bg-white/95 px-6 py-3.5 font-sans text-sm font-semibold text-foreground backdrop-blur-xs transition-colors duration-300 hover:text-primary hover:bg-slate-50 active:scale-[0.985] dark:border-slate-800 dark:bg-slate-900/80 dark:text-slate-100 dark:hover:bg-slate-800/80 dark:hover:text-primary cursor-pointer select-none shadow-2xs",
+        // Light mode: Crisp white background, dark slate-800 text, subtle light border
+        "group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-(--radius-md) border border-slate-200/90 bg-white px-7 py-3.5 font-sans text-sm font-semibold text-slate-800 backdrop-blur-xs transition-colors duration-300 hover:text-primary hover:bg-slate-50 active:scale-[0.985] shadow-2xs cursor-pointer select-none",
+        // Dark mode: Dark slate background, light text, dark border
+        "dark:border-slate-800 dark:bg-slate-900/80 dark:text-slate-100 dark:hover:bg-slate-800/80 dark:hover:text-primary",
         className
       )}
       {...props}
