@@ -57,7 +57,7 @@ export function HeroSection({ className }: HeroSectionProps) {
   return (
     <section
       className={cn(
-        "relative overflow-hidden pt-24 pb-20 sm:pt-32 sm:pb-32 lg:pt-40 lg:pb-36 border-b border-border/40",
+        "relative overflow-hidden pt-20 pb-16 sm:pt-24 sm:pb-24 lg:pt-28 lg:pb-32 border-b border-border/40",
         className
       )}
     >
@@ -79,7 +79,7 @@ export function HeroSection({ className }: HeroSectionProps) {
       <Container size="lg">
         <div className="flex flex-col items-center text-center">
           {/* 2. Engineering Eyebrow Tag / Kicker */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border/80 bg-surface/80 backdrop-blur-md shadow-2xs mb-6 sm:mb-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border/80 bg-surface/80 backdrop-blur-md shadow-2xs mb-5 sm:mb-6">
             <span className="flex h-2 w-2 relative">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
@@ -91,25 +91,27 @@ export function HeroSection({ className }: HeroSectionProps) {
           </div>
 
           {/* 3. Main Persuasive Headline with Hand-drawn Loop Highlight */}
-          <h1 className="font-heading font-bold text-4xl sm:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-foreground leading-[1.08] max-w-5xl mb-6">
-            <span>{tHero("headline_prefix")} </span>
-            <CircleHighlight
-              strokeColor="#0085EB"
-              strokeWidth={3.5}
-              className="text-primary font-black"
-            >
-              {tHero("headline_highlight")}
-            </CircleHighlight>{" "}
-            <span>{tHero("headline_suffix")}</span>
+          <h1 className="font-heading font-bold text-4xl sm:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-foreground leading-[1.08] max-w-5xl mb-5 sm:mb-6">
+            <span className="block">{tHero("headline_prefix")}</span>
+            <span className="inline-block my-0.5 sm:my-1">
+              <CircleHighlight
+                strokeColor="#0085EB"
+                strokeWidth={3.5}
+                className="text-primary font-black"
+              >
+                {tHero("headline_highlight")}
+              </CircleHighlight>
+            </span>
+            <span className="block">{tHero("headline_suffix")}</span>
           </h1>
 
           {/* 4. Subtitle / Product Philosophy Copy */}
-          <p className="font-sans text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-10 sm:mb-12">
+          <p className="font-sans text-base sm:text-lg lg:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-8 sm:mb-10">
             {tHero("description")}
           </p>
 
           {/* 5. Dual Action Buttons */}
-          <div className="flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto mb-16 sm:mb-20">
+          <div className="flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto mb-12 sm:mb-16">
             {/* Primary Action Button with Cyber Scramble Effect */}
             <EncryptButton
               text={tHero("cta_primary")}
