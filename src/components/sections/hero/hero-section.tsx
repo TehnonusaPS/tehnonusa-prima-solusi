@@ -82,7 +82,7 @@ export function HeroSection({ className }: HeroSectionProps) {
       <Container size="lg">
         <div className="flex flex-col items-center text-center">
           {/* 2. Engineering Eyebrow Tag / Kicker */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border/80 bg-surface/80 backdrop-blur-md shadow-2xs mb-6 sm:mb-8 animate-in fade-in slide-in-from-bottom-2 duration-500">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border/80 bg-surface/80 backdrop-blur-md shadow-2xs mb-6 sm:mb-8">
             <span className="flex h-2 w-2 relative">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />

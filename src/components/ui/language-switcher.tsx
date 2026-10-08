@@ -18,31 +18,38 @@ export function LanguageSwitcher({
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-  const [isPending, startTransition] = React.useTransition();
+  const [, startTransition] = React.useTransition();
+  const [selectedLocale, setSelectedLocale] = React.useState<string | null>(null);
+
+  if (selectedLocale !== null && selectedLocale === locale) {
+    setSelectedLocale(null);
+  }
+
+  const currentLocale = selectedLocale ?? locale;
 
   const handleLocaleChange = (nextLocale: "id" | "en") => {
-    if (nextLocale === locale) return;
+    if (nextLocale === currentLocale) return;
+    setSelectedLocale(nextLocale);
     startTransition(() => {
       router.replace(pathname, { locale: nextLocale });
     });
   };
 
   if (variant === "button") {
-    const nextLocale = locale === "id" ? "en" : "id";
+    const nextLocale = currentLocale === "id" ? "en" : "id";
     return (
       <button
         type="button"
-        disabled={isPending}
         onClick={() => handleLocaleChange(nextLocale)}
         className={cn(
-          "inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-semibold rounded-(--radius-md) border border-border bg-background hover:bg-muted text-foreground transition-colors disabled:opacity-50",
+          "inline-flex items-center gap-1.5 px-2.5 py-1 text-xs font-semibold rounded-(--radius-md) border border-border bg-background hover:bg-muted text-foreground transition-colors cursor-pointer",
           className
         )}
         aria-label={`Change language to ${nextLocale.toUpperCase()}`}
         title={`Switch to ${nextLocale === "id" ? "Bahasa Indonesia" : "English"}`}
       >
         <Globe className="h-3.5 w-3.5 text-primary" />
-        <span>{locale.toUpperCase()}</span>
+        <span>{currentLocale.toUpperCase()}</span>
       </button>
     );
   }
@@ -51,7 +58,6 @@ export function LanguageSwitcher({
     <div
       className={cn(
         "inline-flex items-center p-0.5 rounded-full bg-muted/70 border border-border text-xs font-semibold select-none",
-        isPending && "opacity-60 pointer-events-none",
         className
       )}
       role="group"
@@ -61,12 +67,12 @@ export function LanguageSwitcher({
         type="button"
         onClick={() => handleLocaleChange("id")}
         className={cn(
-          "px-2.5 py-1 rounded-full transition-all duration-200 text-xs font-medium",
-          locale === "id"
+          "px-2.5 py-1 rounded-full transition-all duration-150 text-xs font-medium cursor-pointer",
+          currentLocale === "id"
             ? "bg-background text-primary font-semibold shadow-xs"
             : "text-muted-foreground hover:text-foreground"
         )}
-        aria-pressed={locale === "id"}
+        aria-pressed={currentLocale === "id"}
       >
         ID
       </button>
@@ -74,12 +80,12 @@ export function LanguageSwitcher({
         type="button"
         onClick={() => handleLocaleChange("en")}
         className={cn(
-          "px-2.5 py-1 rounded-full transition-all duration-200 text-xs font-medium",
-          locale === "en"
+          "px-2.5 py-1 rounded-full transition-all duration-150 text-xs font-medium cursor-pointer",
+          currentLocale === "en"
             ? "bg-background text-primary font-semibold shadow-xs"
             : "text-muted-foreground hover:text-foreground"
         )}
-        aria-pressed={locale === "en"}
+        aria-pressed={currentLocale === "en"}
       >
         EN
       </button>

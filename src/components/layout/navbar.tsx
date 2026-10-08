@@ -75,16 +75,16 @@ export function Navbar({ className }: NavbarProps) {
             />
           </nav>
 
-          {/* Desktop Actions: Language & Spring Theme Slider */}
+          {/* Desktop Actions: Theme Slider, and Language Switcher at the far right */}
           <div className="hidden lg:flex items-center gap-2.5">
-            <LanguageSwitcher />
             <SliderToggle useNextThemes />
+            <LanguageSwitcher />
           </div>
 
-          {/* Mobile Right Controls: Language, Theme, Morphing Hamburger */}
+          {/* Mobile Right Controls: Theme, Language at the far right, Morphing Hamburger */}
           <div className="flex lg:hidden items-center gap-1.5">
-            <LanguageSwitcher />
             <SliderToggle useNextThemes className="p-0.5 scale-90" />
+            <LanguageSwitcher />
             <AnimatedHamburgerButton
               active={mobileMenuOpen}
               onToggle={setMobileMenuOpen}
