@@ -8,11 +8,11 @@
 
 @layer base {
   :root {
-    /* Brand Colors */
-    --primary: #4c86d8;
+    /* Brand Colors (Exact match with official logo #0085eb) */
+    --primary: #0085eb;
     --primary-foreground: #ffffff;
-    --primary-dark: #3a6fc2;
-    --primary-light: #6ea8fe;
+    --primary-dark: #006ec4;
+    --primary-light: #4dabf7;
 
     /* Secondary */
     --secondary: #0f2747;
@@ -59,10 +59,10 @@
 
   .dark {
     /* Brand Colors */
-    --primary: #5a91e0;
-    --primary-foreground: #ffffff;
-    --primary-dark: #4c86d8;
-    --primary-light: #7eb6ff;
+    --primary: #38bdf8;
+    --primary-foreground: #0b1120;
+    --primary-dark: #0085eb;
+    --primary-light: #7dd3fc;
 
     /* Secondary */
     --secondary: #1e3a5f;

@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Menu, X, Sparkles } from "lucide-react";
 import { Container } from "@/components/ui/container";
@@ -55,20 +56,27 @@ export function Navbar({ className }: NavbarProps) {
           {/* Logo Brand */}
           <a
             href="#"
-            className="flex items-center gap-2.5 font-bold text-lg sm:text-xl tracking-tight text-foreground transition-opacity hover:opacity-90 outline-none"
+            className="flex items-center gap-2.5 transition-opacity hover:opacity-90 outline-none"
             aria-label="PT Tehnonusa Prima Solusi Home"
           >
-            <span className="flex items-center justify-center w-9 h-9 rounded-(--radius-md) bg-primary text-primary-foreground font-extrabold shadow-sm shadow-primary/25">
-              T
-            </span>
-            <span className="flex flex-col">
-              <span className="leading-none text-foreground font-semibold">
-                Tehnonusa
-              </span>
-              <span className="text-[10px] text-muted-foreground tracking-wider uppercase font-medium leading-tight">
-                Prima Solusi
-              </span>
-            </span>
+            {/* Light Mode Logo */}
+            <Image
+              src="/images/logo/logo-horizontal.png"
+              alt="PT Tehnonusa Prima Solusi"
+              width={200}
+              height={40}
+              className="h-8 sm:h-9 w-auto dark:hidden"
+              priority
+            />
+            {/* Dark Mode Logo */}
+            <Image
+              src="/images/logo/logo-horizontal-white.png"
+              alt="PT Tehnonusa Prima Solusi"
+              width={200}
+              height={40}
+              className="h-8 sm:h-9 w-auto hidden dark:block"
+              priority
+            />
           </a>
 
           {/* Desktop Navigation Links */}

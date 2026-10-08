@@ -58,29 +58,34 @@ Hindari desain yang terasa seperti:
 
 ---
 
-# 2. Brand Direction
+# 2. Brand Direction & Official Logo
 
-Logo referensi diberikan oleh user.
+Logo resmi telah ditambahkan oleh user dan diolah menjadi aset transparan berkualitas tinggi:
 
-Logo menggunakan identitas utama warna **biru**.
+- **Aset Logo Tersedia (`public/images/logo/`):**
+  - `logo.png` — Logo vertikal lengkap (Emblem + "TEHNONUSA PRIMA SOLUSI") dengan background transparan.
+  - `logo-horizontal.png` — Logo orientasi horizontal (Emblem kiri + teks kanan) khusus Navbar / Header (Light mode).
+  - `logo-horizontal-white.png` — Logo orientasi horizontal untuk Dark mode (Emblem biru + teks putih kontras tinggi).
+  - `logo-icon.png` — Standalone emblem huruf "T" kotak membulat (untuk Favicon, mobile shortcut, avatar).
+  - `logo-white.png` — Logo vertikal lengkap dengan teks putih untuk latar gelap.
 
-Karena logo masih berupa referensi/dummy pada tahap awal, gunakan design token agar warna dapat diganti dengan mudah ketika brand guideline resmi tersedia.
+## Brand Color System
 
-## Initial Color System
-
-Gunakan warna utama yang terinspirasi dari logo:
+Warna identitas resmi yang diekstrak langsung dari pixel logo:
 
 ```css
---color-primary: #4C86D8;
+--color-primary: #0085EB; /* Biru vibran khas PT Tehnonusa Prima Solusi */
 ```
 
 Gunakan semantic color token, bukan hardcoded color di setiap component.
 
-Contoh konsep:
+Konsep implementasi di `src/app/globals.css`:
 
 ```css
---primary: #4C86D8;
+--primary: #0085EB;
 --primary-foreground: #FFFFFF;
+--primary-dark: #006EC4;
+--primary-light: #4DABF7;
 
 --secondary: #0F2747;
 --secondary-foreground: #FFFFFF;

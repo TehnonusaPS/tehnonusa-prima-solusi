@@ -7,8 +7,8 @@ export interface ParticlePoint {
 export const MIN_RADIUS = 7.5;
 export const MAX_RADIUS = 15;
 export const DEPTH = 2;
-export const LEFT_COLOR = "4c86d8"; // Tehnonusa Primary
-export const RIGHT_COLOR = "6ea8fe"; // Tehnonusa Accent
+export const LEFT_COLOR = "0085eb"; // Tehnonusa Official Primary
+export const RIGHT_COLOR = "4dabf7"; // Tehnonusa Official Accent
 
 export const calculateColor = (x: number): string => {
   const maxDiff = MAX_RADIUS * 2;
