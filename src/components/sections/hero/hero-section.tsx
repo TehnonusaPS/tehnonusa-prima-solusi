@@ -190,22 +190,34 @@ export function HeroSection({ className }: HeroSectionProps) {
             variants={heroItemVariants}
             className="relative w-full max-w-5xl group"
           >
-            {/* Ambient Backlight Glow for Visual Card (GPU-cached static glow) */}
-            <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-primary/20 via-accent/15 to-primary/20 blur-xl opacity-60 group-hover:opacity-85 transition-opacity duration-500 pointer-events-none" />
-
-            {/* Main Showcase Container with Levitation Float */}
+            {/* Ambient Backlight Glow for Visual Card */}
             <motion.div
               animate={{
-                y: [0, -8, 0],
+                opacity: [0.5, 0.8, 0.5],
+                scale: [0.98, 1.025, 0.98],
               }}
               transition={{
-                duration: 6,
+                duration: 4.8,
+                repeat: Infinity,
+                repeatType: "mirror",
+                ease: "easeInOut",
+              }}
+              className="absolute -inset-1.5 rounded-3xl bg-gradient-to-r from-primary/25 via-accent/20 to-primary/25 blur-xl pointer-events-none"
+            />
+
+            {/* Main Showcase Container with Clearly Visible Levitation Float */}
+            <motion.div
+              animate={{
+                y: [0, -22, 0],
+              }}
+              transition={{
+                duration: 4.8,
                 repeat: Infinity,
                 repeatType: "mirror",
                 ease: "easeInOut",
               }}
               whileHover={{
-                scale: 1.01,
+                scale: 1.015,
                 transition: { duration: 0.3, ease: "easeOut" },
               }}
               className="relative rounded-2xl sm:rounded-3xl border border-border/80 bg-surface/90 shadow-2xl overflow-hidden backdrop-blur-xl"
