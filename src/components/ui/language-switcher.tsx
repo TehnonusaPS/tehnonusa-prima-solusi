@@ -4,7 +4,6 @@ import * as React from "react";
 import { motion } from "motion/react";
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "@/i18n/navigation";
-import { Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export interface LanguageSwitcherProps {
@@ -67,7 +66,6 @@ export function LanguageSwitcher({ className }: LanguageSwitcherProps) {
         )}
         onClick={() => handleSelect("id")}
       >
-        <Globe className="h-3 w-3 sm:h-3.5 sm:w-3.5 relative z-10" />
         <span className="relative z-10">ID</span>
       </button>
 
