@@ -230,23 +230,23 @@ export function ProcessSection({ className }: ProcessSectionProps) {
               exit="exit"
               className="rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-surface/95 shadow-xl overflow-hidden backdrop-blur-md"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[480px]">
+              <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[360px]">
                 {/* Left Column: Phase Content & Specifications (7 cols) */}
-                <div className="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between">
+                <div className="lg:col-span-7 p-5 sm:p-6 lg:p-7 flex flex-col justify-between">
                   <div>
                     {/* Phase Header Tag Row */}
-                    <div className="flex items-center justify-between gap-4 mb-6">
-                      <div className="flex items-center gap-3">
+                    <div className="flex items-center justify-between gap-3 mb-3.5">
+                      <div className="flex items-center gap-2.5">
                         <div
                           className={cn(
-                            "w-12 h-12 rounded-xl flex items-center justify-center border shadow-xs",
+                            "w-10 h-10 rounded-lg flex items-center justify-center border shadow-xs",
                             activePhase.iconBg
                           )}
                         >
-                          <ActiveIcon className={cn("w-6 h-6", activePhase.iconColor)} />
+                          <ActiveIcon className={cn("w-5 h-5", activePhase.iconColor)} />
                         </div>
                         <div>
-                          <span className="font-mono text-xs font-bold text-primary tracking-widest uppercase block">
+                          <span className="font-mono text-[11px] font-bold text-primary tracking-widest uppercase block">
                             {t(`phases.${activePhase.key}.step`)}
                           </span>
                           <span className="font-sans text-xs text-muted-foreground font-medium">
@@ -267,30 +267,30 @@ export function ProcessSection({ className }: ProcessSectionProps) {
                     </div>
 
                     {/* Phase Title */}
-                    <h3 className="font-heading text-2xl sm:text-3xl font-bold tracking-tight text-foreground mb-3">
+                    <h3 className="font-heading text-xl sm:text-2xl font-bold tracking-tight text-foreground mb-2">
                       {t(`phases.${activePhase.key}.title`)}
                     </h3>
 
                     {/* Phase Description */}
-                    <p className="font-sans text-sm sm:text-base text-muted-foreground leading-relaxed mb-8">
+                    <p className="font-sans text-xs sm:text-sm text-muted-foreground leading-relaxed mb-4">
                       {t(`phases.${activePhase.key}.description`)}
                     </p>
 
                     {/* Key Deliverables Matrix */}
-                    <div className="mb-8">
-                      <div className="flex items-center gap-2 mb-3">
+                    <div className="mb-4">
+                      <div className="flex items-center gap-1.5 mb-2">
                         <Terminal className="w-3.5 h-3.5 text-primary" />
-                        <span className="font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                        <span className="font-mono text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
                           Key Deliverables:
                         </span>
                       </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         {deliverables.map((item, idx) => (
                           <div
                             key={idx}
-                            className="flex items-start gap-2.5 p-2.5 rounded-xl bg-slate-50/80 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-800/80 text-xs sm:text-sm font-medium text-foreground/90"
+                            className="flex items-start gap-2 px-2.5 py-1.5 rounded-lg bg-slate-50/80 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-800/80 text-xs font-medium text-foreground/90"
                           >
-                            <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5" />
                             <span>{item}</span>
                           </div>
                         ))}
@@ -299,7 +299,7 @@ export function ProcessSection({ className }: ProcessSectionProps) {
                   </div>
 
                   {/* Bottom Action & Tooling Stack */}
-                  <div className="pt-6 border-t border-slate-200/80 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                  <div className="pt-3.5 border-t border-slate-200/80 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                     <div className="flex items-center gap-2 text-xs font-mono text-muted-foreground">
                       <Wrench className="w-3.5 h-3.5 text-primary" />
                       <span className="font-semibold uppercase tracking-wider">Engineered with:</span>
@@ -310,7 +310,7 @@ export function ProcessSection({ className }: ProcessSectionProps) {
 
                     <DrawOutlineButton
                       onClick={scrollToContact}
-                      className="self-start sm:self-auto px-5 py-2.5 text-xs font-sans font-semibold"
+                      className="self-start sm:self-auto px-4 py-2 text-xs font-sans font-semibold"
                     >
                       <span>{t("cta_button")}</span>
                       <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
@@ -319,7 +319,7 @@ export function ProcessSection({ className }: ProcessSectionProps) {
                 </div>
 
                 {/* Right Column: Architectural Visual Graphic with Telemetry (5 cols) */}
-                <div className="lg:col-span-5 relative bg-slate-950 min-h-[300px] lg:min-h-full overflow-hidden border-t lg:border-t-0 lg:border-l border-slate-200/90 dark:border-slate-800 flex flex-col justify-between p-6 sm:p-8">
+                <div className="lg:col-span-5 relative bg-slate-950 min-h-[240px] lg:min-h-full overflow-hidden border-t lg:border-t-0 lg:border-l border-slate-200/90 dark:border-slate-800 flex flex-col justify-between p-5 sm:p-6">
                   {/* Background Image: data-core.jpg */}
                   <div className="absolute inset-0">
                     <Image
@@ -333,7 +333,7 @@ export function ProcessSection({ className }: ProcessSectionProps) {
                   </div>
 
                   {/* Top Overlay: Telemetry HUD Header */}
-                  <div className="relative z-10 flex items-center justify-between gap-2 border-b border-white/10 pb-4">
+                  <div className="relative z-10 flex items-center justify-between gap-2 border-b border-white/10 pb-2.5">
                     <div className="flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                       <span className="font-mono text-xs text-white/80 font-semibold tracking-wider uppercase">
@@ -346,9 +346,9 @@ export function ProcessSection({ className }: ProcessSectionProps) {
                   </div>
 
                   {/* Center Overlay: Architectural Milestone Indicators */}
-                  <div className="relative z-10 py-6 my-auto space-y-3">
-                    <div className="p-3.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/10 shadow-lg">
-                      <div className="flex items-center justify-between text-xs font-mono text-slate-300 mb-1.5">
+                  <div className="relative z-10 py-3 my-auto space-y-2">
+                    <div className="p-2.5 sm:p-3 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/10 shadow-lg">
+                      <div className="flex items-center justify-between text-xs font-mono text-slate-300 mb-1">
                         <span className="font-bold text-white">Verification Gate</span>
                         <span className="text-emerald-400 font-semibold">100% Passed</span>
                       </div>
@@ -357,8 +357,8 @@ export function ProcessSection({ className }: ProcessSectionProps) {
                       </div>
                     </div>
 
-                    <div className="p-3.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/10 shadow-lg">
-                      <div className="flex items-center justify-between text-xs font-mono text-slate-300 mb-1.5">
+                    <div className="p-2.5 sm:p-3 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/10 shadow-lg">
+                      <div className="flex items-center justify-between text-xs font-mono text-slate-300 mb-1">
                         <span className="font-bold text-white">Client Governance</span>
                         <span className="text-cyan-400 font-semibold">Weekly Demo</span>
                       </div>
@@ -369,7 +369,7 @@ export function ProcessSection({ className }: ProcessSectionProps) {
                   </div>
 
                   {/* Bottom HUD: Security & SLA Guarantee */}
-                  <div className="relative z-10 pt-4 border-t border-white/10 flex items-center justify-between text-white/70 font-mono text-[11px]">
+                  <div className="relative z-10 pt-2.5 border-t border-white/10 flex items-center justify-between text-white/70 font-mono text-[11px]">
                     <div className="flex items-center gap-1.5">
                       <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
                       <span>Zero-Downtime Guarantee</span>
@@ -383,7 +383,7 @@ export function ProcessSection({ className }: ProcessSectionProps) {
         </div>
 
         {/* 5. Phase Step Overview Cards (Quick 6-Step Horizontal Navigator on Desktop) */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3.5 mt-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3.5 mt-6 sm:mt-8">
           {PHASES_CONFIG.map((phase) => {
             const Icon = phase.icon;
             const isSelected = activePhaseKey === phase.key;
