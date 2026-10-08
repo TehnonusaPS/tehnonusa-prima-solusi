@@ -245,6 +245,165 @@
     "open_menu": "Buka Menu",
     "close_menu": "Tutup Menu"
   },
+  "portfolio": {
+    "kicker": "PROVEN TRACK RECORD & CASE STUDIES",
+    "title_prefix": "Portofolio Sistem & Rekayasa",
+    "title_highlight": "Solusi Nyata",
+    "description": "Bukti nyata kapabilitas rekayasa kami dalam membangun sistem mission-critical, arsitektur cloud terdistribusi, dan aplikasi dengan dampak bisnis terukur.",
+    "cta_view_project": "Detail Arsitektur",
+    "cta_discuss": "Bangun Sistem Serupa",
+    "cases": {
+      "erp": {
+        "tag": "ENTERPRISE ERP & SUPPLY CHAIN",
+        "title": "NexusERP — Sistem Manajemen Rantai Pasok Terintegrasi",
+        "description": "Modernisasi sistem ERP multi-gudang untuk perusahaan manufaktur & distribusi skala nasional. Menggantikan proses manual dengan pemantauan inventaris real-time, audit trail otomatis, dan modul peramalan pengadaan.",
+        "metric_value": "+320%",
+        "metric_label": "Efisiensi Proses Pesanan",
+        "metrics": [
+          { "val": "100%", "label": "Akurasi Stok Multi-Gudang" },
+          { "val": "3.2x", "label": "Peningkatan Throughput" },
+          { "val": "<120ms", "label": "Query Latency ERP" }
+        ],
+        "highlights": [
+          "Arsitektur database multi-tenant dengan partisi otomatis",
+          "Role-Based Access Control (RBAC) & data masking terenkripsi",
+          "Integrasi telemetri barcode & QR scanner industri",
+          "Dashboard analitik eksekutif dengan auto-reconciliation"
+        ]
+      },
+      "logistics": {
+        "tag": "LOGISTICS & FLEET MOBILE PLATFORM",
+        "title": "FleetMotion — Platform Telemetri Armada & Logistik Real-Time",
+        "description": "Aplikasi mobile driver dan pusat komando terpusat untuk memantau ribuan armada logistik secara simultan dengan pelacakan GPS sub-detik, kalkulasi rute dinamis, dan sinkronisasi offline-first.",
+        "metric_value": "<85ms",
+        "metric_label": "Latensi Telemetri GPS",
+        "metrics": [
+          { "val": "99.98%", "label": "Ketersediaan Jam Sibuk" },
+          { "val": "-24%", "label": "Penghematan Biaya BBM" },
+          { "val": "10k+", "label": "Armada Terpantau Simultan" }
+        ],
+        "highlights": [
+          "Sinkronisasi data offline-first saat koneksi terputus",
+          "Routing dinamis cerdas menghindari kemacetan",
+          "Telemetri kecepatan kendaraan & perilaku pengemudi",
+          "Notifikasi push status pengiriman seketika via WebSockets"
+        ]
+      },
+      "fintech": {
+        "tag": "FINTECH & HIGH-THROUGHPUT ENGINE",
+        "title": "PayGateway Core — Agregator Pembayaran Berkecepatan Tinggi",
+        "description": "Mesin agregasi pembayaran berkapasitas ribuan transaksi per detik (TPS) yang menghubungkan puluhan bank nasional dan e-wallet dengan deteksi fraud real-time dan rekonsiliasi otomatis tanpa selisih.",
+        "metric_value": "2,500+ TPS",
+        "metric_label": "Throughput Transaksi Puncak",
+        "metrics": [
+          { "val": "99.99%", "label": "SLA Core Gateway" },
+          { "val": "Zero", "label": "Selisih Rekonsiliasi" },
+          { "val": "<60ms", "label": "Kecepatan Respons API" }
+        ],
+        "highlights": [
+          "Enkripsi payload end-to-end berstandar perbankan",
+          "Deteksi anomali fraud transaksi menggunakan rule engine",
+          "Otomatisasi kliring & settlement multi-rekening",
+          "Pemisahan microservices dengan zero-downtime failover"
+        ]
+      }
+    }
+  },
+  "testimonials": {
+    "kicker": "CLIENT TRUST & IMPACT",
+    "title_prefix": "Dipercaya oleh Para Pemimpin",
+    "title_highlight": "Teknologi & Bisnis",
+    "description": "Kemitraan jangka panjang dibangun di atas keandalan teknis, ketepatan waktu, dan dedikasi rekayasa software tanpa kompromi.",
+    "items": [
+      {
+        "quote": "Tehnonusa merevolusi sistem distribusi kami. Dari yang sebelumnya sering delay dan data stok tidak akurat, kini ribuan transaksi gudang berjalan real-time dengan uptime 100%.",
+        "name": "Budi Santoso",
+        "role": "VP of Technology",
+        "company": "PT Logistik Prima Nusantara",
+        "metric": "+300% Kecepatan Operasional"
+      },
+      {
+        "quote": "Kualitas arsitektur dan dokumentasi API yang mereka berikan berstandar korporat global. Tim engineer Tehnonusa sangat proaktif dan memahami domain bisnis kami secara mendalam.",
+        "name": "Diana Prasetyo",
+        "role": "Chief Digital Officer",
+        "company": "PT Finansial Sinergi Abadi",
+        "metric": "99.99% Sistem Uptime"
+      },
+      {
+        "quote": "Aplikasi mobile lapangan kami selesai tepat waktu dengan performa mulus bahkan di daerah dengan sinyal lemah. Dukungan teknis pasca-rilis mereka sangat luar biasa.",
+        "name": "Rian Hendrawan",
+        "role": "Head of Operations",
+        "company": "PT Trans Mandiri Ekspres",
+        "metric": "100k+ Active Users"
+      }
+    ]
+  },
+  "faq": {
+    "kicker": "FREQUENTLY ASKED QUESTIONS",
+    "title_prefix": "Pertanyaan yang Sering",
+    "title_highlight": "Diajukan",
+    "description": "Jawaban transparan seputar kepemilikan kode, timeline proyek, biaya, dan standar rekayasa software kami.",
+    "items": [
+      {
+        "question": "Bagaimana kepemilikan hak cipta (IP) dan source code proyek?",
+        "answer": "100% kepemilikan source code, repositori Git, dan aset digital sepenuhnya diserahkan kepada Anda setelah proyek selesai tanpa biaya royalti tambahan atau vendor lock-in."
+      },
+      {
+        "question": "Berapa lama estimasi waktu pengembangan sistem atau aplikasi?",
+        "answer": "Bergantung pada ruang lingkup. Sistem MVP atau modul terfokus umumnya diselesaikan dalam 4–8 minggu. Untuk platform enterprise skala besar, kami bekerja dengan sprint Agile 2 mingguan terstruktur sehingga Anda dapat memantau progres secara berkala."
+      },
+      {
+        "question": "Apakah PT Tehnonusa menyediakan garansi dan dukungan teknis setelah rilis?",
+        "answer": "Ya. Setiap proyek dilengkapi dengan garansi pemeliharaan bebas bug (bug-free warranty) dan dukungan SLA ketersediaan sistem. Kami juga menawarkan paket pemeliharaan berkala untuk pembaruan keamanan dan skalabilitas."
+      },
+      {
+        "question": "Bagaimana cara menentukan estimasi biaya investasi proyek?",
+        "answer": "Biaya dihitung secara transparan berdasarkan kompleksitas arsitektur, integrasi modul, dan target waktu peluncuran. Kami menyediakan sesi konsultasi arsitektur gratis untuk merumuskan spesifikasi teknis dan estimasi formal."
+      },
+      {
+        "question": "Dapatkah sistem baru diintegrasikan dengan database atau software internal kami yang lama (legacy)?",
+        "answer": "Tentu. Tim engineer kami memiliki keahlian khusus dalam migrasi database, pembuatan middleware API jembatan, dan integrasi multi-sistem sehingga data perusahaan dapat mengalir dengan lancar tanpa menghentikan operasional yang sedang berjalan."
+      }
+    ]
+  },
+  "cta": {
+    "kicker": "LET'S BUILD TOGETHER",
+    "title_prefix": "Siap Mewujudkan",
+    "title_highlight": "Solusi Digital Anda?",
+    "description": "Diskusikan kebutuhan sistem Anda bersama software engineer kami. Kami siap memberikan konsultasi arsitektur gratis dan merancang roadmap teknologi yang tepat untuk bisnis Anda.",
+    "button_consult": "Konsultasikan Proyek Sekarang",
+    "button_wa": "Hubungi via WhatsApp",
+    "modal_title": "Konsultasi Solusi Digital",
+    "modal_subtitle": "Ceritakan ringkasan kebutuhan sistem Anda. Tim engineer kami akan mempelajari dan merespons dalam 1x24 jam kerja.",
+    "form_name": "Nama Lengkap",
+    "form_company": "Perusahaan / Organisasi",
+    "form_email": "Alamat Email",
+    "form_phone": "Nomor WhatsApp",
+    "form_service": "Layanan yang Dibutuhkan",
+    "form_service_options": [
+      "Enterprise Web Systems",
+      "Mobile Applications (iOS/Android)",
+      "Custom Software & Cloud",
+      "Digital Transformation & API",
+      "Konsultasi Arsitektur Sistem"
+    ],
+    "form_message": "Ceritakan ringkasan kebutuhan atau tantangan sistem Anda...",
+    "form_submit": "Kirim Permintaan Konsultasi",
+    "form_submitting": "Mengirimkan Permintaan...",
+    "form_success_title": "Permintaan Berhasil Terkirim!",
+    "form_success_desc": "Terima kasih atas kepercayaan Anda. Tim software engineer kami akan menghubungi Anda segera melalui WhatsApp / Email.",
+    "form_close": "Tutup"
+  },
+  "footer": {
+    "about": "PT Tehnonusa Prima Solusi adalah penyedia solusi rekayasa perangkat lunak dan transformasi digital profesional, merancang sistem web enterprise, aplikasi mobile, dan infrastruktur cloud yang skalabel dan andal.",
+    "quick_links": "Navigasi",
+    "services_title": "Layanan Unggulan",
+    "contact_title": "Kontak Resmi",
+    "rights": "Hak Cipta Dilindungi Undang-Undang.",
+    "privacy": "Kebijakan Privasi",
+    "terms": "Syarat & Ketentuan",
+    "made_with": "Dibangun dengan standar rekayasa software modern"
+  },
   "contact": {
     "address_label": "Alamat Kantor",
     "address": "Jl. Bima II Blok CF 5 No. 5 Villa Pamulang, Tangerang Selatan",

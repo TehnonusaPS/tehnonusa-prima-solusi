@@ -245,6 +245,165 @@
     "open_menu": "Open Menu",
     "close_menu": "Close Menu"
   },
+  "portfolio": {
+    "kicker": "PROVEN TRACK RECORD & CASE STUDIES",
+    "title_prefix": "Engineering Systems &",
+    "title_highlight": "Proven Solutions",
+    "description": "Tangible proof of our software engineering capability in delivering mission-critical platforms, distributed cloud architectures, and high-impact applications.",
+    "cta_view_project": "Architecture Specs",
+    "cta_discuss": "Build Similar System",
+    "cases": {
+      "erp": {
+        "tag": "ENTERPRISE ERP & SUPPLY CHAIN",
+        "title": "NexusERP — Integrated Supply Chain & Warehouse System",
+        "description": "Modernization of multi-warehouse ERP systems for national manufacturing and distribution enterprise. Replaced manual paperwork with real-time inventory telemetry, automated audit trails, and data-driven procurement forecasting.",
+        "metric_value": "+320%",
+        "metric_label": "Order Processing Efficiency",
+        "metrics": [
+          { "val": "100%", "label": "Multi-Warehouse Stock Accuracy" },
+          { "val": "3.2x", "label": "Throughput Escalation" },
+          { "val": "<120ms", "label": "ERP Query Latency" }
+        ],
+        "highlights": [
+          "Multi-tenant database architecture with auto-partitioning",
+          "Role-Based Access Control (RBAC) & encrypted data masking",
+          "Industrial barcode & QR scanner telemetry integration",
+          "Executive analytics dashboard with auto-reconciliation"
+        ]
+      },
+      "logistics": {
+        "tag": "LOGISTICS & FLEET MOBILE PLATFORM",
+        "title": "FleetMotion — Real-Time Fleet & Logistics Telemetry Platform",
+        "description": "Driver mobile application and centralized command dispatch to monitor thousands of couriers simultaneously with sub-second GPS tracking, dynamic routing algorithms, and offline-first data sync.",
+        "metric_value": "<85ms",
+        "metric_label": "GPS Telemetry Latency",
+        "metrics": [
+          { "val": "99.98%", "label": "Peak Rush Hour Uptime" },
+          { "val": "-24%", "label": "Fuel Consumption Savings" },
+          { "val": "10k+", "label": "Simultaneous Active Couriers" }
+        ],
+        "highlights": [
+          "Offline-first synchronization on intermittent connectivity",
+          "Intelligent dynamic routing avoiding road bottlenecks",
+          "Vehicle speed telemetry & driver behavior analytics",
+          "Instant WebSocket delivery push notifications"
+        ]
+      },
+      "fintech": {
+        "tag": "FINTECH & HIGH-THROUGHPUT ENGINE",
+        "title": "PayGateway Core — Ultra High-Throughput Payment Engine",
+        "description": "Multi-thousand TPS payment aggregation engine bridging major national banks and digital wallets with real-time fraud mitigation, distributed ledger auditing, and zero-discrepancy reconciliation.",
+        "metric_value": "2,500+ TPS",
+        "metric_label": "Peak Transaction Throughput",
+        "metrics": [
+          { "val": "99.99%", "label": "Core Gateway SLA" },
+          { "val": "Zero", "label": "Reconciliation Discrepancy" },
+          { "val": "<60ms", "label": "API Response Velocity" }
+        ],
+        "highlights": [
+          "Banking-grade end-to-end payload cryptography",
+          "Real-time fraud anomaly prevention rule engine",
+          "Automated daily multi-account clearing & settlement",
+          "Isolated microservices with zero-downtime failover"
+        ]
+      }
+    }
+  },
+  "testimonials": {
+    "kicker": "CLIENT TRUST & IMPACT",
+    "title_prefix": "Trusted by Technology &",
+    "title_highlight": "Business Leaders",
+    "description": "Long-term client partnerships grounded in engineering rigor, punctuality, and uncompromising software craftsmanship.",
+    "items": [
+      {
+        "quote": "Tehnonusa revolutionized our distribution infrastructure. From chronic delays and stock inaccuracies, now thousands of warehouse transactions run smoothly in real time with 100% uptime.",
+        "name": "Budi Santoso",
+        "role": "VP of Technology",
+        "company": "PT Logistik Prima Nusantara",
+        "metric": "+300% Operational Velocity"
+      },
+      {
+        "quote": "The architectural elegance and API documentation they delivered met global corporate standards. The Tehnonusa team proactively understood our business domain from day one.",
+        "name": "Diana Prasetyo",
+        "role": "Chief Digital Officer",
+        "company": "PT Finansial Sinergi Abadi",
+        "metric": "99.99% Production Uptime"
+      },
+      {
+        "quote": "Our field mobile app was deployed on schedule with silky-smooth performance even across remote areas with weak cellular reception. Their post-launch engineering support is stellar.",
+        "name": "Rian Hendrawan",
+        "role": "Head of Operations",
+        "company": "PT Trans Mandiri Ekspres",
+        "metric": "100k+ Active Users"
+      }
+    ]
+  },
+  "faq": {
+    "kicker": "FREQUENTLY ASKED QUESTIONS",
+    "title_prefix": "Frequently Asked",
+    "title_highlight": "Questions",
+    "description": "Transparent clarity regarding intellectual property ownership, development timelines, cost estimation, and our software engineering standards.",
+    "items": [
+      {
+        "question": "How is intellectual property (IP) and source code ownership handled?",
+        "answer": "100% of all source code, Git repositories, and architecture assets are fully transferred to your company upon milestone completion with zero royalty fees and no vendor lock-in."
+      },
+      {
+        "question": "What is the typical timeframe for developing an enterprise system or app?",
+        "answer": "Timeline depends on scope. Focused MVPs or targeted operational modules are typically delivered in 4–8 weeks. For complex enterprise ecosystems, we work in disciplined 2-week Agile sprints."
+      },
+      {
+        "question": "Does PT Tehnonusa provide post-launch warranties and SLA support?",
+        "answer": "Yes. Every delivery is covered by our comprehensive bug-free warranty and system availability SLA guarantees, alongside continuous security monitoring and backups."
+      },
+      {
+        "question": "How do you calculate project investment and pricing?",
+        "answer": "Costs are calculated transparently according to architectural requirements, functional modules, and target deployment schedule. We provide complimentary technical architecture consultations."
+      },
+      {
+        "question": "Can the new platform integrate with our existing legacy enterprise systems?",
+        "answer": "Absolutely. Our engineers specialize in database migration, custom API middleware bridges, and legacy modernization, allowing seamless data flow without halting day-to-day operations."
+      }
+    ]
+  },
+  "cta": {
+    "kicker": "LET'S BUILD TOGETHER",
+    "title_prefix": "Ready to Engineer Your",
+    "title_highlight": "Digital Solution?",
+    "description": "Discuss your technical vision with our software engineering team. We provide complimentary architecture consultations and design the optimal technical roadmap for your business.",
+    "button_consult": "Schedule Free Architecture Call",
+    "button_wa": "Message via WhatsApp",
+    "modal_title": "Digital Solution Consultation",
+    "modal_subtitle": "Describe your system requirements. Our engineering team will analyze and respond within 1 business day.",
+    "form_name": "Full Name",
+    "form_company": "Company / Organization",
+    "form_email": "Corporate Email",
+    "form_phone": "WhatsApp Number",
+    "form_service": "Target Service",
+    "form_service_options": [
+      "Enterprise Web Systems",
+      "Mobile Applications (iOS/Android)",
+      "Custom Software & Cloud",
+      "Digital Transformation & API",
+      "System Architecture Consulting"
+    ],
+    "form_message": "Brief summary of your system challenges or technical requirements...",
+    "form_submit": "Submit Consultation Request",
+    "form_submitting": "Submitting Request...",
+    "form_success_title": "Consultation Request Received!",
+    "form_success_desc": "Thank you for reaching out. Our software architects will contact you promptly via WhatsApp or Email.",
+    "form_close": "Close"
+  },
+  "footer": {
+    "about": "PT Tehnonusa Prima Solusi is a premier software engineering and digital transformation provider, designing resilient enterprise web platforms, mobile apps, and scalable cloud systems.",
+    "quick_links": "Navigation",
+    "services_title": "Core Services",
+    "contact_title": "Official Contact",
+    "rights": "All Rights Reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "made_with": "Engineered with modern software standards"
+  },
   "contact": {
     "address_label": "Office Address",
     "address": "Jl. Bima II Blok CF 5 No. 5 Villa Pamulang, Tangerang Selatan",
