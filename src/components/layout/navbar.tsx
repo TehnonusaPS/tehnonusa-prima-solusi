@@ -52,13 +52,15 @@ export function Navbar({ className }: NavbarProps) {
     [tNav]
   );
 
+  const hasBackdrop = isScrolled || mobileMenuOpen;
+
   return (
     <header
       className={cn(
         "sticky top-0 z-50 w-full transition-all duration-300",
-        isScrolled
+        hasBackdrop
           ? "bg-background/85 backdrop-blur-md border-b border-border shadow-xs"
-          : "bg-background/50 backdrop-blur-xs border-b border-transparent",
+          : "bg-transparent border-b border-transparent shadow-none",
         className
       )}
     >
@@ -76,7 +78,12 @@ export function Navbar({ className }: NavbarProps) {
           >
             <SlideTabs
               tabs={desktopTabs}
-              className="py-1 px-1.5 border-border/60 bg-surface/80"
+              className={cn(
+                "py-1 px-1.5 transition-all duration-300",
+                isScrolled
+                  ? "border border-border/60 bg-surface/80 backdrop-blur-md shadow-2xs"
+                  : "border border-transparent bg-transparent shadow-none"
+              )}
             />
           </nav>
 
