@@ -16,9 +16,9 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { CircleHighlight } from "@/components/ui/draw-circle-text";
 import { AIGradientBorder } from "@/components/ui/ai-gradient-card";
+import { SpotlightButton } from "@/components/ui/creative-buttons";
 import { TechBackground } from "@/components/ui/tech-background";
 import { cn } from "@/lib/utils";
 
@@ -282,16 +282,13 @@ export function ServicesSection({ className }: ServicesSectionProps) {
             </p>
           </div>
 
-          <Button
-            size="lg"
-            variant="default"
+          <SpotlightButton
             onClick={scrollToContact}
-            className="w-full sm:w-auto shrink-0 font-sans font-semibold shadow-md shadow-primary/20"
-            leftIcon={<MessageSquare className="w-4 h-4" />}
-            rightIcon={<ArrowUpRight className="w-4 h-4" />}
+            className="w-full sm:w-auto shrink-0 shadow-md hover:shadow-lg"
           >
-            {tServices("cta_banner_button")}
-          </Button>
+            <span>{tServices("cta_banner_button")}</span>
+            <ArrowUpRight className="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300" />
+          </SpotlightButton>
         </div>
       </motion.div>
       </Container>

@@ -113,10 +113,12 @@ export const EncryptButton: React.FC<EncryptButtonProps> = ({
 
 export interface SpotlightButtonProps extends HTMLMotionProps<"button"> {
   children?: React.ReactNode;
+  variant?: "surface" | "primary";
 }
 
 export const SpotlightButton: React.FC<SpotlightButtonProps> = ({
   children = "Hover me",
+  variant = "surface",
   className,
   ...props
 }) => {
@@ -163,15 +165,17 @@ export const SpotlightButton: React.FC<SpotlightButtonProps> = ({
     };
   }, []);
 
+  const isPrimary = variant === "primary";
+
   return (
     <motion.button
       whileTap={{ scale: 0.985 }}
       ref={btnRef}
       className={cn(
-        // Light mode: Inverted from dark mode (clean white background, bold slate-950 text, soft elevation)
-        "group relative overflow-hidden rounded-(--radius-md) bg-white px-7 py-3.5 font-sans text-sm font-semibold text-slate-950 shadow-sm shadow-slate-200/80 border border-slate-300/80 hover:border-primary/50 hover:shadow-md transition-all duration-300 cursor-pointer select-none",
-        // Dark mode: Sleek dark CTA with dark border and primary glow
-        "dark:bg-slate-950 dark:border-slate-800 dark:text-white dark:shadow-none dark:hover:bg-slate-900",
+        "group relative overflow-hidden rounded-(--radius-md) px-7 py-3.5 font-sans text-sm font-semibold transition-all duration-300 cursor-pointer select-none",
+        isPrimary
+          ? "bg-primary text-white shadow-md shadow-primary/25 border border-primary/40 hover:bg-primary-dark dark:bg-primary dark:text-slate-950 dark:border-primary-light/40 dark:shadow-md dark:shadow-primary/20 dark:hover:bg-primary-light"
+          : "bg-white text-slate-950 shadow-sm shadow-slate-200/80 border border-slate-300/80 hover:border-primary/50 hover:shadow-md dark:bg-slate-950 dark:border-slate-800 dark:text-white dark:shadow-none dark:hover:bg-slate-900",
         className
       )}
       {...props}
@@ -179,10 +183,15 @@ export const SpotlightButton: React.FC<SpotlightButtonProps> = ({
       <span className="pointer-events-none relative z-10 inline-flex items-center justify-center gap-2">
         {children}
       </span>
-      {/* Light mode: primary blue spotlight; Dark mode: primary blue spotlight (calibrated size) */}
+      {/* Radial Spotlight Tracking Aura */}
       <span
         ref={spanRef}
-        className="pointer-events-none absolute left-1/2 top-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/25 dark:bg-primary/80 blur-xs opacity-0"
+        className={cn(
+          "pointer-events-none absolute left-1/2 top-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-full blur-xs opacity-0",
+          isPrimary
+            ? "bg-white/35 dark:bg-white/40"
+            : "bg-primary/25 dark:bg-primary/80"
+        )}
       />
     </motion.button>
   );
