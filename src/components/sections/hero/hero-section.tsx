@@ -30,6 +30,18 @@ const Stars = dynamic(
   { ssr: false }
 );
 
+const AmbientStars = React.memo(function AmbientStars() {
+  return (
+    <div className="hidden dark:block absolute inset-0 opacity-40 pointer-events-none">
+      <React.Suspense fallback={null}>
+        <Canvas camera={{ position: [0, 0, 1] }}>
+          <Stars radius={50} count={1200} factor={3} fade speed={1} />
+        </Canvas>
+      </React.Suspense>
+    </div>
+  );
+});
+
 const emptySubscribe = () => () => {};
 
 export interface HeroSectionProps {
@@ -65,15 +77,7 @@ export function HeroSection({ className }: HeroSectionProps) {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[550px] bg-gradient-to-b from-primary/20 via-primary/5 to-transparent blur-3xl opacity-75 dark:opacity-40" />
 
         {/* Ambient Dark-Mode 3D Stars Canvas */}
-        {mounted && (
-          <div className="hidden dark:block absolute inset-0 opacity-40">
-            <React.Suspense fallback={null}>
-              <Canvas camera={{ position: [0, 0, 1] }}>
-                <Stars radius={50} count={1200} factor={3} fade speed={1} />
-              </Canvas>
-            </React.Suspense>
-          </div>
-        )}
+        {mounted && <AmbientStars />}
 
         {/* Subtle Film Grain Noise Texture (low opacity, non-intrusive) */}
         <FuzzyOverlay opacity={0.03} />
