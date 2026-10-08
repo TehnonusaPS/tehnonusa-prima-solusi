@@ -57,7 +57,7 @@ export function HeroSection({ className }: HeroSectionProps) {
   return (
     <section
       className={cn(
-        "relative overflow-hidden pt-12 pb-20 sm:pt-20 sm:pb-32 lg:pt-28 lg:pb-36 border-b border-border/40",
+        "relative overflow-hidden pt-24 pb-20 sm:pt-32 sm:pb-32 lg:pt-40 lg:pb-36 border-b border-border/40",
         className
       )}
     >
