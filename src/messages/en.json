@@ -34,5 +34,13 @@
   "ui": {
     "open_menu": "Open Menu",
     "close_menu": "Close Menu"
+  },
+  "contact": {
+    "address_label": "Office Address",
+    "address": "Jl. Bima II Blok CF 5 No. 5 Villa Pamulang, Tangerang Selatan",
+    "phone_label": "Phone / WhatsApp",
+    "phone": "+62 813-1902-7707",
+    "email_label": "Email",
+    "email": "contact@tehnonusa.com"
   }
 }

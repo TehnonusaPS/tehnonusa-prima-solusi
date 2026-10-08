@@ -26,6 +26,20 @@ Landing page harus terasa seperti website perusahaan teknologi modern: **profess
 
 Website bukan sekadar "company profile". Tujuannya adalah mengubah visitor menjadi calon client.
 
+### 1.1 Data & Kontak Resmi Perusahaan
+
+Gunakan data resmi berikut di seluruh komponen (Navbar, Contact, Footer, Meta, Schema Org):
+
+- **Nama Resmi:** PT. Tehnonusa Prima Solusi
+- **Alamat Kantor:** `Jl. Bima II Blok CF 5 No. 5 Villa Pamulang, Tangerang Selatan`
+- **Telepon / WhatsApp:** `+62 813-1902-7707`
+- **Email:** `contact@tehnonusa.com` (placeholder resmi)
+- **Social Media (Dummy / Placeholder UI):**
+  - LinkedIn: `https://linkedin.com/company/tehnonusa-prima-solusi`
+  - GitHub: `https://github.com/tehnonusa`
+  - Instagram: `https://instagram.com/tehnonusa`
+  - WhatsApp Direct: `https://wa.me/6281319027707`
+
 ### Target impression
 
 Visitor harus mendapatkan kesan:
@@ -418,24 +432,40 @@ Namun jangan membuat abstraction yang terlalu rumit.
 
 ---
 
-# 9. Visual Assets & AI Generated Images
+# 9. Visual Assets & AI Generated Images Strategy
 
-Pada tahap awal, aset visual telah disiapkan secara mandiri menggunakan AI Image Generation (gaya modern high-tech enterprise, abstrak tanpa manusia) dan tersimpan di direktori lokal project:
+### 9.1 Kebijakan Aset Visual: Dummy / Placeholder vs AI Generation
+
+Dalam pengembangan landing page ini, visual memegang peranan krusial untuk menciptakan impresi *high-tech enterprise*. Kebijakan penggunaan gambar:
+
+1. **Placeholder / Dummy Frame Terlebih Dahulu:**
+   - Jika suatu section memerlukan ilustrasi/mockup yang belum final, gunakan **placeholder dummy yang rapi atau wireframe kosongan** terlebih dahulu (misal: subtle tinted glass container dengan icon representatif).
+   - Hindari memasang sembarang gambar dari internet yang tidak berizin atau broken link.
+
+2. **AI-Generated Imagery Sesuai Kriteria Khusus:**
+   Jika memerlukan gambar visual, generate menggunakan tool AI dengan panduan ketat:
+   - **Gaya Visual:** Modern, berkelas, ultra-sleek, clean, atmosfer teknologi enterprise (nuansa dark sapphire, electric cyan, deep navy, prisma cahaya halus).
+   - **Relevansi Industri:** Merepresentasikan rekayasa perangkat lunak, sistem komputasi terdistribusi, data core, arsitektur cloud, dan transformasi digital.
+   - **MUTLAK TANPA MANUSIA:** Tidak boleh menampilkan figur, wajah, atau siluet manusia. Fokus 100% pada elemen teknologi abstrak, node interkoneksi, sirkuit isometrik, fiber optik, dan kubus data 3D.
+   - **Random & Bebas Asal Harmonis:** Tema spesifik visual boleh acak/random selama tetap menyatu (*cohesive*) dengan identitas visual PT Tehnonusa Prima Solusi dan enak dipandang (*aesthetically pleasing*).
+
+### 9.2 Inventori Aset AI yang Tersedia
+
+Saat ini telah disiapkan aset lokal beresolusi tinggi di direktori `public/images/`:
 
 ```text
 public/
 └── images/
-    ├── hero-tech.jpg       # Futuristic holographic computing core (Hero Section)
-    ├── systems-mesh.jpg     # Abstract enterprise systems architecture (Trust / Why Us)
-    ├── data-core.jpg        # High-tech glowing server infrastructure (Process / Architecture)
-    └── tech-grid.jpg        # Cyber matrix landscape (Portfolio / Case Studies)
+    ├── hero-tech.jpg       # Holographic computing core & glowing optic ring (Hero Section)
+    ├── systems-mesh.jpg     # Isometric enterprise architecture & network lattice (Trust / Tech Stack)
+    ├── data-core.jpg        # High-tech glowing server infrastructure & laser data paths (Process / Workflow)
+    └── tech-grid.jpg        # Cyber matrix landscape & abstract isometric grid (Portfolio / Case Studies)
 ```
 
-Aturan penggunaan aset:
-- Jangan menggunakan URL random internet yang tidak stabil.
-- Prioritaskan aset lokal yang sudah di-generate di `public/images/`.
-- Gambar bersifat non-intrusif, elegan, berestetika teknologi modern (deep blue, cyan glow, dark sleek atmosphere).
-- Komponen visual siap menerima penggantian aset resmi saat brand guideline final tersedia.
+Aturan teknis implementasi gambar di komponen:
+- Gunakan Next.js `<Image />` dengan properti `priority` untuk LCP (seperti hero image) dan `loading="lazy"` untuk section berikutnya.
+- Berikan rasio aspek yang konsisten dan fallback placeholder blur / background skeleton.
+- Seluruh komponen visual siap menerima aset resmi saat branding final perusahaan diluncurkan.
 
 ---
 
@@ -1032,24 +1062,29 @@ What needs to be fixed:
 
 # 17. COMPONENT HARMONY MAP & TASK ROADMAP
 
-> **Prinsip Harmonisasi UI/UX:**
-> Gunakan komponen visual secara proporsional. Jangan menumpuk semua efek di satu tempat. Setiap section memiliki fokus peran psikologisnya masing-masing agar website terasa premium, kredibel, dan modern tanpa terasa norak atau berat. Komponen yang tidak relevan di suatu section **tidak perlu dipaksakan**.
+> **Prinsip Utama Harmonisasi & Seleksi Komponen UI/UX:**
+> 1. **Gunakan yang Terpakai, Jangan Paksakan yang Tidak Perlu:**  
+>    Semua komponen di `src/components/ui/` adalah *modular building blocks*. Gunakan komponen **hanya jika** memiliki fungsi nyata, memperjelas informasi, atau meningkatkan interaksi visitor. Jika suatu komponen dirasa berlebihan (*overkill*), mengalihkan perhatian dari pesan bisnis, atau membuat layout sesak, **tidak perlu digunakan**.
+> 2. **Kebebasan Modifikasi Komponen demi Konsistensi & Harmoni:**  
+>    Komponen yang sudah ada **boleh dan dianjurkan untuk dirubah** (styling, warna semantic token, ukuran, prop, animasi, layout) agar menyatu secara harmonis dengan komponen lainnya. Tujuannya adalah kesatuan estetika (*visual coherence*) dan konsistensi UI/UX kelas dunia untuk perusahaan teknologi modern.
+> 3. **Strategi Aset Visual (Dummy / Placeholder vs AI High-Tech):**  
+>    Gunakan placeholder frame / dummy kosongan terlebih dahulu jika aset belum siap. Jika memerlukan ilustrasi visual, gunakan AI Image Generation bergaya modern enterprise tech abstrak (tanpa figur manusia, estetik, dan enak dipandang).
 
 ---
 
 ### Peta Penempatan Komponen (UI/UX Harmony Matrix)
 
-| Section / Bagian | Komponen Utama | Komponen Pendukung / Interaksi | Aset Visual AI Lokal |
-| :--- | :--- | :--- | :--- |
-| **0. Global Shell & Nav** | `Navbar`, `ShiftingDropDown` | `SlideTabs`, `SliderToggle`, `LanguageSwitcher`, `AnimatedHamburgerButton` | — |
-| **1. Hero Section** | `CircleHighlight`, `SpotlightButton` / `EncryptButton` | `AuroraHero` (ambient glow) / `FuzzyOverlay` (lo-fi depth) | `public/images/hero-tech.jpg` |
-| **2. Services (Layanan)** | `SectionHeading`, `Card` (interactive) | `AIGradientBorder` (highlight card), `StaggerContainer` | — |
-| **3. Trust & Tech Stack** | `DivOrigami` (`LogoRolodex`) | `ParticleRing` (3D interactive mesh drag & zoom) | `public/images/systems-mesh.jpg` |
-| **4. Process & Workflow** | `SlideTabs` (step tabs) | `FadeIn`, `SlideUp` motion primitives | `public/images/data-core.jpg` |
-| **5. Portfolio / Projects** | `TextParallaxContent` | `MouseImageTrail` (interactive cursor showcase) | `public/images/tech-grid.jpg` |
-| **6. FAQ & Support** | `BlockInTextCard` (`Typewrite`) | Accordion / FAQ clean list | — |
-| **7. Conversion CTA** | `AIGradientAnimationCard` | `SpringModal` (inquiry popup), `EncryptButton` | — |
-| **8. Footer** | `RevealLinks` (`FlipLink`) | Legal copyright, brand identity, clean links | — |
+| Section / Bagian | Komponen Utama | Komponen Pendukung (Gunakan Jika Cocok) | Catatan Modifikasi & Harmonisasi UI/UX | Aset Visual |
+| :--- | :--- | :--- | :--- | :--- |
+| **0. Global Shell & Nav** | `Navbar`, `ShiftingDropDown` | `SlideTabs`, `SliderToggle`, `LanguageSwitcher`, `AnimatedHamburgerButton` | Sesuaikan transisi dropdown & ukuran pill agar ringkas dan tidak menutupi konten penting. | Logo brand Tehnonusa |
+| **1. Hero Section** | `CircleHighlight`, `SpotlightButton` / `EncryptButton` | `AuroraHero` (ambient glow lembut) / `FuzzyOverlay` (tekstur film grain) | Modifikasi intensitas glow agar teks headline tetap memiliki kontras tinggi dan mudah dibaca. | `public/images/hero-tech.jpg` |
+| **2. Services (Layanan)** | `SectionHeading`, `Card` (interactive) | `AIGradientBorder` (hanya pada kartu featured), `StaggerContainer` | Jaga keseragaman grid kartu; efek border gradient hanya untuk aksen pembeda. | Dummy icon / tech badges |
+| **3. Trust & Tech Stack** | `DivOrigami` (`LogoRolodex`) | `ParticleRing` (3D interactive drag/zoom jika relevan) | Sederhanakan rotasi agar tidak pusing; padukan dengan metrik uptime & SLA enterprise. | `public/images/systems-mesh.jpg` |
+| **4. Process & Workflow** | `SlideTabs` (navigasi fase kerja) | `FadeIn`, `SlideUp` motion primitives | Sesuaikan warna active tab pill dengan `--primary` agar konsisten. | `public/images/data-core.jpg` |
+| **5. Portfolio / Projects** | `TextParallaxContent` | `MouseImageTrail` (interaktif cursor showcase jika cocok) | Jaga agar efek parallax tetap smooth di mobile atau fallback ke grid kartu jika diperlukan. | `public/images/tech-grid.jpg` |
+| **6. FAQ & Support** | `BlockInTextCard` (`Typewrite`) | Accordion / FAQ clean list | Teks animasi disesuaikan dengan pertanyaan seputar project software & SLA. | Dummy frame / Glass card |
+| **7. Conversion CTA** | `AIGradientAnimationCard` | `SpringModal` (pop-up form konsultasi cepat), `EncryptButton` | Kontras tinggi; pemicu langsung aksi konsultasi & inquiry klien. | Glassmorphism backdrop |
+| **8. Footer** | `RevealLinks` (`FlipLink`), Info Kontak Resmi | Alamat kantor resmi, Telepon/WA, Media sosial dummy | Wajib memuat alamat lengkap Villa Pamulang & No HP resmi dengan layout elegan. | Clean typography & icons |
 
 ---
 
@@ -1102,7 +1137,7 @@ What needs to be fixed:
   2. **High-Performance Mobile Apps** (Aplikasi bisnis native/cross-platform).
   3. **Custom Software & Cloud Architecture** (Sistem kustom spesifik industri).
   4. **Digital Transformation & API Integration** (Payment gateway, third-party connectors, otomatisasi).
-- Komponen: `Card` interaktif dengan aksen `AIGradientBorder` pada layanan unggulan.
+- Komponen: `Card` interaktif dengan aksen `AIGradientBorder` pada layanan unggulan (ubah styling border & glow agar selaras dengan palet tema).
 
 ---
 
@@ -1110,9 +1145,9 @@ What needs to be fixed:
 
 **Fokus:** Memberikan keyakinan bahwa PT Tehnonusa Prima Solusi adalah mitra teknologi yang kompeten.
 - Metrik bisnis realistis (SLA 99.9%, clean code architecture, keamanan data enterprise).
-- Komponen 3D / Interaktif:
+- Komponen Interaktif:
   - `DivOrigami` (`LogoRolodex`) untuk menampilkan pilar teknologi (Next.js, TypeScript, Cloud Infrastructure, Scalable DB, Security, Microservices).
-  - Integrasi modular `ParticleRing` (3D mesh teknologi yang dapat di-drag & zoom oleh visitor) atau visual `public/images/systems-mesh.jpg`.
+  - Integrasi modular `ParticleRing` (3D mesh teknologi yang dapat di-drag & zoom oleh visitor) atau visual `public/images/systems-mesh.jpg`. Gunakan yang paling harmonis; jangan membebani performa browser jika aset gambar lebih efisien.
 
 ---
 
@@ -1120,8 +1155,8 @@ What needs to be fixed:
 
 **Fokus:** Menunjukkan transparansi metodologi rekayasa software.
 - Tahapan jelas: *Discovery & Consultation → Solution Architecture → UI/UX Prototyping → Agile Development → Rigorous QA & Testing → Deployment & SLA Support*.
-- Integrasi `SlideTabs` untuk berpindah antar fase alur kerja secara interaktif.
-- Visual backdrop: `public/images/data-core.jpg`.
+- Integrasi `SlideTabs` untuk berpindah antar fase alur kerja secara interaktif (sesuaikan warna pill seleksi).
+- Visual backdrop: `public/images/data-core.jpg` atau placeholder wireframe yang rapi.
 
 ---
 
@@ -1130,7 +1165,7 @@ What needs to be fixed:
 **Fokus:** Membuktikan kemampuan tim melalui showcase proyek representatif.
 - Menggunakan `TextParallaxContent` untuk storytelling studi kasus utama (gambar sticky scaling + floating typography).
 - Atau `MouseImageTrail` untuk interaksi visual showcase yang dinamis dan berkelas.
-- Visual asset: `public/images/tech-grid.jpg` dan mockups sistem.
+- Visual asset: `public/images/tech-grid.jpg` dan mockups sistem (dummy screens/wireframes).
 
 ---
 
@@ -1144,9 +1179,17 @@ What needs to be fixed:
 
 ## TASK 09 — Conversion CTA & Footer
 
-**Fokus:** Menutup landing page dengan konversi tinggi dan branding yang membekas.
+**Fokus:** Menutup landing page dengan konversi tinggi, kredibilitas legal, dan informasi kontak resmi yang jelas.
 - **Conversion CTA:** Banner penutup dengan `AIGradientAnimationCard`, tombol aksi pemicu `SpringModal` (pop-up konsultasi cepat).
-- **Footer:** Kinetic typography `RevealLinks` (`FlipLink`) untuk tautan navigasi dan media sosial perusahaan, informasi PT resmi, hak cipta, dan kepatuhan privasi.
+- **Footer Komprehensif & Berwibawa:**
+  - **Identitas:** PT. Tehnonusa Prima Solusi & deskripsi singkat solusi digital.
+  - **Informasi Kontak Resmi:**
+    - Alamat: `Jl. Bima II Blok CF 5 No. 5 Villa Pamulang, Tangerang Selatan`
+    - Telepon / WhatsApp: `+62 813-1902-7707`
+    - Email: `contact@tehnonusa.com`
+  - **Social Media (Dummy/Placeholder Elegan):** LinkedIn, GitHub, Instagram, WhatsApp Direct.
+  - **Navigasi Cepat:** Kinetic typography `RevealLinks` (`FlipLink`) jika cocok secara estetika, atau tautan footer modern yang rapi.
+  - **Legalitas & Hak Cipta:** Hak Cipta & Kebijakan Privasi standar enterprise.
 
 ---
 
@@ -1304,6 +1347,34 @@ sesuai kebutuhan task.
 
 ---
 
+### Rule 11 — Selektivitas Komponen & Harmoni Desain
+
+Library komponen di `src/components/ui/` adalah penyedia opsi interaksi:
+- Gunakan komponen **jika memang terpakai** dan menambah kenyamanan pengguna atau kejelasan informasi.
+- Jika suatu komponen tidak terpakai atau berpotensi merusak keselarasan layout, **tak perlu dipaksakan**.
+- Jika perlu **merubah komponen yang ada**, lakukan penyesuaian (warna token, ukuran font, padding, timing animasi) agar seluruh section **selaras, harmonis, dan konsisten secara UI/UX**.
+
+---
+
+### Rule 12 — Kebijakan Aset Visual & AI Image Generation
+
+- Sisipkan gambar **dummy atau kosongan terlebih dahulu** saat layouting jika gambar final belum tersedia.
+- Jika memerlukan gambar visual, generate menggunakan **AI Image Generation**:
+  - Konsep gambar boleh bebas/acak asalkan **modern, keren, dan sesuai dengan identitas project software & teknologi enterprise**.
+  - **MUTLAK TANPA FIGUR MANUSIA** (fokus pada arsitektur sistem abstrak, sirkuit isometrik, laser data core, dan cyber mesh).
+  - Gambar harus berestetika tinggi dan enak dilihat.
+
+---
+
+### Rule 13 — Konsistensi Data Kontak Resmi
+
+Wajib menggunakan data kontak resmi yang telah diverifikasi:
+- **Alamat:** `Jl. Bima II Blok CF 5 No. 5 Villa Pamulang, Tangerang Selatan`
+- **Telepon / WhatsApp:** `+62 813-1902-7707`
+- **Email & Media Sosial:** Gunakan data terpusat di `src/config/site.ts` dan dictionary `messages/`.
+
+---
+
 # 19. DEVELOPMENT PHILOSOPHY
 
 Gunakan pendekatan:
@@ -1348,6 +1419,10 @@ Hasil akhir harus terasa seperti website perusahaan teknologi modern yang:
 - memiliki animation yang tasteful
 - siap dikembangkan menjadi website production
 
-**Mulai sekarang hanya kerjakan TASK 01.**
+---
 
-Jangan lanjut ke TASK 02 sebelum user memberikan instruksi berikutnya.
+**Status Saat Ini:**
+- **TASK 01 (Project Init):** COMPLETED ✅
+- **TASK 02 (Design System & UI Foundation):** COMPLETED ✅
+- **NEXT UP:** **TASK 03 — Navbar + Hero Section 🚀** (Menunggu konfirmasi user untuk memulai).
+
