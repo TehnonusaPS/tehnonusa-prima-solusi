@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "lenis/dist/lenis.css";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ============================================================
    DESIGN TOKEN FOUNDATION — PT Tehnonusa Prima Solusi
    All colors are defined here. Never hardcode brand colors in components.

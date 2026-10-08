@@ -10,7 +10,6 @@ import {
   Cpu,
   Zap,
   ArrowUpRight,
-  Sparkles,
   Terminal,
 } from "lucide-react";
 import { Container } from "@/components/ui/container";
@@ -160,7 +159,6 @@ export function HeroSection({ className }: HeroSectionProps) {
               onClick={() => scrollToSection("#contact")}
               className="hidden sm:inline-flex items-center justify-center w-full sm:w-auto px-7 py-3.5 rounded-(--radius-md) font-sans font-semibold text-sm shadow-md"
             >
-              <Sparkles className="w-4 h-4 shrink-0" />
               <span>{tHero("cta_primary")}</span>
             </SpotlightButton>
 

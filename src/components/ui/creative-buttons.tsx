@@ -132,18 +132,33 @@ export const SpotlightButton: React.FC<SpotlightButtonProps> = ({
       const rect = btn.getBoundingClientRect();
       const offset = e.clientX - rect.left;
       const left = `${(offset / rect.width) * 100}%`;
-      span.animate({ left }, { duration: 250, fill: "forwards" });
+      span.animate(
+        { left, opacity: 0.9 },
+        { duration: 250, fill: "forwards" }
+      );
+    };
+
+    const handleMouseEnter = () => {
+      span.animate(
+        { opacity: 0.9 },
+        { duration: 150, fill: "forwards" }
+      );
     };
 
     const handleMouseLeave = () => {
-      span.animate({ left: "50%" }, { duration: 150, fill: "forwards" });
+      span.animate(
+        { left: "50%", opacity: 0 },
+        { duration: 200, fill: "forwards" }
+      );
     };
 
     btn.addEventListener("mousemove", handleMouseMove);
+    btn.addEventListener("mouseenter", handleMouseEnter);
     btn.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
       btn.removeEventListener("mousemove", handleMouseMove);
+      btn.removeEventListener("mouseenter", handleMouseEnter);
       btn.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
@@ -153,17 +168,17 @@ export const SpotlightButton: React.FC<SpotlightButtonProps> = ({
       whileTap={{ scale: 0.985 }}
       ref={btnRef}
       className={cn(
-        "relative overflow-hidden rounded-(--radius-md) bg-slate-950 px-6 py-3.5 font-sans font-semibold text-white shadow-md border border-slate-800 transition-colors cursor-pointer select-none",
+        "group relative overflow-hidden rounded-(--radius-md) bg-slate-950 px-6 py-3.5 font-sans font-semibold text-white shadow-md border border-slate-800/90 transition-colors cursor-pointer select-none dark:bg-slate-900 dark:border-slate-800",
         className
       )}
       {...props}
     >
-      <span className="pointer-events-none relative z-10 mix-blend-difference inline-flex items-center justify-center gap-2">
+      <span className="pointer-events-none relative z-10 inline-flex items-center justify-center gap-2">
         {children}
       </span>
       <span
         ref={spanRef}
-        className="pointer-events-none absolute left-1/2 top-1/2 h-36 w-36 -translate-x-1/2 -translate-y-1/2 rounded-full bg-slate-100"
+        className="pointer-events-none absolute left-1/2 top-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary blur-xs opacity-0"
       />
     </motion.button>
   );
@@ -220,7 +235,7 @@ export const DrawOutlineButton: React.FC<DrawOutlineButtonProps> = ({
         onBlur?.(e);
       }}
       className={cn(
-        "group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-(--radius-md) border border-border/80 bg-surface/80 px-6 py-3.5 font-sans text-sm font-semibold text-foreground backdrop-blur-xs transition-colors duration-300 hover:text-primary hover:bg-surface-elevated active:scale-[0.985] dark:border-slate-800 dark:bg-slate-900/60 dark:hover:bg-slate-800/80 cursor-pointer select-none",
+        "group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-(--radius-md) border border-border/80 bg-white/95 px-6 py-3.5 font-sans text-sm font-semibold text-foreground backdrop-blur-xs transition-colors duration-300 hover:text-primary hover:bg-slate-50 active:scale-[0.985] dark:border-slate-800 dark:bg-slate-900/80 dark:text-slate-100 dark:hover:bg-slate-800/80 dark:hover:text-primary cursor-pointer select-none shadow-2xs",
         className
       )}
       {...props}
