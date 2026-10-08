@@ -36,18 +36,18 @@ export const AIGradientBorder: React.FC<AIGradientBorderProps> = ({
   const gradient = useMotionTemplate`conic-gradient(from ${turn}turn, transparent 0%, #f472b600 5%, #f472b6 10%, #c084fc 18%, #818cf8 26%, #38bdf8 34%, #2dd4bf 42%, #fbbf24 46%, #fbbf2400 52%, transparent 56%)`;
 
   return (
-    <div className={cn("relative p-px rounded-3xl", className)}>
+    <div className={cn("relative p-px rounded-2xl group/gradient h-full flex flex-col", className)}>
       <motion.div
         style={{ backgroundImage: gradient }}
-        className="absolute inset-0 rounded-[inherit]"
+        className="absolute inset-0 rounded-[inherit] opacity-80 group-hover/gradient:opacity-100 transition-opacity duration-300"
       />
 
-      <div className="relative rounded-[inherit] overflow-hidden">
-        <div className="relative z-10">{children}</div>
+      <div className="relative rounded-[calc(1rem-1px)] overflow-hidden h-full flex flex-col z-10 bg-surface/95">
+        <div className="relative z-10 h-full flex flex-col">{children}</div>
 
         <motion.div
           style={{ backgroundImage: gradient }}
-          className="ai-glow-spill-mask opacity-70 blur-2xl pointer-events-none absolute inset-[-40%] z-0 overflow-hidden"
+          className="ai-glow-spill-mask opacity-30 group-hover/gradient:opacity-65 blur-2xl pointer-events-none absolute inset-[-40%] z-0 overflow-hidden transition-opacity duration-300"
         />
       </div>
     </div>

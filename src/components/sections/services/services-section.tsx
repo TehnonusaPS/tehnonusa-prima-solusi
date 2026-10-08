@@ -17,6 +17,7 @@ import { Container } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { CircleHighlight } from "@/components/ui/draw-circle-text";
+import { AIGradientBorder } from "@/components/ui/ai-gradient-card";
 import { cn } from "@/lib/utils";
 
 export interface ServicesSectionProps {
@@ -130,88 +131,91 @@ export function ServicesSection({ className }: ServicesSectionProps) {
             );
 
             return (
-              <div
+              <AIGradientBorder
                 key={service.id}
-                className="relative flex flex-col h-full p-6 sm:p-8 rounded-2xl bg-surface/90 border border-border/80 hover:border-primary/50 transition-all duration-300 shadow-sm hover:shadow-xl group backdrop-blur-sm"
+                duration={service.isFeatured ? 4 : 5.5}
+                className="h-full rounded-2xl"
               >
-                {/* Top Row: Icon + Eyebrow Badge */}
-                <div className="flex items-center justify-between gap-4 mb-6">
-                  <div
-                    className={cn(
-                      "w-12 h-12 rounded-xl flex items-center justify-center border transition-transform duration-300 group-hover:scale-105",
-                      service.iconBg
-                    )}
-                  >
-                    <IconComponent className={cn("w-6 h-6", service.iconColor)} />
+                <div className="relative flex flex-col h-full p-6 sm:p-8 rounded-[calc(1rem-1px)] bg-surface/90 hover:bg-surface/95 transition-all duration-300 shadow-sm group backdrop-blur-sm">
+                  {/* Top Row: Icon + Eyebrow Badge */}
+                  <div className="flex items-center justify-between gap-4 mb-6">
+                    <div
+                      className={cn(
+                        "w-12 h-12 rounded-xl flex items-center justify-center border transition-transform duration-300 group-hover:scale-105",
+                        service.iconBg
+                      )}
+                    >
+                      <IconComponent className={cn("w-6 h-6", service.iconColor)} />
+                    </div>
+
+                    <Badge
+                      variant={service.isFeatured ? "default" : "surface"}
+                      size="sm"
+                      className="font-mono text-[11px] font-semibold uppercase tracking-wider"
+                    >
+                      {tServices(`${service.key}.badge`)}
+                    </Badge>
                   </div>
 
-                  <Badge
-                    variant={service.isFeatured ? "default" : "surface"}
-                    size="sm"
-                    className="font-mono text-[11px] font-semibold uppercase tracking-wider"
-                  >
-                    {tServices(`${service.key}.badge`)}
-                  </Badge>
-                </div>
+                  {/* Service Title & Tagline with aligned vertical height */}
+                  <div className="min-h-[4.5rem] mb-3">
+                    <h3 className="font-heading text-xl sm:text-2xl font-bold tracking-tight text-foreground mb-1 group-hover:text-primary transition-colors">
+                      {tServices(`${service.key}.title`)}
+                    </h3>
+                    <p className="font-sans text-xs sm:text-sm font-semibold text-primary/90">
+                      {tServices(`${service.key}.tagline`)}
+                    </p>
+                  </div>
 
-                {/* Service Title & Tagline with aligned vertical height */}
-                <div className="min-h-[4.5rem] mb-3">
-                  <h3 className="font-heading text-xl sm:text-2xl font-bold tracking-tight text-foreground mb-1 group-hover:text-primary transition-colors">
-                    {tServices(`${service.key}.title`)}
-                  </h3>
-                  <p className="font-sans text-xs sm:text-sm font-semibold text-primary/90">
-                    {tServices(`${service.key}.tagline`)}
+                  {/* Service Detailed Description with aligned height */}
+                  <p className="font-sans text-sm text-muted-foreground leading-relaxed mb-6 min-h-[4rem]">
+                    {tServices(`${service.key}.description`)}
                   </p>
-                </div>
 
-                {/* Service Detailed Description with aligned height */}
-                <p className="font-sans text-sm text-muted-foreground leading-relaxed mb-6 min-h-[4rem]">
-                  {tServices(`${service.key}.description`)}
-                </p>
-
-                {/* Key Capabilities Checklist with flex-1 to push footer down evenly */}
-                <div className="pt-5 border-t border-border/60 mb-6 flex-1 flex flex-col justify-between">
-                  <span className="font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground/80 block mb-3">
-                    Key Deliverables:
-                  </span>
-                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                    {features.map((feat, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-start gap-2 text-xs sm:text-sm text-foreground/80 font-medium"
-                      >
-                        <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                        <span>{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Tech Stack Tags & Interactive Action pinned to bottom baseline */}
-                <div className="mt-auto pt-4 border-t border-border/60 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                  {/* Technology Badges */}
-                  <div className="flex flex-wrap gap-1.5 items-center">
-                    {service.techStack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="font-mono text-[11px] px-2 py-0.5 rounded-md bg-muted text-muted-foreground font-medium"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                  {/* Key Capabilities Checklist with flex-1 to push footer down evenly */}
+                  <div className="pt-5 border-t border-border/60 mb-6 flex-1 flex flex-col justify-between">
+                    <span className="font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground/80 block mb-3">
+                      Key Deliverables:
+                    </span>
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                      {features.map((feat, idx) => (
+                        <li
+                          key={idx}
+                          className="flex items-start gap-2 text-xs sm:text-sm text-foreground/80 font-medium"
+                        >
+                          <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                          <span>{feat}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
 
-                  {/* Consult Button / Action Link */}
-                  <button
-                    type="button"
-                    onClick={scrollToContact}
-                    className="inline-flex items-center gap-1.5 font-sans text-xs sm:text-sm font-semibold text-primary hover:text-primary-dark transition-colors self-start sm:self-auto group/btn cursor-pointer shrink-0"
-                  >
-                    <span>{tServices("cta_card")}</span>
-                    <ArrowUpRight className="w-4 h-4 transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                  </button>
+                  {/* Tech Stack Tags & Interactive Action pinned to bottom baseline */}
+                  <div className="mt-auto pt-4 border-t border-border/60 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    {/* Technology Badges */}
+                    <div className="flex flex-wrap gap-1.5 items-center">
+                      {service.techStack.map((tech) => (
+                        <span
+                          key={tech}
+                          className="font-mono text-[11px] px-2 py-0.5 rounded-md bg-muted text-muted-foreground font-medium"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Consult Button / Action Link */}
+                    <button
+                      type="button"
+                      onClick={scrollToContact}
+                      className="inline-flex items-center gap-1.5 font-sans text-xs sm:text-sm font-semibold text-primary hover:text-primary-dark transition-colors self-start sm:self-auto group/btn cursor-pointer shrink-0"
+                    >
+                      <span>{tServices("cta_card")}</span>
+                      <ArrowUpRight className="w-4 h-4 transform group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                    </button>
+                  </div>
                 </div>
-              </div>
+              </AIGradientBorder>
             );
           })}
         </div>
