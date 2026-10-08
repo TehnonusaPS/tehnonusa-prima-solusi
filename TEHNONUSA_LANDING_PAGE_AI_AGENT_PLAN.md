@@ -177,17 +177,24 @@ Jangan membuat semua section pada Task 1.
 
 Website harus mendukung:
 
-### 4.1 Responsive
+### 4.1 Responsive-First & Fluid Layout Guarantee
 
-Target:
+Website dirancang dengan standar responsivitas tingkat tinggi (*viewport fluid adaptive*) dari layar terkecil (320px) hingga layar ultra-lebar (2560px+):
 
-- Mobile
-- Tablet
-- Laptop
-- Desktop
-- Large desktop
+1. **Fluid Responsive Typography System:**
+   - Tipografi menggunakan skala fluida dinamis dengan `clamp()` dan ukuran responsif Tailwind (`text-2xl sm:text-4xl lg:text-5xl xl:text-6xl`), memastikan heading dan paragraf tidak pernah terlalu besar di mobile atau kekecilan di desktop besar.
+   - Menggunakan `text-wrap: balance` pada semua heading (`<h1>` - `<h6>`) agar judul tidak patah secara canggung/aneh.
+   - Menggunakan `text-wrap: pretty` pada paragraf body agar tidak meninggalkan satu kata sendirian (*orphan word*) di akhir baris.
 
-Mobile-first.
+2. **Zero Overflow Bug Guarantee:**
+   - Dilarang keras ada horizontal scrollbar liar (*overflow-x bug*) di resolusi mana pun.
+   - `html` dan `body` dikunci dengan `overflow-x: clip; max-width: 100vw;`.
+   - Semua elemen media (`<img>`, `<video>`, `<canvas>`, `<svg>`) memiliki safeguard `max-width: 100%; height: auto;`.
+
+3. **Navbar Cohesion & Minimalist Layout Standard:**
+   - **Navigasi Tengah:** Bersih (*borderless*), tidak boleh dibungkus kotak/kapsul border mati ganda. Indikator hover cursor (spring pill) hanya muncul saat mouse menyentuh link secara halus.
+   - **Optical Height Alignment (36px):** Seluruh elemen kontrol di kanan navbar (`LanguageSwitcher`, `ThemeToggle`, `CTA Button`) wajib memiliki tinggi vertikal seragam (`h-9` / 36px), radius selaras (`rounded-full`), dan padding proporsional.
+   - **Mobile Viewport Protection:** Tombol di header mobile dilarang menggunakan widget lebar berteks (seperti slider switch teks panjang). Gunakan icon-only compact control yang elegan agar tidak mendesak logo perusahaan.
 
 ---
 

@@ -7,7 +7,7 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/ui/logo";
 import { SlideTabs } from "@/components/ui/slide-tabs";
-import { SliderToggle } from "@/components/ui/slider-toggle";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { LanguageSwitcher } from "@/components/ui/language-switcher";
 import { AnimatedHamburgerButton } from "@/components/ui/animated-hamburger";
 import { navItems } from "@/config/navigation";
@@ -67,22 +67,20 @@ export function Navbar({ className }: NavbarProps) {
           {/* Logo Brand */}
           <Logo />
 
-          {/* Desktop Navigation Links with Spring Hover Cursor */}
-          <nav className="hidden lg:block" aria-label="Main Navigation">
-            <SlideTabs
-              tabs={desktopTabs}
-              className="py-1 px-1.5 border-border/60 bg-surface/80"
-            />
+          {/* Desktop Navigation Links (Clean & Borderless with Spring Cursor) */}
+          <nav className="hidden lg:flex items-center" aria-label="Main Navigation">
+            <SlideTabs tabs={desktopTabs} />
           </nav>
 
-          {/* Desktop Actions: Language, Spring Theme Slider, CTA */}
+          {/* Desktop Actions: Harmonized 36px optical height (Language, Theme, CTA) */}
           <div className="hidden lg:flex items-center gap-2">
             <LanguageSwitcher />
-            <SliderToggle useNextThemes />
+            <ThemeToggle variant="icon" />
+            <div className="h-4 w-px bg-border/80 mx-0.5" aria-hidden="true" />
             <Button
               size="sm"
               variant="default"
-              className="ml-2 shadow-sm font-semibold"
+              className="h-9 px-4 rounded-full shadow-sm shadow-primary/25 font-sans font-semibold cursor-pointer"
               rightIcon={<Sparkles className="w-3.5 h-3.5" />}
               onClick={() => {
                 const el = document.querySelector("#contact");
@@ -93,10 +91,10 @@ export function Navbar({ className }: NavbarProps) {
             </Button>
           </div>
 
-          {/* Mobile Right Controls: Language, Theme, Morphing Hamburger */}
-          <div className="flex lg:hidden items-center gap-1.5">
+          {/* Mobile Right Controls: Language, Compact Theme, Morphing Hamburger */}
+          <div className="flex lg:hidden items-center gap-1.5 sm:gap-2">
             <LanguageSwitcher />
-            <SliderToggle useNextThemes className="p-0.5 scale-90" />
+            <ThemeToggle variant="icon" className="w-8 h-8" />
             <AnimatedHamburgerButton
               active={mobileMenuOpen}
               onToggle={setMobileMenuOpen}

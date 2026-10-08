@@ -26,7 +26,7 @@ export function ThemeToggle({ className, variant = "icon" }: ThemeToggleProps) {
       <Button
         variant="ghost"
         size="icon-sm"
-        className={cn("w-9 h-9 text-muted-foreground", className)}
+        className={cn("w-9 h-9 rounded-full border border-border/80 bg-surface/80", className)}
         aria-label="Theme toggle placeholder"
         disabled
       >
@@ -102,7 +102,10 @@ export function ThemeToggle({ className, variant = "icon" }: ThemeToggleProps) {
       variant="ghost"
       size="icon-sm"
       onClick={cycleTheme}
-      className={cn("w-9 h-9 relative transition-colors", className)}
+      className={cn(
+        "w-9 h-9 rounded-full border border-border/80 bg-surface/80 hover:bg-muted text-muted-foreground hover:text-foreground relative transition-colors shadow-2xs flex items-center justify-center cursor-pointer",
+        className
+      )}
       aria-label={`Current theme: ${theme}. Click to change theme.`}
       title={`Theme: ${theme}`}
     >

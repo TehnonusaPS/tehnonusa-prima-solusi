@@ -159,6 +159,8 @@
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    overflow-x: clip;
+    max-width: 100vw;
   }
 
   body {
@@ -170,11 +172,26 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
+    max-width: 100vw;
+    position: relative;
   }
 
+  /* Fluid Responsive Typography & Text Wrapping */
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+
+  p, li, blockquote {
+    text-wrap: pretty;
+  }
+
+  /* Media & Canvas Responsiveness Safeguards */
+  img, svg, video, canvas {
+    max-width: 100%;
+    height: auto;
   }
 
   /* Reduced motion support */
