@@ -15,9 +15,10 @@ import {
 import { Container } from "@/components/ui/container";
 import { CircleHighlight } from "@/components/ui/draw-circle-text";
 import { SpotlightButton, DrawOutlineButton } from "@/components/ui/creative-buttons";
-import { FuzzyOverlay } from "@/components/ui/fuzzy-overlay";
 import { TechBackground } from "@/components/ui/tech-background";
 import { cn } from "@/lib/utils";
+
+import { useTheme } from "next-themes";
 
 // Dynamically load client-side Three.js organic twinkling stars shader (SSR safe)
 const TwinklingStarsCanvas = dynamic(
@@ -26,11 +27,31 @@ const TwinklingStarsCanvas = dynamic(
 );
 
 const AmbientStars = React.memo(function AmbientStars() {
+  const { resolvedTheme } = useTheme();
+  const [isVisible, setIsVisible] = React.useState(true);
+  const containerRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    if (!containerRef.current) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.05 }
+    );
+    observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  if (resolvedTheme !== "dark") return null;
+
   return (
-    <div className="hidden dark:block absolute inset-0 opacity-85 pointer-events-none">
-      <React.Suspense fallback={null}>
-        <TwinklingStarsCanvas />
-      </React.Suspense>
+    <div ref={containerRef} className="absolute inset-0 opacity-85 pointer-events-none">
+      {isVisible && (
+        <React.Suspense fallback={null}>
+          <TwinklingStarsCanvas />
+        </React.Suspense>
+      )}
     </div>
   );
 });
@@ -46,20 +67,19 @@ const heroContainerVariants: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.14,
-      delayChildren: 0.08,
+      staggerChildren: 0.12,
+      delayChildren: 0.05,
     },
   },
 };
 
 const heroItemVariants: Variants = {
-  hidden: { opacity: 0, y: 32, filter: "blur(6px)" },
+  hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
-    filter: "blur(0px)",
     transition: {
-      duration: 0.75,
+      duration: 0.6,
       ease: [0.16, 1, 0.3, 1],
     },
   },
@@ -85,14 +105,11 @@ export function HeroSection({ className }: HeroSectionProps) {
         className
       )}
     >
-      {/* 1. Architectural Tech Background with Organic Breathing Aura */}
+      {/* 1. Architectural Tech Background (Static GPU-cached light auras) */}
       <TechBackground variant="hero" pattern="dots" />
 
       {/* Ambient Dark-Mode 3D Stars Canvas */}
       {mounted && <AmbientStars />}
-
-      {/* Subtle Film Grain Noise Texture */}
-      <FuzzyOverlay opacity={0.03} />
 
       <Container size="lg">
         <motion.div
@@ -173,19 +190,8 @@ export function HeroSection({ className }: HeroSectionProps) {
             variants={heroItemVariants}
             className="relative w-full max-w-5xl group"
           >
-            {/* Ambient Backlight Glow with Breathing Pulse */}
-            <motion.div
-              animate={{
-                opacity: [0.45, 0.75, 0.45],
-                scale: [0.99, 1.015, 0.99],
-              }}
-              transition={{
-                duration: 5,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="absolute -inset-1.5 rounded-3xl bg-gradient-to-r from-primary/30 via-accent/25 to-primary/30 blur-2xl pointer-events-none"
-            />
+            {/* Ambient Backlight Glow for Visual Card (GPU-cached static glow) */}
+            <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-primary/20 via-accent/15 to-primary/20 blur-xl opacity-60 group-hover:opacity-85 transition-opacity duration-500 pointer-events-none" />
 
             {/* Main Showcase Container with Levitation Float */}
             <motion.div

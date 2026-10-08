@@ -42,13 +42,12 @@ const techGridVariants: Variants = {
 };
 
 const techCardVariants: Variants = {
-  hidden: { opacity: 0, y: 36, scale: 0.95 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    scale: 1,
     transition: {
-      duration: 0.6,
+      duration: 0.5,
       ease: [0.16, 1, 0.3, 1],
     },
   },
@@ -164,10 +163,10 @@ export function TechSection({ className }: TechSectionProps) {
       <Container size="lg">
         {/* 1. Header: Eyebrow + Title with Hand-drawn Loop Highlight (Motion Reveal) */}
         <motion.div
-          initial={{ opacity: 0, y: 35, filter: "blur(6px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16 sm:mb-20"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border/80 bg-surface/80 backdrop-blur-md shadow-2xs mb-5">
@@ -239,10 +238,10 @@ export function TechSection({ className }: TechSectionProps) {
 
         {/* 3. Hover.dev DivOrigami Interactive 3D Showcase with Scale Entrance */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.96, y: 35, filter: "blur(4px)" }}
-          whileInView={{ opacity: 1, scale: 1, y: 0, filter: "blur(0px)" }}
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           className="relative rounded-(--radius-2xl) border border-border/80 bg-gradient-to-br from-surface to-surface/60 p-6 sm:p-12 lg:p-16 mb-16 sm:mb-24 shadow-sm overflow-hidden"
         >
           {/* Subtle Accent Glow */}
@@ -292,10 +291,10 @@ export function TechSection({ className }: TechSectionProps) {
         {/* 4. Categorized Tech Stack Ecosystem Grid with Staggered Motion */}
         <div className="mt-8">
           <motion.div
-            initial={{ opacity: 0, y: 30, filter: "blur(4px)" }}
-            whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="text-center max-w-2xl mx-auto mb-12"
           >
             <span className="font-mono text-xs font-semibold uppercase tracking-wider text-primary mb-2 block">

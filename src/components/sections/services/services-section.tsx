@@ -37,13 +37,12 @@ const servicesGridVariants: Variants = {
 };
 
 const serviceCardVariants: Variants = {
-  hidden: { opacity: 0, y: 40, scale: 0.96 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    scale: 1,
     transition: {
-      duration: 0.65,
+      duration: 0.5,
       ease: [0.16, 1, 0.3, 1],
     },
   },
@@ -116,12 +115,12 @@ export function ServicesSection({ className }: ServicesSectionProps) {
       <TechBackground variant="section" pattern="grid" />
 
       <Container size="lg">
-        {/* Section Header with Motion Reveal & Blur Glider */}
+        {/* Section Header with Clean Compositor Motion Reveal */}
         <motion.div
-          initial={{ opacity: 0, y: 35, filter: "blur(6px)" }}
-          whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
           className="flex flex-col items-center text-center mb-16 sm:mb-20"
         >
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border/80 bg-surface/80 backdrop-blur-md shadow-2xs mb-4">
@@ -259,10 +258,10 @@ export function ServicesSection({ className }: ServicesSectionProps) {
 
       {/* Bottom Banner: Custom Consultation Inquiry with Motion Entrance */}
       <motion.div
-        initial={{ opacity: 0, y: 40, scale: 0.98, filter: "blur(4px)" }}
-        whileInView={{ opacity: 1, y: 0, scale: 1, filter: "blur(0px)" }}
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
         whileHover={{ y: -3, transition: { duration: 0.25 } }}
         className="relative rounded-2xl sm:rounded-3xl border border-border/80 bg-surface/90 p-6 sm:p-10 shadow-lg overflow-hidden backdrop-blur-xl"
       >

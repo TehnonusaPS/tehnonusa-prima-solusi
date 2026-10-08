@@ -5,7 +5,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 
 // Pure deterministic generation executed once at module level to comply with React 19 purity
-function createStarFieldData(count = 2200) {
+function createStarFieldData(count = 750) {
   const pos = new Float32Array(count * 3);
   const ph = new Float32Array(count);
   const sp = new Float32Array(count);
@@ -36,7 +36,7 @@ function createStarFieldData(count = 2200) {
     sp[i] = 0.8 + nextRand() * 2.2;
 
     const isHeroStar = nextRand() < 0.1;
-    sz[i] = isHeroStar ? 3.2 + nextRand() * 1.8 : 1.2 + nextRand() * 1.6;
+    sz[i] = isHeroStar ? 3.0 + nextRand() * 1.6 : 1.2 + nextRand() * 1.4;
 
     const randCol = nextRand();
     const starColor =
@@ -54,7 +54,7 @@ function createStarFieldData(count = 2200) {
   return { pos, ph, sp, sz, col };
 }
 
-const DEFAULT_STAR_DATA = createStarFieldData(2200);
+const DEFAULT_STAR_DATA = createStarFieldData(750);
 
 function StarField() {
   const pointsRef = useRef<THREE.Points>(null);
@@ -162,6 +162,7 @@ export function TwinklingStarsCanvas() {
     <Canvas
       camera={{ position: [0, 0, 1], fov: 60 }}
       gl={{ antialias: false, alpha: true, powerPreference: "high-performance" }}
+      dpr={[1, 1.25]}
       style={{ width: "100%", height: "100%", pointerEvents: "none" }}
     >
       <StarField />
