@@ -91,19 +91,16 @@ export function HeroSection({ className }: HeroSectionProps) {
           </div>
 
           {/* 3. Main Persuasive Headline with Hand-drawn Loop Highlight */}
-          <h1 className="font-heading font-bold text-4xl sm:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-foreground leading-[1.12] max-w-6xl mb-5 sm:mb-6">
-            <span className="block">{tHero("headline_prefix")}</span>
-            <span className="block my-0.5 sm:my-1">
-              <CircleHighlight
-                strokeColor="#0085EB"
-                strokeWidth={3.5}
-                className="text-primary font-black"
-              >
-                {tHero("headline_highlight")}
-              </CircleHighlight>
-              {tHero("headline_mid") ? ` ${tHero("headline_mid")}` : ""}
-            </span>
-            <span className="block">{tHero("headline_suffix")}</span>
+          <h1 className="font-heading font-bold text-4xl sm:text-6xl lg:text-7xl xl:text-[5.25rem] tracking-tight text-foreground leading-[1.08] max-w-6xl mb-5 sm:mb-6">
+            <span>{tHero("headline_prefix")} </span>
+            <CircleHighlight
+              strokeColor="#0085EB"
+              strokeWidth={3.5}
+              className="text-primary font-black"
+            >
+              {tHero("headline_highlight")}
+            </CircleHighlight>{" "}
+            <span>{tHero("headline_suffix")}</span>
           </h1>
 
           {/* 4. Subtitle / Product Philosophy Copy */}
