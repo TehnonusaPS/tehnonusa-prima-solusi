@@ -19,24 +19,17 @@ import { EncryptButton } from "@/components/ui/creative-buttons";
 import { FuzzyOverlay } from "@/components/ui/fuzzy-overlay";
 import { cn } from "@/lib/utils";
 
-// Dynamically load Three.js Canvas and Stars on client side only (SSR safe)
-const Canvas = dynamic(
-  () => import("@react-three/fiber").then((mod) => mod.Canvas),
-  { ssr: false }
-);
-
-const Stars = dynamic(
-  () => import("@react-three/drei").then((mod) => mod.Stars),
+// Dynamically load client-side Three.js organic twinkling stars shader (SSR safe)
+const TwinklingStarsCanvas = dynamic(
+  () => import("@/components/ui/twinkling-stars"),
   { ssr: false }
 );
 
 const AmbientStars = React.memo(function AmbientStars() {
   return (
-    <div className="hidden dark:block absolute inset-0 opacity-70 pointer-events-none">
+    <div className="hidden dark:block absolute inset-0 opacity-85 pointer-events-none">
       <React.Suspense fallback={null}>
-        <Canvas camera={{ position: [0, 0, 1] }}>
-          <Stars radius={60} depth={50} count={2400} factor={3.5} fade speed={1.2} />
-        </Canvas>
+        <TwinklingStarsCanvas />
       </React.Suspense>
     </div>
   );
