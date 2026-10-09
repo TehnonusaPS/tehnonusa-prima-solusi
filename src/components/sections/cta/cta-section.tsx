@@ -19,6 +19,7 @@ import { Container } from "@/components/ui/container";
 import { TechBackground } from "@/components/ui/tech-background";
 import { CircleHighlight } from "@/components/ui/draw-circle-text";
 import { SpotlightButton, DrawOutlineButton } from "@/components/ui/creative-buttons";
+import { LottieAnimation } from "@/components/ui/lottie-animation";
 import { cn } from "@/lib/utils";
 
 export function CtaSection() {
@@ -153,8 +154,12 @@ export function CtaSection() {
                       exit={{ opacity: 0, scale: 0.95 }}
                       className="text-center py-8 space-y-4"
                     >
-                      <div className="w-16 h-16 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center mx-auto text-emerald-400">
-                        <CheckCircle2 className="w-8 h-8" />
+                      <div className="w-20 h-20 mx-auto flex items-center justify-center">
+                        <LottieAnimation
+                          src="/lottie/check-success.json"
+                          className="w-20 h-20"
+                          loop={true}
+                        />
                       </div>
 
                       <h3 className="font-heading text-xl font-bold text-white">

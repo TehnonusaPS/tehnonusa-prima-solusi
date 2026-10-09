@@ -12,6 +12,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { LottieAnimation } from "@/components/ui/lottie-animation";
 
 export interface FloatingPhoneProps {
   className?: string;
@@ -114,7 +115,13 @@ export const FloatingPhone: React.FC<FloatingPhoneProps> = ({
                 {/* Gate Attendance Live Telemetry */}
                 <div className="p-2 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-between">
                   <div className="flex items-center gap-1.5 text-emerald-400 text-[10px] font-semibold">
-                    <CheckCircle2 className="w-3 h-3 shrink-0" />
+                    <div className="w-4 h-4 shrink-0 flex items-center justify-center overflow-hidden">
+                      <LottieAnimation
+                        src="/lottie/check-success.json"
+                        className="w-5 h-5 scale-125"
+                        loop={true}
+                      />
+                    </div>
                     <span>Presensi Gerbang Masuk</span>
                   </div>
                   <span className="font-mono text-[9px] text-emerald-300 font-bold">
