@@ -246,67 +246,52 @@
     "close_menu": "Close Menu"
   },
   "portfolio": {
-    "kicker": "PROVEN TRACK RECORD & CASE STUDIES",
-    "title_prefix": "Engineering Systems &",
-    "title_highlight": "Proven Solutions",
-    "description": "Tangible proof of our software engineering capability in delivering mission-critical platforms, distributed cloud architectures, and high-impact applications.",
-    "cta_view_project": "Architecture Specs",
-    "cta_discuss": "Build Similar System",
-    "cases": {
-      "erp": {
-        "tag": "ENTERPRISE ERP & SUPPLY CHAIN",
-        "title": "NexusERP — Integrated Supply Chain & Warehouse System",
-        "description": "Modernization of multi-warehouse ERP systems for national manufacturing and distribution enterprise. Replaced manual paperwork with real-time inventory telemetry, automated audit trails, and data-driven procurement forecasting.",
-        "metric_value": "+320%",
-        "metric_label": "Order Processing Efficiency",
-        "metrics": [
-          { "val": "100%", "label": "Multi-Warehouse Stock Accuracy" },
-          { "val": "3.2x", "label": "Throughput Escalation" },
-          { "val": "<120ms", "label": "ERP Query Latency" }
-        ],
-        "highlights": [
-          "Multi-tenant database architecture with auto-partitioning",
-          "Role-Based Access Control (RBAC) & encrypted data masking",
-          "Industrial barcode & QR scanner telemetry integration",
-          "Executive analytics dashboard with auto-reconciliation"
-        ]
-      },
-      "logistics": {
-        "tag": "LOGISTICS & FLEET MOBILE PLATFORM",
-        "title": "FleetMotion — Real-Time Fleet & Logistics Telemetry Platform",
-        "description": "Driver mobile application and centralized command dispatch to monitor thousands of couriers simultaneously with sub-second GPS tracking, dynamic routing algorithms, and offline-first data sync.",
-        "metric_value": "<85ms",
-        "metric_label": "GPS Telemetry Latency",
-        "metrics": [
-          { "val": "99.98%", "label": "Peak Rush Hour Uptime" },
-          { "val": "-24%", "label": "Fuel Consumption Savings" },
-          { "val": "10k+", "label": "Simultaneous Active Couriers" }
-        ],
-        "highlights": [
-          "Offline-first synchronization on intermittent connectivity",
-          "Intelligent dynamic routing avoiding road bottlenecks",
-          "Vehicle speed telemetry & driver behavior analytics",
-          "Instant WebSocket delivery push notifications"
-        ]
-      },
-      "fintech": {
-        "tag": "FINTECH & HIGH-THROUGHPUT ENGINE",
-        "title": "PayGateway Core — Ultra High-Throughput Payment Engine",
-        "description": "Multi-thousand TPS payment aggregation engine bridging major national banks and digital wallets with real-time fraud mitigation, distributed ledger auditing, and zero-discrepancy reconciliation.",
-        "metric_value": "2,500+ TPS",
-        "metric_label": "Peak Transaction Throughput",
-        "metrics": [
-          { "val": "99.99%", "label": "Core Gateway SLA" },
-          { "val": "Zero", "label": "Reconciliation Discrepancy" },
-          { "val": "<60ms", "label": "API Response Velocity" }
-        ],
-        "highlights": [
-          "Banking-grade end-to-end payload cryptography",
-          "Real-time fraud anomaly prevention rule engine",
-          "Automated daily multi-account clearing & settlement",
-          "Isolated microservices with zero-downtime failover"
-        ]
-      }
+    "kicker": "FEATURED FLAGSHIP PRODUCT & PORTFOLIO",
+    "title_prefix": "Our Premier Engineering Showcase:",
+    "title_highlight": "GerbangSekolah",
+    "description": "An integrated digital school management ecosystem engineered by PT Tehnonusa Prima Solusi to digitalize educational institution operations from end to end.",
+    "cta_view_project": "System Feature Details",
+    "cta_discuss": "Consult School Implementation",
+    "project": {
+      "tag": "EDUTECH & INTEGRATED SCHOOL PLATFORM",
+      "title": "GerbangSekolah — Integrated School Management & Student Telemetry Ecosystem",
+      "subtitle": "Smart School Platform for Attendance, Academics, Finance, & Parent Engagement",
+      "description": "An all-in-one digital school transformation platform integrating automated IoT/RFID school gate attendance, instant WhatsApp presence notifications sent to parents, academic grading & e-Report card portals, and frictionless digital tuition fee payments.",
+      "metric_value": "99.9%",
+      "metric_label": "Gate Attendance Precision",
+      "metrics": [
+        { "val": "<2s", "label": "WhatsApp Notification Velocity" },
+        { "val": "100%", "label": "Tuition Fee Transparency" },
+        { "val": "Multi-Role", "label": "Students, Teachers, Staff, & Parents" }
+      ],
+      "highlights": [
+        "Automated gate attendance (RFID / Biometrics) synchronized in real time",
+        "Instant WhatsApp attendance status alerts delivered directly to parents",
+        "Digital tuition management with Virtual Accounts & zero-discrepancy reconciliation",
+        "Integrated academic portal for grades, schedules, & automated e-Report cards"
+      ],
+      "modules": [
+        {
+          "key": "attendance",
+          "name": "IoT Gate Attendance",
+          "desc": "Automated school entrance telemetry utilizing RFID smart cards or facial recognition. Immediately dispatches WhatsApp arrival and departure notifications to parents' smartphones."
+        },
+        {
+          "key": "academic",
+          "name": "Academic Portal & e-Report",
+          "desc": "Integrated grading system empowering educators to record assignments, exams, and classroom attendance while generating accredited e-Report cards automatically."
+        },
+        {
+          "key": "finance",
+          "name": "Digital Tuition Payments",
+          "desc": "Online tuition and school fee settlements powered by national bank Virtual Accounts and QRIS, automating ledger recording without laborious manual reconciliation."
+        },
+        {
+          "key": "mobile",
+          "name": "Multi-Role Mobile App",
+          "desc": "Intuitive mobile application for parents to monitor student attendance logs, billing invoices, school announcements, and digital absence leave requests seamlessly."
+        }
+      ]
     }
   },
   "testimonials": {

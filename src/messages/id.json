@@ -246,67 +246,52 @@
     "close_menu": "Tutup Menu"
   },
   "portfolio": {
-    "kicker": "PROVEN TRACK RECORD & CASE STUDIES",
-    "title_prefix": "Portofolio Sistem & Rekayasa",
-    "title_highlight": "Solusi Nyata",
-    "description": "Bukti nyata kapabilitas rekayasa kami dalam membangun sistem mission-critical, arsitektur cloud terdistribusi, dan aplikasi dengan dampak bisnis terukur.",
-    "cta_view_project": "Detail Arsitektur",
-    "cta_discuss": "Bangun Sistem Serupa",
-    "cases": {
-      "erp": {
-        "tag": "ENTERPRISE ERP & SUPPLY CHAIN",
-        "title": "NexusERP — Sistem Manajemen Rantai Pasok Terintegrasi",
-        "description": "Modernisasi sistem ERP multi-gudang untuk perusahaan manufaktur & distribusi skala nasional. Menggantikan proses manual dengan pemantauan inventaris real-time, audit trail otomatis, dan modul peramalan pengadaan.",
-        "metric_value": "+320%",
-        "metric_label": "Efisiensi Proses Pesanan",
-        "metrics": [
-          { "val": "100%", "label": "Akurasi Stok Multi-Gudang" },
-          { "val": "3.2x", "label": "Peningkatan Throughput" },
-          { "val": "<120ms", "label": "Query Latency ERP" }
-        ],
-        "highlights": [
-          "Arsitektur database multi-tenant dengan partisi otomatis",
-          "Role-Based Access Control (RBAC) & data masking terenkripsi",
-          "Integrasi telemetri barcode & QR scanner industri",
-          "Dashboard analitik eksekutif dengan auto-reconciliation"
-        ]
-      },
-      "logistics": {
-        "tag": "LOGISTICS & FLEET MOBILE PLATFORM",
-        "title": "FleetMotion — Platform Telemetri Armada & Logistik Real-Time",
-        "description": "Aplikasi mobile driver dan pusat komando terpusat untuk memantau ribuan armada logistik secara simultan dengan pelacakan GPS sub-detik, kalkulasi rute dinamis, dan sinkronisasi offline-first.",
-        "metric_value": "<85ms",
-        "metric_label": "Latensi Telemetri GPS",
-        "metrics": [
-          { "val": "99.98%", "label": "Ketersediaan Jam Sibuk" },
-          { "val": "-24%", "label": "Penghematan Biaya BBM" },
-          { "val": "10k+", "label": "Armada Terpantau Simultan" }
-        ],
-        "highlights": [
-          "Sinkronisasi data offline-first saat koneksi terputus",
-          "Routing dinamis cerdas menghindari kemacetan",
-          "Telemetri kecepatan kendaraan & perilaku pengemudi",
-          "Notifikasi push status pengiriman seketika via WebSockets"
-        ]
-      },
-      "fintech": {
-        "tag": "FINTECH & HIGH-THROUGHPUT ENGINE",
-        "title": "PayGateway Core — Agregator Pembayaran Berkecepatan Tinggi",
-        "description": "Mesin agregasi pembayaran berkapasitas ribuan transaksi per detik (TPS) yang menghubungkan puluhan bank nasional dan e-wallet dengan deteksi fraud real-time dan rekonsiliasi otomatis tanpa selisih.",
-        "metric_value": "2,500+ TPS",
-        "metric_label": "Throughput Transaksi Puncak",
-        "metrics": [
-          { "val": "99.99%", "label": "SLA Core Gateway" },
-          { "val": "Zero", "label": "Selisih Rekonsiliasi" },
-          { "val": "<60ms", "label": "Kecepatan Respons API" }
-        ],
-        "highlights": [
-          "Enkripsi payload end-to-end berstandar perbankan",
-          "Deteksi anomali fraud transaksi menggunakan rule engine",
-          "Otomatisasi kliring & settlement multi-rekening",
-          "Pemisahan microservices dengan zero-downtime failover"
-        ]
-      }
+    "kicker": "PORTOFOLIO UTAMA & KARYA UNGGULAN",
+    "title_prefix": "Karya Rekayasa Unggulan Kami:",
+    "title_highlight": "GerbangSekolah",
+    "description": "Platform ekosistem digital manajemen sekolah terpadu yang dirancang dan dibangun oleh PT Tehnonusa Prima Solusi untuk mendigitalisasi operasional sekolah dari hulu ke hilir.",
+    "cta_view_project": "Detail Fitur Sistem",
+    "cta_discuss": "Konsultasikan Implementasi Sekolah",
+    "project": {
+      "tag": "EDUTECH & INTEGRATED SCHOOL PLATFORM",
+      "title": "GerbangSekolah — Ekosistem Manajemen Sekolah & Telemetri Siswa Terpadu",
+      "subtitle": "Aplikasi Sekolah Cerdas untuk Presensi, Akademik, Keuangan, & Komunikasi Orang Tua",
+      "description": "Solusi transformasi digital sekolah menyeluruh (All-in-One School Management System) yang mengintegrasikan gerbang presensi otomatis berbasis IoT/RFID, pengiriman notifikasi kehadiran instan ke WhatsApp wali murid, portal akademik & e-Rapor, serta sistem pembayaran SPP digital yang transparan.",
+      "metric_value": "99.9%",
+      "metric_label": "Akurasi Presensi Gerbang",
+      "metrics": [
+        { "val": "<2s", "label": "Kecepatan Notifikasi WhatsApp" },
+        { "val": "100%", "label": "Transparansi Pembayaran SPP" },
+        { "val": "Multi-Role", "label": "Siswa, Guru, TU, & Orang Tua" }
+      ],
+      "highlights": [
+        "Presensi gerbang otomatis (RFID/Biometrik) tersinkronisasi instan",
+        "Broadcast notifikasi status kehadiran ke WhatsApp orang tua secara real-time",
+        "Manajemen SPP digital dengan Virtual Account & auto-reconciliation bebas selisih",
+        "Portal akademik, manajemen nilai, jadwal pelajaran, & e-Rapor terintegrasi"
+      ],
+      "modules": [
+        {
+          "key": "attendance",
+          "name": "Presensi Gerbang IoT",
+          "desc": "Telemetri gerbang presensi otomatis dengan kartu RFID / Face Recognition. Langsung mengirim notifikasi pesan WhatsApp ke smartphone orang tua saat siswa masuk dan pulang sekolah."
+        },
+        {
+          "key": "academic",
+          "name": "Portal Akademik & e-Rapor",
+          "desc": "Sistem informasi penilaian terpadu yang memudahkan guru menginput nilai tugas, ujian, dan absensi kelas serta menghasilkan e-Rapor resmi secara otomatis."
+        },
+        {
+          "key": "finance",
+          "name": "Keuangan & SPP Digital",
+          "desc": "Pembayaran SPP dan uang gedung online via Virtual Account bank nasional & QRIS. Sistem membukukan pencatatan otomatis tanpa rekonsiliasi manual yang memakan waktu."
+        },
+        {
+          "key": "mobile",
+          "name": "Aplikasi Mobile Multi-Role",
+          "desc": "Aplikasi mobile intuitif untuk wali murid memantau rekam kehadiran anak, riwayat tagihan, pengumuman sekolah, serta izin sakit langsung dalam genggaman."
+        }
+      ]
     }
   },
   "testimonials": {
