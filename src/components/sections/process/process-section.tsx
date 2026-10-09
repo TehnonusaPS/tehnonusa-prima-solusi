@@ -24,6 +24,7 @@ import { CircleHighlight } from "@/components/ui/draw-circle-text";
 import { SlideTabs, type TabItem } from "@/components/ui/slide-tabs";
 import { DrawOutlineButton } from "@/components/ui/creative-buttons";
 import { TechBackground } from "@/components/ui/tech-background";
+import { LottieAnimation } from "@/components/ui/lottie-animation";
 import { cn } from "@/lib/utils";
 
 export interface ProcessSectionProps {
@@ -320,16 +321,15 @@ export function ProcessSection({ className }: ProcessSectionProps) {
 
                 {/* Right Column: Architectural Visual Graphic with Telemetry (5 cols) */}
                 <div className="lg:col-span-5 relative bg-slate-950 min-h-[300px] lg:min-h-full overflow-hidden border-t lg:border-t-0 lg:border-l border-slate-200/90 dark:border-slate-800 flex flex-col justify-between p-6 sm:p-8">
-                  {/* Background Image: data-core.jpg */}
-                  <div className="absolute inset-0">
-                    <Image
-                      src="/images/data-core.jpg"
-                      alt="Tehnonusa Engineering Process Architecture"
-                      fill
-                      className="object-cover object-center opacity-40 mix-blend-luminosity transform scale-105"
-                      sizes="(max-width: 1024px) 100vw, 450px"
+                  {/* Background Animated Lottie Network Mesh */}
+                  <div className="absolute inset-0 overflow-hidden flex items-center justify-center pointer-events-none">
+                    <LottieAnimation
+                      src="/lottie/network-mesh.json"
+                      className="w-full h-full scale-125 opacity-40 mix-blend-screen"
+                      loop={true}
+                      autoplay={true}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/70 to-slate-950/40" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/30" />
                   </div>
 
                   {/* Top Overlay: Telemetry HUD Header */}

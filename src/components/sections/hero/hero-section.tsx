@@ -16,6 +16,7 @@ import { Container } from "@/components/ui/container";
 import { CircleHighlight } from "@/components/ui/draw-circle-text";
 import { SpotlightButton, DrawOutlineButton } from "@/components/ui/creative-buttons";
 import { TechBackground } from "@/components/ui/tech-background";
+import { LottieAnimation } from "@/components/ui/lottie-animation";
 import { cn } from "@/lib/utils";
 
 import { useTheme } from "next-themes";
@@ -240,22 +241,24 @@ export function HeroSection({ className }: HeroSectionProps) {
                 </div>
               </div>
 
-              {/* High-Tech Holographic Visual Image */}
-              <div className="relative w-full aspect-16/9 sm:aspect-21/9 overflow-hidden bg-slate-950">
-                <Image
-                  src="/images/hero-tech.jpg"
-                  alt="PT Tehnonusa Prima Solusi Systems Core"
-                  fill
-                  priority
-                  className="object-cover object-center transform group-hover:scale-[1.025] transition-transform duration-700 ease-out"
-                  sizes="(max-width: 1280px) 100vw, 1200px"
+              {/* High-Tech Animated Lottie Network Mesh Showcase */}
+              <div className="relative w-full aspect-16/9 sm:aspect-21/9 overflow-hidden bg-slate-950 flex items-center justify-center">
+                {/* Background Ambient Radial Glow */}
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/20 via-slate-950/80 to-slate-950 pointer-events-none" />
+
+                {/* Animated Lottie Network Mesh by Nadir Zouaoui */}
+                <LottieAnimation
+                  src="/lottie/network-mesh.json"
+                  className="w-full h-full scale-105 sm:scale-110 pointer-events-none z-0"
+                  loop={true}
+                  autoplay={true}
                 />
 
-                {/* Subtle Image Gradient Overlay for Depth */}
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-transparent pointer-events-none" />
+                {/* Subtle Gradient Overlay for Depth */}
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/20 to-transparent pointer-events-none z-10" />
 
                 {/* Overlaid Real-Time Metric Pills with Micro-Hover Motion */}
-                <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 flex flex-wrap gap-2 sm:gap-3 pointer-events-auto">
+                <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 flex flex-wrap gap-2 sm:gap-3 pointer-events-auto z-20">
                   {/* Metric Pill 1 */}
                   <motion.div
                     whileHover={{ scale: 1.06, y: -2 }}
