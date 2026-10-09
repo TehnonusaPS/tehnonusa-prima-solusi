@@ -246,10 +246,10 @@ export function HeroSection({ className }: HeroSectionProps) {
                 {/* Background Ambient Radial Glow */}
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary/20 via-slate-950/80 to-slate-950 pointer-events-none" />
 
-                {/* Animated Lottie Network Mesh by Nadir Zouaoui */}
+                {/* Animated Lottie Hero by Nadir Zouaoui (Downloaded from LottieFiles) */}
                 <LottieAnimation
-                  src="/lottie/network-mesh.json"
-                  className="w-full h-full scale-105 sm:scale-110 pointer-events-none z-0"
+                  src="/lottie/background-looping-animation.json"
+                  className="w-full h-full pointer-events-none z-0"
                   loop={true}
                   autoplay={true}
                 />

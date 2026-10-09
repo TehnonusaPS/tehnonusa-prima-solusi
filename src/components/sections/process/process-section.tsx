@@ -324,7 +324,7 @@ export function ProcessSection({ className }: ProcessSectionProps) {
                   {/* Background Animated Lottie Network Mesh */}
                   <div className="absolute inset-0 overflow-hidden flex items-center justify-center pointer-events-none">
                     <LottieAnimation
-                      src="/lottie/network-mesh.json"
+                      src="/lottie/background-looping-animation.json"
                       className="w-full h-full scale-125 opacity-40 mix-blend-screen"
                       loop={true}
                       autoplay={true}
