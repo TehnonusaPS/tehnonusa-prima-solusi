@@ -11,6 +11,10 @@ import {
   ShieldCheck,
   CheckCircle2,
   ArrowRight,
+  ArrowUpRight,
+  ExternalLink,
+  Lock,
+  Globe,
   QrCode,
   BookOpen,
   CreditCard,
@@ -270,45 +274,101 @@ export function PortfolioSection() {
                   ))}
                 </div>
 
-                <DrawOutlineButton
-                  onClick={scrollToContact}
-                  className="self-start sm:self-auto px-5 py-2.5 text-xs font-sans font-semibold shrink-0"
-                >
-                  <span>{t("cta_discuss")}</span>
-                  <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
-                </DrawOutlineButton>
+                <div className="flex items-center gap-2.5 shrink-0">
+                  <a
+                    href="https://school-app.tehnonusa.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary hover:bg-primary-dark text-white text-xs font-sans font-semibold transition-colors shadow-sm"
+                  >
+                    <span>Kunjungi Aplikasi</span>
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </a>
+
+                  <DrawOutlineButton
+                    onClick={scrollToContact}
+                    className="self-start sm:self-auto px-4 py-2 text-xs font-sans font-semibold shrink-0"
+                  >
+                    <span>{t("cta_discuss")}</span>
+                    <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
+                  </DrawOutlineButton>
+                </div>
               </div>
             </div>
 
-            {/* Right Column: Visual Mockup Showcase (5 cols) */}
-            <div className="lg:col-span-5 relative bg-slate-950 min-h-[350px] lg:min-h-full overflow-hidden border-t lg:border-t-0 lg:border-l border-slate-200/90 dark:border-slate-800 flex items-center justify-center p-6 sm:p-8 group">
-              <div className="relative w-full h-[340px] lg:h-full min-h-[320px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-                <Image
-                  src="/images/gerbang-sekolah.jpg"
-                  alt="GerbangSekolah - Dashboard & Telemetri Aplikasi Sekolah"
-                  fill
-                  className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                  sizes="(max-width: 1024px) 100vw, 480px"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none" />
-
-                {/* Live Status Overlay Tag */}
-                <div className="absolute top-4 left-4 z-10 flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-950/80 backdrop-blur-md border border-white/20 text-white font-mono text-[11px]">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>FLAGSHIP EDUTECH SOLUTION</span>
-                </div>
-
-                {/* Bottom Overlay Info Tag */}
-                <div className="absolute bottom-4 left-4 right-4 z-10 p-3 rounded-xl bg-slate-900/90 backdrop-blur-md border border-white/10 text-white flex items-center justify-between text-xs">
-                  <div>
-                    <span className="font-heading font-bold block">GerbangSekolah Platform</span>
-                    <span className="font-mono text-[10px] text-slate-400">By PT Tehnonusa Prima Solusi</span>
+            {/* Right Column: Visual Browser Window Mockup Showcase (5 cols) */}
+            <div className="lg:col-span-5 relative bg-slate-950 min-h-[380px] lg:min-h-full overflow-hidden border-t lg:border-t-0 lg:border-l border-slate-200/90 dark:border-slate-800 flex flex-col justify-between p-5 sm:p-7">
+              {/* Browser Window Chrome Frame */}
+              <div className="rounded-2xl border border-white/10 bg-slate-900/90 shadow-2xl overflow-hidden flex flex-col my-auto">
+                {/* Browser Title Bar / Address Bar */}
+                <div className="px-4 py-3 bg-slate-900 border-b border-white/10 flex items-center justify-between gap-3">
+                  {/* Traffic Light Dots */}
+                  <div className="flex items-center gap-1.5 shrink-0">
+                    <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block" />
                   </div>
-                  <span className="font-mono text-[10px] text-emerald-400 font-bold px-2 py-0.5 rounded bg-emerald-500/20 border border-emerald-500/30">
-                    Live System
-                  </span>
+
+                  {/* URL Address Bar Pill */}
+                  <a
+                    href="https://school-app.tehnonusa.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 max-w-xs mx-auto px-3 py-1 rounded-md bg-slate-950/80 border border-white/10 text-[11px] font-mono text-slate-300 hover:text-white flex items-center justify-center gap-1.5 group transition-colors"
+                  >
+                    <Lock className="w-3 h-3 text-emerald-400 shrink-0" />
+                    <span className="truncate">school-app.tehnonusa.com</span>
+                    <ExternalLink className="w-3 h-3 text-slate-400 group-hover:text-primary transition-colors shrink-0" />
+                  </a>
+
+                  {/* Production Live Status Tag */}
+                  <div className="hidden sm:flex items-center gap-1.5 shrink-0 font-mono text-[10px] text-emerald-400">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    <span>Live</span>
+                  </div>
                 </div>
+
+                {/* Browser Screen Body: Clean 16:9 UI Screenshot */}
+                <a
+                  href="https://school-app.tehnonusa.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative block w-full aspect-[16/10] sm:aspect-[16/9] overflow-hidden group/screen cursor-pointer"
+                  title="Klik untuk membuka demo live school-app.tehnonusa.com"
+                >
+                  <Image
+                    src="/images/gerbang-sekolah.jpg"
+                    alt="GerbangSekolah - Dashboard Sistem Manajemen Sekolah"
+                    fill
+                    className="object-cover object-top group-hover/screen:scale-102 transition-transform duration-500 ease-out"
+                    sizes="(max-width: 1024px) 100vw, 520px"
+                    priority
+                  />
+                  {/* Subtle hover overlay */}
+                  <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover/screen:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                    <span className="px-3.5 py-1.5 rounded-full bg-slate-950/90 text-white font-sans text-xs font-semibold border border-white/20 shadow-lg flex items-center gap-1.5">
+                      <span>Buka Aplikasi</span>
+                      <ExternalLink className="w-3.5 h-3.5 text-primary" />
+                    </span>
+                  </div>
+                </a>
+              </div>
+
+              {/* Bottom Quick Direct Access Footer */}
+              <div className="pt-4 flex items-center justify-between text-xs font-mono text-slate-400">
+                <span className="flex items-center gap-1.5">
+                  <Globe className="w-3.5 h-3.5 text-primary" />
+                  <span>school-app.tehnonusa.com</span>
+                </span>
+                <a
+                  href="https://school-app.tehnonusa.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:text-primary-light font-semibold flex items-center gap-1 transition-colors"
+                >
+                  <span>Buka Live</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
               </div>
             </div>
           </div>
