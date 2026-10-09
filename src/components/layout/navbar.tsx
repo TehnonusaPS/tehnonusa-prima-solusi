@@ -81,7 +81,7 @@ export function Navbar({ className }: NavbarProps) {
       )}
     >
       <Container size="lg">
-        <div className="relative flex items-center justify-between h-16 sm:h-20">
+        <div className="relative flex items-center justify-between h-14 sm:h-[72px]">
           {/* Logo Brand */}
           <div className="flex items-center shrink-0">
             <Logo />
@@ -96,13 +96,13 @@ export function Navbar({ className }: NavbarProps) {
               tabs={desktopTabs}
               activeId={activeSection}
               onChange={setActiveSection}
-              className="border-border/60 bg-surface/80"
+              className="border-border/60 bg-surface/80 h-10"
             />
           </nav>
 
           {/* Desktop Actions: Theme Slider, and Language Switcher at the far right */}
           <div className="hidden lg:flex items-center gap-2.5 shrink-0">
-            <SliderToggle useNextThemes />
+            <SliderToggle useNextThemes className="h-10" />
             <LanguageSwitcher />
           </div>
 
