@@ -20,12 +20,14 @@ import {
   CreditCard,
   Smartphone,
   Sparkles,
+  Monitor,
   type LucideIcon,
 } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { TechBackground } from "@/components/ui/tech-background";
 import { CircleHighlight } from "@/components/ui/draw-circle-text";
 import { DrawOutlineButton } from "@/components/ui/creative-buttons";
+import { FloatingPhone } from "@/components/ui/floating-phone";
 import { cn } from "@/lib/utils";
 
 interface ModuleConfig {
@@ -70,6 +72,7 @@ const TECH_STACK = [
 export function PortfolioSection() {
   const t = useTranslations("portfolio");
   const [activeModuleKey, setActiveModuleKey] = useState<string>("attendance");
+  const [viewMode, setViewMode] = useState<"desktop" | "mobile">("desktop");
 
   const projectMetrics = (t.raw("project.metrics") as Array<{
     val: string;
@@ -202,7 +205,14 @@ export function PortfolioSection() {
                         <button
                           key={mod.key}
                           type="button"
-                          onClick={() => setActiveModuleKey(mod.key)}
+                          onClick={() => {
+                            setActiveModuleKey(mod.key);
+                            if (mod.key === "mobile") {
+                              setViewMode("mobile");
+                            } else {
+                              setViewMode("desktop");
+                            }
+                          }}
                           className={cn(
                             "p-2.5 rounded-xl border text-left transition-all duration-200 flex flex-col justify-between gap-1.5 cursor-pointer select-none",
                             isSelected
@@ -296,66 +306,130 @@ export function PortfolioSection() {
               </div>
             </div>
 
-            {/* Right Column: Visual Browser Window Mockup Showcase (5 cols) */}
-            <div className="lg:col-span-5 relative bg-slate-950 min-h-[380px] lg:min-h-full overflow-hidden border-t lg:border-t-0 lg:border-l border-slate-200/90 dark:border-slate-800 flex flex-col justify-between p-5 sm:p-7">
-              {/* Browser Window Chrome Frame */}
-              <div className="rounded-2xl border border-white/10 bg-slate-900/90 shadow-2xl overflow-hidden flex flex-col my-auto">
-                {/* Browser Title Bar / Address Bar */}
-                <div className="px-4 py-3 bg-slate-900 border-b border-white/10 flex items-center justify-between gap-3">
-                  {/* Traffic Light Dots */}
-                  <div className="flex items-center gap-1.5 shrink-0">
-                    <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block" />
-                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block" />
-                  </div>
-
-                  {/* URL Address Bar Pill */}
-                  <a
-                    href="https://school-app.tehnonusa.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex-1 max-w-xs mx-auto px-3 py-1 rounded-md bg-slate-950/80 border border-white/10 text-[11px] font-mono text-slate-300 hover:text-white flex items-center justify-center gap-1.5 group transition-colors"
+            {/* Right Column: Visual Browser Window / 3D Floating Mobile Phone Showcase (5 cols) */}
+            <div className="lg:col-span-5 relative bg-slate-950 min-h-[460px] lg:min-h-full overflow-hidden border-t lg:border-t-0 lg:border-l border-slate-200/90 dark:border-slate-800 flex flex-col justify-between p-5 sm:p-7">
+              {/* Top View Toggle Switcher Bar */}
+              <div className="flex items-center justify-between gap-2 pb-3 mb-2 border-b border-white/10 z-10">
+                <div className="inline-flex p-1 rounded-xl bg-slate-900 border border-white/10 text-xs">
+                  <button
+                    type="button"
+                    onClick={() => setViewMode("desktop")}
+                    className={cn(
+                      "px-3 py-1.5 rounded-lg font-medium text-xs transition-all flex items-center gap-1.5 cursor-pointer",
+                      viewMode === "desktop"
+                        ? "bg-primary text-white shadow-sm"
+                        : "text-slate-400 hover:text-white"
+                    )}
                   >
-                    <Lock className="w-3 h-3 text-emerald-400 shrink-0" />
-                    <span className="truncate">school-app.tehnonusa.com</span>
-                    <ExternalLink className="w-3 h-3 text-slate-400 group-hover:text-primary transition-colors shrink-0" />
-                  </a>
-
-                  {/* Production Live Status Tag */}
-                  <div className="hidden sm:flex items-center gap-1.5 shrink-0 font-mono text-[10px] text-emerald-400">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                    <span>Live</span>
-                  </div>
+                    <Monitor className="w-3.5 h-3.5" />
+                    <span>Web Dashboard</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setViewMode("mobile")}
+                    className={cn(
+                      "px-3 py-1.5 rounded-lg font-medium text-xs transition-all flex items-center gap-1.5 cursor-pointer",
+                      viewMode === "mobile"
+                        ? "bg-primary text-white shadow-sm"
+                        : "text-slate-400 hover:text-white"
+                    )}
+                  >
+                    <Smartphone className="w-3.5 h-3.5" />
+                    <span>Mobile App (3D)</span>
+                  </button>
                 </div>
 
-                {/* Browser Screen Body: Clean 16:9 UI Screenshot */}
-                <a
-                  href="https://school-app.tehnonusa.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative block w-full aspect-[16/10] sm:aspect-[16/9] overflow-hidden group/screen cursor-pointer"
-                  title="Klik untuk membuka demo live school-app.tehnonusa.com"
-                >
-                  <Image
-                    src="/images/gerbang-sekolah.jpg"
-                    alt="GerbangSekolah - Dashboard Sistem Manajemen Sekolah"
-                    fill
-                    className="object-cover object-top group-hover/screen:scale-102 transition-transform duration-500 ease-out"
-                    sizes="(max-width: 1024px) 100vw, 520px"
-                    priority
-                  />
-                  {/* Subtle hover overlay */}
-                  <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover/screen:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
-                    <span className="px-3.5 py-1.5 rounded-full bg-slate-950/90 text-white font-sans text-xs font-semibold border border-white/20 shadow-lg flex items-center gap-1.5">
-                      <span>Buka Aplikasi</span>
-                      <ExternalLink className="w-3.5 h-3.5 text-primary" />
-                    </span>
-                  </div>
-                </a>
+                <div className="flex items-center gap-1.5 font-mono text-[11px] text-emerald-400 shrink-0">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="hidden sm:inline">Online Demo</span>
+                </div>
+              </div>
+
+              {/* Main Preview Container with AnimatePresence */}
+              <div className="my-auto py-2 flex items-center justify-center min-h-[360px]">
+                <AnimatePresence mode="wait">
+                  {viewMode === "desktop" ? (
+                    <motion.div
+                      key="desktop-view"
+                      initial={{ opacity: 0, scale: 0.96 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.96 }}
+                      transition={{ duration: 0.25 }}
+                      className="w-full"
+                    >
+                      {/* Browser Window Chrome Frame */}
+                      <div className="rounded-2xl border border-white/10 bg-slate-900/90 shadow-2xl overflow-hidden flex flex-col">
+                        {/* Browser Title Bar / Address Bar */}
+                        <div className="px-4 py-3 bg-slate-900 border-b border-white/10 flex items-center justify-between gap-3">
+                          {/* Traffic Light Dots */}
+                          <div className="flex items-center gap-1.5 shrink-0">
+                            <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block" />
+                            <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block" />
+                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block" />
+                          </div>
+
+                          {/* URL Address Bar Pill */}
+                          <a
+                            href="https://school-app.tehnonusa.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-1 max-w-xs mx-auto px-3 py-1 rounded-md bg-slate-950/80 border border-white/10 text-[11px] font-mono text-slate-300 hover:text-white flex items-center justify-center gap-1.5 group transition-colors"
+                          >
+                            <Lock className="w-3 h-3 text-emerald-400 shrink-0" />
+                            <span className="truncate">school-app.tehnonusa.com</span>
+                            <ExternalLink className="w-3 h-3 text-slate-400 group-hover:text-primary transition-colors shrink-0" />
+                          </a>
+
+                          {/* Production Live Status Tag */}
+                          <div className="hidden sm:flex items-center gap-1.5 shrink-0 font-mono text-[10px] text-emerald-400">
+                            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                            <span>Live</span>
+                          </div>
+                        </div>
+
+                        {/* Browser Screen Body: Clean 16:9 UI Screenshot */}
+                        <a
+                          href="https://school-app.tehnonusa.com/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="relative block w-full aspect-[16/10] sm:aspect-[16/9] overflow-hidden group/screen cursor-pointer"
+                          title="Klik untuk membuka demo live school-app.tehnonusa.com"
+                        >
+                          <Image
+                            src="/images/gerbang-sekolah.jpg"
+                            alt="GerbangSekolah - Dashboard Sistem Manajemen Sekolah"
+                            fill
+                            className="object-cover object-top group-hover/screen:scale-102 transition-transform duration-500 ease-out"
+                            sizes="(max-width: 1024px) 100vw, 520px"
+                            priority
+                          />
+                          {/* Subtle hover overlay */}
+                          <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover/screen:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
+                            <span className="px-3.5 py-1.5 rounded-full bg-slate-950/90 text-white font-sans text-xs font-semibold border border-white/20 shadow-lg flex items-center gap-1.5">
+                              <span>Buka Aplikasi</span>
+                              <ExternalLink className="w-3.5 h-3.5 text-primary" />
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="mobile-view"
+                      initial={{ opacity: 0, scale: 0.94 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.94 }}
+                      transition={{ duration: 0.25 }}
+                      className="w-full flex items-center justify-center"
+                    >
+                      <FloatingPhone appUrl="https://school-app.tehnonusa.com/" />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
 
               {/* Bottom Quick Direct Access Footer */}
-              <div className="pt-4 flex items-center justify-between text-xs font-mono text-slate-400">
+              <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs font-mono text-slate-400 z-10">
                 <span className="flex items-center gap-1.5">
                   <Globe className="w-3.5 h-3.5 text-primary" />
                   <span>school-app.tehnonusa.com</span>
