@@ -173,6 +173,14 @@ export function ProcessSection({ className }: ProcessSectionProps) {
     t(`phases.${activePhase.key}.deliverables.${idx}`)
   );
 
+  const toolingList = React.useMemo(() => {
+    try {
+      return (t.raw(`phases.${activePhase.key}.tooling`) as string[]) || [];
+    } catch {
+      return [];
+    }
+  }, [t, activePhase.key]);
+
   const ActiveIcon = activePhase.icon;
 
   return (
@@ -231,68 +239,68 @@ export function ProcessSection({ className }: ProcessSectionProps) {
               exit="exit"
               className="rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-surface/95 shadow-xl overflow-hidden backdrop-blur-md"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[470px]">
+              <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[500px]">
                 {/* Left Column: Phase Content & Specifications (7 cols) */}
-                <div className="lg:col-span-7 p-6 sm:p-9 lg:p-10 flex flex-col justify-between">
+                <div className="lg:col-span-7 p-6 sm:p-8 lg:p-9 flex flex-col justify-between">
                   <div>
-                    {/* Phase Header Tag Row */}
-                    <div className="flex items-center justify-between gap-4 mb-5">
+                    {/* Phase Header Row */}
+                    <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
                       <div className="flex items-center gap-3">
                         <div
                           className={cn(
-                            "w-12 h-12 rounded-xl flex items-center justify-center border shadow-xs",
+                            "w-11 h-11 rounded-xl flex items-center justify-center border shadow-xs shrink-0",
                             activePhase.iconBg
                           )}
                         >
-                          <ActiveIcon className={cn("w-6 h-6", activePhase.iconColor)} />
+                          <ActiveIcon className={cn("w-5 h-5", activePhase.iconColor)} />
                         </div>
                         <div>
-                          <span className="font-mono text-xs font-bold text-primary tracking-widest uppercase block">
+                          <span className="font-mono text-xs font-bold text-primary tracking-widest uppercase block leading-tight">
                             {t(`phases.${activePhase.key}.step`)}
                           </span>
-                          <span className="font-sans text-xs sm:text-sm text-muted-foreground font-medium">
+                          <span className="font-sans text-xs text-muted-foreground font-medium block mt-0.5">
                             {t(`phases.${activePhase.key}.tagline`)}
                           </span>
                         </div>
                       </div>
 
                       {/* Cadence Badge */}
-                      <Badge
-                        variant="surface"
-                        size="sm"
-                        className="font-mono text-xs font-semibold flex items-center gap-1.5"
-                      >
-                        <Calendar className="w-3.5 h-3.5 text-muted-foreground" />
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 text-xs font-mono font-semibold text-muted-foreground">
+                        <Calendar className="w-3.5 h-3.5 text-primary" />
                         <span>{t(`phases.${activePhase.key}.cadence`)}</span>
-                      </Badge>
+                      </div>
                     </div>
 
                     {/* Phase Title */}
-                    <h3 className="font-heading text-2xl sm:text-3xl font-bold tracking-tight text-foreground mb-3">
+                    <h3 className="font-heading text-2xl sm:text-3xl font-bold tracking-tight text-foreground leading-tight mb-3">
                       {t(`phases.${activePhase.key}.title`)}
                     </h3>
 
                     {/* Phase Description */}
-                    <p className="font-sans text-sm sm:text-base text-muted-foreground leading-relaxed mb-6">
+                    <p className="font-sans text-xs sm:text-sm text-muted-foreground leading-relaxed mb-6 max-w-xl">
                       {t(`phases.${activePhase.key}.description`)}
                     </p>
 
                     {/* Key Deliverables Matrix */}
                     <div className="mb-6">
-                      <div className="flex items-center gap-2 mb-3">
+                      <div className="flex items-center gap-1.5 mb-3">
                         <Terminal className="w-3.5 h-3.5 text-primary" />
-                        <span className="font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                        <span className="font-mono text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
                           Key Deliverables:
                         </span>
                       </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                         {deliverables.map((item, idx) => (
                           <div
                             key={idx}
-                            className="flex items-start gap-2.5 p-2.5 sm:p-3 rounded-xl bg-slate-50/80 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-800/80 text-xs sm:text-sm font-medium text-foreground/90"
+                            className="flex items-start gap-2.5 p-3 rounded-xl bg-slate-50/80 dark:bg-slate-900/50 border border-slate-200/80 dark:border-slate-800/80 hover:border-primary/40 hover:bg-white dark:hover:bg-slate-900 transition-all shadow-2xs group"
                           >
-                            <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                            <span>{item}</span>
+                            <div className="w-5 h-5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-500 flex items-center justify-center shrink-0 mt-0.5 group-hover:scale-110 transition-transform">
+                              <CheckCircle2 className="w-3.5 h-3.5" />
+                            </div>
+                            <span className="text-xs sm:text-[13px] font-medium text-foreground/90 leading-snug">
+                              {item}
+                            </span>
                           </div>
                         ))}
                       </div>
@@ -300,81 +308,94 @@ export function ProcessSection({ className }: ProcessSectionProps) {
                   </div>
 
                   {/* Bottom Action & Tooling Stack */}
-                  <div className="pt-5 border-t border-slate-200/80 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                    <div className="flex items-center gap-2 text-xs font-mono text-muted-foreground">
-                      <Wrench className="w-3.5 h-3.5 text-primary" />
-                      <span className="font-semibold uppercase tracking-wider">Engineered with:</span>
-                      <span className="text-foreground font-medium">
-                        Standardized Enterprise Specs
-                      </span>
+                  <div className="pt-4 border-t border-slate-200/80 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
+                    <div className="flex flex-wrap items-center gap-1.5 max-w-md">
+                      <div className="flex items-center gap-1 text-xs font-mono text-muted-foreground mr-1">
+                        <Wrench className="w-3.5 h-3.5 text-primary" />
+                        <span className="font-semibold uppercase tracking-wider">Stack:</span>
+                      </div>
+                      {toolingList.map((tool, idx) => (
+                        <span
+                          key={idx}
+                          className="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/60 font-mono text-[11px] font-medium text-foreground/85"
+                        >
+                          {tool}
+                        </span>
+                      ))}
                     </div>
 
-                    <DrawOutlineButton
-                      onClick={scrollToContact}
-                      className="self-start sm:self-auto px-5 py-2.5 text-xs font-sans font-semibold"
+                    <a
+                      href="#contact"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        scrollToContact();
+                      }}
+                      className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary hover:bg-primary-dark text-white text-xs font-sans font-semibold transition-colors shadow-2xs group cursor-pointer"
                     >
                       <span>{t("cta_button")}</span>
                       <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
-                    </DrawOutlineButton>
+                    </a>
                   </div>
                 </div>
 
-                {/* Right Column: Architectural Visual Graphic with Telemetry (5 cols) */}
-                <div className="lg:col-span-5 relative bg-slate-950 min-h-[300px] lg:min-h-full overflow-hidden border-t lg:border-t-0 lg:border-l border-slate-200/90 dark:border-slate-800 flex flex-col justify-between p-6 sm:p-8">
-                  {/* Background Animated Lottie Network Mesh */}
+                {/* Right Column: Architectural Visual Graphic with Clearly Visible Lottie (5 cols) */}
+                <div className="lg:col-span-5 relative bg-[#030519] min-h-[380px] lg:min-h-full overflow-hidden border-t lg:border-t-0 lg:border-l border-slate-200/90 dark:border-slate-800 flex flex-col justify-between p-5 sm:p-6">
+                  {/* High-Visibility Animated Lottie Network Mesh */}
                   <div className="absolute inset-0 overflow-hidden flex items-center justify-center pointer-events-none">
                     <LottieAnimation
                       src="/lottie/background-looping-animation.json"
-                      className="w-full h-full scale-125 opacity-40 mix-blend-screen"
+                      layout={{ fit: "cover", align: [0.5, 0.5] }}
+                      className="w-full h-full"
                       loop={true}
                       autoplay={true}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-slate-950/30" />
+                    {/* Subtle top & bottom gradients for telemetry readability, leaving center 100% transparent and visible */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#030519]/75 via-transparent to-[#030519]/85" />
                   </div>
 
                   {/* Top Overlay: Telemetry HUD Header */}
-                  <div className="relative z-10 flex items-center justify-between gap-2 border-b border-white/10 pb-4">
+                  <div className="relative z-10 flex items-center justify-between gap-2 border border-white/10 p-2.5 bg-slate-950/60 backdrop-blur-md rounded-xl">
                     <div className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                      <span className="font-mono text-xs text-white/80 font-semibold tracking-wider uppercase">
+                      <span className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                      </span>
+                      <span className="font-mono text-xs text-white/90 font-semibold tracking-wider uppercase">
                         SLA QUALITY GATE
                       </span>
                     </div>
-                    <span className="font-mono text-xs text-primary font-bold">
+                    <span className="font-mono text-xs text-cyan-300 font-bold px-2 py-0.5 rounded-md bg-cyan-500/15 border border-cyan-500/30">
                       PHASE {activePhase.stepNum} / 06
                     </span>
                   </div>
 
-                  {/* Center Overlay: Architectural Milestone Indicators */}
-                  <div className="relative z-10 py-5 my-auto space-y-3">
-                    <div className="p-3.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/10 shadow-lg">
-                      <div className="flex items-center justify-between text-xs font-mono text-slate-300 mb-1.5">
-                        <span className="font-bold text-white">Verification Gate</span>
-                        <span className="text-emerald-400 font-semibold">100% Passed</span>
+                  {/* Bottom Compact Telemetry HUD Card (leaves center completely open for Lottie) */}
+                  <div className="relative z-10 mt-auto pt-4">
+                    <div className="p-3.5 rounded-2xl bg-slate-950/75 backdrop-blur-md border border-white/15 shadow-2xl space-y-2.5">
+                      {/* Metric 1 */}
+                      <div className="flex items-center justify-between text-xs font-mono">
+                        <span className="text-slate-200 font-semibold flex items-center gap-1.5">
+                          <Terminal className="w-3.5 h-3.5 text-primary" />
+                          Verification Gate
+                        </span>
+                        <span className="text-emerald-400 font-bold">100% Passed</span>
                       </div>
-                      <div className="h-1.5 w-full bg-slate-800 rounded-full overflow-hidden">
-                        <div className="h-full bg-gradient-to-r from-primary to-emerald-400 w-full" />
+                      <div className="h-1.5 w-full bg-slate-800/80 rounded-full overflow-hidden">
+                        <div className="h-full bg-gradient-to-r from-primary via-cyan-400 to-emerald-400 w-full animate-pulse" />
                       </div>
-                    </div>
 
-                    <div className="p-3.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/10 shadow-lg">
-                      <div className="flex items-center justify-between text-xs font-mono text-slate-300 mb-1.5">
-                        <span className="font-bold text-white">Client Governance</span>
-                        <span className="text-cyan-400 font-semibold">Weekly Demo</span>
+                      {/* Metric 2 & SLA */}
+                      <div className="flex items-center justify-between text-[11px] font-mono pt-1.5 border-t border-white/10">
+                        <div className="flex items-center gap-1.5 text-cyan-300 font-medium">
+                          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                          <span>{t(`phases.${activePhase.key}.cadence`)} Demo</span>
+                        </div>
+                        <div className="flex items-center gap-1.5 text-slate-300">
+                          <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                          <span>99.9% SLA</span>
+                        </div>
                       </div>
-                      <p className="text-[11px] font-sans text-slate-400 leading-tight">
-                        Akses repositori Git langsung, staging live review, dan pelaporan terstruktur.
-                      </p>
                     </div>
-                  </div>
-
-                  {/* Bottom HUD: Security & SLA Guarantee */}
-                  <div className="relative z-10 pt-4 border-t border-white/10 flex items-center justify-between text-white/70 font-mono text-[11px]">
-                    <div className="flex items-center gap-1.5">
-                      <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                      <span>Zero-Downtime Guarantee</span>
-                    </div>
-                    <span>99.9% SLA</span>
                   </div>
                 </div>
               </div>

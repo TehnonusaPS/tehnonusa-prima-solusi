@@ -20,6 +20,10 @@ export interface LottieAnimationProps {
   autoplay?: boolean;
   className?: string;
   style?: React.CSSProperties;
+  layout?: {
+    fit?: "contain" | "cover" | "fill" | "none";
+    align?: [number, number];
+  };
 }
 
 export function LottieAnimation({
@@ -29,6 +33,7 @@ export function LottieAnimation({
   autoplay = true,
   className,
   style,
+  layout,
 }: LottieAnimationProps) {
   const [mounted, setMounted] = useState(false);
 
@@ -47,6 +52,7 @@ export function LottieAnimation({
         data={data as any}
         loop={loop}
         autoplay={autoplay}
+        layout={layout}
         className="w-full h-full"
       />
     </div>
