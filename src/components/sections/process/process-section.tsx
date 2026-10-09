@@ -46,6 +46,7 @@ interface PhaseConfig {
   iconColor: string;
   iconBg: string;
   accentColor: string;
+  lottieSrc: string;
 }
 
 const PHASES_CONFIG: PhaseConfig[] = [
@@ -56,6 +57,7 @@ const PHASES_CONFIG: PhaseConfig[] = [
     iconColor: "text-blue-500",
     iconBg: "bg-blue-500/10 border-blue-500/20",
     accentColor: "#0085EB",
+    lottieSrc: "/lottie/phase-01-discovery.json",
   },
   {
     key: "architecture",
@@ -64,6 +66,7 @@ const PHASES_CONFIG: PhaseConfig[] = [
     iconColor: "text-indigo-500",
     iconBg: "bg-indigo-500/10 border-indigo-500/20",
     accentColor: "#6366F1",
+    lottieSrc: "/lottie/phase-02-architecture.json",
   },
   {
     key: "prototyping",
@@ -72,6 +75,7 @@ const PHASES_CONFIG: PhaseConfig[] = [
     iconColor: "text-purple-500",
     iconBg: "bg-purple-500/10 border-purple-500/20",
     accentColor: "#A855F7",
+    lottieSrc: "/lottie/phase-03-prototyping.json",
   },
   {
     key: "development",
@@ -80,6 +84,7 @@ const PHASES_CONFIG: PhaseConfig[] = [
     iconColor: "text-cyan-500",
     iconBg: "bg-cyan-500/10 border-cyan-500/20",
     accentColor: "#06B6D4",
+    lottieSrc: "/lottie/phase-04-development.json",
   },
   {
     key: "qa_testing",
@@ -88,6 +93,7 @@ const PHASES_CONFIG: PhaseConfig[] = [
     iconColor: "text-amber-500",
     iconBg: "bg-amber-500/10 border-amber-500/20",
     accentColor: "#F59E0B",
+    lottieSrc: "/lottie/phase-05-qa-testing.json",
   },
   {
     key: "deployment",
@@ -96,6 +102,7 @@ const PHASES_CONFIG: PhaseConfig[] = [
     iconColor: "text-emerald-500",
     iconBg: "bg-emerald-500/10 border-emerald-500/20",
     accentColor: "#10B981",
+    lottieSrc: "/lottie/phase-06-deployment.json",
   },
 ];
 
@@ -338,20 +345,11 @@ export function ProcessSection({ className }: ProcessSectionProps) {
                   </div>
                 </div>
 
-                {/* Right Column: Architectural Visual Graphic with Clearly Visible Lottie (5 cols) */}
-                <div className="lg:col-span-5 relative bg-[#030519] min-h-[380px] lg:min-h-full overflow-hidden border-t lg:border-t-0 lg:border-l border-slate-200/90 dark:border-slate-800 flex flex-col justify-between p-5 sm:p-6">
-                  {/* High-Visibility Animated Lottie Network Mesh */}
-                  <div className="absolute inset-0 overflow-hidden flex items-center justify-center pointer-events-none">
-                    <LottieAnimation
-                      src="/lottie/background-looping-animation.json"
-                      layout={{ fit: "cover", align: [0.5, 0.5] }}
-                      className="w-full h-full"
-                      loop={true}
-                      autoplay={true}
-                    />
-                    {/* Subtle top & bottom gradients for telemetry readability, leaving center 100% transparent and visible */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-[#030519]/75 via-transparent to-[#030519]/85" />
-                  </div>
+                {/* Right Column: Architectural Visual Graphic with Phase-Specific Harmonized Lottie (5 cols) */}
+                <div className="lg:col-span-5 relative bg-[#030519] min-h-[420px] lg:min-h-full overflow-hidden border-t lg:border-t-0 lg:border-l border-slate-200/90 dark:border-slate-800 flex flex-col justify-between p-5 sm:p-6">
+                  {/* High-Tech Ambient Grid & Radial Glow */}
+                  <div className="absolute inset-0 bg-[radial-gradient(#1e3a5f_1px,transparent_1px)] [background-size:20px_20px] opacity-25 pointer-events-none" />
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-primary/15 rounded-full blur-3xl pointer-events-none" />
 
                   {/* Top Overlay: Telemetry HUD Header */}
                   <div className="relative z-10 flex items-center justify-between gap-2 border border-white/10 p-2.5 bg-slate-950/60 backdrop-blur-md rounded-xl">
@@ -369,8 +367,30 @@ export function ProcessSection({ className }: ProcessSectionProps) {
                     </span>
                   </div>
 
-                  {/* Bottom Compact Telemetry HUD Card (leaves center completely open for Lottie) */}
-                  <div className="relative z-10 mt-auto pt-4">
+                  {/* Center Showcase: Dynamic Lottie Animation specific to Current Phase */}
+                  <div className="relative z-10 my-auto py-4 flex items-center justify-center">
+                    <AnimatePresence mode="wait">
+                      <motion.div
+                        key={activePhase.key}
+                        initial={{ opacity: 0, scale: 0.88 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0.92 }}
+                        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                        className="w-full max-w-[280px] sm:max-w-[320px] aspect-[4/3] flex items-center justify-center"
+                      >
+                        <LottieAnimation
+                          src={activePhase.lottieSrc}
+                          layout={{ fit: "contain", align: [0.5, 0.5] }}
+                          className="w-full h-full drop-shadow-[0_12px_30px_rgba(0,133,235,0.25)]"
+                          loop={true}
+                          autoplay={true}
+                        />
+                      </motion.div>
+                    </AnimatePresence>
+                  </div>
+
+                  {/* Bottom Compact Telemetry HUD Card */}
+                  <div className="relative z-10 mt-auto pt-2">
                     <div className="p-3.5 rounded-2xl bg-slate-950/75 backdrop-blur-md border border-white/15 shadow-2xl space-y-2.5">
                       {/* Metric 1 */}
                       <div className="flex items-center justify-between text-xs font-mono">
