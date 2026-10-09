@@ -307,7 +307,7 @@ export function PortfolioSection() {
             </div>
 
             {/* Right Column: Visual Browser Window / 3D Floating Mobile Phone Showcase (5 cols) */}
-            <div className="lg:col-span-5 relative bg-slate-950 min-h-[380px] lg:min-h-full overflow-hidden border-t lg:border-t-0 lg:border-l border-slate-200/90 dark:border-slate-800 flex flex-col justify-between p-4 sm:p-5">
+            <div className="lg:col-span-5 relative bg-slate-950 min-h-[480px] lg:min-h-full overflow-hidden border-t lg:border-t-0 lg:border-l border-slate-200/90 dark:border-slate-800 flex flex-col justify-between p-4 sm:p-5">
               {/* Top View Toggle Switcher Bar */}
               <div className="flex items-center justify-between gap-2 pb-2.5 mb-1.5 border-b border-white/10 z-10">
                 <div className="inline-flex p-0.5 rounded-lg bg-slate-900 border border-white/10 text-xs">
@@ -346,7 +346,7 @@ export function PortfolioSection() {
               </div>
 
               {/* Main Preview Container with AnimatePresence */}
-              <div className="my-auto py-1 flex items-center justify-center min-h-[340px]">
+              <div className="my-auto py-2 flex items-center justify-center min-h-[480px]">
                 <AnimatePresence mode="wait">
                   {viewMode === "desktop" ? (
                     <motion.div
