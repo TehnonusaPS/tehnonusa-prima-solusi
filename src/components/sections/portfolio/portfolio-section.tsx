@@ -72,7 +72,7 @@ const TECH_STACK = [
 export function PortfolioSection() {
   const t = useTranslations("portfolio");
   const [activeModuleKey, setActiveModuleKey] = useState<string>("attendance");
-  const [viewMode, setViewMode] = useState<"desktop" | "mobile">("desktop");
+  const [viewMode, setViewMode] = useState<"desktop" | "mobile">("mobile");
 
   const projectMetrics = (t.raw("project.metrics") as Array<{
     val: string;
@@ -313,19 +313,6 @@ export function PortfolioSection() {
                 <div className="inline-flex p-0.5 rounded-lg bg-slate-900 border border-white/10 text-xs">
                   <button
                     type="button"
-                    onClick={() => setViewMode("desktop")}
-                    className={cn(
-                      "px-2.5 py-1 rounded-md font-medium text-[11px] transition-all flex items-center gap-1.5 cursor-pointer",
-                      viewMode === "desktop"
-                        ? "bg-primary text-white shadow-2xs"
-                        : "text-slate-400 hover:text-white"
-                    )}
-                  >
-                    <Monitor className="w-3 h-3" />
-                    <span>Web Dashboard</span>
-                  </button>
-                  <button
-                    type="button"
                     onClick={() => setViewMode("mobile")}
                     className={cn(
                       "px-2.5 py-1 rounded-md font-medium text-[11px] transition-all flex items-center gap-1.5 cursor-pointer",
@@ -336,6 +323,19 @@ export function PortfolioSection() {
                   >
                     <Smartphone className="w-3 h-3" />
                     <span>Mobile App (3D)</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setViewMode("desktop")}
+                    className={cn(
+                      "px-2.5 py-1 rounded-md font-medium text-[11px] transition-all flex items-center gap-1.5 cursor-pointer",
+                      viewMode === "desktop"
+                        ? "bg-primary text-white shadow-2xs"
+                        : "text-slate-400 hover:text-white"
+                    )}
+                  >
+                    <Monitor className="w-3 h-3" />
+                    <span>Web Dashboard</span>
                   </button>
                 </div>
 
