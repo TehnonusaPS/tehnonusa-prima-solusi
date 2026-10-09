@@ -103,22 +103,22 @@ export function PortfolioSection() {
     <section
       id="portfolio"
       aria-labelledby="portfolio-heading"
-      className="relative py-24 sm:py-32 overflow-hidden bg-background transition-colors duration-300"
+      className="relative py-12 sm:py-16 md:py-20 overflow-hidden bg-background transition-colors duration-300"
     >
       {/* 1. Ambient Matrix Grid Background */}
       <TechBackground variant="section" pattern="dots" />
 
       <Container size="lg">
         {/* 2. Section Header */}
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono font-semibold tracking-wider uppercase mb-4 shadow-2xs">
+        <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-6 sm:mb-8">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[11px] font-mono font-semibold tracking-wider uppercase mb-2.5 shadow-2xs">
             <GraduationCap className="w-3.5 h-3.5 shrink-0" />
             <span>{t("kicker")}</span>
           </div>
 
           <h2
             id="portfolio-heading"
-            className="font-heading font-bold text-3xl sm:text-4xl md:text-5xl text-foreground tracking-tight leading-[1.15] mb-5"
+            className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl text-foreground tracking-tight leading-snug mb-2.5"
           >
             <span>{t("title_prefix")} </span>
             <CircleHighlight
@@ -130,7 +130,7 @@ export function PortfolioSection() {
             </CircleHighlight>
           </h2>
 
-          <p className="font-sans text-base sm:text-lg text-muted-foreground leading-relaxed">
+          <p className="font-sans text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-xl">
             {t("description")}
           </p>
         </div>
@@ -139,47 +139,47 @@ export function PortfolioSection() {
         <div className="rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-surface/95 shadow-xl overflow-hidden backdrop-blur-md">
           <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch">
             {/* Left Column: Product Story, Metrics & Interactive Modules (7 cols) */}
-            <div className="lg:col-span-7 p-6 sm:p-9 lg:p-10 flex flex-col justify-between">
+            <div className="lg:col-span-7 p-5 sm:p-7 lg:p-8 flex flex-col justify-between">
               <div>
                 {/* Badge Tag & Primary Accuracy SLA */}
-                <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
-                  <span className="font-mono text-xs font-bold tracking-wider px-3 py-1 rounded-md border border-primary/30 text-primary bg-primary/10">
+                <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                  <span className="font-mono text-[11px] font-bold tracking-wider px-2.5 py-0.5 rounded-md border border-primary/30 text-primary bg-primary/10">
                     {t("project.tag")}
                   </span>
 
-                  <div className="flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 font-mono text-xs font-bold">
-                    <TrendingUp className="w-3.5 h-3.5" />
+                  <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 font-mono text-[11px] font-bold">
+                    <TrendingUp className="w-3 h-3" />
                     <span>
                       {t("project.metric_value")}{" "}
-                      <span className="text-[11px] font-normal text-muted-foreground">
+                      <span className="text-[10px] font-normal text-muted-foreground">
                         {t("project.metric_label")}
                       </span>
                     </span>
                   </div>
                 </div>
 
-                {/* Main Project Title */}
-                <h3 className="font-heading text-2xl sm:text-3xl font-bold tracking-tight text-foreground mb-2">
+                {/* Main Project Title & Subtitle */}
+                <h3 className="font-heading text-xl sm:text-2xl font-bold tracking-tight text-foreground mb-1">
                   {t("project.title")}
                 </h3>
 
-                <p className="font-sans text-xs sm:text-sm font-semibold text-primary mb-4">
+                <p className="font-sans text-xs font-semibold text-primary mb-2">
                   {t("project.subtitle")}
                 </p>
 
                 {/* Project Description */}
-                <p className="font-sans text-xs sm:text-sm text-muted-foreground leading-relaxed mb-6">
+                <p className="font-sans text-xs sm:text-sm text-muted-foreground leading-relaxed mb-3.5 line-clamp-2 sm:line-clamp-none">
                   {t("project.description")}
                 </p>
 
                 {/* 3 Key Metrics Cards Grid */}
-                <div className="grid grid-cols-3 gap-3 p-4 rounded-2xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-800/80 mb-6">
+                <div className="grid grid-cols-3 gap-2 p-2.5 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-800/80 mb-3.5">
                   {projectMetrics.map((metric, idx) => (
                     <div key={idx} className="text-center">
-                      <span className="font-heading text-base sm:text-xl font-bold text-primary block">
+                      <span className="font-heading text-sm sm:text-base font-bold text-primary block leading-tight">
                         {metric.val}
                       </span>
-                      <span className="font-sans text-[11px] sm:text-xs text-muted-foreground block line-clamp-1">
+                      <span className="font-sans text-[10px] sm:text-[11px] text-muted-foreground block line-clamp-1 mt-0.5">
                         {metric.label}
                       </span>
                     </div>
@@ -187,15 +187,15 @@ export function PortfolioSection() {
                 </div>
 
                 {/* Interactive Core Modules Selector */}
-                <div className="mb-6">
-                  <div className="flex items-center gap-2 mb-3">
+                <div className="mb-3.5">
+                  <div className="flex items-center gap-1.5 mb-2">
                     <Layers className="w-3.5 h-3.5 text-primary" />
-                    <span className="font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                    <span className="font-mono text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
                       Modul Unggulan Sistem:
                     </span>
                   </div>
 
-                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 mb-2.5">
                     {MODULES_CONFIG.map((mod) => {
                       const Icon = mod.icon;
                       const isSelected = activeModuleKey === mod.key;
@@ -214,14 +214,14 @@ export function PortfolioSection() {
                             }
                           }}
                           className={cn(
-                            "p-2.5 rounded-xl border text-left transition-all duration-200 flex flex-col justify-between gap-1.5 cursor-pointer select-none",
+                            "p-2 rounded-lg border text-left transition-all duration-200 flex flex-col justify-between gap-1 cursor-pointer select-none",
                             isSelected
-                              ? "bg-primary text-primary-foreground border-primary shadow-sm ring-1 ring-primary/40"
+                              ? "bg-primary text-primary-foreground border-primary shadow-xs ring-1 ring-primary/40"
                               : "bg-surface/80 hover:bg-surface text-muted-foreground hover:text-foreground border-border/80"
                           )}
                         >
-                          <Icon className="w-4 h-4 shrink-0" />
-                          <span className="font-heading text-xs font-bold leading-tight line-clamp-1">
+                          <Icon className="w-3.5 h-3.5 shrink-0" />
+                          <span className="font-heading text-[11px] font-bold leading-tight line-clamp-1">
                             {modData ? modData.name : mod.key}
                           </span>
                         </button>
@@ -233,19 +233,19 @@ export function PortfolioSection() {
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={activeModuleKey}
-                      initial={{ opacity: 0, y: 8 }}
+                      initial={{ opacity: 0, y: 6 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -8 }}
-                      transition={{ duration: 0.2 }}
-                      className="p-3.5 rounded-xl bg-primary/5 dark:bg-primary/10 border border-primary/20 text-xs sm:text-sm text-foreground/90"
+                      exit={{ opacity: 0, y: -6 }}
+                      transition={{ duration: 0.15 }}
+                      className="p-2.5 sm:p-3 rounded-xl bg-primary/5 dark:bg-primary/10 border border-primary/20 text-xs text-foreground/90"
                     >
-                      <div className="flex items-center gap-2 mb-1">
-                        <Sparkles className="w-3.5 h-3.5 text-primary shrink-0" />
-                        <span className="font-heading font-bold text-xs text-primary">
+                      <div className="flex items-center gap-1.5 mb-0.5">
+                        <Sparkles className="w-3 h-3 text-primary shrink-0" />
+                        <span className="font-heading font-bold text-[11px] text-primary">
                           {activeModuleData?.name} ({activeModuleConfig.badge})
                         </span>
                       </div>
-                      <p className="font-sans text-xs text-muted-foreground leading-relaxed">
+                      <p className="font-sans text-[11px] text-muted-foreground leading-relaxed">
                         {activeModuleData?.desc}
                       </p>
                     </motion.div>
@@ -253,17 +253,17 @@ export function PortfolioSection() {
                 </div>
 
                 {/* Key System Highlights */}
-                <div className="space-y-2 mb-6">
-                  <span className="font-mono text-xs font-semibold uppercase tracking-wider text-muted-foreground block">
+                <div className="space-y-1 mb-3.5">
+                  <span className="font-mono text-[10px] font-semibold uppercase tracking-wider text-muted-foreground block">
                     Kelebihan Arsitektur Sistem:
                   </span>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
                     {projectHighlights.map((highlight, idx) => (
                       <div
                         key={idx}
-                        className="flex items-start gap-2 text-xs font-medium text-foreground/90"
+                        className="flex items-start gap-1.5 text-[11px] font-medium text-foreground/90 leading-tight"
                       >
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-3 h-3 text-emerald-500 shrink-0 mt-0.5" />
                         <span>{highlight}</span>
                       </div>
                     ))}
@@ -272,24 +272,24 @@ export function PortfolioSection() {
               </div>
 
               {/* Tech Stack Chips & Action Button */}
-              <div className="pt-6 border-t border-slate-200/80 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <div className="flex flex-wrap items-center gap-1.5">
+              <div className="pt-3 border-t border-slate-200/80 dark:border-slate-800 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div className="flex flex-wrap items-center gap-1">
                   {TECH_STACK.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-900 text-[11px] font-mono text-foreground/80 border border-slate-200/60 dark:border-slate-800"
+                      className="px-2 py-0.5 rounded-md bg-slate-100 dark:bg-slate-900 text-[10px] font-mono text-foreground/80 border border-slate-200/60 dark:border-slate-800"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex items-center gap-2.5 shrink-0">
+                <div className="flex items-center gap-2 shrink-0">
                   <a
                     href="https://school-app.tehnonusa.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary hover:bg-primary-dark text-white text-xs font-sans font-semibold transition-colors shadow-sm"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-primary hover:bg-primary-dark text-white text-xs font-sans font-semibold transition-colors shadow-2xs"
                   >
                     <span>Kunjungi Aplikasi</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
@@ -297,7 +297,7 @@ export function PortfolioSection() {
 
                   <DrawOutlineButton
                     onClick={scrollToContact}
-                    className="self-start sm:self-auto px-4 py-2 text-xs font-sans font-semibold shrink-0"
+                    className="self-start sm:self-auto px-3 py-1.5 text-xs font-sans font-semibold shrink-0"
                   >
                     <span>{t("cta_discuss")}</span>
                     <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
@@ -307,46 +307,46 @@ export function PortfolioSection() {
             </div>
 
             {/* Right Column: Visual Browser Window / 3D Floating Mobile Phone Showcase (5 cols) */}
-            <div className="lg:col-span-5 relative bg-slate-950 min-h-[460px] lg:min-h-full overflow-hidden border-t lg:border-t-0 lg:border-l border-slate-200/90 dark:border-slate-800 flex flex-col justify-between p-5 sm:p-7">
+            <div className="lg:col-span-5 relative bg-slate-950 min-h-[380px] lg:min-h-full overflow-hidden border-t lg:border-t-0 lg:border-l border-slate-200/90 dark:border-slate-800 flex flex-col justify-between p-4 sm:p-5">
               {/* Top View Toggle Switcher Bar */}
-              <div className="flex items-center justify-between gap-2 pb-3 mb-2 border-b border-white/10 z-10">
-                <div className="inline-flex p-1 rounded-xl bg-slate-900 border border-white/10 text-xs">
+              <div className="flex items-center justify-between gap-2 pb-2.5 mb-1.5 border-b border-white/10 z-10">
+                <div className="inline-flex p-0.5 rounded-lg bg-slate-900 border border-white/10 text-xs">
                   <button
                     type="button"
                     onClick={() => setViewMode("desktop")}
                     className={cn(
-                      "px-3 py-1.5 rounded-lg font-medium text-xs transition-all flex items-center gap-1.5 cursor-pointer",
+                      "px-2.5 py-1 rounded-md font-medium text-[11px] transition-all flex items-center gap-1.5 cursor-pointer",
                       viewMode === "desktop"
-                        ? "bg-primary text-white shadow-sm"
+                        ? "bg-primary text-white shadow-2xs"
                         : "text-slate-400 hover:text-white"
                     )}
                   >
-                    <Monitor className="w-3.5 h-3.5" />
+                    <Monitor className="w-3 h-3" />
                     <span>Web Dashboard</span>
                   </button>
                   <button
                     type="button"
                     onClick={() => setViewMode("mobile")}
                     className={cn(
-                      "px-3 py-1.5 rounded-lg font-medium text-xs transition-all flex items-center gap-1.5 cursor-pointer",
+                      "px-2.5 py-1 rounded-md font-medium text-[11px] transition-all flex items-center gap-1.5 cursor-pointer",
                       viewMode === "mobile"
-                        ? "bg-primary text-white shadow-sm"
+                        ? "bg-primary text-white shadow-2xs"
                         : "text-slate-400 hover:text-white"
                     )}
                   >
-                    <Smartphone className="w-3.5 h-3.5" />
+                    <Smartphone className="w-3 h-3" />
                     <span>Mobile App (3D)</span>
                   </button>
                 </div>
 
-                <div className="flex items-center gap-1.5 font-mono text-[11px] text-emerald-400 shrink-0">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <div className="flex items-center gap-1.5 font-mono text-[10px] text-emerald-400 shrink-0">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   <span className="hidden sm:inline">Online Demo</span>
                 </div>
               </div>
 
               {/* Main Preview Container with AnimatePresence */}
-              <div className="my-auto py-2 flex items-center justify-center min-h-[360px]">
+              <div className="my-auto py-1 flex items-center justify-center min-h-[340px]">
                 <AnimatePresence mode="wait">
                   {viewMode === "desktop" ? (
                     <motion.div
@@ -354,18 +354,18 @@ export function PortfolioSection() {
                       initial={{ opacity: 0, scale: 0.96 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.96 }}
-                      transition={{ duration: 0.25 }}
+                      transition={{ duration: 0.2 }}
                       className="w-full"
                     >
                       {/* Browser Window Chrome Frame */}
-                      <div className="rounded-2xl border border-white/10 bg-slate-900/90 shadow-2xl overflow-hidden flex flex-col">
+                      <div className="rounded-xl border border-white/10 bg-slate-900/90 shadow-2xl overflow-hidden flex flex-col">
                         {/* Browser Title Bar / Address Bar */}
-                        <div className="px-4 py-3 bg-slate-900 border-b border-white/10 flex items-center justify-between gap-3">
+                        <div className="px-3 py-2 bg-slate-900 border-b border-white/10 flex items-center justify-between gap-2">
                           {/* Traffic Light Dots */}
-                          <div className="flex items-center gap-1.5 shrink-0">
-                            <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80 inline-block" />
-                            <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80 inline-block" />
-                            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80 inline-block" />
+                          <div className="flex items-center gap-1 shrink-0">
+                            <span className="w-2 h-2 rounded-full bg-rose-500/80 inline-block" />
+                            <span className="w-2 h-2 rounded-full bg-amber-500/80 inline-block" />
+                            <span className="w-2 h-2 rounded-full bg-emerald-500/80 inline-block" />
                           </div>
 
                           {/* URL Address Bar Pill */}
@@ -373,16 +373,16 @@ export function PortfolioSection() {
                             href="https://school-app.tehnonusa.com/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex-1 max-w-xs mx-auto px-3 py-1 rounded-md bg-slate-950/80 border border-white/10 text-[11px] font-mono text-slate-300 hover:text-white flex items-center justify-center gap-1.5 group transition-colors"
+                            className="flex-1 max-w-xs mx-auto px-2.5 py-0.5 rounded-md bg-slate-950/80 border border-white/10 text-[10px] font-mono text-slate-300 hover:text-white flex items-center justify-center gap-1 group transition-colors"
                           >
-                            <Lock className="w-3 h-3 text-emerald-400 shrink-0" />
+                            <Lock className="w-2.5 h-2.5 text-emerald-400 shrink-0" />
                             <span className="truncate">school-app.tehnonusa.com</span>
-                            <ExternalLink className="w-3 h-3 text-slate-400 group-hover:text-primary transition-colors shrink-0" />
+                            <ExternalLink className="w-2.5 h-2.5 text-slate-400 group-hover:text-primary transition-colors shrink-0" />
                           </a>
 
                           {/* Production Live Status Tag */}
-                          <div className="hidden sm:flex items-center gap-1.5 shrink-0 font-mono text-[10px] text-emerald-400">
-                            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                          <div className="hidden sm:flex items-center gap-1 shrink-0 font-mono text-[9px] text-emerald-400">
+                            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                             <span>Live</span>
                           </div>
                         </div>
@@ -405,9 +405,9 @@ export function PortfolioSection() {
                           />
                           {/* Subtle hover overlay */}
                           <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover/screen:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
-                            <span className="px-3.5 py-1.5 rounded-full bg-slate-950/90 text-white font-sans text-xs font-semibold border border-white/20 shadow-lg flex items-center gap-1.5">
+                            <span className="px-3 py-1 rounded-full bg-slate-950/90 text-white font-sans text-[11px] font-semibold border border-white/20 shadow-lg flex items-center gap-1">
                               <span>Buka Aplikasi</span>
-                              <ExternalLink className="w-3.5 h-3.5 text-primary" />
+                              <ExternalLink className="w-3 h-3 text-primary" />
                             </span>
                           </div>
                         </a>
@@ -419,7 +419,7 @@ export function PortfolioSection() {
                       initial={{ opacity: 0, scale: 0.94 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.94 }}
-                      transition={{ duration: 0.25 }}
+                      transition={{ duration: 0.2 }}
                       className="w-full flex items-center justify-center"
                     >
                       <FloatingPhone appUrl="https://school-app.tehnonusa.com/" />
@@ -429,9 +429,9 @@ export function PortfolioSection() {
               </div>
 
               {/* Bottom Quick Direct Access Footer */}
-              <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs font-mono text-slate-400 z-10">
+              <div className="pt-2.5 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-slate-400 z-10">
                 <span className="flex items-center gap-1.5">
-                  <Globe className="w-3.5 h-3.5 text-primary" />
+                  <Globe className="w-3 h-3 text-primary" />
                   <span>school-app.tehnonusa.com</span>
                 </span>
                 <a
@@ -441,7 +441,7 @@ export function PortfolioSection() {
                   className="text-primary hover:text-primary-light font-semibold flex items-center gap-1 transition-colors"
                 >
                   <span>Buka Live</span>
-                  <ArrowUpRight className="w-3.5 h-3.5" />
+                  <ArrowUpRight className="w-3 h-3" />
                 </a>
               </div>
             </div>
