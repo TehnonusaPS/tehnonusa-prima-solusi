@@ -105,7 +105,7 @@ export function HeroSection({ className }: HeroSectionProps) {
     <section
       id="hero"
       className={cn(
-        "relative min-h-screen flex flex-col justify-center overflow-hidden pt-20 pb-12 sm:pt-24 sm:pb-16 lg:pt-24 lg:pb-20 bg-gradient-to-b from-sky-50/70 via-white to-slate-50/80 dark:bg-none dark:bg-[#0b1120] border-b border-slate-200/80 dark:border-slate-800/80",
+        "relative min-h-screen flex flex-col justify-center overflow-hidden pt-20 pb-12 sm:pt-24 sm:pb-16 lg:pt-24 lg:pb-20 bg-gradient-to-b from-sky-50/75 via-white to-white dark:bg-none dark:bg-[#0b1120] border-b border-slate-200 dark:border-slate-800/80",
         className
       )}
     >
@@ -115,7 +115,7 @@ export function HeroSection({ className }: HeroSectionProps) {
       {/* Ambient Dark-Mode 3D Stars Canvas */}
       {mounted && <AmbientStars />}
 
-      <Container size="lg">
+      <Container size="lg" className="relative z-10">
         <motion.div
           variants={heroContainerVariants}
           initial="hidden"

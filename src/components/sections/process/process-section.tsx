@@ -17,6 +17,7 @@ import {
   ArrowRight,
   Terminal,
   Cpu,
+  Sparkles,
 } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
@@ -194,19 +195,29 @@ export function ProcessSection({ className }: ProcessSectionProps) {
     <section
       id="process"
       className={cn(
-        "relative min-h-screen flex flex-col justify-center py-10 sm:py-14 lg:py-16 overflow-hidden bg-gradient-to-b from-slate-50 via-blue-50/30 to-slate-100/90 dark:bg-none dark:bg-[#070b14] border-b border-slate-200/80 dark:border-slate-800/80",
+        "relative min-h-screen flex flex-col justify-center py-10 sm:py-14 lg:py-16 overflow-hidden bg-slate-100 dark:bg-none dark:bg-[#070b14] border-b border-slate-200 dark:border-slate-800/80",
         className
       )}
     >
       {/* 1. Architectural Engineering Blueprint & Technical Grid */}
       <TechBackground variant="section" pattern="grid" />
 
-      <Container size="lg">
-        {/* 2. Section Header with Hand-Drawn Highlight */}
+      <Container size="lg" className="relative z-10">
+        {/* 2. Section Header with Process Marker Badge */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-6 sm:mb-8">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 dark:bg-primary/10 border border-slate-200/90 dark:border-primary/20 text-primary text-xs font-mono font-semibold tracking-wider uppercase mb-3 shadow-2xs">
-            <Cpu className="w-3.5 h-3.5 shrink-0" />
-            <span>{t("kicker")}</span>
+          <div className="flex flex-wrap items-center justify-center gap-2.5 mb-3">
+            <span className="font-mono text-[11px] font-bold text-cyan-500 tracking-widest px-2.5 py-0.5 rounded-md bg-cyan-500/10 border border-cyan-500/20 shadow-2xs">
+              03 // WORKFLOW & METHODOLOGY
+            </span>
+            <span className="h-px w-6 bg-slate-300 dark:bg-slate-700 hidden sm:block" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 dark:bg-primary/10 border border-slate-200/90 dark:border-primary/20 text-primary text-xs font-mono font-semibold tracking-wider uppercase shadow-2xs">
+              <Cpu className="w-3.5 h-3.5 shrink-0" />
+              <span>{t("kicker")}</span>
+            </div>
+            <div className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-surface border border-slate-200/80 dark:border-border/80 text-[11px] font-mono text-slate-600 dark:text-slate-300">
+              <Sparkles className="w-3 h-3 text-cyan-500" />
+              <span>Milestone-Driven Execution</span>
+            </div>
           </div>
 
           <h2 className="font-heading font-bold text-2xl sm:text-3xl lg:text-4xl text-slate-900 dark:text-foreground tracking-tight leading-tight mb-2.5">

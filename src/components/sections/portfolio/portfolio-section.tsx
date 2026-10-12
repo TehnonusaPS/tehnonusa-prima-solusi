@@ -103,22 +103,32 @@ export function PortfolioSection() {
     <section
       id="portfolio"
       aria-labelledby="portfolio-heading"
-      className="relative min-h-screen flex flex-col justify-center py-10 sm:py-14 md:py-16 overflow-hidden bg-gradient-to-b from-white via-sky-50/40 to-slate-50/90 dark:bg-none dark:bg-[#0b1120] border-b border-slate-200/80 dark:border-slate-800/80 transition-colors duration-300"
+      className="relative min-h-screen flex flex-col justify-center py-10 sm:py-14 md:py-16 overflow-hidden bg-white dark:bg-none dark:bg-[#0b1120] border-b border-slate-200 dark:border-slate-800/80 transition-colors duration-300"
     >
       {/* 1. Ambient Matrix Grid & Studio Spotlight Background */}
       <TechBackground variant="spotlight" pattern="dots" />
 
-      <Container size="lg">
-        {/* 2. Section Header */}
-        <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-6 sm:mb-8">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[11px] font-mono font-semibold tracking-wider uppercase mb-2.5 shadow-2xs">
-            <GraduationCap className="w-3.5 h-3.5 shrink-0" />
-            <span>{t("kicker")}</span>
+      <Container size="lg" className="relative z-10">
+        {/* 2. Section Header with Portfolio Marker Badge */}
+        <div className="flex flex-col items-start text-left max-w-2xl mb-6 sm:mb-8">
+          <div className="flex flex-wrap items-center gap-2.5 mb-2.5">
+            <span className="font-mono text-[11px] font-bold text-emerald-500 tracking-widest px-2.5 py-0.5 rounded-md bg-emerald-500/10 border border-emerald-500/20 shadow-2xs">
+              04 // PROVEN TRACK RECORD
+            </span>
+            <span className="h-px w-6 bg-slate-300 dark:bg-slate-700 hidden sm:block" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[11px] font-mono font-semibold tracking-wider uppercase shadow-2xs">
+              <GraduationCap className="w-3.5 h-3.5 shrink-0" />
+              <span>{t("kicker")}</span>
+            </div>
+            <div className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-surface border border-slate-200/80 dark:border-border/80 text-[11px] font-mono text-slate-600 dark:text-slate-300">
+              <Sparkles className="w-3 h-3 text-emerald-500" />
+              <span>Live Production Environment</span>
+            </div>
           </div>
 
           <h2
             id="portfolio-heading"
-            className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl text-foreground tracking-tight leading-snug mb-2.5"
+            className="font-heading font-bold text-2xl sm:text-3xl md:text-4xl text-foreground tracking-tight leading-snug mb-2"
           >
             <span>{t("title_prefix")} </span>
             <CircleHighlight

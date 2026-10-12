@@ -160,43 +160,57 @@ export function ServicesSection({ className }: ServicesSectionProps) {
     <section
       id="services"
       className={cn(
-        "relative min-h-screen flex flex-col justify-center py-8 sm:py-12 lg:py-14 overflow-hidden bg-gradient-to-b from-slate-50 via-sky-50/40 to-slate-100/90 dark:bg-none dark:bg-[#070b14] border-b border-slate-200/80 dark:border-slate-800/80",
+        "relative min-h-screen flex flex-col justify-center py-8 sm:py-12 lg:py-14 overflow-hidden bg-slate-100 dark:bg-none dark:bg-[#070b14] border-b border-slate-200 dark:border-slate-800/80",
         className
       )}
     >
       {/* Ambient background glow accents & Light-Mode Architectural Blueprint */}
       <TechBackground variant="section" pattern="grid" />
 
-      <Container size="lg">
-        {/* Section Header with Clean Motion Reveal */}
+      <Container size="lg" className="relative z-10">
+        {/* Section Header with Left-Split Editorial Layout */}
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col items-center text-center mb-6 sm:mb-8"
+          className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-6 sm:mb-8"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-200/90 dark:border-border/80 bg-white/90 dark:bg-surface/80 backdrop-blur-md shadow-2xs mb-2.5">
-            <Terminal className="w-3.5 h-3.5 text-primary" />
-            <span className="font-mono text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-muted-foreground">
-              {tServices("kicker")}
-            </span>
+          <div className="flex flex-col items-start text-left max-w-2xl">
+            <div className="flex items-center gap-2.5 mb-2.5">
+              <span className="font-mono text-[11px] font-bold text-primary tracking-widest px-2.5 py-0.5 rounded-md bg-primary/10 border border-primary/20 shadow-2xs">
+                01 // SERVICES & CAPABILITIES
+              </span>
+              <span className="h-px w-6 bg-slate-300 dark:bg-slate-700 hidden sm:block" />
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full border border-slate-200/90 dark:border-border/80 bg-white/90 dark:bg-surface/80 backdrop-blur-md shadow-2xs">
+                <Terminal className="w-3.5 h-3.5 text-primary" />
+                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-muted-foreground">
+                  {tServices("kicker")}
+                </span>
+              </div>
+            </div>
+
+            <h2 className="font-heading font-bold text-2xl sm:text-3xl lg:text-4xl tracking-tight text-slate-900 dark:text-foreground leading-tight">
+              <span>{tServices("title_prefix")} </span>
+              <CircleHighlight
+                strokeColor="#0085EB"
+                strokeWidth={3}
+                className="text-primary font-black"
+              >
+                {tServices("title_highlight")}
+              </CircleHighlight>
+            </h2>
           </div>
 
-          <h2 className="font-heading font-bold text-2xl sm:text-3xl lg:text-4xl tracking-tight text-slate-900 dark:text-foreground leading-tight max-w-3xl mb-2.5">
-            <span>{tServices("title_prefix")} </span>
-            <CircleHighlight
-              strokeColor="#0085EB"
-              strokeWidth={3}
-              className="text-primary font-black"
-            >
-              {tServices("title_highlight")}
-            </CircleHighlight>
-          </h2>
-
-          <p className="font-sans text-xs sm:text-sm lg:text-base text-slate-600 dark:text-muted-foreground max-w-2xl leading-relaxed">
-            {tServices("description")}
-          </p>
+          <div className="flex flex-col items-start lg:items-end max-w-md text-left lg:text-right">
+            <p className="font-sans text-xs sm:text-sm lg:text-base text-slate-600 dark:text-muted-foreground leading-relaxed">
+              {tServices("description")}
+            </p>
+            <div className="inline-flex items-center gap-1.5 mt-2 px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-surface border border-slate-200/80 dark:border-border/80 text-[11px] font-mono text-slate-700 dark:text-slate-300">
+              <Sparkles className="w-3 h-3 text-primary" />
+              <span>Full-Lifecycle Software Engineering</span>
+            </div>
+          </div>
         </motion.div>
 
         {/* Dynamic Bento Grid Layout (7+5 & 5+7) dengan Image Assets & Hover Depth */}

@@ -26,7 +26,7 @@ export const TechBackground: React.FC<TechBackgroundProps> = ({
   return (
     <div
       className={cn(
-        "pointer-events-none absolute inset-0 -z-10 overflow-hidden select-none",
+        "pointer-events-none absolute inset-0 z-0 overflow-hidden select-none",
         className
       )}
       aria-hidden="true"
@@ -37,7 +37,7 @@ export const TechBackground: React.FC<TechBackgroundProps> = ({
           className={cn(
             "absolute inset-0",
             // Light mode: visible brand blue micro-dots (24px spacing)
-            "bg-[radial-gradient(#0085eb_1.1px,transparent_1.1px)] [background-size:24px_24px] opacity-25",
+            "bg-[radial-gradient(#0085eb_1.15px,transparent_1.15px)] [background-size:24px_24px] opacity-45",
             // Dark mode: subtle neon cyan blueprint dots on deep dark
             "dark:bg-[radial-gradient(#38bdf8_1.1px,transparent_1.1px)] dark:opacity-10",
             "[mask-image:radial-gradient(ellipse_85%_75%_at_50%_40%,#000_30%,transparent_100%)]"
@@ -79,7 +79,7 @@ export const TechBackground: React.FC<TechBackgroundProps> = ({
             className={cn(
               "absolute -top-20 -right-20 w-[440px] h-[440px] sm:w-[580px] sm:h-[580px] rounded-full blur-3xl pointer-events-none",
               variant === "hero"
-                ? "bg-gradient-to-br from-sky-400/22 via-primary/12 to-transparent opacity-85 dark:opacity-20"
+                ? "bg-gradient-to-br from-sky-400/28 via-primary/16 to-transparent opacity-90 dark:opacity-20"
                 : "bg-gradient-to-br from-sky-300/18 via-primary/8 to-transparent opacity-75 dark:opacity-15"
             )}
           />
@@ -89,7 +89,7 @@ export const TechBackground: React.FC<TechBackgroundProps> = ({
             className={cn(
               "absolute -bottom-24 -left-24 w-[400px] h-[400px] sm:w-[520px] sm:h-[520px] rounded-full blur-3xl pointer-events-none",
               variant === "hero"
-                ? "bg-gradient-to-tr from-primary/15 via-indigo-400/10 to-transparent opacity-80 dark:opacity-20"
+                ? "bg-gradient-to-tr from-primary/20 via-indigo-400/12 to-transparent opacity-85 dark:opacity-20"
                 : "bg-gradient-to-tr from-accent/14 via-primary/6 to-transparent opacity-70 dark:opacity-12"
             )}
           />
@@ -98,9 +98,9 @@ export const TechBackground: React.FC<TechBackgroundProps> = ({
           {(variant === "hero" || variant === "spotlight") && (
             <div
               className={cn(
-                "absolute top-0 left-1/2 -translate-x-1/2 w-[600px] sm:w-[850px] lg:w-[950px] h-[320px] sm:h-[400px] rounded-full blur-3xl pointer-events-none",
+                "absolute top-0 left-1/2 -translate-x-1/2 w-[650px] sm:w-[900px] lg:w-[1050px] h-[340px] sm:h-[420px] rounded-full blur-3xl pointer-events-none",
                 variant === "hero"
-                  ? "bg-gradient-to-b from-sky-400/22 via-primary/8 to-transparent opacity-85 dark:opacity-25"
+                  ? "bg-gradient-to-b from-sky-400/35 via-primary/16 to-transparent opacity-95 dark:opacity-25"
                   : "bg-gradient-to-b from-primary/12 via-cyan-400/8 to-transparent opacity-75 dark:opacity-20"
               )}
             />

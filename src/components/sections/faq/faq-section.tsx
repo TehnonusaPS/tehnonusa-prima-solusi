@@ -27,16 +27,26 @@ export function FaqSection() {
     <section
       id="faq"
       aria-labelledby="faq-heading"
-      className="relative min-h-screen flex flex-col justify-center py-14 sm:py-18 lg:py-20 overflow-x-clip bg-gradient-to-b from-white via-sky-50/20 to-white dark:bg-none dark:bg-[#0b1120] transition-colors duration-300"
+      className="relative min-h-screen flex flex-col justify-center py-14 sm:py-18 lg:py-20 overflow-x-clip bg-white dark:bg-none dark:bg-[#0b1120] transition-colors duration-300"
     >
       <TechBackground variant="section" pattern="mesh" />
 
       <Container size="lg" className="relative z-10">
-        {/* Section Header */}
+        {/* Section Header with FAQ Marker Badge */}
         <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-10 sm:mb-14">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono font-semibold tracking-wider uppercase mb-4 shadow-2xs">
-            <HelpCircle className="w-3.5 h-3.5 shrink-0" />
-            <span>{t("kicker")}</span>
+          <div className="flex flex-wrap items-center justify-center gap-2.5 mb-4">
+            <span className="font-mono text-[11px] font-bold text-indigo-500 tracking-widest px-2.5 py-0.5 rounded-md bg-indigo-500/10 border border-indigo-500/20 shadow-2xs">
+              06 // FAQ & DUE DILIGENCE
+            </span>
+            <span className="h-px w-6 bg-slate-300 dark:bg-slate-700 hidden sm:block" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono font-semibold tracking-wider uppercase shadow-2xs">
+              <HelpCircle className="w-3.5 h-3.5 shrink-0" />
+              <span>{t("kicker")}</span>
+            </div>
+            <div className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-surface border border-slate-200/80 dark:border-border/80 text-[11px] font-mono text-slate-600 dark:text-slate-300">
+              <Sparkles className="w-3 h-3 text-indigo-500" />
+              <span>Transparent Project Governance</span>
+            </div>
           </div>
 
           <h2

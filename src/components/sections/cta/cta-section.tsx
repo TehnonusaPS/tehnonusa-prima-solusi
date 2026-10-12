@@ -66,7 +66,7 @@ export function CtaSection() {
     <section
       id="contact"
       aria-labelledby="cta-heading"
-      className="relative min-h-screen flex flex-col justify-center py-14 sm:py-18 lg:py-20 overflow-x-clip bg-gradient-to-b from-white via-slate-50/70 to-slate-100/80 dark:bg-none dark:bg-[#0b1120] transition-colors duration-300"
+      className="relative min-h-screen flex flex-col justify-center py-14 sm:py-18 lg:py-20 overflow-x-clip bg-white dark:bg-none dark:bg-[#0b1120] transition-colors duration-300"
     >
       {/* 1. Live Interactive 3D Particle Ring Background (Persistent mount, no flicker on fast scroll) */}
       <ParticleRingBackground className="opacity-80 dark:opacity-95" />

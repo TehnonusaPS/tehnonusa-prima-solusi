@@ -308,73 +308,86 @@ export function TechSection({ className }: TechSectionProps) {
     <section
       id="solutions"
       className={cn(
-        "relative min-h-screen flex flex-col justify-center overflow-hidden py-8 sm:py-12 lg:py-14 bg-gradient-to-b from-white via-sky-50/25 to-slate-50/80 dark:bg-none dark:bg-[#0b1120] border-b border-slate-200/80 dark:border-slate-800/80",
+        "relative min-h-screen flex flex-col justify-center overflow-hidden py-8 sm:py-12 lg:py-14 bg-white dark:bg-none dark:bg-[#0b1120] border-b border-slate-200 dark:border-slate-800/80",
         className
       )}
     >
       {/* Background Circuit Mesh & Ambient Glow */}
       <TechBackground variant="section" pattern="mesh" />
 
-      <Container size="lg">
-        {/* 1. Header Section */}
+      <Container size="lg" className="relative z-10">
+        {/* 1. Header Section with Integrated Tab Switcher (Zero Duplication) */}
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col items-center text-center max-w-3xl mx-auto mb-5 sm:mb-6"
+          className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-5 sm:mb-6"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-200/90 dark:border-border/80 bg-slate-50/90 dark:bg-surface/80 backdrop-blur-md shadow-2xs mb-2.5">
-            <Terminal className="w-3.5 h-3.5 text-primary" />
-            <span className="font-mono text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-muted-foreground">
-              {t("kicker")}
-            </span>
+          {/* Left: Technical Architecture Title & Description */}
+          <div className="flex flex-col items-start text-left max-w-2xl">
+            <div className="flex flex-wrap items-center gap-2.5 mb-2.5">
+              <span className="font-mono text-[11px] font-bold text-sky-500 tracking-widest px-2.5 py-0.5 rounded-md bg-sky-500/10 border border-sky-500/20 shadow-2xs">
+                02 // TECH ARCHITECTURE
+              </span>
+              <span className="h-px w-6 bg-slate-300 dark:bg-slate-700 hidden sm:block" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-200/90 dark:border-border/80 bg-slate-50/90 dark:bg-surface/80 backdrop-blur-md shadow-2xs">
+                <Terminal className="w-3.5 h-3.5 text-primary" />
+                <span className="font-mono text-xs font-semibold uppercase tracking-wider text-slate-600 dark:text-muted-foreground">
+                  {t("kicker")}
+                </span>
+              </div>
+              <div className="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-surface border border-slate-200/80 dark:border-border/80 text-[11px] font-mono text-slate-600 dark:text-slate-300">
+                <Layers className="w-3 h-3 text-sky-500" />
+                <span>Multi-Cloud & Microservices Ready</span>
+              </div>
+            </div>
+
+            <h2 className="font-heading font-bold text-2xl sm:text-3xl lg:text-4xl tracking-tight text-slate-900 dark:text-foreground leading-tight mb-2">
+              <span>{t("title_prefix")} </span>
+              <CircleHighlight
+                strokeColor="#0085EB"
+                strokeWidth={3}
+                className="text-primary font-black"
+              >
+                {t("title_highlight")}
+              </CircleHighlight>
+            </h2>
+
+            <p className="font-sans text-xs sm:text-sm text-slate-600 dark:text-muted-foreground leading-relaxed max-w-xl">
+              {t("description")}
+            </p>
           </div>
 
-          <h2 className="font-heading font-bold text-2xl sm:text-3xl lg:text-4xl tracking-tight text-slate-900 dark:text-foreground leading-tight mb-2">
-            <span>{t("title_prefix")} </span>
-            <CircleHighlight
-              strokeColor="#0085EB"
-              strokeWidth={3}
-              className="text-primary font-black"
-            >
-              {t("title_highlight")}
-            </CircleHighlight>
-          </h2>
-
-          <p className="font-sans text-xs sm:text-sm text-slate-600 dark:text-muted-foreground leading-relaxed max-w-2xl mb-3.5">
-            {t("description")}
-          </p>
-
-          {/* Interactive Modern Tab Switcher */}
-          <div className="inline-flex p-1 rounded-xl bg-slate-100 dark:bg-muted/80 border border-slate-200/80 dark:border-border/80 shadow-2xs">
-            <button
-              type="button"
-              onClick={() => setActiveTab("reliability")}
-              className={cn(
-                "flex items-center gap-2 px-4 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all cursor-pointer",
-                activeTab === "reliability"
-                  ? "bg-white dark:bg-surface text-primary shadow-xs font-bold"
-                  : "text-slate-600 dark:text-muted-foreground hover:text-slate-900 dark:hover:text-foreground"
-              )}
-            >
-              <Activity className="w-3.5 h-3.5" />
-              <span>{t("tab_reliability")}</span>
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveTab("ecosystem")}
-              className={cn(
-                "flex items-center gap-2 px-4 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all cursor-pointer",
-                activeTab === "ecosystem"
-                  ? "bg-white dark:bg-surface text-primary shadow-xs font-bold"
-                  : "text-slate-600 dark:text-muted-foreground hover:text-slate-900 dark:hover:text-foreground"
-              )}
-            >
-              <Cpu className="w-3.5 h-3.5" />
-              <span>{t("tab_ecosystem")}</span>
-            </button>
-          </div>
+          {/* Right: Modern Tab Switcher Docked Cleanly */}
+          <div className="inline-flex p-1 rounded-xl bg-slate-100 dark:bg-muted/80 border border-slate-200/80 dark:border-border/80 shadow-2xs self-start lg:self-end shrink-0">
+              <button
+                type="button"
+                onClick={() => setActiveTab("reliability")}
+                className={cn(
+                  "flex items-center gap-2 px-4 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all cursor-pointer",
+                  activeTab === "reliability"
+                    ? "bg-white dark:bg-surface text-primary shadow-xs font-bold"
+                    : "text-slate-600 dark:text-muted-foreground hover:text-slate-900 dark:hover:text-foreground"
+                )}
+              >
+                <Activity className="w-3.5 h-3.5" />
+                <span>{t("tab_reliability")}</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveTab("ecosystem")}
+                className={cn(
+                  "flex items-center gap-2 px-4 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all cursor-pointer",
+                  activeTab === "ecosystem"
+                    ? "bg-white dark:bg-surface text-primary shadow-xs font-bold"
+                    : "text-slate-600 dark:text-muted-foreground hover:text-slate-900 dark:hover:text-foreground"
+                )}
+              >
+                <Cpu className="w-3.5 h-3.5" />
+                <span>{t("tab_ecosystem")}</span>
+              </button>
+            </div>
         </motion.div>
 
         {/* 2. Interactive Tab Panels */}
