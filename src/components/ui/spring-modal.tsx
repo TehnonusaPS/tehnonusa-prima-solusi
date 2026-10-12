@@ -60,7 +60,9 @@ export const SpringModal: React.FC<SpringModalProps> = ({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           onClick={() => setIsOpen(false)}
-          className="fixed inset-0 z-50 grid place-items-center overflow-y-auto bg-slate-950/60 backdrop-blur-md p-4 sm:p-8 cursor-pointer select-none"
+          role="dialog"
+          aria-modal="true"
+          className="fixed inset-0 z-50 grid place-items-center overflow-y-auto no-scrollbar bg-slate-950/60 backdrop-blur-md p-4 sm:p-8 cursor-pointer select-none"
         >
           <motion.div
             initial={{ scale: 0, rotate: "12.5deg" }}

@@ -633,7 +633,7 @@ export function TechSection({ className }: TechSectionProps) {
       {/* Interactive Detail Modal Dialog with Pristine Light & Dark Mode */}
       <AnimatePresence>
         {activeDetail && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+          <div role="dialog" aria-modal="true" className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto no-scrollbar">
             {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -650,7 +650,7 @@ export function TechSection({ className }: TechSectionProps) {
               exit={{ opacity: 0, scale: 0.95, y: 16 }}
               transition={{ type: "spring", damping: 26, stiffness: 320 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 p-6 sm:p-8 shadow-2xl shadow-slate-950/15 dark:shadow-black/60 text-slate-900 dark:text-slate-100 z-10"
+              className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto no-scrollbar rounded-3xl bg-white dark:bg-slate-900 border border-slate-200/90 dark:border-slate-800 p-6 sm:p-8 shadow-2xl shadow-slate-950/15 dark:shadow-black/60 text-slate-900 dark:text-slate-100 z-10"
             >
               {/* Close Button - Clean Circular Pill */}
               <button

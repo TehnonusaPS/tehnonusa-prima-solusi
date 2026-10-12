@@ -278,6 +278,13 @@
     "description": "Platform ekosistem digital manajemen sekolah terpadu yang dirancang dan dibangun oleh PT Tehnonusa Prima Solusi untuk mendigitalisasi operasional sekolah dari hulu ke hilir.",
     "cta_view_project": "Detail Fitur Sistem",
     "cta_discuss": "Konsultasikan Implementasi Sekolah",
+    "cta_details": "Detail Spesifikasi & Arsitektur",
+    "modal_kicker": "BLUEPRINT ARSITEKTUR & SPESIFIKASI",
+    "modal_close": "Tutup",
+    "modal_visit": "Kunjungi Aplikasi Live",
+    "modal_tab_architecture": "Kelebihan Arsitektur",
+    "modal_tab_modules": "Modul Unggulan",
+    "modal_tab_tech": "Stack & Infrastruktur",
     "project": {
       "tag": "EDUTECH & INTEGRATED SCHOOL PLATFORM",
       "title": "GerbangSekolah — Ekosistem Manajemen Sekolah & Telemetri Siswa Terpadu",

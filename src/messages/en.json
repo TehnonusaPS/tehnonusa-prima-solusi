@@ -278,6 +278,13 @@
     "description": "An integrated digital school management ecosystem engineered by PT Tehnonusa Prima Solusi to digitalize educational institution operations from end to end.",
     "cta_view_project": "System Feature Details",
     "cta_discuss": "Consult School Implementation",
+    "cta_details": "Specification & Architecture Details",
+    "modal_kicker": "ARCHITECTURE BLUEPRINT & SPECIFICATIONS",
+    "modal_close": "Close",
+    "modal_visit": "Visit Live Application",
+    "modal_tab_architecture": "Architecture Highlights",
+    "modal_tab_modules": "Core Modules",
+    "modal_tab_tech": "Stack & Infrastructure",
     "project": {
       "tag": "EDUTECH & INTEGRATED SCHOOL PLATFORM",
       "title": "GerbangSekolah — Integrated School Management & Student Telemetry Ecosystem",
