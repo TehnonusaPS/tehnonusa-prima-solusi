@@ -1,11 +1,11 @@
 {
   "common": {
     "company": "PT Tehnonusa Prima Solusi",
-    "tagline": "Digital Solutions for Your Business"
+    "tagline": "Software Engineering & Enterprise Solutions"
   },
   "meta": {
-    "title": "PT Tehnonusa Prima Solusi — Digital Solutions for Your Business",
-    "description": "PT Tehnonusa Prima Solusi provides web system development, application building, custom software, and digital transformation services for your business."
+    "title": "PT Tehnonusa Prima Solusi — Enterprise Software & Cloud Architecture",
+    "description": "Trusted enterprise software engineering partner. Large-scale web systems, mobile apps, and cloud infrastructure with 99.9% SLA and 100% IP ownership."
   },
   "nav": {
     "services": "Services",
@@ -15,215 +15,241 @@
     "contact": "Contact Us"
   },
   "hero": {
-    "kicker": "SOFTWARE ENGINEERING & DIGITAL TRANSFORMATION",
-    "headline_prefix": "Engineering",
-    "headline_highlight": "Digital Solutions",
-    "headline_mid": "Built",
-    "headline_suffix": "for Scalable Business",
-    "description": "We architect and engineer enterprise web systems, high-performance mobile apps, and custom cloud architectures that power modern business growth.",
-    "cta_primary": "Discuss Project",
-    "cta_secondary": "Explore Services",
+    "kicker": "ENTERPRISE SOFTWARE ENGINEERING",
+    "headline_prefix": "Build Resilient",
+    "headline_highlight": "Digital Systems",
+    "headline_mid": "",
+    "headline_suffix": "Without Downtime",
+    "description": "We architect and engineer corporate-grade custom software with 99.9% SLA, zero-downtime deployments, and 100% source code ownership without vendor lock-in.",
+    "cta_primary": "Schedule Free Architecture Discovery",
+    "cta_secondary": "Explore Our Portfolio",
     "badge_uptime": "99.9% Uptime SLA",
-    "badge_security": "Enterprise Grade Security",
+    "badge_security": "Enterprise Data Security",
     "badge_architecture": "Scalable Microservices",
-    "client_trust": "Trusted for delivering mission-critical digital infrastructure and enterprise software"
+    "client_trust": "Trusted for delivering mission-critical systems and digital infrastructure"
   },
   "services": {
-    "kicker": "SERVICES & TECHNICAL CAPABILITIES",
-    "title_prefix": "Software Engineering Solutions for",
-    "title_highlight": "Business Growth",
-    "description": "We engineer reliable, scalable, and secure system architectures that accelerate digital transformation and operational efficiency for your business.",
+    "kicker": "FEATURED CAPABILITIES",
+    "title_prefix": "Enterprise-Grade Software Engineering to",
+    "title_highlight": "Accelerate Business",
+    "description": "Fast, bug-free software engineered to cut operational overhead and maximize your team's throughput.",
     "cta_card": "Discuss Requirements",
-    "cta_banner_title": "Need a Tailored Digital System Solution?",
-    "cta_banner_desc": "Our software engineering team is ready to analyze your unique business challenges and architect the most effective, scalable digital solution.",
-    "cta_banner_button": "Consult With Our Engineers",
+    "cta_details": "View Technical Specs",
+    "modal_deliverables": "Deliverables & Technical Architecture:",
+    "modal_tech": "Related Tech Stack:",
+    "modal_cta": "Consult on This Solution",
+    "modal_close": "Close",
+    "cta_banner_title": "Need a Tailored System Solution?",
+    "cta_banner_desc": "Our lead software engineers will analyze your operational bottlenecks and design an efficient technical architecture blueprint.",
+    "cta_banner_button": "Get Free Architecture Blueprint",
     "web_systems": {
       "badge": "ENTERPRISE ARCHITECTURE",
-      "title": "Enterprise Web Systems",
-      "tagline": "Corporate Web Systems & Unified Portals",
-      "description": "Corporate-scale web application development, operations management dashboards, integrated ERP, and internal portals with high availability and centralized access control.",
+      "title": "Enterprise Web & ERP",
+      "tagline": "Workflow Automation & Centralized Data",
+      "description": "Replace scattered spreadsheets and manual processes with a unified portal. Save thousands of work-hours and prevent data leaks.",
+      "detail_desc": "Corporate-scale web solutions designed for long-term stability. Every module is modularly built to banking-grade security standards, enabling your team to execute faster without administrative bottlenecks.",
       "features": [
-        "Modular architecture & high-availability",
-        "Multi-role RBAC & centralized data auditing",
-        "Real-time data visualization & telemetry",
-        "Seamless corporate database integration"
+        "High-availability unified portal",
+        "Granular RBAC access controls & audit logs",
+        "Real-time analytics telemetry dashboard",
+        "Secure connection to legacy databases"
       ]
     },
     "mobile_apps": {
       "badge": "MOBILE ENGINEERING",
       "title": "High-Performance Mobile Apps",
-      "tagline": "Cross-Platform & Native Mobile Solutions",
-      "description": "Responsive enterprise mobile applications for iOS & Android featuring native-grade performance, offline-first sync, robust data encryption, and intuitive UX.",
+      "tagline": "iOS & Android with Native Responsiveness",
+      "description": "Offline-first mobile applications for field operations. Transactions stay smooth even in low-connectivity areas.",
+      "detail_desc": "Intuitive UX combined with true native responsiveness. Smart offline caching guarantees that operations never freeze even in remote facilities or warehouse dead zones.",
       "features": [
         "Modern cross-platform (Flutter / React Native)",
-        "Automated offline-first data sync engine",
-        "Biometric security & end-to-end encryption",
-        "Automated app store release CI/CD pipelines"
+        "Automated background offline sync",
+        "Biometric authentication & end-to-end encryption",
+        "Silky 60 FPS rendering on all screen sizes"
       ]
     },
     "custom_cloud": {
       "badge": "CLOUD & BACKEND",
       "title": "Custom Software & Cloud Systems",
-      "tagline": "Industry-Specific Logic & Distributed Cloud",
-      "description": "Custom software precisely designed around your unique business logic, backed by distributed cloud infrastructure, microservices, and elastic scalability.",
+      "tagline": "Resilient Architecture Ready for Traffic Surges",
+      "description": "Precision backend engines built to handle millions of daily transactions without server crashes during traffic spikes.",
+      "detail_desc": "Engineered using Domain-Driven Design (DDD) to reflect your exact business rules. Includes automated horizontal scaling to reduce idle cloud costs while effortlessly absorbing sudden traffic surges.",
       "features": [
-        "Domain-driven custom business logic design",
-        "Microservices & distributed caching layers",
-        "Container orchestration & automated CI/CD",
-        "Automated disaster recovery with 99.9% SLA"
+        "Battle-tested distributed microservices",
+        "Automated scaling & instant failover recovery",
+        "Docker container orchestration & CI/CD",
+        "99.9% availability SLA guarantee"
       ]
     },
     "digital_transformation": {
       "badge": "INTEGRATION SUITE",
-      "title": "Digital Transformation & API",
-      "tagline": "Legacy Modernization & Workflow Automation",
-      "description": "Legacy system modernization, national/global payment gateway integration, third-party API aggregations, and seamless cross-department workflow automation.",
+      "title": "System Modernization & API Integration",
+      "tagline": "Bridge Legacy Software Without Operational Downtime",
+      "description": "Securely connect legacy databases to modern payment gateways, logistics aggregators, and third-party APIs.",
+      "detail_desc": "Eliminate manual data re-entry between departments. We build resilient middleware API layers that safely connect your core company systems to the modern digital ecosystem in real time.",
       "features": [
-        "Legacy architecture modernization & refactoring",
-        "Standardized RESTful & GraphQL API gateways",
-        "Payment gateways & fintech aggregator connectors",
-        "Seamless event-driven workflow automation"
+        "Payment gateway & banking connectors",
+        "Zero-downtime legacy core modernization",
+        "Standardized RESTful & GraphQL gateways",
+        "Cross-department automated event workflows"
       ]
     }
   },
   "trust_tech": {
-    "kicker": "RELIABILITY & ENGINEERING EXPERTISE",
-    "title_prefix": "Modern Architecture &",
-    "title_highlight": "Enterprise Standards",
-    "description": "We engineer technology solutions with high-caliber software engineering disciplines: maximum system availability, ultra-responsive performance, enterprise-grade data security, and effortless scalability.",
+    "kicker": "ENGINEERING STANDARDS",
+    "title_prefix": "Production Quality &",
+    "title_highlight": "Enterprise Reliability",
+    "description": "Every line of code is rigorous tested to ensure ultra-low latency, data security, and uninterrupted 24/7 operations.",
+    "tab_reliability": "Reliability Standards & SLA",
+    "tab_ecosystem": "Technology Ecosystem",
+    "cta_details": "Technical Specs",
+    "modal_close": "Close",
+    "modal_cta": "Consult on This Solution",
     "metrics": {
       "sla_val": "99.9%",
       "sla_title": "Production SLA Uptime",
-      "sla_desc": "High-availability infrastructure with automated failover and zero-downtime releases.",
+      "sla_desc": "High-availability infrastructure with automatic failover.",
       "latency_val": "<100ms",
       "latency_title": "P95 Response Latency",
-      "latency_desc": "Optimized database queries, edge caching, and lightweight runtimes.",
+      "latency_desc": "Optimized queries and distributed caching for instant response.",
       "quality_val": "100%",
       "quality_title": "Clean Code & Type Safety",
-      "quality_desc": "Modular architecture enforced by strict TypeScript and comprehensive testing.",
+      "quality_desc": "Strict TypeScript, modular layers, zero compiler errors.",
       "security_val": "Enterprise",
       "security_title": "Security & Data Governance",
-      "security_desc": "Role-based access control (RBAC), data encryption, and centralized audit logs."
+      "security_desc": "Centralized audit trails, encryption, and strict access controls."
     },
     "origami": {
-      "kicker": "CORE ARCHITECTURE PILLARS",
-      "headline": "Battle-Tested Tech Foundation for Modern Business",
-      "subtitle": "Our architectural stack is engineered for long-term scalability, corporate data protection, and rapid delivery cycles without vendor lock-in.",
+      "kicker": "CORE ARCHITECTURE",
+      "headline": "Resilient Foundation for Business Scalability",
+      "subtitle": "Modern, high-performance tech stack designed for effortless maintainability without vendor lock-in.",
       "tag_1": "Next.js App Core",
       "tag_2": "TypeScript Engine",
       "tag_3": "Cloud & Microservices",
       "tag_4": "Scalable Database",
       "tag_5": "Enterprise Security",
       "tag_6": "API Integration Mesh",
+      "sub_1": "React 19 & Hybrid Edge",
+      "sub_2": "100% Strict Type Safety",
+      "sub_3": "Kubernetes Multi-Zone",
+      "sub_4": "PostgreSQL & Distributed Cache",
+      "sub_5": "Zero-Trust & AES-256 Encryption",
+      "sub_6": "Event-Driven Realtime APIs",
+      "badge_1": "FRAMEWORK",
+      "badge_2": "TYPE SAFE",
+      "badge_3": "CLOUD MESH",
+      "badge_4": "DATA CORE",
+      "badge_5": "ZERO TRUST",
+      "badge_6": "SUB-50MS",
       "cta": "Discuss Architecture"
     },
     "ecosystem": {
-      "kicker": "TECH STACK ECOSYSTEM",
-      "title": "Proven Production Tech Ecosystem",
-      "desc": "We select modern industry standards backed by active global developer communities and proven under heavy transaction traffic.",
+      "kicker": "TECH ECOSYSTEM",
+      "title": "Battle-Tested Production Stack",
+      "desc": "Global industry-standard technologies chosen for long-term stability and throughput.",
       "cat_frontend": "Frontend & Mobile",
-      "cat_frontend_desc": "Responsive interfaces and sub-second rendering performance on web and mobile apps.",
+      "cat_frontend_desc": "Responsive interfaces with rapid rendering across web and mobile.",
       "cat_backend": "Backend & Microservices",
-      "cat_backend_desc": "Resilient business logic, high throughput, and adaptive modular architectures.",
+      "cat_backend_desc": "Resilient business logic, high throughput, and adaptive modularity.",
       "cat_cloud": "Cloud & DevOps",
-      "cat_cloud_desc": "Automated containerized deployment, CI/CD pipelines, and full telemetry observability.",
+      "cat_cloud_desc": "Automated container pipelines, CI/CD, and full observability telemetry.",
       "cat_data": "Database & Distributed Cache",
-      "cat_data_desc": "Consistent ACID-compliant storage and ultra-low latency distributed caching."
+      "cat_data_desc": "ACID-compliant storage paired with ultra-low latency memory caching."
     }
   },
   "process": {
-    "kicker": "METHODOLOGY & WORKFLOW",
-    "title_prefix": "Structured Engineering from",
-    "title_highlight": "Concept to Production",
-    "description": "We follow a transparent, measurable, and highly disciplined software engineering lifecycle to ensure every deliverable arrives on schedule and meets enterprise standards.",
-    "cta_button": "Consult With Our Team",
+    "kicker": "TRANSPARENT METHODOLOGY",
+    "title_prefix": "From Business Needs to",
+    "title_highlight": "Production-Ready Systems",
+    "description": "Structured 2-week Agile sprint cycles. You know exactly what is being built, when it finishes, and test regular demos.",
+    "cta_button": "Consult Your Project",
     "phases": {
       "discovery": {
         "step": "PHASE 01",
         "tab_label": "01. Discovery",
-        "title": "Discovery & Business Needs Analysis",
-        "tagline": "Understanding Business Logic & Defining Precise Scope",
-        "description": "We collaborate closely with your stakeholders to dissect operational hurdles, map out system requirements, and craft comprehensive technical blueprints.",
+        "title": "Business Requirements & Technical Discovery",
+        "tagline": "Diagnose Problems & Architect the Right Scope",
+        "description": "We dissect your operational workflows and formalize clear technical requirements to ensure business objectives are hit without misunderstandings.",
         "deliverables": [
           "Business Requirements Document (BRD)",
           "User Journey & Scope Mapping",
-          "Project Timeline & Milestone Release Plan",
-          "Technical Feasibility & ROI Assessment"
+          "Milestone Timeline & Release Roadmap",
+          "Technical Architecture Feasibility Assessment"
         ],
         "tooling": ["Figma Jam", "Miro", "Notion Specs", "Jira Architecture"],
-        "cadence": "Weeks 1 – 2"
+        "cadence": "Week 1 – 2"
       },
       "architecture": {
         "step": "PHASE 02",
         "tab_label": "02. Architecture",
-        "title": "System Architecture Design & Technical Specs",
-        "tagline": "Scalable, Secure, & Future-Proof System Blueprint",
-        "description": "Before writing code, our software architects design normalized database schemas, modular service boundaries, security data protocols, and API contracts.",
+        "title": "System Architecture & Security Design",
+        "tagline": "Solid, Secure, and Scalable Foundation",
+        "description": "Designing relational database schemas, modular service separation, and security protocols before writing a single line of code.",
         "deliverables": [
-          "System Architecture & Cloud Topology Blueprint",
-          "Entity Relationship Diagram (ERD) Schema",
-          "Standardized API Contracts (OpenAPI / Swagger)",
-          "Data Security & RBAC Governance Model"
+          "Cloud Topography & Architecture Diagrams",
+          "Relational Database Schema (ERD)",
+          "Standardized API Contracts (OpenAPI)",
+          "Security Protocol & RBAC Governance"
         ],
         "tooling": ["PlantUML", "Draw.io", "PostgreSQL ERD", "OpenAPI"],
-        "cadence": "Weeks 2 – 3"
+        "cadence": "Week 2 – 3"
       },
       "prototyping": {
         "step": "PHASE 03",
         "tab_label": "03. Prototyping",
-        "title": "UI/UX Prototyping & Flow Mapping",
-        "tagline": "Intuitive User Journeys Engineered for Conversion",
-        "description": "Our product designers craft modern, accessible, and high-fidelity interfaces. Stakeholders can interactively click through real system flows before development begins.",
+        "title": "UI/UX Design & Interactive Prototypes",
+        "tagline": "Modern, Conversion-Focused User Experience",
+        "description": "Designing an intuitive, responsive interface. You click and test the complete system flow before any coding begins.",
         "deliverables": [
-          "High-Fidelity Interface Wireframes",
-          "Modular Design System & Component Library",
-          "Interactive Prototypes for User Testing",
-          "Responsive Mobile & Desktop Viewport Specs"
+          "High-Fidelity Interface Screens (Figma)",
+          "Standardized Design System & Tokens",
+          "Interactive Clickable Prototype",
+          "Mobile & Desktop Responsiveness Guidelines"
         ],
         "tooling": ["Figma", "Design Tokens", "Tailwind Theme", "User Testing"],
-        "cadence": "Weeks 3 – 4"
+        "cadence": "Week 3 – 4"
       },
       "development": {
         "step": "PHASE 04",
         "tab_label": "04. Development",
-        "title": "Agile & Modular Engineering Sprints",
-        "tagline": "Clean Code, Strict Type Safety, & Predictable Cadence",
-        "description": "Development proceeds in transparent 2-week agile sprints. You receive live working demos, visible Git commit progress, and automated CI/CD pipeline verification.",
+        "title": "Modular & Clean Code Development",
+        "tagline": "2-Week Sprints with Regular Working Demos",
+        "description": "Clean, type-safe codebase. Track transparent progress via dedicated staging servers and sprint review demos.",
         "deliverables": [
-          "Bi-Weekly Agile Sprint Deliverables",
-          "Clean Codebase with Strict TypeScript Type Safety",
-          "Live Staging Environments for Review",
+          "Agile 2-Week Sprint Development Cycles",
+          "Clean, Type-Safe Code Repository",
+          "Live Staging Environment for Demos",
           "Automated CI/CD Integration Pipeline"
         ],
         "tooling": ["Next.js", "TypeScript", "Node.js / Go", "Docker", "GitLab / GitHub"],
-        "cadence": "Bi-Weekly Sprints"
+        "cadence": "2-Week Sprints"
       },
       "qa_testing": {
         "step": "PHASE 05",
         "tab_label": "05. QA & Audit",
-        "title": "Rigorous QA, Security Audits, & Load Testing",
-        "tagline": "Ensuring Zero Flaws, Resilient Uptime, & Peak Performance",
-        "description": "Prior to launch, systems undergo end-to-end testing: automated unit test suites, security penetration checks, peak concurrency load testing, and cross-device validation.",
+        "title": "Rigorous Testing & Performance Audit",
+        "tagline": "Bug-Free, Fast, and Securely Shielded",
+        "description": "Comprehensive testing: unit tests, peak traffic stress simulations, and vulnerability audits prior to production launch.",
         "deliverables": [
-          "End-to-End & Automated Unit Testing Suites",
-          "High-Concurrency Peak Load & Stress Testing",
-          "Vulnerability & Security Penetration Check",
-          "Accessibility & Viewport Responsiveness Audit"
+          "Automated Unit & End-to-End Testing",
+          "Peak Traffic Stress Simulation (Load Test)",
+          "Security Vulnerability Penetration Check",
+          "Cross-Device Interface Responsiveness Audit"
         ],
         "tooling": ["Jest", "Playwright", "K6 Load Test", "SonarQube", "OWASP ZAP"],
-        "cadence": "Pre-Release Stage"
+        "cadence": "Pre-Release"
       },
       "deployment": {
         "step": "PHASE 06",
         "tab_label": "06. Launch & SLA",
-        "title": "Production Deployment & 99.9% SLA Warranty",
-        "tagline": "Zero-Downtime Rollout & Continuous Enterprise Support",
-        "description": "We roll out to production cloud infrastructure with zero-downtime blue/green deployment, 24/7 real-time telemetry monitoring, automated backups, and SLA guarantees.",
+        "title": "Production Deployment & SLA Warranty",
+        "tagline": "Zero-Downtime Rollout & Ongoing Support",
+        "description": "Seamless production launch backed by real-time observability telemetry and an active bug-free maintenance SLA.",
         "deliverables": [
           "Zero-Downtime Production Deployment",
-          "Real-Time Telemetry & APM Observability",
-          "Comprehensive Technical Documentation & Training",
-          "SLA-Backed Maintenance & Engineering Support"
+          "24/7 Real-Time Telemetry & Monitoring",
+          "Internal Team Handover & Documentation",
+          "Bug-Free Warranty & SLA Maintenance"
         ],
         "tooling": ["Kubernetes", "AWS / GCP", "Prometheus", "Grafana", "Uptime Kuma"],
         "cadence": "Continuous Support"
@@ -295,98 +321,112 @@
     }
   },
   "testimonials": {
-    "kicker": "CLIENT TRUST & IMPACT",
-    "title_prefix": "Trusted by Technology &",
-    "title_highlight": "Business Leaders",
-    "description": "Long-term client partnerships grounded in engineering rigor, punctuality, and uncompromising software craftsmanship.",
+    "kicker": "PROVEN RESULTS & TRUST",
+    "title_prefix": "Trusted by Leaders in",
+    "title_highlight": "Technology & Business",
+    "description": "Long-term partnerships forged through on-time delivery, clean code, and zero compromises on reliability.",
+    "verified_badge": "Verified Enterprise Client",
+    "cta_consult": "Consult Similar Solution",
+    "trust_points": {
+      "sla": "99.9% Production SLA",
+      "on_time": "100% On-Time Milestones",
+      "handover": "100% Source Code Ownership",
+      "retention": "95%+ Long-Term Partnerships"
+    },
     "items": [
       {
-        "quote": "Tehnonusa revolutionized our distribution infrastructure. From chronic delays and stock inaccuracies, now thousands of warehouse transactions run smoothly in real time with 100% uptime.",
+        "quote": "Our inventory reconciliations used to have frequent errors and dispatch delays. Since migrating to Tehnonusa's system, warehouse transactions synchronize in real time and orders process 3x faster.",
         "name": "Budi Santoso",
         "role": "VP of Technology",
         "company": "PT Logistik Prima Nusantara",
-        "metric": "+300% Operational Velocity"
+        "metric": "+300% Operational Throughput",
+        "project_type": "Multi-Warehouse Logistics & ERP System",
+        "deliverables": "Real-time multi-branch inventory sync & zero-error automated dispatch."
       },
       {
-        "quote": "The architectural elegance and API documentation they delivered met global corporate standards. The Tehnonusa team proactively understood our business domain from day one.",
+        "quote": "Their architecture and banking API integrations were exceptionally well designed. Tehnonusa's engineers proactively identified security vulnerabilities before we even noticed them.",
         "name": "Diana Prasetyo",
         "role": "Chief Digital Officer",
         "company": "PT Finansial Sinergi Abadi",
-        "metric": "99.99% Production Uptime"
+        "metric": "99.99% Production Uptime",
+        "project_type": "High-Security Banking API & Payment Gateway",
+        "deliverables": "Stringent banking data encryption, automatic failover & end-to-end audit trail."
       },
       {
-        "quote": "Our field mobile app was deployed on schedule with silky-smooth performance even across remote areas with weak cellular reception. Their post-launch engineering support is stellar.",
+        "quote": "Our field operations mobile app was delivered on time and runs silky-smooth even when accessed by tens of thousands of staff in remote, low-signal areas.",
         "name": "Rian Hendrawan",
         "role": "Head of Operations",
         "company": "PT Trans Mandiri Ekspres",
-        "metric": "100k+ Active Users"
+        "metric": "100k+ Active Users",
+        "project_type": "Offline-First Mobile Operations & Fleet App",
+        "deliverables": "Intelligent offline sync & data packet efficiency in remote field regions."
       }
     ]
   },
   "faq": {
-    "kicker": "FREQUENTLY ASKED QUESTIONS",
+    "kicker": "CONTRACT TRANSPARENCY",
     "title_prefix": "Frequently Asked",
     "title_highlight": "Questions",
-    "description": "Transparent clarity regarding intellectual property ownership, development timelines, cost estimation, and our software engineering standards.",
+    "description": "Straightforward answers regarding code ownership, delivery timelines, costs, and warranty commitments.",
     "items": [
       {
-        "question": "How is intellectual property (IP) and source code ownership handled?",
-        "answer": "100% of all source code, Git repositories, and architecture assets are fully transferred to your company upon milestone completion with zero royalty fees and no vendor lock-in."
+        "question": "Who owns the project source code and intellectual property?",
+        "answer": "100% owned by you. All Git repositories, documentation, and digital assets are fully transferred without royalties or vendor lock-in."
       },
       {
-        "question": "What is the typical timeframe for developing an enterprise system or app?",
-        "answer": "Timeline depends on scope. Focused MVPs or targeted operational modules are typically delivered in 4–8 weeks. For complex enterprise ecosystems, we work in disciplined 2-week Agile sprints."
+        "question": "What is the typical development timeline?",
+        "answer": "Focused MVP systems take 4–8 weeks. For complex enterprise platforms, we work in transparent 2-week sprints with regular demos."
       },
       {
-        "question": "Does PT Tehnonusa provide post-launch warranties and SLA support?",
-        "answer": "Yes. Every delivery is covered by our comprehensive bug-free warranty and system availability SLA guarantees, alongside continuous security monitoring and backups."
+        "question": "Does PT Tehnonusa provide post-launch warranty and support?",
+        "answer": "Yes. Every project includes a bug-free maintenance warranty and system availability SLA commitments."
       },
       {
-        "question": "How do you calculate project investment and pricing?",
-        "answer": "Costs are calculated transparently according to architectural requirements, functional modules, and target deployment schedule. We provide complimentary technical architecture consultations."
+        "question": "How are project investment estimates calculated?",
+        "answer": "Priced transparently based on architectural complexity, module integrations, and delivery milestones. We offer free technical discovery sessions to provide a formal proposal."
       },
       {
-        "question": "Can the new platform integrate with our existing legacy enterprise systems?",
-        "answer": "Absolutely. Our engineers specialize in database migration, custom API middleware bridges, and legacy modernization, allowing seamless data flow without halting day-to-day operations."
+        "question": "Can the new system integrate with our legacy databases?",
+        "answer": "Yes. We specialize in building secure bridge API connectors so your new system connects seamlessly without interrupting live operations."
       }
     ]
   },
   "cta": {
-    "kicker": "LET'S BUILD TOGETHER",
-    "title_prefix": "Ready to Engineer Your",
-    "title_highlight": "Digital Solution?",
-    "description": "Discuss your technical vision with our software engineering team. We provide complimentary architecture consultations and design the optimal technical roadmap for your business.",
-    "button_consult": "Schedule Free Architecture Call",
-    "button_wa": "Message via WhatsApp",
-    "modal_title": "Digital Solution Consultation",
-    "modal_subtitle": "Describe your system requirements. Our engineering team will analyze and respond within 1 business day.",
+    "kicker": "ARCHITECTURE CONSULTATION",
+    "title_prefix": "Ready to Build Your",
+    "title_highlight": "Next Digital System?",
+    "description": "Discuss your system requirements with our lead software engineers. Receive technical feasibility analysis and a clear roadmap — free with zero commitment.",
+    "button_consult": "Schedule Free Consultation",
+    "button_wa": "Contact via WhatsApp",
+    "modal_title": "Design Your System Solution",
+    "modal_subtitle": "Tell us briefly about your system requirements. Our engineering team will review and respond within 1 business day.",
     "form_name": "Full Name",
     "form_company": "Company / Organization",
-    "form_email": "Corporate Email",
+    "form_email": "Email Address",
     "form_phone": "WhatsApp Number",
-    "form_service": "Target Service",
+    "form_service": "Required Service",
     "form_service_options": [
-      "Enterprise Web Systems",
-      "Mobile Applications (iOS/Android)",
+      "Enterprise Web & ERP",
+      "High-Performance Mobile Apps",
       "Custom Software & Cloud",
-      "Digital Transformation & API",
-      "System Architecture Consulting"
+      "System Modernization & API Integration",
+      "System Architecture Consultation"
     ],
-    "form_message": "Brief summary of your system challenges or technical requirements...",
+    "form_message": "Briefly describe your requirements or operational bottlenecks...",
     "form_submit": "Submit Consultation Request",
     "form_submitting": "Submitting Request...",
-    "form_success_title": "Consultation Request Received!",
-    "form_success_desc": "Thank you for reaching out. Our software architects will contact you promptly via WhatsApp or Email.",
+    "form_success_title": "Request Successfully Sent!",
+    "form_success_desc": "Thank you for reaching out. Our engineering team will follow up with you promptly via WhatsApp or Email.",
     "form_close": "Close"
   },
   "footer": {
-    "about": "PT Tehnonusa Prima Solusi is a premier software engineering and digital transformation provider, designing resilient enterprise web platforms, mobile apps, and scalable cloud systems.",
+    "about": "PT Tehnonusa Prima Solusi is an enterprise software engineering partner designing robust corporate web systems, mobile apps, and scalable cloud infrastructure.",
     "quick_links": "Navigation",
     "services_title": "Core Services",
     "contact_title": "Official Contact",
     "rights": "All Rights Reserved.",
     "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
+    "terms": "Terms & Conditions",
     "made_with": "Engineered with modern software standards"
   },
   "contact": {

@@ -16,9 +16,9 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Container } from "@/components/ui/container";
-import { TechBackground } from "@/components/ui/tech-background";
-import { CircleHighlight } from "@/components/ui/draw-circle-text";
 import { SpotlightButton, DrawOutlineButton } from "@/components/ui/creative-buttons";
+import { ParticleRingBackground } from "@/components/ui/particle-ring";
+import { TechBackground } from "@/components/ui/tech-background";
 import { LottieAnimation } from "@/components/ui/lottie-animation";
 import { cn } from "@/lib/utils";
 
@@ -66,13 +66,26 @@ export function CtaSection() {
     <section
       id="contact"
       aria-labelledby="cta-heading"
-      className="relative py-24 sm:py-32 overflow-hidden bg-background transition-colors duration-300"
+      className="relative min-h-screen flex flex-col justify-center py-14 sm:py-18 lg:py-20 overflow-x-clip bg-gradient-to-b from-white via-slate-50/70 to-slate-100/80 dark:bg-none dark:bg-[#0b1120] transition-colors duration-300"
     >
+      {/* 1. Live Interactive 3D Particle Ring Background (Persistent mount, no flicker on fast scroll) */}
+      <ParticleRingBackground className="opacity-80 dark:opacity-95" />
+
+      {/* 2. Soft upward blend overlay into FAQ (zero WebGL compositor overhead, smooth particle fade) */}
+      <div className="absolute -top-28 sm:-top-44 inset-x-0 h-32 bg-gradient-to-b from-white via-white/80 to-transparent dark:from-[#0b1120] dark:via-[#0b1120]/80 dark:to-transparent pointer-events-none z-[1]" />
+
+      {/* 3. Architectural Blueprint Grid */}
       <TechBackground variant="section" pattern="grid" />
 
-      <Container size="lg">
+      {/* 3. Subtle 3D Telemetry Indicator (docked at bottom right to keep top boundary completely borderless) */}
+      <div className="hidden sm:flex items-center gap-2 absolute bottom-6 right-8 text-[11px] font-mono text-slate-500 dark:text-slate-400 bg-white/70 dark:bg-slate-900/70 border border-slate-200/80 dark:border-slate-800 px-3 py-1 rounded-full backdrop-blur-md pointer-events-none z-10 shadow-2xs">
+        <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
+        <span>3D Particle Ring • Drag to Rotate</span>
+      </div>
+
+      <Container size="lg" className="relative z-10">
         {/* Main CTA Card with Ambient Glowing Border */}
-        <div className="relative rounded-3xl p-8 sm:p-12 lg:p-16 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 text-white border border-slate-800 shadow-2xl overflow-hidden">
+        <div className="relative rounded-3xl p-8 sm:p-12 lg:p-16 bg-gradient-to-br from-slate-900/90 via-slate-950/95 to-slate-900/90 backdrop-blur-xl text-white border border-slate-800/90 shadow-2xl overflow-hidden">
           {/* Glowing Ambient Radial Glow */}
           <div className="absolute top-0 right-1/4 w-96 h-96 bg-primary/25 rounded-full blur-3xl pointer-events-none" />
           <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none" />
@@ -184,7 +197,7 @@ export function CtaSection() {
                               message: "",
                             });
                           }}
-                          className="px-5 py-2.5 rounded-full bg-surface border border-border text-xs font-sans font-semibold text-foreground hover:bg-surface/80 transition-colors"
+                          className="px-5 py-2.5 rounded-full bg-slate-800 hover:bg-slate-700 border border-slate-700 text-xs font-sans font-semibold text-white transition-colors"
                         >
                           Kirim Pertanyaan Lain
                         </button>

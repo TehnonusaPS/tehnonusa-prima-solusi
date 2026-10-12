@@ -1,11 +1,11 @@
 {
   "common": {
     "company": "PT Tehnonusa Prima Solusi",
-    "tagline": "Solusi Digital untuk Bisnis Anda"
+    "tagline": "Software Engineering & Enterprise Solutions"
   },
   "meta": {
-    "title": "PT Tehnonusa Prima Solusi — Solusi Digital untuk Bisnis Anda",
-    "description": "PT Tehnonusa Prima Solusi menyediakan layanan pembuatan sistem web, aplikasi, custom software, dan transformasi digital untuk bisnis Anda."
+    "title": "PT Tehnonusa Prima Solusi — Enterprise Software & Cloud Architecture",
+    "description": "Partner rekayasa software terpercaya untuk enterprise. Sistem web skala besar, aplikasi mobile, dan infrastruktur cloud dengan SLA 99.9% serta 100% kepemilikan kode."
   },
   "nav": {
     "services": "Layanan",
@@ -15,140 +15,166 @@
     "contact": "Hubungi Kami"
   },
   "hero": {
-    "kicker": "SOFTWARE ENGINEERING & DIGITAL TRANSFORMATION",
-    "headline_prefix": "Membangun",
-    "headline_highlight": "Solusi Digital",
-    "headline_mid": "Andal",
-    "headline_suffix": "untuk Skalabilitas Bisnis",
-    "description": "Kami merancang dan mengembangkan sistem web enterprise, aplikasi mobile performa tinggi, serta arsitektur cloud kustom yang menggerakkan pertumbuhan bisnis modern.",
-    "cta_primary": "Diskusi Proyek",
-    "cta_secondary": "Lihat Layanan",
+    "kicker": "ENTERPRISE SOFTWARE ENGINEERING",
+    "headline_prefix": "Bangun Sistem",
+    "headline_highlight": "Digital Andal",
+    "headline_mid": "",
+    "headline_suffix": "Bebas Risiko Downtime",
+    "description": "Kami merancang custom software berstandar korporat dengan SLA 99.9%, zero-downtime, dan 100% kepemilikan source code tanpa vendor lock-in.",
+    "cta_primary": "Jadwalkan Konsultasi Gratis",
+    "cta_secondary": "Lihat Karya & Solusi",
     "badge_uptime": "99.9% Uptime SLA",
-    "badge_security": "Enterprise Grade Security",
-    "badge_architecture": "Scalable Microservices",
-    "client_trust": "Dipercaya untuk membangun infrastruktur dan sistem digital berkinerja tinggi"
+    "badge_security": "Enterprise Data Security",
+    "badge_architecture": "Microservices Scalable",
+    "client_trust": "Dipercaya menangani sistem dan infrastruktur misi-kritis"
   },
   "services": {
-    "kicker": "LAYANAN & KAPABILITAS TEKNOLOGI",
-    "title_prefix": "Solusi Rekayasa Perangkat Lunak untuk",
-    "title_highlight": "Pertumbuhan Bisnis",
-    "description": "Kami merancang arsitektur sistem yang andal, scalable, dan aman guna mengakselerasi transformasi digital serta efisiensi operasional perusahaan Anda.",
+    "kicker": "LAYANAN UNGGULAN",
+    "title_prefix": "Solusi Software Berstandar Enterprise untuk",
+    "title_highlight": "Akselerasi Bisnis",
+    "description": "Sistem cepat, bebas bug, dan dirancang langsung untuk menghemat biaya operasional serta meningkatkan efisiensi tim Anda.",
     "cta_card": "Konsultasikan Kebutuhan",
-    "cta_banner_title": "Memiliki Kebutuhan Sistem Digital Khusus?",
-    "cta_banner_desc": "Tim software engineer kami siap menganalisis kebutuhan spesifik bisnis Anda dan merancang solusi arsitektur yang paling tepat dan efisien.",
-    "cta_banner_button": "Diskusikan Kebutuhan Anda",
+    "cta_details": "Detail Spesifikasi",
+    "modal_deliverables": "Deliverables & Arsitektur Teknis:",
+    "modal_tech": "Teknologi Terkait:",
+    "modal_cta": "Konsultasikan Solusi Ini",
+    "modal_close": "Tutup",
+    "cta_banner_title": "Punya Kebutuhan Sistem Khusus?",
+    "cta_banner_desc": "Lead software engineer kami siap menganalisis tantangan bisnis Anda dan merancang blueprint arsitektur yang paling efisien.",
+    "cta_banner_button": "Konsultasi Blueprint Gratis",
     "web_systems": {
       "badge": "ENTERPRISE ARCHITECTURE",
-      "title": "Enterprise Web Systems",
-      "tagline": "Sistem Web Korporat & Portal Terintegrasi",
-      "description": "Pengembangan aplikasi web skala korporat, dashboard manajemen operasional, ERP terintegrasi, dan portal internal dengan ketersediaan tinggi serta kontrol akses terpusat.",
+      "title": "Enterprise Web & ERP",
+      "tagline": "Otomasi Operasional & Sentralisasi Data",
+      "description": "Gantikan sistem manual dan spreadsheet berantakan dengan portal terpusat. Menghemat ribuan jam kerja dan mencegah kebocoran data.",
+      "detail_desc": "Solusi web skala korporat yang dirancang untuk stabilitas jangka panjang. Setiap modul dibangun secara modular dengan standar keamanan perbankan, memungkinkan tim Anda bekerja lebih cepat tanpa hambatan birokrasi manual.",
       "features": [
-        "Arsitektur modular & high-availability",
-        "Multi-role RBAC & data auditing terpusat",
-        "Visualisasi data & telemetri real-time",
-        "Integrasi seamless dengan database korporat"
+        "Portal terintegrasi & high-availability",
+        "Kontrol akses bertingkat (RBAC) & audit trail",
+        "Dashboard visualisasi & telemetri real-time",
+        "Koneksi aman ke database korporat"
       ]
     },
     "mobile_apps": {
       "badge": "MOBILE ENGINEERING",
       "title": "High-Performance Mobile Apps",
-      "tagline": "Solusi Mobile Lintas Platform & Native",
-      "description": "Aplikasi mobile bisnis responsif untuk iOS & Android dengan performa native, sinkronisasi offline-first, enkripsi data, dan antarmuka pengguna yang intuitif.",
+      "tagline": "Aplikasi iOS & Android Kecepatan Native",
+      "description": "Aplikasi mobile responsif berarsitektur offline-first. Transaksi dan koordinasi lapangan tetap lancar bahkan di jaringan minim sinyal.",
+      "detail_desc": "Pengalaman pengguna intuitif dipadukan dengan performa native. Kami mengimplementasikan offline caching cerdas sehingga aplikasi tidak pernah macet saat pengguna berada di area terpencil atau gudang minim sinyal.",
       "features": [
         "Lintas platform modern (Flutter / React Native)",
-        "Sinkronisasi offline-first otomatis",
-        "Keamanan biometrik & autentikasi enkripsi",
-        "Dukungan pipeline CI/CD rilis toko aplikasi"
+        "Sinkronisasi data offline otomatis",
+        "Autentikasi biometrik & enkripsi end-to-end",
+        "Rendering mulus 60 FPS di semua perangkat"
       ]
     },
     "custom_cloud": {
       "badge": "CLOUD & BACKEND",
       "title": "Custom Software & Cloud Systems",
-      "tagline": "Sistem Spesifik Industri & Cloud Terdistribusi",
-      "description": "Pengembangan sistem kustom yang dirancang presisi sesuai logika bisnis unik Anda, diperkuat infrastruktur cloud terdistribusi, microservices, dan skalabilitas elastis.",
+      "tagline": "Infrastruktur Tangguh Siap Lonjakan Transaksi",
+      "description": "Sistem kustom presisi tinggi yang siap menampung jutaan transaksi harian tanpa takut server crash saat promosi puncak.",
+      "detail_desc": "Dirancang menggunakan pendekatan Domain-Driven Design (DDD) untuk menangani kompleksitas aturan bisnis spesifik Anda. Dilengkapi mekanisme auto-scaling yang menghemat biaya server saat sepi dan otomatis membesar saat lonjakan trafik.",
       "features": [
-        "Logika bisnis kustom domain-driven design",
-        "Microservices & caching terdistribusi",
-        "Orkestrasi kontainer & automasi CI/CD",
-        "Disaster recovery otomatis dengan 99.9% SLA"
+        "Arsitektur microservices terdistribusi",
+        "Auto-scaling & disaster recovery otomatis",
+        "Kontainerisasi Docker & CI/CD otomatis",
+        "Jaminan SLA ketersediaan 99.9%"
       ]
     },
     "digital_transformation": {
       "badge": "INTEGRATION SUITE",
-      "title": "Digital Transformation & API",
-      "tagline": "Modernisasi Sistem & Otomasi Alur Kerja",
-      "description": "Modernisasi sistem legacy, integrasi payment gateway nasional/global, agregasi API pihak ketiga, dan otomatisasi alur kerja operasional antar departemen.",
+      "title": "Modernisasi Sistem & Integrasi API",
+      "tagline": "Hubungkan Sistem Lama Tanpa Mengganggu Operasional",
+      "description": "Hubungkan database legacy dengan payment gateway, logistik, dan API pihak ketiga secara otomatis tanpa jeda transaksi.",
+      "detail_desc": "Hilangkan proses re-input manual antar departemen. Kami membangun middleware API handal yang menjembatani sistem inti perusahaan Anda dengan ekosistem digital modern secara real-time dan aman.",
       "features": [
-        "Modernisasi arsitektur sistem legacy",
-        "Gerbang RESTful & GraphQL API terstandar",
-        "Konektor payment gateway & agregator fintech",
-        "Otomatisasi event-driven workflow tanpa jeda"
+        "Konektor payment gateway & perbankan",
+        "Modernisasi sistem legacy zero-downtime",
+        "Gerbang RESTful & GraphQL terstandar",
+        "Otomasi alur kerja lintas departemen"
       ]
     }
   },
   "trust_tech": {
-    "kicker": "RELIABILITY & ENGINEERING EXPERTISE",
-    "title_prefix": "Standar Arsitektur Modern &",
-    "title_highlight": "Kualitas Industri",
-    "description": "Kami membangun solusi teknologi dengan disiplin rekayasa software tingkat tinggi: ketersediaan sistem maksimal, performa responsif, keamanan data berstandar enterprise, dan kemudahan skalabilitas.",
+    "kicker": "STANDAR REKAYASA TEKNOLOGI",
+    "title_prefix": "Standar Kualitas &",
+    "title_highlight": "Keandalan Produksi",
+    "description": "Setiap baris kode diuji ketat untuk menjamin respon kilat, keamanan aset data, dan kelancaran operasional 24/7.",
+    "tab_reliability": "Standar Keandalan & SLA",
+    "tab_ecosystem": "Ekosistem Stack Teknologi",
+    "cta_details": "Detail Spesifikasi",
+    "modal_close": "Tutup",
+    "modal_cta": "Konsultasikan Solusi Ini",
     "metrics": {
       "sla_val": "99.9%",
       "sla_title": "Production SLA Uptime",
-      "sla_desc": "Infrastruktur high-availability dengan failover otomatis dan disaster recovery.",
+      "sla_desc": "Infrastruktur tahan lonjakan trafik dengan failover otomatis.",
       "latency_val": "<100ms",
       "latency_title": "P95 Response Latency",
-      "latency_desc": "Optimalisasi query database, distributed caching, dan runtime yang efisien.",
+      "latency_desc": "Optimalisasi query dan distributed caching untuk respon instan.",
       "quality_val": "100%",
       "quality_title": "Clean Code & Type Safety",
-      "quality_desc": "Basis kode modular dengan TypeScript ketat dan pengujian otomatis.",
+      "quality_desc": "TypeScript ketat, modular, dan zero compiler error.",
       "security_val": "Enterprise",
       "security_title": "Security & Data Governance",
-      "security_desc": "Role-based access control (RBAC), enkripsi data, dan audit trail terpusat."
+      "security_desc": "Audit trail, enkripsi data, dan kontrol akses ketat."
     },
     "origami": {
-      "kicker": "CORE ARCHITECTURE PILLARS",
-      "headline": "Fondasi Teknologi Andal untuk Skalabilitas Bisnis",
-      "subtitle": "Pilihan stack teknologi kami dirancang untuk performa jangka panjang, keamanan data korporat, dan kemudahan pengembangan tanpa risiko vendor lock-in.",
+      "kicker": "PILAR ARSITEKTUR",
+      "headline": "Fondasi Tangguh untuk Skalabilitas Bisnis",
+      "subtitle": "Stack teknologi modern berkinerja tinggi, aman, dan mudah dirawat jangka panjang tanpa risiko ketergantungan (vendor lock-in).",
       "tag_1": "Next.js App Core",
       "tag_2": "TypeScript Engine",
       "tag_3": "Cloud & Microservices",
       "tag_4": "Scalable Database",
       "tag_5": "Enterprise Security",
       "tag_6": "API Integration Mesh",
-      "cta": "Diskusikan Arsitektur"
+      "sub_1": "React 19 & Hybrid Edge",
+      "sub_2": "100% Strict Type Safety",
+      "sub_3": "Kubernetes Multi-Zone",
+      "sub_4": "PostgreSQL & Distributed Cache",
+      "sub_5": "Zero-Trust & Enkripsi AES-256",
+      "sub_6": "Event-Driven Realtime APIs",
+      "badge_1": "FRAMEWORK",
+      "badge_2": "TYPE SAFE",
+      "badge_3": "CLOUD MESH",
+      "badge_4": "DATA CORE",
+      "badge_5": "ZERO TRUST",
+      "badge_6": "SUB-50MS",
+      "cta": "Konsultasikan Arsitektur"
     },
     "ecosystem": {
-      "kicker": "TECH STACK ECOSYSTEM",
-      "title": "Teknologi Teruji di Level Produksi",
-      "desc": "Kami memilih teknologi modern yang terbukti tangguh menangani lalu lintas transaksi tinggi dan didukung ekosistem global.",
+      "kicker": "EKOSISTEM TEKNOLOGI",
+      "title": "Teknologi Teruji di Skala Produksi",
+      "desc": "Stack pilihan industri global untuk efisiensi dan stabilitas jangka panjang.",
       "cat_frontend": "Frontend & Mobile",
-      "cat_frontend_desc": "Antarmuka responsif dan performa rendering kilat di web maupun aplikasi mobile.",
+      "cat_frontend_desc": "Antarmuka responsif dan rendering kilat di web maupun mobile.",
       "cat_backend": "Backend & Microservices",
-      "cat_backend_desc": "Logika bisnis tangguh, throughput tinggi, dan arsitektur modular yang adaptif.",
+      "cat_backend_desc": "Logika bisnis tangguh, throughput tinggi, dan arsitektur adaptif.",
       "cat_cloud": "Cloud & DevOps",
-      "cat_cloud_desc": "Otomasi deployment kontainer, pipeline CI/CD, dan observabilitas telemetri penuh.",
+      "cat_cloud_desc": "Otomasi deployment kontainer, pipeline CI/CD, dan telemetri penuh.",
       "cat_data": "Database & Distributed Cache",
-      "cat_data_desc": "Penyimpanan data konsisten ACID-compliant dan caching latensi ultra-rendah."
+      "cat_data_desc": "Penyimpanan data konsisten ACID-compliant dan cache latensi rendah."
     }
   },
   "process": {
-    "kicker": "METODOLOGI & ALUR KERJA",
-    "title_prefix": "Alur Rekayasa Terstruktur dari",
-    "title_highlight": "Ide ke Produksi",
-    "description": "Kami menerapkan siklus hidup rekayasa perangkat lunak yang transparan, terukur, dan berdisiplin tinggi untuk memastikan setiap deliverables selesai tepat waktu dan berstandar enterprise.",
+    "kicker": "METODOLOGI TRANSPARAN",
+    "title_prefix": "Dari Kebutuhan Bisnis ke",
+    "title_highlight": "Sistem Siap Pakai",
+    "description": "Proses terukur dalam siklus sprint 2 mingguan. Anda tahu persis apa yang dikerjakan, kapan selesai, dan melihat demo rutin.",
     "cta_button": "Konsultasikan Proyek Anda",
     "phases": {
       "discovery": {
         "step": "FASE 01",
         "tab_label": "01. Discovery",
-        "title": "Discovery & Analisis Kebutuhan Bisnis",
-        "tagline": "Memahami Logika Bisnis & Mendefinisikan Ruang Lingkup",
-        "description": "Kami berkolaborasi erat dengan tim Anda untuk membedah tantangan operasional, memetakan kebutuhan sistem, dan menyusun spesifikasi kebutuhan teknis secara komprehensif.",
+        "title": "Analisis Kebutuhan & Solusi Bisnis",
+        "tagline": "Memetakan Masalah & Menentukan Solusi Tepat",
+        "description": "Kami membedah alur operasional dan menyusun spesifikasi kebutuhan teknis yang jelas agar target bisnis tercapai tanpa salah paham.",
         "deliverables": [
-          "Business Requirements Document (BRD)",
-          "Pemetaan User Journey & Ruang Lingkup",
-          "Estimasi Timeline & Rencana Rilis",
-          "Kalkulasi Kelayakan Teknis (Feasibility)"
+          "Dokumen Kebutuhan Bisnis (BRD)",
+          "Pemetaan Alur Pengguna & Ruang Lingkup",
+          "Estimasi Timeline & Roadmap Rilis",
+          "Kalkulasi Kelayakan Arsitektur"
         ],
         "tooling": ["Figma Jam", "Miro", "Notion Specs", "Jira Architecture"],
         "cadence": "Minggu 1 – 2"
@@ -156,14 +182,14 @@
       "architecture": {
         "step": "FASE 02",
         "tab_label": "02. Arsitektur",
-        "title": "Desain Arsitektur Sistem & Spesifikasi",
-        "tagline": "Fondasi Scalable, Aman, & Siap Skalabilitas",
-        "description": "Sebelum menulis kode, software architect kami merancang skema database, pemisahan layer microservices/modular, protokol keamanan data, dan kontrak API.",
+        "title": "Desain Arsitektur & Keamanan",
+        "tagline": "Fondasi Kuat, Aman, & Siap Berkembang",
+        "description": "Merancang skema database, pemisahan layer modular, dan standar keamanan data sebelum menulis satu baris kode pun.",
         "deliverables": [
-          "Diagram Arsitektur Sistem & Topologi Cloud",
-          "Entity Relationship Diagram (ERD) Database",
-          "Kontrak API Terstandar (OpenAPI / Swagger)",
-          "Strategi Keamanan & RBAC Governance"
+          "Diagram Arsitektur & Topologi Cloud",
+          "Skema Database Relasional (ERD)",
+          "Kontrak API Terstandar (OpenAPI)",
+          "Protokol Keamanan & Kontrol Akses (RBAC)"
         ],
         "tooling": ["PlantUML", "Draw.io", "PostgreSQL ERD", "OpenAPI"],
         "cadence": "Minggu 2 – 3"
@@ -171,13 +197,13 @@
       "prototyping": {
         "step": "FASE 03",
         "tab_label": "03. Prototyping",
-        "title": "Desain Antarmuka & Prototipe Interaktif",
-        "tagline": "Pengalaman Pengguna Intuitif Berorientasi Konversi",
-        "description": "Tim UI/UX merancang antarmuka yang modern, responsif, dan mudah digunakan. Klien dapat menguji klik alur sistem secara langsung sebelum tahap koding dimulai.",
+        "title": "Desain UI/UX & Prototipe Interaktif",
+        "tagline": "Antarmuka Modern yang Mudah Digunakan",
+        "description": "Mendesain antarmuka yang intuitif dan berorientasi konversi. Anda dapat menguji klik alur sistem sebelum tahap koding dimulai.",
         "deliverables": [
-          "Wireframe Antarmuka Resolusi Tinggi",
+          "Desain Antarmuka Resolusi Tinggi (Figma)",
           "Design System & Komponen Terstandar",
-          "Prototipe Interaktif Siap Uji Pengguna",
+          "Prototipe Interaktif Siap Uji Coba",
           "Panduan Responsif Mobile & Desktop"
         ],
         "tooling": ["Figma", "Design Tokens", "Tailwind Theme", "User Testing"],
@@ -186,13 +212,13 @@
       "development": {
         "step": "FASE 04",
         "tab_label": "04. Development",
-        "title": "Pengembangan Sistem Agile & Modular",
-        "tagline": "Clean Code, Type-Safe, & Sprint Terjadwal",
-        "description": "Pengembangan dilakukan dalam siklus sprint 2 mingguan. Anda mendapatkan demo berkala, progress transparan di Git, dan integrasi berkelanjutan (CI/CD pipeline).",
+        "title": "Pengembangan Kode Bersih & Modular",
+        "tagline": "Sprint 2 Mingguan & Demo Berkala",
+        "description": "Kode bersih dan type-safe. Anda memantau progres secara transparan melalui staging server dan sesi demo setiap sprint.",
         "deliverables": [
           "Siklus Sprint Agile 2 Mingguan",
-          "Repositori Kode Bersih & Type-Safe",
-          "Staging Environment untuk Demo Rutin",
+          "Basis Kode Bersih & Type-Safe",
+          "Staging Server untuk Demo Rutin",
           "Pipeline CI/CD Otomatis Terintegrasi"
         ],
         "tooling": ["Next.js", "TypeScript", "Node.js / Go", "Docker", "GitLab / GitHub"],
@@ -201,14 +227,14 @@
       "qa_testing": {
         "step": "FASE 05",
         "tab_label": "05. QA & Audit",
-        "title": "Pengujian Ketat, Keamanan, & Audit Performa",
-        "tagline": "Menjamin Bebas Bug, Cepat, & Terlindungi",
-        "description": "Sebelum peluncuran, sistem diuji secara menyeluruh: unit testing, pengujian penetrasi keamanan data, audit beban puncak (stress/load test), dan uji lintas perangkat.",
+        "title": "Pengujian Ketat & Audit Performa",
+        "tagline": "Bebas Bug, Cepat, & Aman Terlindungi",
+        "description": "Pengujian menyeluruh: uji otomatis, simulasi beban puncak (load test), dan audit celah keamanan sebelum peluncuran resmi.",
         "deliverables": [
-          "End-to-End & Automated Unit Testing",
-          "Simulasi Uji Beban Puncak (Load & Stress Test)",
-          "Vulnerability & Security Penetration Check",
-          "Audit Aksesibilitas & Responsivitas Antarmuka"
+          "Uji Otomatis & End-to-End Testing",
+          "Simulasi Beban Trafik Puncak (Stress Test)",
+          "Audit Celah Keamanan Data",
+          "Verifikasi Responsivitas Antarmuka"
         ],
         "tooling": ["Jest", "Playwright", "K6 Load Test", "SonarQube", "OWASP ZAP"],
         "cadence": "Menjelang Release"
@@ -216,14 +242,14 @@
       "deployment": {
         "step": "FASE 06",
         "tab_label": "06. Launch & SLA",
-        "title": "Peluncuran Produksi & Garansi SLA 99.9%",
-        "tagline": "Deployment Zero-Downtime & Dukungan Penuh",
-        "description": "Sistem diluncurkan ke production cloud dengan arsitektur zero-downtime, dilengkapi pemantauan telemetri real-time, backup otomatis, dan jaminan support SLA.",
+        "title": "Peluncuran Produksi & Garansi SLA",
+        "tagline": "Zero-Downtime & Dukungan Penuh",
+        "description": "Peluncuran sistem mulus tanpa downtime, dilengkapi monitoring real-time dan garansi pemeliharaan bebas bug.",
         "deliverables": [
-          "Zero-Downtime Production Deployment",
-          "Pemantauan Telemetri & APM Real-Time",
-          "Dokumentasi Teknis & Pelatihan Admin",
-          "Dukungan Pemeliharaan & Perjanjian SLA"
+          "Peluncuran Zero-Downtime ke Cloud",
+          "Monitoring Sistem Real-Time 24/7",
+          "Dokumentasi & Panduan Tim Internal",
+          "Garansi Bug & Perjanjian SLA Ketersediaan"
         ],
         "tooling": ["Kubernetes", "AWS / GCP", "Prometheus", "Grafana", "Uptime Kuma"],
         "cadence": "Continuous Support"
@@ -295,70 +321,84 @@
     }
   },
   "testimonials": {
-    "kicker": "CLIENT TRUST & IMPACT",
+    "kicker": "BUKTI HASIL & REPUTASI",
     "title_prefix": "Dipercaya oleh Para Pemimpin",
     "title_highlight": "Teknologi & Bisnis",
-    "description": "Kemitraan jangka panjang dibangun di atas keandalan teknis, ketepatan waktu, dan dedikasi rekayasa software tanpa kompromi.",
+    "description": "Kepercayaan jangka panjang dibangun dari ketepatan waktu, kualitas kode bersih, dan keandalan sistem tanpa kompromi.",
+    "verified_badge": "Klien Terverifikasi Produksi",
+    "cta_consult": "Konsultasikan Kebutuhan Serupa",
+    "trust_points": {
+      "sla": "99.9% Production SLA",
+      "on_time": "100% On-Time Milestones",
+      "handover": "100% Hak Milik Source Code",
+      "retention": "95%+ Kemitraan Jangka Panjang"
+    },
     "items": [
       {
-        "quote": "Tehnonusa merevolusi sistem distribusi kami. Dari yang sebelumnya sering delay dan data stok tidak akurat, kini ribuan transaksi gudang berjalan real-time dengan uptime 100%.",
+        "quote": "Sebelumnya rekap stok sering selisih dan pengiriman delay. Setelah migrasi ke sistem Tehnonusa, seluruh data gudang sinkron real-time dan pesanan diproses 3x lebih cepat.",
         "name": "Budi Santoso",
         "role": "VP of Technology",
         "company": "PT Logistik Prima Nusantara",
-        "metric": "+300% Kecepatan Operasional"
+        "metric": "+300% Kecepatan Operasional",
+        "project_type": "Multi-Warehouse Logistics & ERP System",
+        "deliverables": "Sinkronisasi inventaris multi-cabang real-time & otomatisasi alur dispatch."
       },
       {
-        "quote": "Kualitas arsitektur dan dokumentasi API yang mereka berikan berstandar korporat global. Tim engineer Tehnonusa sangat proaktif dan memahami domain bisnis kami secara mendalam.",
+        "quote": "Arsitektur dan integrasi API perbankannya sangat rapi. Tim Tehnonusa proaktif memikirkan celah keamanan yang bahkan belum sempat kami sadari.",
         "name": "Diana Prasetyo",
         "role": "Chief Digital Officer",
         "company": "PT Finansial Sinergi Abadi",
-        "metric": "99.99% Sistem Uptime"
+        "metric": "99.99% Sistem Uptime",
+        "project_type": "High-Security Banking API & Payment Gateway",
+        "deliverables": "Standar enkripsi data perbankan ketat, failover otomatis & audit trail lengkap."
       },
       {
-        "quote": "Aplikasi mobile lapangan kami selesai tepat waktu dengan performa mulus bahkan di daerah dengan sinyal lemah. Dukungan teknis pasca-rilis mereka sangat luar biasa.",
+        "quote": "Aplikasi mobile lapangan kami selesai sesuai jadwal. Performa tetap mulus dan stabil bahkan saat diakses puluhan ribu staf di area sinyal minim.",
         "name": "Rian Hendrawan",
         "role": "Head of Operations",
         "company": "PT Trans Mandiri Ekspres",
-        "metric": "100k+ Active Users"
+        "metric": "100k+ Active Users",
+        "project_type": "Offline-First Mobile Operations & Fleet App",
+        "deliverables": "Sinkronisasi offline cerdas & efisiensi paket data di wilayah pelosok."
       }
     ]
   },
   "faq": {
-    "kicker": "FREQUENTLY ASKED QUESTIONS",
+    "kicker": "TRANSPARANSI KONTRAK",
     "title_prefix": "Pertanyaan yang Sering",
     "title_highlight": "Diajukan",
-    "description": "Jawaban transparan seputar kepemilikan kode, timeline proyek, biaya, dan standar rekayasa software kami.",
+    "description": "Jawaban lugas seputar kepemilikan kode, waktu pengerjaan, biaya, dan standar garansi kami.",
     "items": [
       {
-        "question": "Bagaimana kepemilikan hak cipta (IP) dan source code proyek?",
-        "answer": "100% kepemilikan source code, repositori Git, dan aset digital sepenuhnya diserahkan kepada Anda setelah proyek selesai tanpa biaya royalti tambahan atau vendor lock-in."
+        "question": "Bagaimana kepemilikan source code dan hak cipta proyek?",
+        "answer": "100% hak milik Anda. Seluruh repositori Git, dokumentasi, dan aset diserahkan penuh tanpa biaya royalti tambahan atau ikatan vendor lock-in."
       },
       {
-        "question": "Berapa lama estimasi waktu pengembangan sistem atau aplikasi?",
-        "answer": "Bergantung pada ruang lingkup. Sistem MVP atau modul terfokus umumnya diselesaikan dalam 4–8 minggu. Untuk platform enterprise skala besar, kami bekerja dengan sprint Agile 2 mingguan terstruktur sehingga Anda dapat memantau progres secara berkala."
+        "question": "Berapa lama waktu pengembangan sistem atau aplikasi?",
+        "answer": "Sistem MVP terfokus selesai dalam 4–8 minggu. Untuk platform kompleks, kami bekerja dengan sprint 2 mingguan dengan demo teratur."
       },
       {
-        "question": "Apakah PT Tehnonusa menyediakan garansi dan dukungan teknis setelah rilis?",
-        "answer": "Ya. Setiap proyek dilengkapi dengan garansi pemeliharaan bebas bug (bug-free warranty) dan dukungan SLA ketersediaan sistem. Kami juga menawarkan paket pemeliharaan berkala untuk pembaruan keamanan dan skalabilitas."
+        "question": "Apakah PT Tehnonusa menyediakan garansi setelah rilis?",
+        "answer": "Ya. Setiap proyek mencakup garansi perbaikan bug dan jaminan SLA ketersediaan sistem pasca-peluncuran."
       },
       {
-        "question": "Bagaimana cara menentukan estimasi biaya investasi proyek?",
-        "answer": "Biaya dihitung secara transparan berdasarkan kompleksitas arsitektur, integrasi modul, dan target waktu peluncuran. Kami menyediakan sesi konsultasi arsitektur gratis untuk merumuskan spesifikasi teknis dan estimasi formal."
+        "question": "Bagaimana penentuan estimasi biaya investasi proyek?",
+        "answer": "Biaya dihitung transparan sesuai kompleksitas modul dan integrasi. Kami menyediakan sesi konsultasi arsitektur gratis untuk merumuskan estimasi formal."
       },
       {
-        "question": "Dapatkah sistem baru diintegrasikan dengan database atau software internal kami yang lama (legacy)?",
-        "answer": "Tentu. Tim engineer kami memiliki keahlian khusus dalam migrasi database, pembuatan middleware API jembatan, dan integrasi multi-sistem sehingga data perusahaan dapat mengalir dengan lancar tanpa menghentikan operasional yang sedang berjalan."
+        "question": "Dapatkah sistem baru diintegrasikan dengan database lama (legacy)?",
+        "answer": "Tentu. Kami berpengalaman membangun API penghubung sehingga sistem baru langsung tersambung tanpa menghentikan operasional yang sedang berjalan."
       }
     ]
   },
   "cta": {
-    "kicker": "LET'S BUILD TOGETHER",
+    "kicker": "KONSULTASI ARSITEKTUR",
     "title_prefix": "Siap Mewujudkan",
-    "title_highlight": "Solusi Digital Anda?",
-    "description": "Diskusikan kebutuhan sistem Anda bersama software engineer kami. Kami siap memberikan konsultasi arsitektur gratis dan merancang roadmap teknologi yang tepat untuk bisnis Anda.",
-    "button_consult": "Konsultasikan Proyek Sekarang",
+    "title_highlight": "Sistem Impian Bisnis Anda?",
+    "description": "Diskusikan tantangan sistem Anda bersama lead software engineer kami. Dapatkan analisis kelayakan teknis dan rekomendasi roadmap — gratis tanpa komitmen.",
+    "button_consult": "Jadwalkan Konsultasi Gratis",
     "button_wa": "Hubungi via WhatsApp",
-    "modal_title": "Konsultasi Solusi Digital",
+    "modal_title": "Rancang Solusi Sistem Anda",
     "modal_subtitle": "Ceritakan ringkasan kebutuhan sistem Anda. Tim engineer kami akan mempelajari dan merespons dalam 1x24 jam kerja.",
     "form_name": "Nama Lengkap",
     "form_company": "Perusahaan / Organisasi",
@@ -366,10 +406,10 @@
     "form_phone": "Nomor WhatsApp",
     "form_service": "Layanan yang Dibutuhkan",
     "form_service_options": [
-      "Enterprise Web Systems",
-      "Mobile Applications (iOS/Android)",
+      "Enterprise Web & ERP",
+      "High-Performance Mobile Apps",
       "Custom Software & Cloud",
-      "Digital Transformation & API",
+      "Modernisasi Sistem & Integrasi API",
       "Konsultasi Arsitektur Sistem"
     ],
     "form_message": "Ceritakan ringkasan kebutuhan atau tantangan sistem Anda...",
@@ -380,7 +420,7 @@
     "form_close": "Tutup"
   },
   "footer": {
-    "about": "PT Tehnonusa Prima Solusi adalah penyedia solusi rekayasa perangkat lunak dan transformasi digital profesional, merancang sistem web enterprise, aplikasi mobile, dan infrastruktur cloud yang skalabel dan andal.",
+    "about": "PT Tehnonusa Prima Solusi adalah partner rekayasa perangkat lunak korporat. Membangun sistem web skala enterprise, aplikasi mobile, dan infrastruktur cloud yang tangguh, aman, dan scalable.",
     "quick_links": "Navigasi",
     "services_title": "Layanan Unggulan",
     "contact_title": "Kontak Resmi",

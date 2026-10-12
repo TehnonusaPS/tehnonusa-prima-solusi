@@ -103,10 +103,10 @@ export function PortfolioSection() {
     <section
       id="portfolio"
       aria-labelledby="portfolio-heading"
-      className="relative py-12 sm:py-16 md:py-20 overflow-hidden bg-background transition-colors duration-300"
+      className="relative min-h-screen flex flex-col justify-center py-10 sm:py-14 md:py-16 overflow-hidden bg-gradient-to-b from-white via-sky-50/40 to-slate-50/90 dark:bg-none dark:bg-[#0b1120] border-b border-slate-200/80 dark:border-slate-800/80 transition-colors duration-300"
     >
-      {/* 1. Ambient Matrix Grid Background */}
-      <TechBackground variant="section" pattern="dots" />
+      {/* 1. Ambient Matrix Grid & Studio Spotlight Background */}
+      <TechBackground variant="spotlight" pattern="dots" />
 
       <Container size="lg">
         {/* 2. Section Header */}

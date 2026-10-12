@@ -234,3 +234,15 @@
     black 100%
   );
 }
+
+/* ============================================================
+   SMOOTH VIEWPORT SCROLL & SECTION ALIGNMENT (NO MAGNETIC SNAP)
+   ============================================================ */
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 4.5rem;
+}
+

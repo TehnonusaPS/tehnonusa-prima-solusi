@@ -3,11 +3,11 @@
 import React, { useState } from "react";
 import { useTranslations } from "next-intl";
 import { motion, AnimatePresence } from "motion/react";
-import { HelpCircle, ChevronDown, MessageSquare, ArrowRight, ShieldCheck } from "lucide-react";
+import { HelpCircle, ChevronDown, MessageSquare, ArrowRight, ShieldCheck, Sparkles } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { TechBackground } from "@/components/ui/tech-background";
 import { CircleHighlight } from "@/components/ui/draw-circle-text";
-import { DrawOutlineButton } from "@/components/ui/creative-buttons";
+import { SpotlightButton } from "@/components/ui/creative-buttons";
 import { cn } from "@/lib/utils";
 
 export function FaqSection() {
@@ -27,13 +27,13 @@ export function FaqSection() {
     <section
       id="faq"
       aria-labelledby="faq-heading"
-      className="relative py-24 sm:py-32 overflow-hidden bg-background transition-colors duration-300"
+      className="relative min-h-screen flex flex-col justify-center py-14 sm:py-18 lg:py-20 overflow-x-clip bg-gradient-to-b from-white via-sky-50/20 to-white dark:bg-none dark:bg-[#0b1120] transition-colors duration-300"
     >
-      <TechBackground variant="section" pattern="grid" />
+      <TechBackground variant="section" pattern="mesh" />
 
-      <Container size="lg">
+      <Container size="lg" className="relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-10 sm:mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-mono font-semibold tracking-wider uppercase mb-4 shadow-2xs">
             <HelpCircle className="w-3.5 h-3.5 shrink-0" />
             <span>{t("kicker")}</span>
@@ -71,8 +71,8 @@ export function FaqSection() {
                   className={cn(
                     "rounded-2xl border transition-all duration-300 overflow-hidden",
                     isOpen
-                      ? "bg-white dark:bg-surface border-primary/50 shadow-md shadow-primary/5 ring-1 ring-primary/20"
-                      : "bg-surface/70 hover:bg-surface border-border/80"
+                      ? "bg-white dark:bg-slate-900 border-primary/50 shadow-md shadow-primary/5 ring-1 ring-primary/20"
+                      : "bg-slate-50/80 dark:bg-slate-900/50 hover:bg-slate-100/80 dark:hover:bg-slate-900/80 border-slate-200/80 dark:border-slate-800"
                   )}
                 >
                   <button
@@ -89,7 +89,7 @@ export function FaqSection() {
                         "w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 border",
                         isOpen
                           ? "bg-primary text-primary-foreground border-primary rotate-180"
-                          : "bg-surface text-muted-foreground border-border/80"
+                          : "bg-white dark:bg-slate-800 text-muted-foreground border-slate-200 dark:border-slate-700"
                       )}
                     >
                       <ChevronDown className="w-4 h-4" />
@@ -106,7 +106,7 @@ export function FaqSection() {
                         className="overflow-hidden"
                       >
                         <div className="px-5 pb-6 sm:px-6 pt-0 border-t border-slate-100 dark:border-slate-800/60 mt-1">
-                          <p className="font-sans text-xs sm:text-sm text-muted-foreground leading-relaxed pt-3">
+                          <p className="font-sans text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed pt-3">
                             {t(`items.${idx}.answer`)}
                           </p>
                         </div>
@@ -118,46 +118,66 @@ export function FaqSection() {
             })}
           </div>
 
-          {/* Consultation Assurance Card (5 cols) */}
+          {/* Unified Consultation Assurance Card (5 cols) */}
           <div className="lg:col-span-5 sticky top-28">
-            <div className="rounded-3xl p-7 sm:p-8 bg-gradient-to-br from-slate-900 to-slate-950 text-white border border-slate-800 shadow-xl relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl pointer-events-none" />
+            <div className="rounded-3xl p-7 sm:p-8 bg-gradient-to-br from-white via-slate-50/80 to-sky-50/30 dark:from-slate-900 dark:via-slate-900 dark:to-slate-950 text-foreground border border-slate-200/90 dark:border-slate-800 shadow-xl shadow-slate-200/50 dark:shadow-2xl relative overflow-hidden transition-all">
+              {/* Ambient brand glow */}
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/10 dark:bg-primary/20 rounded-full blur-3xl pointer-events-none" />
 
               <div className="relative z-10">
-                <div className="w-12 h-12 rounded-xl bg-primary/20 border border-primary/30 flex items-center justify-center mb-6">
-                  <MessageSquare className="w-6 h-6 text-primary" />
+                {/* Header Icon & Status Pill */}
+                <div className="flex items-center justify-between mb-5">
+                  <div className="w-12 h-12 rounded-2xl bg-primary/10 dark:bg-primary/20 border border-primary/25 text-primary flex items-center justify-center shadow-xs">
+                    <MessageSquare className="w-6 h-6" />
+                  </div>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[11px] font-mono font-semibold tracking-wider uppercase border border-emerald-500/20">
+                    <ShieldCheck className="w-3.5 h-3.5" />
+                    NDA Protected
+                  </span>
                 </div>
 
-                <h3 className="font-heading text-xl sm:text-2xl font-bold tracking-tight mb-3">
+                <h3 className="font-heading text-xl sm:text-2xl font-bold tracking-tight text-foreground mb-3 leading-snug">
                   Punya Pertanyaan Spesifik tentang Sistem Anda?
                 </h3>
 
-                <p className="font-sans text-xs sm:text-sm text-slate-300 leading-relaxed mb-6">
-                  Konsultasikan spesifikasi teknis, integrasi modul, atau estimasi anggaran langsung bersama software architect kami tanpa biaya komitmen.
+                <p className="font-sans text-xs sm:text-sm text-muted-foreground leading-relaxed mb-6">
+                  Konsultasikan spesifikasi teknis, integrasi modul, estimasi timeline, atau kalkulasi anggaran langsung bersama software architect kami tanpa biaya komitmen.
                 </p>
 
-                <div className="space-y-3 mb-8 pt-4 border-t border-white/10 text-xs font-sans text-slate-300">
-                  <div className="flex items-center gap-2">
-                    <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>Non-Disclosure Agreement (NDA) tersedia</span>
+                {/* Assurance Points */}
+                <div className="space-y-3 mb-8 pt-5 border-t border-slate-200/80 dark:border-slate-800 text-xs sm:text-[13px] font-sans text-foreground/90">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-5 h-5 rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+                      <ShieldCheck className="w-3.5 h-3.5" />
+                    </div>
+                    <span className="font-medium">Non-Disclosure Agreement (NDA) legal tersedia</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>Respons cepat dalam 1x24 jam kerja</span>
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-5 h-5 rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+                      <ShieldCheck className="w-3.5 h-3.5" />
+                    </div>
+                    <span className="font-medium">Respons cepat dalam 1x24 jam kerja</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span>Rancangan arsitektur awal gratis</span>
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-5 h-5 rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+                      <ShieldCheck className="w-3.5 h-3.5" />
+                    </div>
+                    <span className="font-medium">Review arsitektur & estimasi awal 100% gratis</span>
                   </div>
                 </div>
 
-                <DrawOutlineButton
+                {/* High-Converting CTA Button */}
+                <SpotlightButton
                   onClick={scrollToContact}
-                  className="w-full justify-center py-3 text-xs sm:text-sm font-sans font-semibold text-white"
+                  className="w-full justify-center py-3.5 text-xs sm:text-sm font-sans font-semibold shadow-md shadow-primary/25 cursor-pointer"
                 >
-                  <span>Mulai Diskusi Teknis</span>
+                  <span>Konsultasikan Spesifikasi Sistem</span>
                   <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                </DrawOutlineButton>
+                </SpotlightButton>
+
+                <p className="text-center text-[11px] font-mono text-muted-foreground mt-3">
+                  Konsultasi 1-on-1 langsung dengan Senior Solution Architect
+                </p>
               </div>
             </div>
           </div>

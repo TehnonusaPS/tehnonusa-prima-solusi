@@ -36,7 +36,9 @@ const AmbientStars = React.memo(function AmbientStars() {
     if (!containerRef.current) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsVisible(entry.isIntersecting);
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
       },
       { threshold: 0.05 }
     );
@@ -101,12 +103,13 @@ export function HeroSection({ className }: HeroSectionProps) {
 
   return (
     <section
+      id="hero"
       className={cn(
-        "relative overflow-hidden pt-20 pb-16 sm:pt-24 sm:pb-24 lg:pt-28 lg:pb-32 border-b border-border/40",
+        "relative min-h-screen flex flex-col justify-center overflow-hidden pt-20 pb-12 sm:pt-24 sm:pb-16 lg:pt-24 lg:pb-20 bg-gradient-to-b from-sky-50/70 via-white to-slate-50/80 dark:bg-none dark:bg-[#0b1120] border-b border-slate-200/80 dark:border-slate-800/80",
         className
       )}
     >
-      {/* 1. Architectural Tech Background (Static GPU-cached light auras) */}
+      {/* 1. Architectural Tech Background & Radiant Aura */}
       <TechBackground variant="hero" pattern="dots" />
 
       {/* Ambient Dark-Mode 3D Stars Canvas */}
@@ -122,43 +125,43 @@ export function HeroSection({ className }: HeroSectionProps) {
           {/* 2. Engineering Eyebrow Tag / Kicker */}
           <motion.div
             variants={heroItemVariants}
-            className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-border/80 bg-surface/80 backdrop-blur-md shadow-2xs mb-5 sm:mb-6 max-w-[94vw] sm:max-w-none"
+            className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full border border-slate-200/90 dark:border-border/80 bg-white/90 dark:bg-surface/80 backdrop-blur-md shadow-2xs mb-5 sm:mb-6 max-w-[94vw] sm:max-w-none"
           >
             <span className="flex h-2 w-2 shrink-0 relative">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
             </span>
             <Terminal className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-primary shrink-0" />
-            <span className="font-mono text-[10px] sm:text-xs font-semibold uppercase tracking-tight sm:tracking-wider text-muted-foreground text-center">
+            <span className="font-mono text-[10px] sm:text-xs font-semibold uppercase tracking-tight sm:tracking-wider text-slate-600 dark:text-muted-foreground text-center">
               {tHero("kicker")}
             </span>
           </motion.div>
 
-          {/* 3. Main Persuasive Headline with Hand-drawn Loop Highlight (Exact 3 lines on mobile & desktop) */}
+          {/* 3. Main Persuasive Headline with Hand-drawn Loop Highlight */}
           <motion.h1
             variants={heroItemVariants}
             className="font-heading font-bold text-[clamp(1.65rem,7.2vw,2.4rem)] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-tight text-foreground leading-[1.12] sm:leading-[1.08] max-w-6xl mb-5 sm:mb-6"
           >
             <span className="block">{tHero("headline_prefix")}</span>
-            <span className="block my-1.5 sm:my-2 whitespace-nowrap">
+            <span className="block my-2 sm:my-3">
               <CircleHighlight
                 strokeColor="#0085EB"
                 strokeWidth={3}
-                className="text-primary font-black inline-block mr-2 sm:mr-4"
+                className="text-primary font-black inline-block"
               >
                 {tHero("headline_highlight")}
-              </CircleHighlight>{" "}
+              </CircleHighlight>
               {Boolean(tHero("headline_mid")) && (
-                <span className="inline-block">{tHero("headline_mid")}</span>
+                <span className="inline-block ml-2 sm:ml-4">{tHero("headline_mid")}</span>
               )}
             </span>
-            <span className="block whitespace-nowrap">{tHero("headline_suffix")}</span>
+            <span className="block">{tHero("headline_suffix")}</span>
           </motion.h1>
 
           {/* 4. Subtitle / Product Philosophy Copy */}
           <motion.p
             variants={heroItemVariants}
-            className="font-sans text-sm sm:text-lg lg:text-xl text-muted-foreground max-w-3xl leading-relaxed mb-8 sm:mb-10 px-1 sm:px-0"
+            className="font-sans text-sm sm:text-base lg:text-lg text-muted-foreground max-w-3xl leading-relaxed mb-4 sm:mb-6 px-1 sm:px-0"
           >
             {tHero("description")}
           </motion.p>
@@ -166,7 +169,7 @@ export function HeroSection({ className }: HeroSectionProps) {
           {/* 5. Dual Action Buttons (Diskusi Proyek hidden on mobile) */}
           <motion.div
             variants={heroItemVariants}
-            className="flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto mb-12 sm:mb-16"
+            className="flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto mb-6 sm:mb-8"
           >
             {/* Primary Action Button with Hover.dev Spotlight Effect - Hidden on mobile */}
             <SpotlightButton
@@ -221,20 +224,20 @@ export function HeroSection({ className }: HeroSectionProps) {
                 scale: 1.015,
                 transition: { duration: 0.3, ease: "easeOut" },
               }}
-              className="relative rounded-2xl sm:rounded-3xl border border-border/80 bg-surface/90 shadow-2xl overflow-hidden backdrop-blur-xl"
+              className="relative rounded-2xl sm:rounded-3xl border border-slate-200/90 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 shadow-2xl shadow-slate-900/10 dark:shadow-black/60 overflow-hidden backdrop-blur-xl"
             >
               {/* Window Frame Bar */}
-              <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-border/70 bg-muted/40">
+              <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-slate-200/80 dark:border-slate-800 bg-slate-50/90 dark:bg-slate-950/80">
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-red-400/80 inline-block" />
                   <span className="w-2.5 h-2.5 rounded-full bg-yellow-400/80 inline-block" />
                   <span className="w-2.5 h-2.5 rounded-full bg-green-400/80 inline-block" />
-                  <span className="ml-2 font-mono text-[11px] text-muted-foreground/80 hidden sm:inline-block">
+                  <span className="ml-2 font-mono text-[11px] text-slate-500 dark:text-muted-foreground/80 hidden sm:inline-block">
                     core.tehnonusa.internal/systems
                   </span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="font-mono text-[11px] font-semibold text-primary flex items-center gap-1.5 bg-primary/10 px-2.5 py-0.5 rounded-full">
+                  <span className="font-mono text-[11px] font-semibold text-primary flex items-center gap-1.5 bg-primary/10 px-2.5 py-0.5 rounded-full border border-primary/20">
                     <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                     LIVE PRODUCTION
                   </span>
